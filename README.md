@@ -3,7 +3,7 @@
 The component library behind [carbonweb.co](https://www.carbonweb.co) and Carbon LATAM.
 Vanilla HTML/CSS/JS — no framework, no build step, no npm.
 
-**Live:** https://nahid-carbon.github.io/carbonweb-design-system-github/
+**Live:** https://nahid-carbon.github.io/design-system-carbonweb-github/
 
 ---
 
