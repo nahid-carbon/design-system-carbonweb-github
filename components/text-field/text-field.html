@@ -1,0 +1,34 @@
+<!-- CarbonWeb Text Field — Template (not yet built) -->
+<!-- TODO: Populate with actual variants after design review -->
+
+<!-- Default -->
+<div class="text-field">
+  <label class="text-field__label" for="name">Full name</label>
+  <input class="text-field__input" type="text" id="name" placeholder="Enter your name" />
+</div>
+
+<!-- With helper text -->
+<div class="text-field">
+  <label class="text-field__label" for="email">Email</label>
+  <input class="text-field__input" type="email" id="email" placeholder="example@gmail.com" />
+  <p class="text-field__helper">We'll never share your email.</p>
+</div>
+
+<!-- Error state -->
+<div class="text-field text-field--error">
+  <label class="text-field__label" for="email-err">Email</label>
+  <input class="text-field__input" type="email" id="email-err" placeholder="example@gmail.com" aria-invalid="true" aria-describedby="email-err-msg" />
+  <p class="text-field__error-msg" id="email-err-msg">Please enter a valid email address.</p>
+</div>
+
+<!-- Disabled -->
+<div class="text-field text-field--disabled">
+  <label class="text-field__label" for="disabled">Disabled field</label>
+  <input class="text-field__input" type="text" id="disabled" placeholder="Cannot edit" disabled />
+</div>
+
+<!-- Floating Label (requires JS) -->
+<div class="text-field text-field--floating">
+  <input class="text-field__input" type="text" id="float" placeholder=" " />
+  <label class="text-field__label" for="float">Floating label</label>
+</div>

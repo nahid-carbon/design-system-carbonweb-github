@@ -1,0 +1,170 @@
+/* CarbonWeb Newsletter Form */
+
+.newsletter-form {
+  max-width: 400px;
+  font-family: var(--font-family);
+}
+
+.newsletter-form__heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+}
+
+.newsletter-form__subtext {
+  font-size: 14px;
+  color: var(--color-muted);
+  margin-bottom: 16px;
+}
+
+.newsletter-form__field {
+  display: flex;
+  gap: 0;
+  position: relative;
+}
+
+.newsletter-form__input {
+  flex: 1;
+  height: 48px;
+  border-radius: 9999px 0 0 9999px;
+  border: 1.5px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+  border-right: none;
+  padding: 0 20px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--color-ink);
+  transition: border-color 0.2s;
+  outline: none;
+  background: white;
+}
+
+.newsletter-form__input:focus {
+  border-color: var(--color-teal-500);
+}
+
+.newsletter-form__input::placeholder {
+  color: var(--color-slate-light);
+}
+
+.newsletter-form__button {
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 0 9999px 9999px 0;
+  background: var(--color-teal-500);
+  color: white;
+  border: none;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.newsletter-form__button:hover {
+  background: var(--color-teal-hover);
+}
+
+/* Success state */
+.newsletter-form__success {
+  display: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--color-green-100);
+  color: var(--color-green-700);
+  font-size: 14px;
+  margin-top: 12px;
+  align-items: center;
+  gap: 8px;
+}
+
+.newsletter-form--show-success .newsletter-form__success {
+  display: flex;
+}
+
+.newsletter-form--show-success .newsletter-form__field {
+  display: none;
+}
+
+.newsletter-form--show-success .newsletter-form__heading,
+.newsletter-form--show-success .newsletter-form__subtext {
+  display: none;
+}
+
+/* Error state */
+.newsletter-form__error {
+  color: var(--color-pink-700);
+  font-size: 13px;
+  margin-top: 8px;
+  display: none;
+  font-family: var(--font-family);
+}
+
+.newsletter-form--show-error .newsletter-form__error {
+  display: block;
+}
+
+.newsletter-form--show-error .newsletter-form__input {
+  border-color: var(--color-pink-700);
+}
+
+/* Shake animation for error */
+@keyframes newsletter-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+.newsletter-form--shake .newsletter-form__field {
+  animation: newsletter-shake 0.4s ease;
+}
+
+/* ── Stacked variant ── */
+.newsletter-form--stacked .newsletter-form__field {
+  flex-direction: column;
+  gap: 12px;
+}
+
+.newsletter-form--stacked .newsletter-form__input {
+  border-radius: 9999px;
+  border-right: 1.5px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+}
+
+.newsletter-form--stacked .newsletter-form__input:focus {
+  border-color: var(--color-teal-500);
+}
+
+.newsletter-form--stacked .newsletter-form__button {
+  border-radius: 9999px;
+  width: 100%;
+}
+
+/* ── Dark variant ── */
+.newsletter-form--dark .newsletter-form__heading {
+  color: white;
+}
+
+.newsletter-form--dark .newsletter-form__subtext {
+  color: color-mix(in srgb, var(--color-white) 60%, transparent);
+}
+
+.newsletter-form--dark .newsletter-form__input {
+  background: color-mix(in srgb, var(--color-white) 10%, transparent);
+  border-color: color-mix(in srgb, var(--color-white) 20%, transparent);
+  color: white;
+}
+
+.newsletter-form--dark .newsletter-form__input::placeholder {
+  color: color-mix(in srgb, var(--color-white) 50%, transparent);
+}
+
+.newsletter-form--dark .newsletter-form__input:focus {
+  border-color: var(--color-teal-300);
+}
+
+.newsletter-form--dark .newsletter-form__error {
+  color: var(--color-pink-500);
+}

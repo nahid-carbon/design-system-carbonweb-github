@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glowing Cards — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/shadows.css" />
+  <link rel="stylesheet" href="glowing-cards.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #f8f9fb; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 40px; line-height: 1.6; }
+    .section { margin-bottom: 48px; }
+    .section h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+    .section .label { font-size: 13px; font-weight: 500; color: var(--color-muted); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .sep { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 40px 0; }
+  </style>
+</head>
+<body>
+
+<h2>Glowing Cards</h2>
+<p class="desc">Interactive cards with mouse-tracking glow border effect. Move your cursor across the cards to see the glow follow your mouse position. Each card can have its own glow color.</p>
+
+<!-- ════════════════════ LIGHT VARIANT ════════════════════ -->
+
+<div class="section">
+  <h3>Light — Brand Colors</h3>
+  <p class="label">Mouse-tracking glow border — hover over the card group</p>
+
+  <div class="glow-cards">
+    <div class="glow-card glow-card--teal">
+      <div class="glow-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3 class="glow-card__title">Performance</h3>
+      <p class="glow-card__description">Lightning-fast components optimized for speed and efficiency across every device.</p>
+    </div>
+    <div class="glow-card glow-card--green">
+      <div class="glow-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3 class="glow-card__title">Scalable</h3>
+      <p class="glow-card__description">Built to grow with your project from prototype to production deployment.</p>
+    </div>
+    <div class="glow-card glow-card--yellow">
+      <div class="glow-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h3 class="glow-card__title">Accessible</h3>
+      <p class="glow-card__description">WCAG-compliant with keyboard navigation and screen reader support built in.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="sep" />
+
+<!-- ════════════════════ DARK VARIANT ════════════════════ -->
+
+<div class="section">
+  <h3>Dark — Services</h3>
+  <p class="label">Dark background with colored glow borders</p>
+
+  <div class="glow-cards glow-cards--dark" style="background: #0a0a0a; border-radius: 16px; padding: 32px;">
+    <div class="glow-card glow-card--teal">
+      <div class="glow-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h3 class="glow-card__title">Workflow</h3>
+      <p class="glow-card__description">Streamline your monday.com workspace with custom automation workflows.</p>
+    </div>
+    <div class="glow-card glow-card--pink">
+      <div class="glow-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 19l7-7 3 3-7 7-3-3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 2l7.586 7.586" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="2" stroke="currentColor" stroke-width="2"/></svg>
+      </div>
+      <h3 class="glow-card__title">Creative</h3>
+      <p class="glow-card__description">Design systems and brand experiences that convert and delight users.</p>
+    </div>
+    <div class="glow-card glow-card--green">
+      <div class="glow-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h3 class="glow-card__title">Consulting</h3>
+      <p class="glow-card__description">Expert guidance to maximize your platform investment and ROI.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="sep" />
+
+<!-- ════════════════════ ELEVATED ════════════════════ -->
+
+<div class="section">
+  <h3>Elevated — With Shadow</h3>
+  <p class="label">Elevated cards with subtle shadow + glow border</p>
+
+  <div class="glow-cards">
+    <div class="glow-card glow-card--teal glow-card--elevated">
+      <div class="glow-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3 class="glow-card__title">Teal Elevated</h3>
+      <p class="glow-card__description">Card with shadow elevation and teal glow border on hover.</p>
+    </div>
+    <div class="glow-card glow-card--ink glow-card--elevated">
+      <div class="glow-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 16v-4M12 8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h3 class="glow-card__title">Ink Elevated</h3>
+      <p class="glow-card__description">Subtle ink-colored glow for neutral card designs.</p>
+    </div>
+    <div class="glow-card glow-card--pink glow-card--elevated">
+      <div class="glow-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3 class="glow-card__title">Pink Elevated</h3>
+      <p class="glow-card__description">Warm pink glow for highlight and featured content.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="sep" />
+
+<!-- ════════════════════ 2-COLUMN ════════════════════ -->
+
+<div class="section">
+  <h3>Two Column</h3>
+  <p class="label">Wider cards in a two-column layout</p>
+
+  <div class="glow-cards" style="max-width: 800px;">
+    <div class="glow-card glow-card--teal" style="flex-basis: 340px;">
+      <div class="glow-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h3 class="glow-card__title">monday.com Partnership</h3>
+      <p class="glow-card__description">As a certified monday.com partner, we deliver customized solutions that transform how teams collaborate and manage work.</p>
+    </div>
+    <div class="glow-card glow-card--green" style="flex-basis: 340px;">
+      <div class="glow-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3 class="glow-card__title">Emergency Response</h3>
+      <p class="glow-card__description">24/7 rapid response team for critical workflow issues. We keep your operations running when it matters most.</p>
+    </div>
+  </div>
+</div>
+
+<script src="glowing-cards.js"></script>
+</body>
+</html>

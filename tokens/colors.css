@@ -1,0 +1,158 @@
+/* CarbonWeb Design System — Color Tokens
+   Single source of truth. Components reference these via var(--token).
+   Two brands: Global (Carbon core) + LATAM (regional).
+   Step 500 = brand/normal for every scale.
+   Steps 100–400 = lighter. Steps 600–950 = darker.
+*/
+
+:root {
+  /* ── Global Brand ── */
+
+  /* Teal (Primary) */
+  --color-teal-100: #92F3FC;
+  --color-teal-200: #80E8F2;
+  --color-teal-300: #5BD6E3; /* Light :hover */
+  --color-teal-400: #2BC9D9; /* Light :active */
+  --color-teal-500: #00B0C2; /* Normal (brand) */
+  --color-teal-600: #009DAD; /* Normal :hover */
+  --color-teal-700: #008B99; /* Normal :active */
+  --color-teal-800: #007885; /* Dark */
+  --color-teal-900: #006670; /* Dark :hover */
+  --color-teal-950: #00535C; /* Darker */
+
+  /* Green */
+  --color-green-100: #AAE5A1;
+  --color-green-200: #92DE85;
+  --color-green-300: #7CD96C;
+  --color-green-400: #71D761;
+  --color-green-500: #69D757; /* Normal */
+  --color-green-600: #4FB23E;
+  --color-green-700: #448C39;
+  --color-green-800: #36662E;
+  --color-green-900: #2C4D26;
+  --color-green-950: #1F331C;
+
+  /* ── LATAM Brand ── */
+
+  /* Yellow */
+  --color-yellow-100: #FFF7E0;
+  --color-yellow-200: #FFEFBF;
+  --color-yellow-300: #FFE699;
+  --color-yellow-400: #FFC933;
+  --color-yellow-500: #FFB400; /* Normal */
+  --color-yellow-600: #CC9000;
+  --color-yellow-700: #A37300;
+  --color-yellow-800: #7F5700;
+  --color-yellow-900: #5C3C00;
+  --color-yellow-950: #382400;
+
+  /* Gold */
+  --color-gold-100: #E9D596;
+  --color-gold-200: #DCBE5C;
+  --color-gold-300: #CFA82A;
+  --color-gold-400: #C29100;
+  --color-gold-500: #B08300; /* Normal */
+  --color-gold-600: #8F6900;
+  --color-gold-700: #6F5000;
+  --color-gold-800: #523A00;
+  --color-gold-900: #392700;
+  --color-gold-950: #231700;
+
+  /* Pink */
+  --color-pink-100: #FDDDDC;
+  --color-pink-200: #FCC8C7;
+  --color-pink-300: #FBB4B2;
+  --color-pink-400: #FAAFAA;
+  --color-pink-500: #FCA29D; /* Normal */
+  --color-pink-600: #FF7E78;
+  --color-pink-700: #D7443D;
+  --color-pink-800: #B93330;
+  --color-pink-900: #992625;
+  --color-pink-950: #541514;
+
+  /* LATAM Teal */
+  --color-latam-teal-100: #E0F7F5;
+  --color-latam-teal-200: #BCEBE8;
+  --color-latam-teal-300: #95DFDB;
+  --color-latam-teal-400: #6ED3CF;
+  --color-latam-teal-500: #25BCB2; /* Normal */
+  --color-latam-teal-600: #1DA199;
+  --color-latam-teal-700: #178780;
+  --color-latam-teal-800: #116C67;
+  --color-latam-teal-900: #0C524F;
+  --color-latam-teal-950: #062E2C;
+
+  /* WineRed */
+  --color-winered-100: #F2E1E2;
+  --color-winered-200: #E3BDBF;
+  --color-winered-300: #C77578;
+  --color-winered-400: #B55055;
+  --color-winered-500: #832C2F; /* Normal */
+  --color-winered-600: #6B2123;
+  --color-winered-700: #53181A;
+  --color-winered-800: #3A1012;
+  --color-winered-900: #230908;
+  --color-winered-950: #1A0809;
+
+  /* ── Neutrals ── */
+  --color-white: #FFFFFF;     /* Figma: Carbon/Brand/Colors/System/White */
+  --color-ink: #0A0A0A;       /* Headings, primary text */
+  --color-muted: #7F8081;     /* Secondary/meta text */
+  --color-slate: #5E6075;     /* Link / body text (footer) */
+  --color-slate-light: #A3A5B5; /* Meta text (phone, email, legal, copyright) */
+
+  /* ── System Greys (Figma: Carbon/Brand/Colors/System/Gray *) ──
+     Neutral surfaces for chips, tags and filter controls. Steps 300/700
+     are the same values as --color-grey-base / --color-grey-dark below;
+     both names are kept so Figma's scale maps 1:1. */
+  --color-grey-100: #F5F7FB;  /* Gray 100 — unselected filter surface */
+  --color-grey-200: #E1E7F0;  /* Gray 200 — light tag surface / hairline */
+  --color-grey-300: #B7BFDD;  /* Gray 300 — hover border */
+  --color-grey-700: #686A86;  /* Gray 700 — unselected filter label */
+  --color-grey-900: #3F444B;  /* Gray 900 — product tag ink / hover fill */
+  --color-border-light: #D0D5DD; /* Product tag hairline */
+  --color-surface-dark: #102D30; /* Dark filter-row surface */
+
+  /* ── monday.com Product Brand Colors ──
+     Fills for product/category chips. Not part of the Carbon palette —
+     they are monday.com's own product marks and must stay exact.
+     CRM's #007682 is identical to --color-teal-800, so it reuses that token. */
+  --color-monday-wm: #3D3DA1;      /* Work Management */
+  --color-monday-dev: #007140;     /* Dev */
+  --color-monday-service: #8B3046; /* Service */
+
+  /* ── System Neutrals ──
+     Greys outside the teal/green brand ramps: surfaces, hairlines, borders and
+     near-black UI. Values taken from what components were already using, so
+     adopting them changed nothing visually. */
+  --color-black: #000000;          /* Figma System/Black — true black surfaces */
+  --color-neutral-50: #FAFAFA;     /* off-white page and card surfaces */
+  --color-neutral-100: #F0F1F8;    /* subtle fills, inactive tabs */
+  --color-neutral-200: #E7E8EA;    /* hairlines and dividers */
+  --color-neutral-300: #D4D6D9;    /* borders */
+  --color-neutral-400: #BBBBBC;    /* disabled text and icons */
+  --color-neutral-600: #525252;    /* secondary ink */
+  --color-neutral-700: #333333;    /* body ink on light surfaces */
+  --color-neutral-800: #1A1A1A;    /* near-black surfaces */
+  --color-surface-night: #10141A;  /* deep UI surface, darker than ink */
+
+  /* ── Semantic status ──
+     Success / danger for validation, health dots and status pills. */
+  --color-success: #13CE66;
+  --color-success-dark: #085229;
+  --color-success-tint: #E9FBF0;
+  --color-danger: #EF4444;
+  --color-danger-dark: #661D1D;
+  --color-danger-tint: #FFEDED;
+
+  /* ── Interaction States ── */
+  --color-teal-hover: #005F69;       /* Primary button hover bg */
+  --color-teal-hover-text: #007682;  /* Secondary button hover text */
+  --color-teal-tertiary: #116C67;    /* Tertiary button hover underline */
+  --color-grey-base: #B7BFDD;        /* Grey button default */
+  --color-grey-dark: #686A86;        /* Grey button hover */
+
+  /* ── Gradients (use as background values) ── */
+  --gradient-global: linear-gradient(to bottom left, #00B0C2, #69D757);
+  --gradient-latam: linear-gradient(55.62deg, #FFB400 2.97%, #00B0C2 59.04%, #69D757 85.78%);
+}

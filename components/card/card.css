@@ -1,0 +1,797 @@
+/* CarbonWeb Card — uses only var(--token) references
+   Variants sourced from Figma page "3. Content / Cards"
+   (file tA0Y5j2fkTBqjG427Tltn8).
+*/
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  overflow: hidden;
+  /* cards are often <a> wrappers — kill the browser's default link underline */
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  text-decoration: none;
+}
+
+.card--elevated {
+  border: none;
+  box-shadow: var(--shadow-md);
+}
+
+.card__body {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.card__title {
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.card__description {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.card__price {
+  font-family: var(--font-family-numeric); /* numbers use Montserrat */
+  font-weight: var(--font-bold);
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.card__period {
+  font-weight: var(--font-regular);
+  font-size: var(--text-base);
+  color: var(--color-muted);
+}
+
+.card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.card__features li {
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-slate);
+}
+
+.card__actions {
+  padding: 0 var(--space-6) var(--space-6);
+}
+
+/* ── Shared interaction behavior ─────────────────────────────
+   Add .card--hoverable to any card that links somewhere. */
+
+.card--hoverable {
+  transition: transform 200ms ease, box-shadow 200ms ease,
+    border-color 200ms ease;
+  cursor: pointer;
+}
+
+.card--hoverable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.card--hoverable:focus-visible,
+.card--selector:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}
+
+/* Image zoom on hover for image-bearing variants */
+.card__media {
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.card__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 200ms ease;
+}
+
+.card--hoverable:hover .card__media img {
+  transform: scale(1.03);
+}
+
+/* Token-gradient placeholder when no real graphic exists */
+.card__media--placeholder {
+  background: var(--gradient-global);
+  min-height: 196px;
+  border-radius: var(--radius-md);
+}
+
+/* ── Icon Card (Figma: Card/Icon 92:574) ───────────────────── */
+
+.card--icon {
+  border: none;
+  box-shadow: var(--shadow-sm);
+  background: var(--color-white);
+}
+
+.card--icon .card__body {
+  gap: var(--space-2);
+}
+
+.card__icon-box {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--color-teal-100);
+  color: var(--color-teal-500);
+  margin-bottom: var(--space-3);
+}
+
+.card__icon-box svg {
+  width: 36px;
+  height: 36px;
+}
+
+/* ── Borderless Card (Figma: Card/Borderless 92:888) ───────── */
+
+.card--borderless {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+  align-items: center;
+  text-align: center;
+}
+
+.card--borderless .card__body {
+  padding: var(--space-3);
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.card--borderless .card__icon-box {
+  background: transparent;
+  width: auto;
+  height: auto;
+  margin-bottom: 0;
+}
+
+.card--borderless .card__icon-box svg {
+  width: 44px;
+  height: 44px;
+}
+
+.card--borderless .card__description {
+  color: var(--color-ink);
+}
+
+/* ── Square Graphic Card (Figma: Card/Square Graphic 170:47705) */
+
+.card--square-graphic {
+  border: none;
+  background: var(--color-grey-100);
+  padding: var(--space-8) var(--space-6) var(--space-6);
+  gap: var(--space-6);
+}
+
+.card--square-graphic .card__body {
+  padding: 0;
+}
+
+.card--square-graphic .card__media {
+  border-radius: var(--radius-md);
+}
+
+/* ── Rectangle Graphic Card (Figma: Card/Rectangle Graphic 170:48849) */
+
+.card--rectangle-graphic {
+  border: none;
+  background: var(--gradient-global);
+  color: var(--color-white);
+  padding: var(--space-8) var(--space-8) 0;
+  gap: var(--space-6);
+}
+
+.card--rectangle-graphic .card__body {
+  padding: 0;
+  gap: var(--space-4);
+}
+
+.card--rectangle-graphic .card__title,
+.card--rectangle-graphic .card__description {
+  color: var(--color-white);
+}
+
+.card--rectangle-graphic .card__media {
+  overflow: visible;
+  align-self: center;
+  max-width: 235px;
+}
+
+/* ── Illustration Card (Figma: Card/Illustration 593:5488) ──── */
+
+.card--illustration {
+  border: none;
+  background: var(--color-grey-100);
+  padding: var(--space-6);
+  gap: var(--space-5);
+}
+
+.card--illustration .card__body {
+  padding: 0;
+  gap: var(--space-2);
+}
+
+.card--illustration .card__media {
+  border-radius: var(--radius-md);
+  filter: grayscale(1) opacity(0.75);
+  transition: filter 200ms ease;
+}
+
+.card--illustration:hover .card__media,
+.card--illustration.card--hoverable:hover .card__media {
+  filter: none;
+}
+
+/* ── Carousel Card (Figma: Card/Carousel 170:49604) ─────────── */
+
+.card--carousel {
+  background: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
+}
+
+.card--carousel .card__media {
+  background: var(--color-grey-100);
+}
+
+.card--carousel .card__body {
+  padding: var(--space-8) var(--space-8) var(--space-6);
+  gap: var(--space-4);
+}
+
+.card__meta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  align-self: flex-start;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--color-neutral-100);
+  color: var(--color-slate);
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  line-height: 1.5;
+}
+
+.card__meta-chip svg {
+  width: 20px;
+  height: 20px;
+}
+
+.card--carousel .card__footer-link {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 var(--space-8) var(--space-8);
+}
+
+/* ── Blog Card (Figma: Blog Graphic Space 735:4976 / Monday 735:4763 /
+     Integrations 735:4874 / Process Automation 735:4917) ────── */
+
+.card--blog {
+  background: var(--color-white);
+  border: none;
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-5);
+  gap: var(--space-4);
+}
+
+.card--blog .card__media {
+  border-radius: var(--radius-md);
+}
+
+.card--blog .card__body {
+  padding: 0;
+  gap: var(--space-3);
+}
+
+.card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.card--blog .card__actions {
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Tinted blog card — set --card-tint-bg to any token on the element */
+.card--tint {
+  background: var(--card-tint-bg, var(--color-teal-800));
+}
+
+.card--tint .card__title,
+.card--tint .card__description {
+  color: var(--color-white);
+}
+
+/* ── Blog Full Width Card (Figma: Blog Full Width 738:5501) ─── */
+
+.card--blog-wide {
+  flex-direction: row;
+  border: none;
+  background: linear-gradient(
+    100deg,
+    var(--color-ink),
+    var(--color-teal-950)
+  );
+  border-radius: var(--radius-xl);
+}
+
+.card--blog-wide .card__content {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-10) var(--space-12);
+  justify-content: center;
+}
+
+.card--blog-wide .card__title {
+  color: var(--color-white);
+  font-size: var(--text-4xl);
+}
+
+.card--blog-wide .card__description {
+  color: color-mix(in srgb, var(--color-white) 85%, transparent);
+}
+
+.card--blog-wide .card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.card--blog-wide .card__media {
+  flex: 1 1 55%;
+  background: var(--color-grey-100);
+}
+
+.card--blog-wide .card__media img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Note Card (Figma: Note Wide 796:33721) ─────────────────── */
+
+.card--note {
+  flex-direction: row;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--color-latam-teal-200);
+  padding: var(--space-4) var(--space-6);
+}
+
+.card--note .card__description {
+  color: var(--color-teal-950);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  text-align: center;
+}
+
+/* ── Service With Price Card (Figma: Service With Price 795:33585) */
+
+.card--service-price {
+  border: none;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.card__band {
+  background: var(--color-teal-500);
+  color: var(--color-white);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.card__band .card__title {
+  color: var(--color-white);
+  font-size: var(--text-3xl);
+}
+
+.card__band .card__description {
+  color: color-mix(in srgb, var(--color-white) 90%, transparent);
+}
+
+.card--service-price .card__checklist {
+  padding: var(--space-8);
+  flex: 1;
+}
+
+.card__band--footer {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+/* Checklist (teal check + label) */
+.card__checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card__checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-ink);
+}
+
+.card__checklist svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--color-teal-500);
+  margin-top: 2px;
+}
+
+.card__checklist--inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+/* Price block — numbers use Montserrat */
+.card__price-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.card__price-value {
+  font-family: var(--font-family-numeric);
+  font-weight: var(--font-bold);
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  color: var(--color-white);
+  margin: 0;
+}
+
+.card__price-unit {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-base);
+  color: color-mix(in srgb, var(--color-white) 90%, transparent);
+}
+
+.card__price-note {
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  color: color-mix(in srgb, var(--color-white) 85%, transparent);
+  margin: 0;
+}
+
+/* ── Price Horizontal Card (Figma: Price Horizontal 800:49379) */
+
+.card--price-horizontal {
+  flex-direction: row;
+  border: none;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.card--price-horizontal .card__content {
+  flex: 1 1 66%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-10) var(--space-12);
+}
+
+.card__subtitle {
+  font-family: var(--font-family);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-teal-500);
+  margin: 0;
+}
+
+.card__price-panel {
+  flex: 1 1 34%;
+  background: var(--color-teal-500);
+  color: var(--color-white);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card__price-panel .card__price-note {
+  flex: 1;
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Selector Card (Figma: Card/Selector 854:45656) ─────────── */
+
+.card--selector {
+  border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: border-color 200ms ease, box-shadow 200ms ease,
+    transform 200ms ease;
+  position: relative;
+}
+
+.card--selector .card__body {
+  padding: var(--space-5) var(--space-6);
+  gap: var(--space-2);
+  padding-right: var(--space-12);
+}
+
+.card--selector:hover {
+  border-color: var(--color-teal-500);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.card__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-family);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-teal-500);
+}
+
+.card__eyebrow svg {
+  width: 16px;
+  height: 16px;
+}
+
+.card--selector .card__title {
+  font-size: var(--text-base);
+}
+
+.card--selector .card__description {
+  font-size: var(--text-sm);
+}
+
+.card__checkbox {
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-5);
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-slate-light);
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.card__checkbox svg {
+  width: 12px;
+  height: 12px;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.card--selector.card--selected .card__checkbox {
+  background: var(--color-teal-500);
+  border-color: var(--color-teal-500);
+}
+
+.card--selector.card--selected .card__checkbox svg {
+  opacity: 1;
+}
+
+.card--selector.card--disabled {
+  background: var(--color-neutral-200);
+  pointer-events: none;
+  cursor: default;
+}
+
+.card--selector.card--disabled .card__eyebrow,
+.card--selector.card--disabled .card__title,
+.card--selector.card--disabled .card__description {
+  color: var(--color-slate-light);
+}
+
+/* ── Directory Card (Figma: Card/Directory 94:4868) ─────────── */
+
+.card--directory {
+  border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  background: var(--color-white);
+  padding: var(--space-5);
+  gap: var(--space-5);
+  transition: box-shadow 200ms ease, transform 200ms ease;
+  cursor: pointer;
+}
+
+.card--directory:hover {
+  transform: translateY(-2px);
+  box-shadow: -2px -2px 22px 0 color-mix(in srgb, var(--color-grey-900) 18%, transparent), var(--shadow-md);
+}
+
+.card--directory .card__media {
+  border: 1px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
+  border-radius: var(--radius-md);
+}
+
+.card--directory .card__body {
+  padding: 0;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.card--directory .card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.card--directory:hover .card__footer .text-link {
+  color: var(--color-teal-500);
+}
+
+.card__product-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-ink);
+  background: var(--color-white);
+}
+
+.card__product-tag img,
+.card__product-tag svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ── Card Grids (Figma: Card Section wrappers) ──────────────── */
+
+.card-grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.card-grid--icon,
+.card-grid--rectangle {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-grid--2col,
+.card-grid--carousel,
+.card-grid--service-price,
+.card-grid--selector {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card-grid--borderless {
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-8);
+}
+
+.card-grid--blog {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* Carousel controls (Figma: Card Section Carousel 170:49865) */
+.card-carousel__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.card-carousel__dots {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.card-carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-slate-light);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.card-carousel__dot[aria-current="true"] {
+  background: var(--color-teal-500);
+}
+
+.card-carousel__arrow {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  border: none;
+  background: var(--color-teal-500);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.card-carousel__arrow:hover {
+  background: var(--color-teal-600);
+}
+
+.card-carousel__arrow:disabled {
+  background: var(--color-neutral-100);
+  color: var(--color-slate-light);
+  cursor: default;
+}
+
+.card-carousel__arrow svg {
+  width: 16px;
+  height: 16px;
+}
+
+.card-carousel__arrow:focus-visible,
+.card-carousel__dot:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}

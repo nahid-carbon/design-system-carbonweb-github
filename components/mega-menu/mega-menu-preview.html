@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mega Menu — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/shadows.css" />
+  <link rel="stylesheet" href="mega-menu.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-family);
+      background: #f5f5f5;
+      color: var(--color-ink);
+      -webkit-font-smoothing: antialiased;
+      min-height: 700px;
+    }
+    .preview-header {
+      background: #ffffff;
+      border-bottom: 1px solid rgba(163, 165, 181, 0.2);
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      height: 64px;
+    }
+    .preview-logo {
+      font-family: var(--font-family);
+      font-weight: var(--font-bold);
+      font-size: 18px;
+      color: var(--color-ink);
+      white-space: nowrap;
+    }
+    .preview-body {
+      padding: 48px;
+      max-width: 600px;
+    }
+    .preview-body h2 {
+      font-family: var(--font-family);
+      font-weight: var(--font-bold);
+      font-size: var(--text-xl);
+      color: var(--color-ink);
+      margin-bottom: 12px;
+    }
+    .preview-body p {
+      font-family: var(--font-family);
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      line-height: var(--leading-relaxed);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Simulated site header bar -->
+<header class="preview-header">
+  <span class="preview-logo">CarbonWeb</span>
+
+  <!-- Mega Menu component -->
+  <nav class="mega-menu" role="navigation" aria-label="Main navigation">
+
+    <!-- Products -->
+    <div class="mega-menu__item" data-mega-item>
+      <button class="mega-menu__trigger" aria-expanded="false" aria-haspopup="true">
+        Products
+        <svg class="mega-menu__chevron" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="mega-menu__dropdown" role="menu">
+        <div class="mega-menu__columns">
+          <div class="mega-menu__column">
+            <p class="mega-menu__column-title">Platform</p>
+            <a href="#" class="mega-menu__link" role="menuitem">
+              <svg class="mega-menu__link-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="9" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="9" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/></svg>
+              monday.com Platform
+            </a>
+            <a href="#" class="mega-menu__link" role="menuitem">
+              <svg class="mega-menu__link-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M8 4v4l2.5 2.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              Solutions
+            </a>
+            <a href="#" class="mega-menu__link" role="menuitem">
+              <svg class="mega-menu__link-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+              Enterprise
+            </a>
+          </div>
+          <div class="mega-menu__column">
+            <p class="mega-menu__column-title">Products</p>
+            <a href="#" class="mega-menu__link" role="menuitem">monday Work Management</a>
+            <a href="#" class="mega-menu__link" role="menuitem">monday CRM</a>
+            <a href="#" class="mega-menu__link" role="menuitem">monday Service</a>
+            <a href="#" class="mega-menu__link" role="menuitem">monday Dev</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="mega-menu__item" data-mega-item>
+      <button class="mega-menu__trigger" aria-expanded="false" aria-haspopup="true">
+        Services
+        <svg class="mega-menu__chevron" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="mega-menu__dropdown" role="menu">
+        <div class="mega-menu__columns">
+          <div class="mega-menu__column">
+            <p class="mega-menu__column-title">monday.com Services</p>
+            <a href="#" class="mega-menu__link" role="menuitem">Consultation</a>
+            <a href="#" class="mega-menu__link" role="menuitem">Workflow Development</a>
+            <a href="#" class="mega-menu__link" role="menuitem">Training</a>
+            <a href="#" class="mega-menu__link" role="menuitem">Custom Work</a>
+          </div>
+          <div class="mega-menu__column">
+            <p class="mega-menu__column-title">Creative Services</p>
+            <a href="#" class="mega-menu__link" role="menuitem">Explore</a>
+            <a href="#" class="mega-menu__link" role="menuitem">Web Design</a>
+            <a href="#" class="mega-menu__link" role="menuitem">Evolution Plan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Company -->
+    <div class="mega-menu__item" data-mega-item>
+      <button class="mega-menu__trigger" aria-expanded="false" aria-haspopup="true">
+        Company
+        <svg class="mega-menu__chevron" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="mega-menu__dropdown" role="menu">
+        <div class="mega-menu__columns">
+          <div class="mega-menu__column">
+            <p class="mega-menu__column-title">CarbonWeb</p>
+            <a href="#" class="mega-menu__link" role="menuitem">About</a>
+            <a href="#" class="mega-menu__link" role="menuitem">How We Work</a>
+            <a href="#" class="mega-menu__link" role="menuitem">Careers</a>
+            <a href="#" class="mega-menu__link" role="menuitem">Partnerships</a>
+            <a href="#" class="mega-menu__link" role="menuitem">Newsroom</a>
+          </div>
+          <div class="mega-menu__column">
+            <p class="mega-menu__column-title">CarbonApps</p>
+            <a href="#" class="mega-menu__link" role="menuitem">About</a>
+            <a href="#" class="mega-menu__link" role="menuitem">Our Apps</a>
+            <a href="#" class="mega-menu__link" role="menuitem">Support</a>
+            <a href="#" class="mega-menu__link" role="menuitem">Explore Marketplace</a>
+          </div>
+        </div>
+        <hr class="mega-menu__divider" />
+        <div class="mega-menu__cta">
+          <p class="mega-menu__cta-title">Ready to get started?</p>
+          <p class="mega-menu__cta-description">Book a free exploration call with our team.</p>
+          <a href="#" class="mega-menu__cta-link">
+            Book a call
+            <svg class="mega-menu__cta-arrow" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </nav>
+</header>
+
+<div class="preview-body">
+  <h2>Mega Menu Preview</h2>
+  <p>Hover over the nav items above to see the dropdown panels. On touch devices, tap to toggle. Press Escape to close. Click outside to dismiss. Only one dropdown is open at a time. The Company dropdown includes a CTA card.</p>
+</div>
+
+<script src="mega-menu.js"></script>
+</body>
+</html>

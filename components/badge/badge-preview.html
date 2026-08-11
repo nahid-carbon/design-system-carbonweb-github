@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Badge — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="badge.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .sub { margin-bottom: 36px; }
+    .sub h3 { font-size: 18px; font-weight: 600; margin-bottom: 14px; }
+    .grid { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<h2>Badges</h2>
+<p class="desc">5 color variants. Solid, outline, with dot, and with icon.</p>
+
+<div class="sub">
+  <h3>Solid</h3>
+  <div class="grid">
+    <span class="badge badge--teal">Teal</span>
+    <span class="badge badge--green">Green</span>
+    <span class="badge badge--yellow">Yellow</span>
+    <span class="badge badge--pink">Pink</span>
+    <span class="badge badge--ink">Ink</span>
+  </div>
+</div>
+
+<div class="sub">
+  <h3>Outline</h3>
+  <div class="grid">
+    <span class="badge badge--outline badge--teal">Teal</span>
+    <span class="badge badge--outline badge--green">Green</span>
+    <span class="badge badge--outline badge--yellow">Yellow</span>
+    <span class="badge badge--outline badge--pink">Pink</span>
+    <span class="badge badge--outline badge--ink">Ink</span>
+  </div>
+</div>
+
+<div class="sub">
+  <h3>With Dot</h3>
+  <div class="grid">
+    <span class="badge badge--teal"><span class="badge__dot"></span>Active</span>
+    <span class="badge badge--green"><span class="badge__dot"></span>Complete</span>
+    <span class="badge badge--yellow"><span class="badge__dot"></span>Pending</span>
+    <span class="badge badge--pink"><span class="badge__dot"></span>Error</span>
+    <span class="badge badge--ink"><span class="badge__dot"></span>Archived</span>
+  </div>
+</div>
+
+<div class="sub">
+  <h3>Outline with Dot</h3>
+  <div class="grid">
+    <span class="badge badge--outline badge--teal"><span class="badge__dot"></span>Active</span>
+    <span class="badge badge--outline badge--green"><span class="badge__dot"></span>Complete</span>
+    <span class="badge badge--outline badge--yellow"><span class="badge__dot"></span>Pending</span>
+    <span class="badge badge--outline badge--pink"><span class="badge__dot"></span>Error</span>
+    <span class="badge badge--outline badge--ink"><span class="badge__dot"></span>Archived</span>
+  </div>
+</div>
+
+<div class="sub">
+  <h3>With Icon</h3>
+  <div class="grid">
+    <span class="badge badge--teal">
+      <span class="badge__icon">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.667 3.5L5.25 9.917 2.333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      Verified
+    </span>
+    <span class="badge badge--green">
+      <span class="badge__icon">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.667 3.5L5.25 9.917 2.333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      Approved
+    </span>
+    <span class="badge badge--pink">
+      <span class="badge__icon">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="7" cy="7" r="5.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M7 4.667V7M7 9.333h.006" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Warning
+    </span>
+    <span class="badge badge--yellow">
+      <span class="badge__icon">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 1.167v5.25M7 9.917v1.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Attention
+    </span>
+    <span class="badge badge--ink">
+      <span class="badge__icon">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.5 3.5L3.5 10.5M3.5 3.5l7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Closed
+    </span>
+  </div>
+</div>
+
+<div class="sub">
+  <h3>Outline with Icon</h3>
+  <div class="grid">
+    <span class="badge badge--outline badge--teal">
+      <span class="badge__icon">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.667 3.5L5.25 9.917 2.333 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      Verified
+    </span>
+    <span class="badge badge--outline badge--pink">
+      <span class="badge__icon">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="7" cy="7" r="5.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M7 4.667V7M7 9.333h.006" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Warning
+    </span>
+    <span class="badge badge--outline badge--ink">
+      <span class="badge__icon">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.5 3.5L3.5 10.5M3.5 3.5l7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Closed
+    </span>
+  </div>
+</div>
+
+</body>
+</html>

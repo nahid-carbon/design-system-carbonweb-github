@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CarbonWeb DS — Reference Names</title>
+<link rel="stylesheet" href="tokens/colors.css" />
+<link rel="stylesheet" href="tokens/typography.css" />
+<link rel="stylesheet" href="tokens/spacing.css" />
+<link rel="stylesheet" href="tokens/radii.css" />
+<link rel="stylesheet" href="tokens/grid.css" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-family); background: #f8f9fb; color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: var(--container); margin: 0 auto; padding: 44px 32px 120px; }
+  h1 { font-size: var(--text-5xl); font-weight: var(--font-black); margin-bottom: 6px; }
+  .sub { font-size: 15px; color: var(--color-muted); line-height: var(--leading-relaxed); margin-bottom: 22px; max-width: var(--container-header); }
+
+  .how { background: #fff; border: 1px solid color-mix(in srgb, var(--color-ink) 7%, transparent); border-radius: var(--radius-lg); padding: 20px 24px; margin-bottom: 26px; }
+  .how h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .07em; color: var(--color-muted); margin-bottom: 12px; }
+  code { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; background: var(--color-grey-100); padding: 2px 6px; border-radius: 5px; }
+  .how ul { margin: 10px 0 0 18px; font-size: 14px; line-height: 1.85; color: var(--color-slate); }
+  .example { margin-top: 14px; background: var(--color-ink); color: #eaf7f9; border-radius: var(--radius-md); padding: 14px 16px;
+             font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; line-height: 1.7; }
+
+  .toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 20px; position: sticky; top: 0;
+             background: #f8f9fb; padding: 12px 0; z-index: 5; }
+  .search { flex: 1; min-width: 240px; height: 44px; padding: 0 18px; font-family: inherit; font-size: 15px;
+            border: 1px solid color-mix(in srgb, var(--color-slate) 25%, transparent); border-radius: var(--radius-full); outline: none; background: #fff; transition: all 200ms ease; }
+  .search:focus { border-color: var(--color-teal-500); box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-teal-500) 15%, transparent); }
+  .filters { display: flex; gap: 6px; }
+  .filter { font-size: 12px; font-weight: var(--font-semibold); padding: 7px 13px; border-radius: var(--radius-full); border: 1px solid color-mix(in srgb, var(--color-slate) 20%, transparent);
+            background: #fff; color: var(--color-slate); cursor: pointer; transition: all 150ms ease; }
+  .filter:hover { border-color: var(--color-teal-500); color: var(--color-teal-700); }
+  .filter--on { background: var(--color-teal-500); border-color: var(--color-teal-500); color: #fff; }
+  .count { font-size: 13px; color: var(--color-muted); white-space: nowrap; }
+
+  .cat { font-size: 11px; font-weight: var(--font-semibold); letter-spacing: .08em; text-transform: uppercase; color: var(--color-muted); margin: 28px 0 10px; }
+
+  .comp { background: #fff; border: 1px solid color-mix(in srgb, var(--color-ink) 7%, transparent); border-radius: var(--radius-lg); padding: 16px 20px; margin-bottom: 10px; }
+  .comp--foundation { border-color: color-mix(in srgb, var(--color-teal-500) 35%, transparent); background: color-mix(in srgb, var(--color-teal-100) 7%, #fff); }
+  .comp__head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+  /* name + copy icon */
+  .name { display: inline-flex; align-items: center; gap: 6px; background: none; border: none; padding: 2px 4px; margin-left: -4px;
+          border-radius: 6px; cursor: pointer; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 15px;
+          font-weight: var(--font-semibold); color: var(--color-teal-700); transition: background-color 150ms ease; }
+  .name:hover { background: color-mix(in srgb, var(--color-teal-500) 10%, transparent); }
+  .name svg { width: 13px; height: 13px; opacity: .45; flex-shrink: 0; }
+  .name:hover svg { opacity: 1; }
+  .name--copied { background: var(--color-teal-500); color: #fff; }
+  .name--copied svg { opacity: 1; }
+
+  .lvl { font-size: 10px; font-weight: var(--font-bold); letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: var(--radius-full); }
+  .lvl--foundation { background: color-mix(in srgb, var(--color-teal-500) 15%, transparent); color: var(--color-teal-700); }
+  .lvl--atom       { background: color-mix(in srgb, var(--color-green-500) 20%, transparent); color: var(--color-green-700); }
+  .lvl--molecule   { background: color-mix(in srgb, var(--color-yellow-500) 20%, transparent); color: #7F5700; }
+  .lvl--section    { background: color-mix(in srgb, var(--color-slate) 12%, transparent); color: var(--color-slate); }
+  .alias { font-size: 12px; color: var(--color-slate-light); }
+  .summary { font-size: 13.5px; color: var(--color-slate); line-height: var(--leading-relaxed); margin-top: 5px; }
+
+  .built { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-top: 10px; font-size: 12px; color: var(--color-muted); }
+  .built b { font-weight: var(--font-semibold); color: var(--color-slate); }
+  .dep { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; padding: 2px 8px; border-radius: var(--radius-full);
+         background: color-mix(in srgb, var(--color-teal-500) 10%, transparent); color: var(--color-teal-700); cursor: pointer; border: none; }
+  .dep--atom { background: color-mix(in srgb, var(--color-green-500) 16%, transparent); color: var(--color-green-700); }
+  .dep:hover { filter: brightness(.94); }
+
+  .vars { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
+  .var { display: inline-flex; align-items: center; gap: 5px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px;
+         background: var(--color-grey-100); color: var(--color-slate); border: 1px solid transparent; border-radius: 6px;
+         padding: 3px 9px; cursor: pointer; transition: all 150ms ease; }
+  .var svg { width: 11px; height: 11px; opacity: 0; }
+  .var:hover { background: color-mix(in srgb, var(--color-teal-500) 12%, transparent); border-color: var(--color-teal-500); color: var(--color-teal-700); }
+  .var:hover svg { opacity: .8; }
+  .var--copied { background: var(--color-teal-500); color: #fff; border-color: var(--color-teal-500); }
+  .var--copied svg { opacity: 1; }
+
+  .hidden { display: none; }
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0;
+           background: var(--color-ink); color: #fff; padding: 10px 18px; border-radius: var(--radius-full); font-size: 13px;
+           font-family: 'JetBrains Mono', ui-monospace, monospace; transition: all 200ms ease; pointer-events: none; z-index: 20; }
+  .toast--on { opacity: 1; transform: translateX(-50%) translateY(0); }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Reference Names</h1>
+  <p class="sub">Every foundation, atom and component has one unique name. Use these names to ask for a page to be built &mdash; nothing else needs describing.</p>
+
+  <div class="how">
+    <h2>How to use</h2>
+    <p style="font-size:14px;line-height:1.7;color:var(--color-slate);">Names follow <code>component/variant</code>.</p>
+    <ul>
+      <li>A bare name means the default form &mdash; <code>card</code> is the same as <code>card/default</code>.</li>
+      <li>Variant names are only unique inside their component, so always namespace them: <code>hero/dark</code>, not <code>dark</code>.</li>
+      <li><b>Foundations</b> (colour, type, space, grid, radius, shadow) are the building blocks every component is made from. <b>Atoms</b> are reused inside molecules and sections &mdash; the <i>built from</i> line on each card shows the trail.</li>
+      <li>Click any name to copy it.</li>
+    </ul>
+    <div class="example">Build a services page with:<br />
+      hero/service, chip/tag-category, icon-tile, accordion/service,<br />
+      faq-section/dark, cta-banner/glow, site-footer/v2
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <input class="search" id="q" type="search" placeholder="Search names, variants or descriptions…" aria-label="Search reference names" />
+    <div class="filters" id="filters"></div>
+    <span class="count" id="count"></span>
+  </div>
+
+  <div id="list"></div>
+</div>
+<div class="toast" id="toast">Copied</div>
+
+<script src="data.js"></script>
+<script>
+  // Load JSON over http; fall back to the embedded copy in data.js when the
+  // page is opened straight from the filesystem (file:// blocks fetch).
+  async function cwLoad(file, globalKey) {
+    try {
+      const r = await fetch(file);
+      if (r.ok) return await r.json();
+    } catch (e) { /* file:// — fall through */ }
+    if (window[globalKey]) return window[globalKey];
+    const m = document.createElement('div');
+    m.style.cssText = 'margin:24px 0;padding:16px 20px;border-radius:12px;background:#fff3f3;border:1px solid #f3c6c6;color:#8a2b2b;font-size:14px;line-height:1.6';
+    m.innerHTML = '<b>Could not load ' + file + '.</b><br>Serve the folder over http — <code>python3 -m http.server 8765</code> — then open <code>http://localhost:8765</code>. ' +
+                  'Or run <code>python3 tools/gen-data.py</code> so this page works offline.';
+    (document.querySelector('#list') || document.querySelector('.docs-main') || document.body).prepend(m);
+    throw new Error('data unavailable: ' + file);
+  }
+(async () => {
+  const reg = await cwLoad('registry.json', '__CW_REGISTRY__');
+  const comps = reg.components;
+  const founds = reg.foundations || {};
+  const list = document.getElementById('list');
+  const toast = document.getElementById('toast');
+  let toastTimer;
+
+  const COPY_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+
+  function copy(text, el, cls) {
+    navigator.clipboard.writeText(text);
+    toast.textContent = text;
+    toast.classList.add('toast--on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('toast--on'), 1400);
+    if (el) { el.classList.add(cls); setTimeout(() => el.classList.remove(cls), 700); }
+  }
+
+  function nameButton(text, cls, copiedCls) {
+    const b = document.createElement('button');
+    b.className = cls;
+    b.innerHTML = '<span></span>' + COPY_ICON;
+    b.firstChild.textContent = text;
+    b.title = 'Copy “' + text + '”';
+    b.setAttribute('aria-label', 'Copy ' + text);
+    b.onclick = () => copy(text, b, copiedCls);
+    return b;
+  }
+
+  function card(ref, level, summary, aliases, deps, variants, isFoundation) {
+    const el = document.createElement('div');
+    el.className = 'comp' + (isFoundation ? ' comp--foundation' : '');
+    el.dataset.level = level;
+    el.dataset.hay = [ref, ...(aliases || []), summary || '', ...(variants || []), ...(deps || [])].join(' ').toLowerCase();
+
+    const head = document.createElement('div');
+    head.className = 'comp__head';
+    head.appendChild(nameButton(ref, 'name', 'name--copied'));
+    const lv = document.createElement('span');
+    lv.className = 'lvl lvl--' + level; lv.textContent = level;
+    head.appendChild(lv);
+    if (aliases && aliases.length) {
+      const a = document.createElement('span');
+      a.className = 'alias'; a.textContent = 'also: ' + aliases.join(', ');
+      head.appendChild(a);
+    }
+    el.appendChild(head);
+
+    if (summary) {
+      const s = document.createElement('p');
+      s.className = 'summary'; s.textContent = summary;
+      el.appendChild(s);
+    }
+
+    if (deps && deps.length) {
+      const b = document.createElement('div');
+      b.className = 'built';
+      const lab = document.createElement('b'); lab.textContent = 'built from';
+      b.appendChild(lab);
+      for (const dep of deps) {
+        const isAtom = !founds[dep];
+        const chip = document.createElement('button');
+        chip.className = 'dep' + (isAtom ? ' dep--atom' : '');
+        chip.textContent = dep;
+        chip.title = 'Copy “' + dep + '”';
+        chip.onclick = () => copy(dep);
+        b.appendChild(chip);
+      }
+      el.appendChild(b);
+    }
+
+    const vs = (variants || []).filter(x => x !== 'default');
+    if (vs.length) {
+      const box = document.createElement('div');
+      box.className = 'vars';
+      for (const name of vs) box.appendChild(nameButton(ref + '/' + name, 'var', 'var--copied'));
+      el.appendChild(box);
+    }
+    return el;
+  }
+
+  let total = 0;
+
+  // Foundations first — the building blocks
+  const fHead = document.createElement('div');
+  fHead.className = 'cat'; fHead.textContent = '0 · Foundations — every component is built from these';
+  list.appendChild(fHead);
+  for (const [key, f] of Object.entries(founds)) {
+    total++;
+    list.appendChild(card(f.ref, 'foundation', f.summary + '  (' + f.file + ')', [], [], [], true));
+  }
+
+  const CATS = [['basics','1 · Basics'],['inputs','2 · Inputs'],['content','3 · Content'],['sections','4 · Sections']];
+  for (const [key, label] of CATS) {
+    const inCat = Object.entries(comps).filter(([, v]) => v.category === key)
+      .sort((a, b) => (a[1].ref || a[0]).localeCompare(b[1].ref || b[0]));
+    if (!inCat.length) continue;
+    const h = document.createElement('div');
+    h.className = 'cat'; h.textContent = label;
+    list.appendChild(h);
+    for (const [slug, v] of inCat) {
+      const ref = v.ref || slug;
+      const vs = (v.variants || []).filter(x => x !== 'default');
+      total += 1 + vs.length;
+      list.appendChild(card(ref, v.level || 'molecule', v.summary, v.aliases, v.depends_on, v.variants, false));
+    }
+  }
+
+  document.getElementById('count').textContent = total + ' names';
+
+  // level filters
+  const LEVELS = ['foundation','atom','molecule','section'];
+  const filters = document.getElementById('filters');
+  let active = null;
+  for (const lv of LEVELS) {
+    const b = document.createElement('button');
+    b.className = 'filter'; b.textContent = lv;
+    b.onclick = () => {
+      active = active === lv ? null : lv;
+      [...filters.children].forEach(x => x.classList.toggle('filter--on', x.textContent === active));
+      apply();
+    };
+    filters.appendChild(b);
+  }
+
+  function apply() {
+    const q = document.getElementById('q').value.toLowerCase().trim();
+    let shown = 0;
+    document.querySelectorAll('.comp').forEach(el => {
+      const hit = (!q || el.dataset.hay.includes(q)) && (!active || el.dataset.level === active);
+      el.classList.toggle('hidden', !hit);
+      if (hit) shown++;
+    });
+    document.querySelectorAll('.cat').forEach(cat => {
+      let n = 0;
+      for (let s = cat.nextElementSibling; s && s.classList.contains('comp'); s = s.nextElementSibling)
+        if (!s.classList.contains('hidden')) n++;
+      cat.classList.toggle('hidden', n === 0);
+    });
+    document.getElementById('count').textContent = (q || active) ? shown + ' shown' : total + ' names';
+  }
+  document.getElementById('q').addEventListener('input', apply);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ Section — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../accordion/accordion.css" />
+  <link rel="stylesheet" href="faq-section.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+    .doc { padding: 40px 60px 8px; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); }
+    .label { font-size: 13px; color: var(--color-muted); padding: 28px 60px 8px; }
+  </style>
+</head>
+<body>
+
+<div class="doc">
+  <h2>FAQ Section</h2>
+  <p class="desc">Full-page FAQ block: angled gap wedges, optional blur ambience, centred header, and a stack of FAQ accordion cards.</p>
+</div>
+
+<p class="label">Figma: Accordion/FAQ Section Light (99:20113) — bottom wedge, Gray 100 cards on white.</p>
+<section class="faq-section faq-section--wedge-bottom">
+  <div class="faq-section__inner">
+    <div class="faq-section__header">
+      <h2 class="faq-section__title">Frequently Asked Questions</h2>
+      <p class="faq-section__subtitle">Get the answers you need about monday.com, features, pricing, and integrations in our comprehensive FAQ section.</p>
+    </div>
+    <div class="accordion accordion--faq" data-single="true" role="region" aria-label="Frequently asked questions">
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="lp1" id="lt1">
+          <span>How does CarbonWeb customize monday.com solutions for different industries and team sizes?</span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+        <div class="accordion__panel" id="lp1" role="region" aria-labelledby="lt1">
+          <div class="accordion__content">CarbonWeb takes a consultative approach. We begin by understanding your specific workflow, team structure, and business goals. Then we configure monday.com's boards, automations, and integrations to match your unique processes — no matter the size or industry of your business.</div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="lp2" id="lt2">
+          <span>What does a typical implementation timeline look like?</span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+        <div class="accordion__panel" id="lp2" role="region" aria-labelledby="lt2">
+          <div class="accordion__content">Most scoped builds run four to eight weeks from discovery to handover, depending on the number of boards, integrations, and automations involved.</div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="lp3" id="lt3">
+          <span>Do you support existing monday.com accounts, or only new ones?</span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+        <div class="accordion__panel" id="lp3" role="region" aria-labelledby="lt3">
+          <div class="accordion__content">Both. We audit and rebuild existing accounts as often as we stand up new ones.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="label">Figma: Accordion/FAQ Section Dark (99:20114) — wedges top and bottom, black surface, white-10% cards, blur ambience.</p>
+<section class="faq-section faq-section--dark faq-section--wedge-both">
+  <div class="faq-section__ambience" aria-hidden="true"></div>
+  <div class="faq-section__inner">
+    <div class="faq-section__header">
+      <h2 class="faq-section__title">Frequently Asked Questions</h2>
+      <p class="faq-section__subtitle">Get the answers you need about monday.com, features, pricing, and integrations in our comprehensive FAQ section.</p>
+    </div>
+    <div class="accordion accordion--faq accordion--dark" data-single="true" role="region" aria-label="Frequently asked questions (dark)">
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="dp1" id="dt1">
+          <span>How does CarbonWeb customize monday.com solutions for different industries and team sizes?</span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+        <div class="accordion__panel" id="dp1" role="region" aria-labelledby="dt1">
+          <div class="accordion__content">CarbonWeb takes a consultative approach. We begin by understanding your specific workflow, team structure, and business goals. Then we configure monday.com's boards, automations, and integrations to match your unique processes — no matter the size or industry of your business.</div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="dp2" id="dt2">
+          <span>What does a typical implementation timeline look like?</span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+        <div class="accordion__panel" id="dp2" role="region" aria-labelledby="dt2">
+          <div class="accordion__content">Most scoped builds run four to eight weeks from discovery to handover.</div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="dp3" id="dt3">
+          <span>Do you support existing monday.com accounts, or only new ones?</span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+        <div class="accordion__panel" id="dp3" role="region" aria-labelledby="dt3">
+          <div class="accordion__content">Both. We audit and rebuild existing accounts as often as we stand up new ones.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../accordion/accordion.js"></script>
+</body>
+</html>

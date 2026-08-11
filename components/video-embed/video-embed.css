@@ -1,0 +1,113 @@
+/* CarbonWeb Video Embed — BEM component
+   Uses var(--color-*) tokens from ../../tokens/colors.css
+   Uses var(--radius-*) from ../../tokens/radii.css
+   Uses var(--font-*) and var(--text-*) from ../../tokens/typography.css
+   Uses var(--space-*) from ../../tokens/spacing.css
+*/
+
+/* ── Block wrapper ── */
+.video-embed {
+  font-family: var(--font-family);
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ── Heading + description ── */
+.video-embed__heading {
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.video-embed__desc {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-slate);
+  max-width: 560px;
+  margin: 0 auto var(--space-8) auto;
+}
+
+/* ── 16:9 frame ── */
+.video-embed__frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-ink);
+}
+
+.video-embed__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ── Poster (gradient placeholder) ── */
+.video-embed__poster {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(225deg, var(--color-teal-500), var(--color-green-500));
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+.video-embed__poster:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}
+
+/* ── Play button ── */
+.video-embed__play {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--color-white) 70%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.video-embed__play-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent var(--color-ink);
+  margin-left: 5px;
+  transition: border-color 0.2s ease;
+}
+
+.video-embed__poster:hover .video-embed__play,
+.video-embed__poster:focus-visible .video-embed__play {
+  transform: scale(1.1);
+  background: var(--color-teal-500);
+}
+
+.video-embed__poster:hover .video-embed__play-triangle,
+.video-embed__poster:focus-visible .video-embed__play-triangle {
+  border-left-color: var(--color-white);
+}
+
+/* ── Caption ── */
+.video-embed__caption {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: 13px;
+  line-height: var(--leading-relaxed);
+  color: var(--color-slate);
+  margin: var(--space-3) 0 0 0;
+}

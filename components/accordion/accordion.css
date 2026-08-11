@@ -1,0 +1,335 @@
+/* CarbonWeb Accordion — BEM naming, token-only colors
+   Variants: default, bordered, faq (+ --dark), service
+   Depends on: ../../tokens/colors.css, ../../tokens/typography.css,
+               ../../tokens/radii.css, ../../tokens/spacing.css
+
+   Figma coverage:
+     Accordion/Item        882:9057   → .accordion--service
+     Accordion/FAQ         842:13274  → .accordion--faq (+ .accordion--dark)
+     Container (priced)    918:47005  → .accordion--service + .accordion__eyebrow
+   The full FAQ page sections (99:20113 / 99:20114) live in
+   components/faq-section/.
+*/
+
+/* ── Base ── */
+
+.accordion {
+  border-top: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  width: 100%;
+}
+
+.accordion__item {
+  border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+.accordion__trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.accordion__trigger:hover {
+  color: var(--color-teal-500);
+}
+
+.accordion__trigger:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.accordion__icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-left: 16px;
+  transition: transform 0.3s ease;
+  color: currentColor;
+}
+
+.accordion__item--open .accordion__icon {
+  transform: rotate(45deg);
+}
+
+.accordion__panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.accordion__content {
+  padding: 0 0 20px;
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  font-weight: var(--font-regular);
+  line-height: var(--leading-relaxed);
+  color: var(--color-muted);
+  margin: 0;
+}
+
+/* ── Bordered variant ── */
+
+.accordion--bordered .accordion__item {
+  border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  padding: 0 20px;
+}
+
+.accordion--bordered {
+  border-top: none;
+}
+
+.accordion--bordered .accordion__item:last-child {
+  margin-bottom: 0;
+}
+
+/* ══ FAQ variant (Figma: Accordion/FAQ 842:13274) ══════════════════════
+   Each item is a 20px-radius card with 32px padding. Theme=Light is the
+   default (Gray 100 surface); add .accordion--dark for Theme=Dark
+   (white 10% over a dark section). The chevron sits in a 40px circle.
+   Question = Heading 5 (SB) 20/1.3, Answer = Body Large 20/1.7. */
+
+.accordion--faq {
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.accordion--faq .accordion__item {
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 0;
+  padding: var(--space-8);
+  background: var(--color-grey-100);
+  transition: background-color 200ms ease;
+}
+
+.accordion--faq .accordion__trigger {
+  padding: 0;
+  gap: 80px;
+  align-items: center;
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  line-height: 1.3;
+}
+
+.accordion--faq .accordion__trigger:hover {
+  color: var(--color-teal-600);
+}
+
+/* 40px chevron puck */
+.accordion--faq .accordion__icon {
+  box-sizing: content-box;
+  margin-left: 0;
+  padding: var(--space-2);
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--color-white) 20%, transparent);
+}
+
+.accordion--faq .accordion__content {
+  padding: var(--space-4) 0 0;
+  font-size: var(--text-xl);
+  line-height: var(--leading-relaxed);
+  color: var(--color-ink);
+}
+
+/* ── Dark theme (Accordion/FAQ Theme=Dark) ── */
+
+.accordion--dark {
+  border-top-color: color-mix(in srgb, var(--color-white) 12%, transparent);
+}
+
+.accordion--dark .accordion__item {
+  border-bottom-color: color-mix(in srgb, var(--color-white) 12%, transparent);
+}
+
+.accordion--dark .accordion__trigger {
+  color: var(--color-white);
+}
+
+.accordion--dark .accordion__trigger:hover {
+  color: var(--color-teal-300);
+}
+
+.accordion--dark .accordion__content {
+  color: var(--color-white);
+}
+
+.accordion--faq.accordion--dark .accordion__item {
+  background: color-mix(in srgb, var(--color-white) 10%, transparent);
+}
+
+/* ══ Service variant (Figma: Accordion/Item 882:9057,
+     Container 918:47005) ═══════════════════════════════════════════════
+   A priced service row. Collapsed rows are flat white with a hairline
+   between them; the open row lifts into a teal-outlined tinted card
+   carrying a price and a CTA. */
+
+.accordion--service {
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-bottom: var(--space-3);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--color-teal-500) 12%, transparent);
+  color: var(--color-teal-700);
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  line-height: 1.3;
+}
+
+.accordion--service .accordion__item {
+  border: 1.5px solid transparent;
+  border-bottom-color: var(--color-grey-200);
+  border-radius: 12px;
+  background: var(--color-white);
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.accordion--service .accordion__item--open {
+  border-color: var(--color-teal-500);
+  /* Figma #F3FCFD — a teal-100 wash over white */
+  background: color-mix(in srgb, var(--color-teal-100) 12%, var(--color-white));
+}
+
+.accordion--service .accordion__trigger {
+  align-items: center;
+  gap: var(--space-4);
+  padding: 18px var(--space-5);
+}
+
+.accordion--service .accordion__item--open .accordion__trigger {
+  padding: var(--space-6) var(--space-5);
+}
+
+.accordion--service .accordion__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1 0 0;
+  min-width: 0;
+  text-align: left;
+}
+
+.accordion--service .accordion__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  line-height: 1.3;
+  color: var(--color-ink);
+  transition: color 200ms ease;
+}
+
+.accordion--service .accordion__item--open .accordion__title {
+  color: var(--color-teal-500);
+}
+
+.accordion--service .accordion__subtitle {
+  font-size: var(--text-base);
+  font-weight: var(--font-regular);
+  line-height: var(--leading-relaxed);
+  color: var(--color-grey-700);
+}
+
+.accordion--service .accordion__content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: 0 var(--space-8) var(--space-6) var(--space-5);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-ink);
+}
+
+.accordion__desc {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+/* Price + CTA rail */
+.accordion__cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.accordion__price {
+  font-family: var(--font-family-numeric);
+  font-size: 35px;
+  font-weight: var(--font-bold);
+  line-height: 1.1;
+  color: var(--color-teal-500);
+}
+
+.accordion__price-note {
+  display: block;
+  margin-top: var(--space-1);
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  font-weight: var(--font-regular);
+  line-height: var(--leading-relaxed);
+  color: var(--color-grey-700);
+}
+
+/* ── Chevron icon (Figma uses a chevron; the base accordion keeps the
+     rotating plus) ── */
+
+.accordion__icon--chevron {
+  transition: transform 300ms ease;
+}
+
+.accordion__item--open .accordion__icon--chevron {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 767px) {
+  .accordion--faq .accordion__item {
+    padding: var(--space-5);
+  }
+
+  .accordion--faq .accordion__trigger {
+    gap: var(--space-4);
+    font-size: var(--text-lg);
+  }
+
+  .accordion--faq .accordion__content {
+    font-size: var(--text-base);
+  }
+
+  .accordion--service .accordion__content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion__icon,
+  .accordion__panel,
+  .accordion__item {
+    transition: none;
+  }
+}

@@ -1,0 +1,159 @@
+/* CarbonWeb Glowing Cards — mouse-tracking glow border effect
+   Uses overlay + radial-gradient mask approach (lightswind pattern) */
+
+/* ── Container ── */
+
+.glow-cards {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 4px;
+}
+
+/* ── Individual card ── */
+
+.glow-card {
+  position: relative;
+  flex: 1 1 260px;
+  background: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-grey-base) 10%, transparent);
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  transition: box-shadow 300ms ease;
+}
+
+/* ── Overlay (created by JS) ── */
+
+.glow-cards__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-wrap: wrap;
+  pointer-events: none;
+  -webkit-mask: radial-gradient(
+    25rem 25rem at var(--glow-x, 0) var(--glow-y, 0),
+    var(--color-black) 1%,
+    transparent 50%
+  );
+  mask: radial-gradient(
+    25rem 25rem at var(--glow-x, 0) var(--glow-y, 0),
+    var(--color-black) 1%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.glow-cards:hover .glow-cards__overlay {
+  opacity: 1;
+}
+
+.glow-cards__overlay .glow-card {
+  background: var(--glow-bg);
+  border: 2px solid var(--glow-color);
+  box-shadow: 0 0 0 1px inset var(--glow-color);
+}
+
+.glow-cards__overlay .glow-card > * {
+  visibility: hidden;
+}
+
+/* ── Card content ── */
+
+.glow-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+  color: var(--color-white);
+}
+
+.glow-card__title {
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+
+.glow-card__description {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-muted);
+}
+
+/* ── Color variants ── */
+
+.glow-card--teal {
+  --glow-color: color-mix(in srgb, var(--color-teal-500) 80%, transparent);
+  --glow-bg: color-mix(in srgb, var(--color-teal-500) 16%, transparent);
+}
+.glow-card--teal .glow-card__icon {
+  background: var(--color-teal-500);
+}
+
+.glow-card--green {
+  --glow-color: color-mix(in srgb, var(--color-green-500) 80%, transparent);
+  --glow-bg: color-mix(in srgb, var(--color-green-500) 16%, transparent);
+}
+.glow-card--green .glow-card__icon {
+  background: var(--color-green-500);
+}
+
+.glow-card--yellow {
+  --glow-color: color-mix(in srgb, var(--color-yellow-500) 80%, transparent);
+  --glow-bg: color-mix(in srgb, var(--color-yellow-500) 16%, transparent);
+}
+.glow-card--yellow .glow-card__icon {
+  background: var(--color-yellow-500);
+}
+
+.glow-card--pink {
+  --glow-color: color-mix(in srgb, var(--color-pink-500) 80%, transparent);
+  --glow-bg: color-mix(in srgb, var(--color-pink-500) 16%, transparent);
+}
+.glow-card--pink .glow-card__icon {
+  background: var(--color-pink-500);
+}
+
+.glow-card--ink {
+  --glow-color: color-mix(in srgb, var(--color-slate) 70%, transparent);
+  --glow-bg: color-mix(in srgb, var(--color-slate) 14%, transparent);
+}
+.glow-card--ink .glow-card__icon {
+  background: var(--color-ink);
+}
+
+/* ── Dark variant ── */
+
+.glow-cards--dark > .glow-card {
+  background: #111113; /* token-exception: bespoke near-black card surface — sits between --color-ink and --color-neutral-800 so the card still separates from the page behind it */
+  border-color: color-mix(in srgb, var(--color-white) 8%, transparent);
+}
+
+.glow-cards--dark .glow-cards__overlay .glow-card {
+  background: var(--glow-bg);
+  border: 2px solid var(--glow-color);
+  box-shadow: 0 0 0 1px inset var(--glow-color);
+}
+
+.glow-cards--dark .glow-card__title {
+  color: var(--color-white);
+}
+
+.glow-cards--dark .glow-card__description {
+  color: color-mix(in srgb, var(--color-white) 55%, transparent);
+}
+
+/* ── Elevated variant ── */
+
+.glow-card--elevated {
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--color-ink) 6%, transparent), 0 4px 12px color-mix(in srgb, var(--color-ink) 4%, transparent);
+}

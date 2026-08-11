@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkbox — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="checkbox.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .section { margin-bottom: 40px; }
+    .section h3 { font-size: 16px; font-weight: 600; margin-bottom: 16px; color: var(--color-slate); }
+    .row { display: flex; gap: 40px; align-items: center; }
+  </style>
+</head>
+<body>
+
+<h2>Checkbox</h2>
+<p class="desc">Custom checkbox — default, checked, disabled + filter-list group.</p>
+
+<div class="section">
+  <h3>States</h3>
+  <div class="row">
+    <label class="checkbox">
+      <input class="checkbox__input" type="checkbox" />
+      <span class="checkbox__box">
+        <svg class="checkbox__check" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 6.5L4.7 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="checkbox__label">Default</span>
+    </label>
+
+    <label class="checkbox">
+      <input class="checkbox__input" type="checkbox" checked />
+      <span class="checkbox__box">
+        <svg class="checkbox__check" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 6.5L4.7 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="checkbox__label">Checked</span>
+    </label>
+
+    <label class="checkbox checkbox--disabled">
+      <input class="checkbox__input" type="checkbox" disabled />
+      <span class="checkbox__box">
+        <svg class="checkbox__check" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 6.5L4.7 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="checkbox__label">Disabled</span>
+    </label>
+
+    <label class="checkbox checkbox--disabled">
+      <input class="checkbox__input" type="checkbox" checked disabled />
+      <span class="checkbox__box">
+        <svg class="checkbox__check" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 6.5L4.7 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="checkbox__label">Disabled checked</span>
+    </label>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Filter list (checkbox-group)</h3>
+  <div class="checkbox-group" role="group" aria-labelledby="filter-title">
+    <p class="checkbox-group__title" id="filter-title">Filter by service</p>
+
+    <label class="checkbox">
+      <input class="checkbox__input" type="checkbox" checked />
+      <span class="checkbox__box">
+        <svg class="checkbox__check" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 6.5L4.7 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="checkbox__label">Workflow development</span>
+    </label>
+
+    <label class="checkbox">
+      <input class="checkbox__input" type="checkbox" />
+      <span class="checkbox__box">
+        <svg class="checkbox__check" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 6.5L4.7 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="checkbox__label">Consultation</span>
+    </label>
+
+    <label class="checkbox">
+      <input class="checkbox__input" type="checkbox" />
+      <span class="checkbox__box">
+        <svg class="checkbox__check" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 6.5L4.7 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="checkbox__label">Training</span>
+    </label>
+
+    <label class="checkbox">
+      <input class="checkbox__input" type="checkbox" checked />
+      <span class="checkbox__box">
+        <svg class="checkbox__check" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 6.5L4.7 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="checkbox__label">Web Design</span>
+    </label>
+  </div>
+</div>
+
+</body>
+</html>

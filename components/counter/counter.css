@@ -1,0 +1,85 @@
+/* CarbonWeb Counter / Stat — uses only var(--token) references */
+
+/* ── Base ── */
+
+.counter {
+  text-align: center;
+}
+
+/* ── Number row (prefix + number + suffix) ── */
+
+.counter__value {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+}
+
+.counter__number {
+  font-family: var(--font-family-numeric);
+  font-weight: var(--font-black);
+  font-size: var(--text-8xl);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.counter__prefix,
+.counter__suffix {
+  font-family: var(--font-family-numeric);
+  font-weight: var(--font-black);
+  font-size: var(--text-8xl);
+  line-height: var(--leading-tight);
+  color: inherit;
+}
+
+/* ── Title / label ── */
+
+.counter__title {
+  font-family: var(--font-family);
+  font-weight: var(--font-medium);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-muted);
+  margin-top: 4px;
+}
+
+/* ── Color modifiers ── */
+
+.counter--teal .counter__number,
+.counter--teal .counter__prefix,
+.counter--teal .counter__suffix {
+  color: var(--color-teal-500);
+}
+
+.counter--green .counter__number,
+.counter--green .counter__prefix,
+.counter--green .counter__suffix {
+  color: var(--color-green-500);
+}
+
+/* ── Counter group ── */
+
+.counter-group {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 64px;
+}
+
+.counter-group--dividers .counter + .counter {
+  position: relative;
+  padding-left: 64px;
+}
+
+.counter-group--dividers .counter + .counter::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 48px;
+  background: var(--color-slate-light);
+  opacity: 0.4;
+}

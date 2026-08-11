@@ -1,0 +1,33 @@
+<!-- Avatar Library — CarbonWeb Design System -->
+<!-- Imported from the "Carbon Avatar Library" claude.ai/design project. -->
+<!-- Two reusable hexagon avatar atoms + a full browsable library app (see avatar-library.js). -->
+
+<!-- Atom 1: Cutout employee photo on the teal hexagon backplate.
+     assets/_hex-bg.svg drives BOTH the backplate and the alpha mask,
+     so the photo is clipped to exactly the brand hex outline. -->
+<div class="avlib">
+  <div class="photo-frame" style="width: 160px;">
+    <div class="backplate"></div>
+    <div class="portrait" style="background-image: url('photos-cutout/NahidHasan.png')"></div>
+  </div>
+</div>
+
+<!-- Atom 2: Illustrated avatar on the Carbon "C" hexagon backplate.
+     Add class "borderless" to the frame for the borderless plate. -->
+<div class="avlib">
+  <div class="illus-frame" style="width: 160px;">
+    <div class="backplate"></div>
+    <div class="portrait" style="background-image: url('avatars/NahidHasan.png')"></div>
+  </div>
+</div>
+
+<!-- Fallback (person not yet synced): initials on the brand gradient -->
+<div class="avlib">
+  <div class="illus-frame" style="width: 160px;">
+    <div class="backplate"></div>
+    <div class="portrait is-missing" data-initials="NH"></div>
+  </div>
+</div>
+
+<!-- Full library app: see avatar-library-preview.html for the complete
+     markup (search + filters + grid + detail dialog), driven by avatar-library.js -->

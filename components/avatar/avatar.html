@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avatar — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="avatar.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .sub { margin-bottom: 36px; }
+    .sub h3 { font-size: 18px; font-weight: 600; margin-bottom: 14px; }
+    .grid { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<h2>Avatar</h2>
+<p class="desc">User/team member avatar circles. 6 sizes, 5 color variants, status indicators, and avatar groups.</p>
+
+<!-- All sizes with initials -->
+<div class="sub">
+  <h3>Sizes (with initials)</h3>
+  <div class="grid">
+    <div class="avatar avatar--xs" aria-label="Extra small">A</div>
+    <div class="avatar avatar--sm" aria-label="Small">AB</div>
+    <div class="avatar avatar--md" aria-label="Medium">CD</div>
+    <div class="avatar avatar--lg" aria-label="Large">EF</div>
+    <div class="avatar avatar--xl" aria-label="Extra large">GH</div>
+    <div class="avatar avatar--2xl" aria-label="Double extra large">JK</div>
+  </div>
+</div>
+
+<!-- Color variants -->
+<div class="sub">
+  <h3>Color Variants</h3>
+  <div class="grid">
+    <div class="avatar avatar--lg" aria-label="Teal avatar">JD</div>
+    <div class="avatar avatar--lg avatar--green" aria-label="Green avatar">MK</div>
+    <div class="avatar avatar--lg avatar--yellow" aria-label="Yellow avatar">NP</div>
+    <div class="avatar avatar--lg avatar--pink" aria-label="Pink avatar">RS</div>
+    <div class="avatar avatar--lg avatar--ink" aria-label="Ink avatar">TU</div>
+  </div>
+</div>
+
+<!-- With image (data URI placeholder) -->
+<div class="sub">
+  <h3>With Image</h3>
+  <div class="grid">
+    <div class="avatar avatar--sm">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='32' height='32' fill='%2300B0C2'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='14' font-family='sans-serif'%3EJ%3C/text%3E%3C/svg%3E" alt="Jane" />
+    </div>
+    <div class="avatar avatar--md">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%2369D757'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='16' font-family='sans-serif'%3EM%3C/text%3E%3C/svg%3E" alt="Mike" />
+    </div>
+    <div class="avatar avatar--lg">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Crect width='48' height='48' fill='%23FFB400'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='20' font-family='sans-serif'%3ES%3C/text%3E%3C/svg%3E" alt="Sara" />
+    </div>
+    <div class="avatar avatar--xl">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='64' height='64' fill='%23FCA29D'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='24' font-family='sans-serif'%3EA%3C/text%3E%3C/svg%3E" alt="Alex" />
+    </div>
+  </div>
+</div>
+
+<!-- Bordered -->
+<div class="sub">
+  <h3>Bordered</h3>
+  <div class="grid" style="background: #f0f0f0; padding: 20px; border-radius: 8px;">
+    <div class="avatar avatar--lg avatar--bordered" aria-label="Bordered teal">JD</div>
+    <div class="avatar avatar--lg avatar--green avatar--bordered" aria-label="Bordered green">MK</div>
+    <div class="avatar avatar--lg avatar--yellow avatar--bordered" aria-label="Bordered yellow">NP</div>
+  </div>
+</div>
+
+<!-- Avatar Group -->
+<div class="sub">
+  <h3>Avatar Group (stacked)</h3>
+  <div class="grid">
+    <div class="avatar-group">
+      <div class="avatar avatar--md" aria-label="User A">AB</div>
+      <div class="avatar avatar--md avatar--green" aria-label="User B">CD</div>
+      <div class="avatar avatar--md avatar--yellow" aria-label="User C">EF</div>
+      <div class="avatar avatar--md avatar--pink" aria-label="User D">GH</div>
+      <div class="avatar-group__count" style="width: 40px; height: 40px;">+3</div>
+    </div>
+  </div>
+</div>
+
+<!-- Status Indicators -->
+<div class="sub">
+  <h3>Status Indicators</h3>
+  <div class="grid">
+    <div class="avatar avatar--lg" aria-label="Online user">
+      JD
+      <span class="avatar__status avatar__status--online"></span>
+    </div>
+    <div class="avatar avatar--lg avatar--green" aria-label="Offline user">
+      MK
+      <span class="avatar__status avatar__status--offline"></span>
+    </div>
+    <div class="avatar avatar--lg avatar--pink" aria-label="Busy user">
+      RS
+      <span class="avatar__status avatar__status--busy"></span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

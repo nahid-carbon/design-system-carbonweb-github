@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../button/button.css" />
+  <link rel="stylesheet" href="../card/card.css" />
+  <link rel="stylesheet" href="section.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+    .label { font-size: 13px; font-weight: 600; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.06em; padding: 32px 60px 12px; }
+    .divider { height: 1px; background: #e5e5e5; margin: 0; }
+  </style>
+</head>
+<body>
+
+<div class="label">Hero Section</div>
+<section class="section section--hero">
+  <div class="section__container">
+    <div class="section__content">
+      <h1 class="display-1">Build workflows that work</h1>
+      <p class="lead-paragraph" style="color:var(--color-muted)">We help teams unlock the full power of monday.com with expert consultation and custom development.</p>
+      <div class="section__actions">
+        <button class="btn btn--primary btn--teal btn--lg">Get Started</button>
+        <button class="btn btn--secondary btn--teal btn--lg">Learn More</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<div class="label">Feature Grid</div>
+<section class="section section--feature-grid">
+  <div class="section__container">
+    <div class="section__header">
+      <h2 class="heading-2">What we do</h2>
+      <p class="body-large" style="color:var(--color-muted)">End-to-end monday.com services for growing teams.</p>
+    </div>
+    <div class="section__grid">
+      <div class="card card--elevated"><div class="card__body"><h3 class="card__title">Consultation</h3><p class="card__description">Strategic guidance tailored to your workflows.</p></div></div>
+      <div class="card card--elevated"><div class="card__body"><h3 class="card__title">Development</h3><p class="card__description">Custom integrations and automations.</p></div></div>
+      <div class="card card--elevated"><div class="card__body"><h3 class="card__title">Training</h3><p class="card__description">Team onboarding and best practices.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<div class="label">CTA Band</div>
+<section class="section section--cta-band">
+  <div class="section__container">
+    <div class="section__content" style="padding:48px 0">
+      <h2 class="heading-2" style="color:#fff">Ready to get started?</h2>
+      <p class="body-large" style="color:rgba(255,255,255,0.8)">Book a free exploration with our workflow experts.</p>
+      <button class="btn btn--primary btn--white btn--lg">Book an exploration</button>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

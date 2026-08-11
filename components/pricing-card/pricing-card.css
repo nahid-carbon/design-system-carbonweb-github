@@ -1,0 +1,132 @@
+/* CarbonWeb Pricing Card — BEM component
+   Uses var(--color-*) tokens from ../../tokens/colors.css
+   Uses var(--radius-*) from ../../tokens/radii.css
+   Uses var(--shadow-*) from ../../tokens/shadows.css
+   Uses var(--font-*) and var(--text-*) from ../../tokens/typography.css
+   Uses var(--space-*) from ../../tokens/spacing.css
+   Price uses Montserrat (--font-family-numeric).
+*/
+
+/* ── Grid wrapper ── */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  align-items: stretch;
+}
+
+/* ── Base card ── */
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  font-family: var(--font-family);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Featured modifier ── */
+.pricing-card--featured {
+  border: 2px solid var(--color-teal-500);
+  background: linear-gradient(var(--color-white), var(--color-white)) padding-box;
+  background-color: color-mix(in srgb, var(--color-teal-500) 4%, transparent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--color-teal-500) 18%, transparent);
+}
+
+.pricing-card--featured:hover {
+  box-shadow: 0 0 32px color-mix(in srgb, var(--color-teal-500) 28%, transparent);
+}
+
+/* ── Dark modifier ── */
+.pricing-card--dark {
+  background: var(--color-ink);
+  border-color: color-mix(in srgb, var(--color-white) 12%, transparent);
+}
+
+.pricing-card--dark .pricing-card__desc { color: var(--color-slate-light); }
+.pricing-card--dark .pricing-card__price { color: var(--color-white); }
+.pricing-card--dark .pricing-card__price-caption { color: var(--color-slate-light); }
+.pricing-card--dark .pricing-card__name { color: var(--color-teal-300); }
+
+/* ── Package name ── */
+.pricing-card__name {
+  font-family: var(--font-family);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  color: var(--color-teal-500);
+  margin: 0 0 var(--space-2) 0;
+}
+
+/* ── Description ── */
+.pricing-card__desc {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-slate);
+  margin: 0 0 var(--space-6) 0;
+  flex-grow: 1;
+}
+
+/* ── Price line ── */
+.pricing-card__price {
+  font-family: var(--font-family-numeric);
+  font-weight: var(--font-bold);
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.pricing-card__price-unit {
+  font-family: var(--font-family-numeric);
+  font-weight: var(--font-medium);
+  font-size: var(--text-base);
+  color: var(--color-muted);
+}
+
+.pricing-card__price-caption {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+  color: var(--color-muted);
+  margin: var(--space-1) 0 var(--space-6) 0;
+}
+
+/* ── CTA ── */
+.pricing-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-weight: var(--font-medium);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-white);
+  background: var(--color-teal-500);
+  border: none;
+  border-radius: var(--radius-full);
+  padding: var(--space-3) var(--space-6);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.pricing-card__cta:hover {
+  background: var(--color-teal-hover);
+}
+
+.pricing-card__cta:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}

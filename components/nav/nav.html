@@ -1,0 +1,75 @@
+<!-- CarbonWeb Nav — Template (not yet built as standalone) -->
+<!-- Currently implemented as part of Layout.tsx (React sidebar nav) -->
+<!-- TODO: Build standalone nav component for non-React usage -->
+
+<!-- Desktop Sidebar Nav -->
+<aside class="nav">
+  <div class="nav__header">
+    <div class="nav__brand">
+      <img src="/logos/global-icon.svg" alt="CarbonWeb" class="nav__icon" />
+      <span class="nav__title">CarbonWeb</span>
+    </div>
+    <p class="nav__subtitle">Design System</p>
+  </div>
+
+  <nav class="nav__menu">
+    <!-- Collapsible group -->
+    <div class="nav__group">
+      <button class="nav__group-toggle">
+        Logos
+        <span class="nav__toggle-icon">&#9654;</span>
+      </button>
+      <div class="nav__group-items">
+        <a href="/logos#global" class="nav__link">Global</a>
+        <a href="/logos#latam" class="nav__link">LATAM</a>
+        <div class="nav__group">
+          <button class="nav__group-toggle">
+            Services
+            <span class="nav__toggle-icon">&#9654;</span>
+          </button>
+          <div class="nav__group-items">
+            <a href="/logos#creative" class="nav__link">Creative</a>
+            <a href="/logos#workflow" class="nav__link">Workflow</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Direct links -->
+    <a href="/typography" class="nav__link">Typography</a>
+    <a href="/colors" class="nav__link">Colors</a>
+
+    <!-- Components group -->
+    <div class="nav__group">
+      <button class="nav__group-toggle">
+        Components
+        <span class="nav__toggle-icon">&#9654;</span>
+      </button>
+      <div class="nav__group-items">
+        <div class="nav__group">
+          <button class="nav__group-toggle">
+            Buttons
+            <span class="nav__toggle-icon">&#9654;</span>
+          </button>
+          <div class="nav__group-items">
+            <a href="/components/buttons#primary" class="nav__link">Primary</a>
+            <a href="/components/buttons#secondary" class="nav__link">Secondary</a>
+            <a href="/components/buttons#tertiary" class="nav__link">Tertiary</a>
+            <a href="/components/buttons#square" class="nav__link">Square</a>
+          </div>
+        </div>
+        <a href="/components/footer" class="nav__link">Footer</a>
+      </div>
+    </div>
+
+    <!-- Coming soon -->
+    <span class="nav__link nav__link--soon">
+      Templates
+      <span class="nav__soon-badge">soon</span>
+    </span>
+  </nav>
+
+  <div class="nav__footer">
+    <p>Raleway &middot; Global &amp; LATAM brands</p>
+  </div>
+</aside>

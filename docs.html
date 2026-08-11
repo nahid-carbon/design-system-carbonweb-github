@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CarbonWeb DS — Component Reference</title>
+<link rel="stylesheet" href="tokens/colors.css" />
+<link rel="stylesheet" href="tokens/typography.css" />
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Raleway', sans-serif; background: #f8f9fb; color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+
+  .docs-layout { display: flex; min-height: 100vh; }
+
+  /* ── Sidebar ── */
+  .docs-nav {
+    width: 260px; flex-shrink: 0; background: #fff;
+    border-right: 1px solid rgba(0,0,0,0.06);
+    padding: 28px 0; position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  }
+  .docs-nav__title { padding: 0 24px 20px; font-size: 17px; font-weight: 700; }
+  .docs-nav__title span { color: var(--color-teal-500); }
+  .docs-nav__cat { padding: 14px 24px 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-muted); }
+  .docs-nav__link {
+    display: block; padding: 6px 24px; font-size: 14px; color: var(--color-slate);
+    text-decoration: none; border-left: 2px solid transparent; transition: all 150ms ease;
+  }
+  .docs-nav__link:hover { color: var(--color-teal-500); background: rgba(0,176,194,0.05); border-left-color: var(--color-teal-500); }
+
+  /* ── Main ── */
+  .docs-main { flex: 1; padding: 44px 56px 120px; max-width: 1060px; }
+  .docs-main > h1 { font-size: 32px; font-weight: 900; margin-bottom: 6px; }
+  .docs-main > .sub { font-size: 15px; color: var(--color-muted); margin-bottom: 28px; line-height: 1.6; }
+
+  .docs-search {
+    width: 100%; max-width: 420px; height: 44px; padding: 0 18px; margin-bottom: 40px;
+    font-family: inherit; font-size: 15px; border: 1px solid rgba(94,96,117,0.25);
+    border-radius: 22px; outline: none; transition: all 200ms ease; background: #fff;
+  }
+  .docs-search:focus { border-color: var(--color-teal-500); box-shadow: 0 0 0 3px rgba(0,176,194,0.15); }
+
+  /* ── Component card ── */
+  .comp {
+    background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 14px;
+    padding: 28px 32px; margin-bottom: 28px; scroll-margin-top: 24px;
+    transition: box-shadow 200ms ease;
+  }
+  .comp:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+  .comp__head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+  .comp__name { font-size: 21px; font-weight: 700; }
+  .comp__name--copy { display: inline-flex; align-items: center; gap: 7px; background: none; border: none; padding: 2px 6px;
+    margin-left: -6px; border-radius: 7px; cursor: pointer; font-family: inherit; color: inherit; transition: background-color 150ms ease; }
+  .comp__name--copy svg { width: 15px; height: 15px; opacity: .35; }
+  .comp__name--copy:hover { background: rgba(0,176,194,0.1); }
+  .comp__name--copy:hover svg { opacity: 1; }
+  .comp__name--copy.is-copied { background: var(--color-teal-500); color: #fff; }
+  .comp__lvl { font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px;
+    border-radius: 20px; margin-right: 8px; }
+  .comp__lvl--atom { background: rgba(105,215,87,.2); color: var(--color-green-700); }
+  .comp__lvl--molecule { background: rgba(255,180,0,.2); color: #7F5700; }
+  .comp__lvl--section { background: rgba(94,96,117,.12); color: var(--color-slate); }
+  .comp__built { display: flex; align-items: baseline; gap: 7px; flex-wrap: wrap; margin: 8px 0 2px; font-size: 12px; color: var(--color-muted); }
+  .comp__built b { font-weight: 600; color: var(--color-slate); }
+  .dep { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; padding: 2px 8px; border-radius: 20px;
+    background: rgba(0,176,194,.1); color: var(--color-teal-700); }
+  .dep--atom { background: rgba(105,215,87,.16); color: var(--color-green-700); }
+  .comp__cat {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+  }
+  .comp__cat--basics   { background: rgba(0,176,194,0.12);  color: var(--color-teal-700); }
+  .comp__cat--inputs   { background: rgba(105,215,87,0.15); color: var(--color-green-700); }
+  .comp__cat--content  { background: rgba(255,180,0,0.15);  color: #7F5700; }
+  .comp__cat--sections { background: rgba(94,96,117,0.12);  color: var(--color-slate); }
+  .comp__figma { font-size: 12px; color: var(--color-slate-light); }
+  .comp__links { margin: 6px 0 18px; font-size: 13px; }
+  .comp__links a { color: var(--color-teal-600); text-decoration: none; margin-right: 14px; transition: color 150ms; }
+  .comp__links a:hover { color: var(--color-teal-800); text-decoration: underline; }
+
+  .block { margin-bottom: 16px; }
+  .block__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .block__label { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); }
+
+  .copy-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: inherit; font-size: 12px; font-weight: 600; color: var(--color-teal-600);
+    background: rgba(0,176,194,0.08); border: none; border-radius: 6px;
+    padding: 4px 10px; cursor: pointer; transition: all 150ms ease;
+  }
+  .copy-btn:hover { background: rgba(0,176,194,0.16); color: var(--color-teal-800); }
+  .copy-btn:active { transform: scale(0.95); }
+  .copy-btn.copied { background: rgba(105,215,87,0.18); color: var(--color-green-700); }
+
+  pre.codeblock {
+    background: #0d1117; color: #e6edf3; border-radius: 10px;
+    padding: 14px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px;
+    line-height: 1.6; overflow-x: auto; max-height: 320px; overflow-y: auto;
+  }
+  .refname {
+    display: inline-block; background: #0d1117; color: #7ee7f0;
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    padding: 6px 12px; border-radius: 8px;
+  }
+  .variants { display: flex; flex-wrap: wrap; gap: 6px; }
+  .variants span {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    background: #f0f2f7; color: var(--color-slate); padding: 3px 9px; border-radius: 5px;
+  }
+  .rules-body { font-size: 13.5px; line-height: 1.7; color: var(--color-slate); max-height: 300px; overflow-y: auto; padding-right: 8px; }
+  .rules-body h1, .rules-body h2, .rules-body h3 { color: var(--color-ink); font-size: 14px; margin: 12px 0 4px; }
+  .rules-body code { background: #f0f2f7; padding: 1px 5px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+  .rules-body table { border-collapse: collapse; margin: 8px 0; }
+  .rules-body td, .rules-body th { border: 1px solid rgba(0,0,0,0.08); padding: 4px 10px; font-size: 12.5px; text-align: left; }
+  .rules-body ul { padding-left: 20px; }
+
+  details.blockfold summary { cursor: pointer; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); margin-bottom: 6px; user-select: none; }
+  details.blockfold summary:hover { color: var(--color-teal-600); }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div class="docs-layout">
+  <nav class="docs-nav" id="nav">
+    <div class="docs-nav__title">Carbon<span>Web</span> DS<br/><small style="font-weight:400;color:var(--color-muted);font-size:12px;">Component Reference</small></div>
+  </nav>
+
+  <main class="docs-main">
+    <h1>Component Reference</h1>
+    <p class="sub">Every component in the CarbonWeb Design System: what to call it, how to import it, the code to paste, and the rules to follow. Click any <strong>Copy</strong> button to grab the snippet. Mirrors the Figma design system structure (Basics → Inputs → Content → Sections).</p>
+    <input class="docs-search" id="search" type="search" placeholder="Filter components… (e.g. button, hero, chip)" />
+    <div id="list"></div>
+  </main>
+</div>
+
+<script src="data.js"></script>
+<script>
+const CAT_ORDER = ['basics', 'inputs', 'content', 'sections'];
+const CAT_LABEL = { basics: '1 · Basics', inputs: '2 · Inputs', content: '3 · Content', sections: '4 · Sections' };
+
+function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+/* minimal markdown -> html (headings, bold, code, tables, lists) */
+function md(src) {
+  let h = esc(src);
+  h = h.replace(/^### (.*)$/gm, '<h3>$1</h3>')
+       .replace(/^## (.*)$/gm, '<h2>$1</h2>')
+       .replace(/^# (.*)$/gm, '<h1>$1</h1>')
+       .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+       .replace(/`([^`]+)`/g, '<code>$1</code>');
+  // tables
+  h = h.replace(/((?:^\|.*\|\s*$\n?)+)/gm, (m) => {
+    const rows = m.trim().split('\n').filter(r => !/^\|[\s\-|]+\|$/.test(r));
+    const cells = rows.map((r, i) => '<tr>' + r.split('|').slice(1, -1).map(c => (i===0?'<th>':'<td>') + c.trim() + (i===0?'</th>':'</td>')).join('') + '</tr>');
+    return '<table>' + cells.join('') + '</table>';
+  });
+  h = h.replace(/((?:^- .*$\n?)+)/gm, (m) => '<ul>' + m.trim().split('\n').map(l => '<li>' + l.slice(2) + '</li>').join('') + '</ul>');
+  return h.replace(/\n{2,}/g, '<br/>');
+}
+
+function legacyCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); } catch (e) {}
+  ta.remove();
+}
+
+function copyBtn(text, label = 'Copy') {
+  const b = document.createElement('button');
+  b.className = 'copy-btn';
+  b.innerHTML = '⧉ ' + label;
+  b.addEventListener('click', () => {
+    const done = () => {
+      b.classList.add('copied'); b.innerHTML = '✓ Copied';
+      setTimeout(() => { b.classList.remove('copied'); b.innerHTML = '⧉ ' + label; }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, () => { legacyCopy(text); done(); });
+    } else { legacyCopy(text); done(); }
+  });
+  return b;
+}
+
+function block(label, contentEl, copyText) {
+  const wrap = document.createElement('div'); wrap.className = 'block';
+  const head = document.createElement('div'); head.className = 'block__head';
+  head.innerHTML = '<span class="block__label">' + label + '</span>';
+  if (copyText) head.appendChild(copyBtn(copyText));
+  wrap.appendChild(head); wrap.appendChild(contentEl);
+  return wrap;
+}
+
+async function fetchText(path) {
+  try { const r = await fetch(path); return r.ok ? await r.text() : null; } catch (e) { return null; }
+}
+
+const COPY_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+const FOUNDATIONS = new Set(['color','type','space','grid','radius','shadow']);
+  // Load JSON over http; fall back to the embedded copy in data.js when the
+  // page is opened straight from the filesystem (file:// blocks fetch).
+  async function cwLoad(file, globalKey) {
+    try {
+      const r = await fetch(file);
+      if (r.ok) return await r.json();
+    } catch (e) { /* file:// — fall through */ }
+    if (window[globalKey]) return window[globalKey];
+    const m = document.createElement('div');
+    m.style.cssText = 'margin:24px 0;padding:16px 20px;border-radius:12px;background:#fff3f3;border:1px solid #f3c6c6;color:#8a2b2b;font-size:14px;line-height:1.6';
+    m.innerHTML = '<b>Could not load ' + file + '.</b><br>Serve the folder over http — <code>python3 -m http.server 8765</code> — then open <code>http://localhost:8765</code>. ' +
+                  'Or run <code>python3 tools/gen-data.py</code> so this page works offline.';
+    (document.querySelector('#list') || document.querySelector('.docs-main') || document.body).prepend(m);
+    throw new Error('data unavailable: ' + file);
+  }
+(async function init() {
+  const reg = await cwLoad('registry.json', '__CW_REGISTRY__');
+  const comps = Object.entries(reg.components).map(([slug, c]) => ({ slug, ...c }));
+  comps.sort((a, b) => CAT_ORDER.indexOf(a.category) - CAT_ORDER.indexOf(b.category) || (a.ref || a.slug).localeCompare(b.ref || b.slug));
+
+  const nav = document.getElementById('nav');
+  const list = document.getElementById('list');
+  let lastCat = null;
+
+  for (const c of comps) {
+    if (c.category !== lastCat) {
+      lastCat = c.category;
+      const catEl = document.createElement('div');
+      catEl.className = 'docs-nav__cat';
+      catEl.textContent = CAT_LABEL[c.category] || c.category;
+      nav.appendChild(catEl);
+    }
+    const a = document.createElement('a');
+    a.className = 'docs-nav__link'; a.href = '#' + c.slug; a.textContent = c.ref || c.slug;
+    nav.appendChild(a);
+
+    const card = document.createElement('section');
+    card.className = 'comp'; card.id = c.slug; card.dataset.name = [c.ref || c.slug, c.slug, ...(c.aliases || [])].join(' ').toLowerCase();
+
+    // header
+    const head = document.createElement('div'); head.className = 'comp__head';
+    const headRef = c.ref || c.slug;
+    const nameBtn = document.createElement('button');
+    nameBtn.className = 'comp__name comp__name--copy';
+    nameBtn.title = 'Copy \u201c' + headRef + '\u201d';
+    nameBtn.innerHTML = '<span></span>' + COPY_SVG;
+    nameBtn.firstChild.textContent = headRef;
+    nameBtn.onclick = () => { navigator.clipboard.writeText(headRef); nameBtn.classList.add('is-copied'); setTimeout(()=>nameBtn.classList.remove('is-copied'),700); };
+    head.appendChild(nameBtn);
+    const extra = document.createElement('span');
+    extra.innerHTML = (c.level ? '<span class="comp__lvl comp__lvl--' + c.level + '">' + c.level + '</span>' : '') +
+      '<span class="comp__cat comp__cat--' + c.category + '">' + c.category + '</span>' +
+      (c.figma ? '<span class="comp__figma">Figma: ' + esc(c.figma) + '</span>' : '');
+    head.appendChild(extra);
+    card.appendChild(head);
+
+    if (c.depends_on && c.depends_on.length) {
+      const b = document.createElement('div'); b.className = 'comp__built';
+      b.innerHTML = '<b>built from</b> ' + c.depends_on.map(d =>
+        '<span class="dep' + (FOUNDATIONS.has(d) ? '' : ' dep--atom') + '">' + esc(d) + '</span>').join('');
+      card.appendChild(b);
+    }
+
+    const links = document.createElement('div'); links.className = 'comp__links';
+    const previewPath = c.path + '/' + c.slug + '-preview.html';
+    links.innerHTML = '<a href="' + previewPath + '" target="_blank">Open preview ↗</a>' +
+      (c.rules ? '<a href="' + c.rules + '" target="_blank">Rules file ↗</a>' : '');
+    card.appendChild(links);
+
+    // 1. Reference name
+    const refName = c.ref || c.slug;
+    const ref = document.createElement('span'); ref.className = 'refname'; ref.textContent = refName;
+    const aka = (c.aliases && c.aliases.length) ? '  (also: ' + c.aliases.join(', ') + ')' : '';
+    if (aka) { const s2 = document.createElement('span'); s2.style.cssText = 'font-size:12px;color:var(--color-slate-light);margin-left:8px;'; s2.textContent = aka.trim(); ref.appendChild(s2); }
+    card.appendChild(block('Reference name — variants are ' + refName + '/…', ref, refName));
+
+    // 2. Import
+    const importLines = [];
+    ['colors','spacing','typography','radii','shadows'].forEach(t => importLines.push('<link rel="stylesheet" href="tokens/' + t + '.css" />'));
+    if (c.css) importLines.push('<link rel="stylesheet" href="' + c.css + '" />');
+    if (c.js) importLines.push('<script src="' + c.js + '"><\/script>');
+    (c.depends_on || []).forEach(d => { if (d.endsWith('.css') && !d.startsWith('tokens/')) importLines.splice(5, 0, '<link rel="stylesheet" href="' + d + '" />'); });
+    const importsText = importLines.join('\n');
+    const pre1 = document.createElement('pre'); pre1.className = 'codeblock'; pre1.textContent = importsText;
+    card.appendChild(block('Import', pre1, importsText));
+
+    // 3. Code snippet (component html)
+    if (c.html) {
+      const htmlSrc = await fetchText(c.html);
+      if (htmlSrc) {
+        const pre2 = document.createElement('pre'); pre2.className = 'codeblock'; pre2.textContent = htmlSrc.trim();
+        card.appendChild(block('Code', pre2, htmlSrc.trim()));
+      }
+    }
+
+    // 4. Variants
+    if (c.variants && c.variants.length) {
+      const v = document.createElement('div'); v.className = 'variants';
+      c.variants.forEach(x => { const s = document.createElement('span'); s.textContent = x; v.appendChild(s); });
+      card.appendChild(block('Variants', v, c.variants.join(', ')));
+    }
+
+    // 5. Rules (collapsed)
+    if (c.rules) {
+      const rulesSrc = await fetchText(c.rules);
+      if (rulesSrc) {
+        const det = document.createElement('details'); det.className = 'blockfold';
+        const sum = document.createElement('summary'); sum.textContent = 'Rules';
+        const body = document.createElement('div'); body.className = 'rules-body'; body.innerHTML = md(rulesSrc);
+        det.appendChild(sum);
+        const rh = document.createElement('div'); rh.style.cssText = 'display:flex;justify-content:flex-end;margin-bottom:4px;';
+        rh.appendChild(copyBtn(rulesSrc, 'Copy rules'));
+        det.appendChild(rh);
+        det.appendChild(body);
+        const wrap = document.createElement('div'); wrap.className = 'block'; wrap.appendChild(det);
+        card.appendChild(wrap);
+      }
+    }
+
+    list.appendChild(card);
+  }
+
+  // filter
+  document.getElementById('search').addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase().trim();
+    document.querySelectorAll('.comp').forEach(el => {
+      el.classList.toggle('hidden', q && !el.dataset.name.includes(q));
+    });
+    document.querySelectorAll('.docs-nav__link').forEach(el => {
+      el.classList.toggle('hidden', q && !el.textContent.includes(q));
+    });
+  });
+})();
+</script>
+</body>
+</html>

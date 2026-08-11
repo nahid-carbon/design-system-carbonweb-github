@@ -1,0 +1,314 @@
+/* CarbonWeb Chip — filter chip / tag. Uses only var(--token) references.
+
+   Figma coverage:
+     Chip/Filter          689:21718  → .chip--filter (+ .chip--dark, .chip--selected)
+     Chip/Filter Row      690:4      → .chip-row--dark
+     Chip/Blog Category   735:4410   → .chip--tag.chip--category
+     Chip/Blog Product    735:4385   → .chip--tag.chip--product-*
+     Chip/App             735:4429   → .chip--tag.chip--app
+   Chip/Products (848:61721) is a 32px logo tag, not a pill — see
+   components/product-tag/. */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  line-height: 1.5;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  background: var(--color-teal-500);
+  color: var(--color-white);
+  transition: background-color 200ms ease, color 200ms ease,
+    border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.chip:hover {
+  background: var(--color-teal-600);
+  transform: translateY(-1px);
+}
+
+.chip:active {
+  background: var(--color-teal-700);
+  transform: translateY(0);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}
+
+/* ── Light Variant ── */
+
+.chip--light {
+  background: var(--color-teal-100);
+  color: var(--color-teal-800);
+}
+
+.chip--light:hover {
+  background: var(--color-teal-200);
+}
+
+.chip--light:active {
+  background: var(--color-teal-300);
+  color: var(--color-teal-950);
+}
+
+/* ── Outline Variant ── */
+
+.chip--outline {
+  background: var(--color-white);
+  border-color: var(--color-slate-light);
+  color: var(--color-slate);
+}
+
+.chip--outline:hover {
+  background: var(--color-white);
+  border-color: var(--color-teal-500);
+  color: var(--color-teal-600);
+}
+
+.chip--outline:active {
+  background: var(--color-white);
+  border-color: var(--color-teal-700);
+  color: var(--color-teal-700);
+}
+
+/* ── Selected State ── */
+
+.chip--selected,
+.chip--outline.chip--selected,
+.chip--light.chip--selected {
+  background: var(--color-teal-500);
+  border-color: var(--color-teal-500);
+  color: var(--color-white);
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--color-teal-500) 35%, transparent);
+}
+
+.chip--selected:hover {
+  background: var(--color-teal-600);
+}
+
+.chip--selected:active {
+  background: var(--color-teal-700);
+}
+
+/* ══ Filter Chip (Figma: Chip/Filter 689:21718) ══════════════════════
+   Fixed 16/6 padding and 22px radius across all 8 variants.
+   Style=Light is the default; add .chip--dark for the dark-surface style.
+   Selected is solid teal in both styles — the accent doesn't adapt. */
+
+.chip--filter {
+  padding: 6px 16px;
+  border-radius: 22px;
+  font-size: var(--text-xl);
+  font-weight: var(--font-regular);
+  line-height: normal;
+  /* Style=Light, Selected=False, State=Default */
+  background: var(--color-grey-100);
+  border-color: var(--color-grey-200);
+  color: var(--color-grey-700);
+  box-shadow: none;
+  transform: none;
+}
+
+/* Style=Light, Selected=False, State=Hover */
+.chip--filter:hover {
+  background: var(--color-grey-200);
+  border-color: var(--color-grey-300);
+  color: var(--color-grey-700);
+  transform: none;
+}
+
+.chip--filter:active {
+  background: var(--color-grey-200);
+  border-color: var(--color-grey-300);
+}
+
+/* Style=Dark, Selected=False, State=Default — two-stop translucent teal
+   gradient over a dark section background, white-translucent hairline.
+   Figma's stops are #006673 → #00B0C2; teal-900 (#006670) is the nearest
+   token and is visually identical at 23/35% alpha. */
+.chip--filter.chip--dark {
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-teal-900) 23%, transparent),
+    color-mix(in srgb, var(--color-teal-500) 23%, transparent)
+  );
+  background-color: transparent;
+  border-color: color-mix(in srgb, var(--color-white) 45%, transparent);
+  color: color-mix(in srgb, var(--color-white) 65%, transparent);
+}
+
+/* Style=Dark, Selected=False, State=Hover */
+.chip--filter.chip--dark:hover {
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-teal-900) 35%, transparent),
+    color-mix(in srgb, var(--color-teal-500) 35%, transparent)
+  );
+  border-color: color-mix(in srgb, var(--color-white) 65%, transparent);
+}
+
+/* Selected=True — identical in both styles */
+.chip--filter.chip--selected,
+.chip--filter.chip--dark.chip--selected {
+  background-image: none;
+  background-color: var(--color-teal-500);
+  border-color: transparent;
+  color: var(--color-white);
+  box-shadow: none;
+}
+
+.chip--filter.chip--selected:hover,
+.chip--filter.chip--dark.chip--selected:hover {
+  background-color: var(--color-teal-600);
+  border-color: transparent;
+}
+
+.chip--filter.chip--selected:active,
+.chip--filter.chip--dark.chip--selected:active {
+  background-color: var(--color-teal-700);
+}
+
+/* ══ Tag Chips (Figma: Blog Category 735:4410 / Blog Product 735:4385 /
+     App 735:4429) ════════════════════════════════════════════════════
+   Small metadata pill used on blog and directory cards. Theme=Dark is a
+   filled brand colour with white text (the default here); Theme=Light is
+   the neutral Gray 200 surface with ink text. */
+
+.chip--tag {
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: var(--font-regular);
+  line-height: normal;
+  cursor: default;
+  color: var(--color-white);
+  box-shadow: none;
+}
+
+.chip--tag:hover,
+.chip--tag:active {
+  transform: none;
+}
+
+/* Theme=Light — one neutral surface for every category/product/app */
+.chip--tag.chip--tag-light,
+.chip--tag.chip--tag-light:hover,
+.chip--tag.chip--tag-light:active {
+  background: var(--color-grey-200);
+  border-color: transparent;
+  color: var(--color-ink);
+}
+
+/* Blog Category (735:4410) — monday.com / Process automation / Integrations
+   all share the Teal 800 dark fill */
+.chip--category,
+.chip--category:hover,
+.chip--category:active {
+  background: var(--color-teal-800);
+}
+
+/* App (735:4429) — every app chip uses the Teal 800 dark fill */
+.chip--app,
+.chip--app:hover,
+.chip--app:active {
+  background: var(--color-teal-800);
+}
+
+/* Blog Product (735:4385) — monday product brand fills */
+.chip--product-wm,
+.chip--product-wm:hover,
+.chip--product-wm:active {
+  background: var(--color-monday-wm);
+}
+
+.chip--product-dev,
+.chip--product-dev:hover,
+.chip--product-dev:active {
+  background: var(--color-monday-dev);
+}
+
+.chip--product-crm,
+.chip--product-crm:hover,
+.chip--product-crm:active {
+  background: var(--color-teal-800); /* monday CRM #007682 == Teal 800 */
+}
+
+.chip--product-service,
+.chip--product-service:hover,
+.chip--product-service:active {
+  background: var(--color-monday-service);
+}
+
+/* Interactive tag chips (used as filters) keep the base lift + focus ring */
+.chip--tag[data-toggle],
+.chip-row[data-toggle] .chip--tag {
+  cursor: pointer;
+}
+
+/* ── Icon Slots ── */
+
+.chip__icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.chip__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Trailing brand logo on tag chips — 14px tall, natural width */
+.chip__logo {
+  display: inline-flex;
+  align-items: center;
+  height: 14px;
+  flex-shrink: 0;
+  order: 1; /* always trails the label, whatever the markup order */
+}
+
+.chip__logo img,
+.chip__logo svg {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+/* ── Chip Row Wrapper ── */
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Dark filter row (Figma: Chip/Filter Row 690:4) */
+.chip-row--dark {
+  gap: 10px;
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface-dark);
+  align-items: flex-start;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip {
+    transition: none;
+  }
+  .chip:hover,
+  .chip:active {
+    transform: none;
+  }
+}

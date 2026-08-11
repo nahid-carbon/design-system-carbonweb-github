@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Header — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/shadows.css" />
+  <link rel="stylesheet" href="../button/button.css" />
+  <link rel="stylesheet" href="header.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-family);
+      background: #ffffff;
+      color: var(--color-ink);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Preview page content sections */
+    .preview-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 var(--space-10);
+    }
+
+    .preview-section {
+      padding: var(--space-20) 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .preview-section:last-child {
+      border-bottom: none;
+    }
+
+    .preview-section__title {
+      font-family: var(--font-family);
+      font-weight: var(--font-bold);
+      font-size: var(--text-5xl);
+      line-height: var(--leading-tight);
+      color: var(--color-ink);
+      margin-bottom: var(--space-6);
+    }
+
+    .preview-section__subtitle {
+      font-family: var(--font-family);
+      font-weight: var(--font-semibold);
+      font-size: var(--text-xl);
+      line-height: var(--leading-tight);
+      color: var(--color-teal-500);
+      margin-bottom: var(--space-4);
+    }
+
+    .preview-section__text {
+      font-family: var(--font-family);
+      font-weight: var(--font-regular);
+      font-size: var(--text-base);
+      line-height: var(--leading-relaxed);
+      color: var(--color-muted);
+      margin-bottom: var(--space-4);
+    }
+
+    .preview-hero {
+      padding: var(--space-24) 0 var(--space-20);
+      text-align: center;
+    }
+
+    .preview-hero__badge {
+      display: inline-block;
+      font-family: var(--font-family);
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+      color: var(--color-teal-500);
+      background: rgba(146, 243, 252, 0.2);
+      padding: var(--space-1-5) var(--space-4);
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-6);
+    }
+
+    .preview-hero__title {
+      font-family: var(--font-family);
+      font-weight: var(--font-black);
+      font-size: var(--text-8xl);
+      line-height: var(--leading-tight);
+      color: var(--color-ink);
+      margin-bottom: var(--space-5);
+    }
+
+    .preview-hero__desc {
+      font-family: var(--font-family);
+      font-weight: var(--font-regular);
+      font-size: var(--text-xl);
+      line-height: var(--leading-relaxed);
+      color: var(--color-muted);
+      max-width: 560px;
+      margin: 0 auto var(--space-8);
+    }
+
+    .preview-note {
+      background: rgba(146, 243, 252, 0.1);
+      border: 1px solid rgba(0, 176, 194, 0.15);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      margin-top: var(--space-6);
+      font-family: var(--font-family);
+      font-size: var(--text-sm);
+      color: var(--color-teal-700);
+      line-height: var(--leading-relaxed);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header Component -->
+<header class="header" id="header">
+  <div class="header__container">
+
+    <!-- Logo -->
+    <a href="/" class="header__logo">
+      <div class="header__logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      <span class="header__logo-text">CarbonWeb</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="header__nav">
+      <a href="#products" class="header__nav-link" data-path="/products">Products</a>
+      <a href="#services" class="header__nav-link" data-path="/services">Services</a>
+      <a href="#resources" class="header__nav-link" data-path="/resources">Resources</a>
+      <a href="#company" class="header__nav-link" data-path="/company">Company</a>
+      <a href="#contact" class="header__nav-link" data-path="/contact">Contact</a>
+    </nav>
+
+    <!-- Actions -->
+    <div class="header__actions">
+      <button class="header__lang" aria-label="Switch language">
+        EN
+        <span class="header__lang-chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
+      <a href="#" class="btn btn--secondary btn--teal btn--sm header__cta">Get Started</a>
+      <a href="#" class="btn btn--primary btn--teal btn--sm header__cta">Book a Demo</a>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button class="header__mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <div class="header__hamburger">
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+      </div>
+    </button>
+
+  </div>
+
+  <!-- Mobile Nav Panel -->
+  <div class="header__mobile-nav">
+    <a href="#products" class="header__nav-link" data-path="/products">Products</a>
+    <a href="#services" class="header__nav-link" data-path="/services">Services</a>
+    <a href="#resources" class="header__nav-link" data-path="/resources">Resources</a>
+    <a href="#company" class="header__nav-link" data-path="/company">Company</a>
+    <a href="#contact" class="header__nav-link" data-path="/contact">Contact</a>
+    <div class="header__mobile-actions">
+      <a href="#" class="btn btn--secondary btn--teal btn--sm">Get Started</a>
+      <a href="#" class="btn btn--primary btn--teal btn--sm">Book a Demo</a>
+    </div>
+  </div>
+</header>
+
+<!-- Scrollable Content to Demonstrate Sticky Behavior -->
+<div class="preview-content">
+
+  <div class="preview-hero">
+    <span class="preview-hero__badge">Header Component Preview</span>
+    <h1 class="preview-hero__title">Sticky Header</h1>
+    <p class="preview-hero__desc">Scroll down to see the sticky behavior and shadow transition. The header stays fixed at the top and gains a subtle shadow after scrolling past 10px.</p>
+    <div class="preview-note">
+      Try scrolling to see the <strong>header--scrolled</strong> shadow appear. On mobile viewports (below 768px), the hamburger menu appears with a slide-down animation.
+    </div>
+  </div>
+
+  <section class="preview-section" id="products">
+    <h2 class="preview-section__title">Products</h2>
+    <h3 class="preview-section__subtitle">Workflow Solutions</h3>
+    <p class="preview-section__text">CarbonWeb builds powerful workflow solutions on top of monday.com. Our products help teams streamline operations, automate repetitive tasks, and gain real-time visibility into their processes.</p>
+    <p class="preview-section__text">From project management to CRM integrations, our suite of tools is designed for teams that want to move fast without sacrificing quality or oversight.</p>
+    <p class="preview-section__text">Each product is built with enterprise-grade security, scalability, and the flexibility to adapt to your unique business needs. We believe in tools that work the way you do, not the other way around.</p>
+  </section>
+
+  <section class="preview-section" id="services">
+    <h2 class="preview-section__title">Services</h2>
+    <h3 class="preview-section__subtitle">Expert Consultation</h3>
+    <p class="preview-section__text">Our team of workflow experts provides end-to-end consultation services. From initial discovery through implementation and training, we partner with your team to ensure success.</p>
+    <p class="preview-section__text">We specialize in workflow development, custom integrations, platform migrations, and ongoing optimization. Whether you are just getting started with monday.com or looking to level up your existing setup, we have the expertise to help.</p>
+    <p class="preview-section__text">Every engagement begins with a thorough understanding of your business processes, pain points, and goals. We do not believe in one-size-fits-all solutions.</p>
+  </section>
+
+  <section class="preview-section" id="resources">
+    <h2 class="preview-section__title">Resources</h2>
+    <h3 class="preview-section__subtitle">Learn & Grow</h3>
+    <p class="preview-section__text">Access our library of guides, tutorials, case studies, and best practices. Our resource center is designed to help you get the most out of your workflow tools and stay ahead of the curve.</p>
+    <p class="preview-section__text">From beginner walkthroughs to advanced automation patterns, there is something for every level of expertise. Our blog covers industry trends, product updates, and tips from our team of specialists.</p>
+    <p class="preview-section__text">Subscribe to our newsletter for monthly insights delivered straight to your inbox. Join thousands of professionals who trust CarbonWeb for workflow expertise.</p>
+  </section>
+
+  <section class="preview-section" id="company">
+    <h2 class="preview-section__title">Company</h2>
+    <h3 class="preview-section__subtitle">About CarbonWeb</h3>
+    <p class="preview-section__text">CarbonWeb is a leading monday.com partner, serving clients across the Americas and beyond. Founded with the mission of making work simpler, smarter, and more connected, our team brings deep platform expertise and a passion for solving real business challenges.</p>
+    <p class="preview-section__text">With offices in the US and Latin America, we bring a global perspective with local understanding. Our multilingual team works across time zones to deliver exceptional results for clients of all sizes.</p>
+    <p class="preview-section__text">We are proud to be recognized as a trusted partner by monday.com and a thought leader in the workflow automation space. Our commitment to innovation, quality, and client success drives everything we do.</p>
+  </section>
+
+  <section class="preview-section" id="contact">
+    <h2 class="preview-section__title">Contact</h2>
+    <h3 class="preview-section__subtitle">Get in Touch</h3>
+    <p class="preview-section__text">Ready to transform your workflows? Reach out to our team for a free consultation. We will discuss your needs, explore solutions, and map out a plan to get you where you want to be.</p>
+    <p class="preview-section__text">You can reach us by phone at (216) 666 2522, email at contact@carbonweb.co, or through our online booking form. We typically respond within one business day.</p>
+    <p class="preview-section__text">For LATAM inquiries, contact us at +593 99 864 2941. Our bilingual team is ready to help you in English or Spanish.</p>
+  </section>
+
+</div>
+
+<script src="header.js"></script>
+
+</body>
+</html>

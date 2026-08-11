@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../button/button.css" />
+  <link rel="stylesheet" href="../badge/badge.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../chip/chip.css" />
+  <link rel="stylesheet" href="../partner-badge/partner-badge.css" />
+  <link rel="stylesheet" href="hero.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+    .demo-head { padding: 48px 60px 0; }
+    .demo-head h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .demo-head .desc { font-size: 15px; color: var(--color-muted); }
+    .label { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); padding: 40px 60px 14px; }
+    .mock-form-field { display: block; width: 100%; height: 52px; border: 1px solid color-mix(in srgb, var(--color-slate-light) 60%, transparent); border-radius: var(--radius-full); margin-bottom: 14px; padding: 0 20px; font-family: var(--font-family); font-size: 15px; color: var(--color-ink); outline: none; transition: border-color 200ms ease; }
+    .mock-form-field:focus { border-color: var(--color-teal-500); }
+    .mock-media { aspect-ratio: 16 / 10; background: var(--gradient-global); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 18px; }
+  </style>
+</head>
+<body>
+
+<div class="demo-head">
+  <h2>Hero</h2>
+  <p class="desc">Page hero section. Base (centered) + --columns, --form, and --dark variants. Content fades and rises in on load.</p>
+</div>
+
+<div class="label">Base — centered</div>
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__eyebrow">
+      <span class="badge badge--outline badge--teal">monday.com Platinum Partner</span>
+      <span class="badge badge--green">New</span>
+    </div>
+    <h1 class="hero__title">Build workflows that <span class="hero__accent">actually work</span></h1>
+    <p class="hero__lead">We design, build, and support monday.com solutions for teams that want to move faster without breaking things.</p>
+    <div class="hero__actions">
+      <a href="#" class="btn btn--primary btn--teal btn--lg">Book an exploration</a>
+      <a href="#" class="btn btn--tertiary btn--teal btn--lg">See how we work</a>
+    </div>
+  </div>
+</section>
+
+<div class="label">--columns — text left, media right</div>
+<section class="hero hero--columns">
+  <div class="hero__inner">
+    <div>
+      <div class="hero__eyebrow">
+        <span class="badge badge--teal">Workflow</span>
+      </div>
+      <h1 class="hero__title">Your <span class="hero__accent">workflow</span>, engineered</h1>
+      <p class="hero__lead">Custom monday.com builds, integrations, and automations tailored to how your team really works.</p>
+      <div class="hero__actions">
+        <a href="#" class="btn btn--primary btn--teal btn--lg">Get started</a>
+        <a href="#" class="btn btn--tertiary btn--teal btn--lg">Learn more</a>
+      </div>
+    </div>
+    <div class="hero__media">
+      <!-- Real illustration exported from Figma @2x, displayed at 1x for retina sharpness -->
+      <img src="assets/hero-monday-service@2x.png" alt="monday.com service illustration"
+           style="width:100%; max-width:520px; height:auto; display:block;" />
+    </div>
+  </div>
+</section>
+
+<div class="label">--form — text left, form card right</div>
+<section class="hero hero--form">
+  <div class="hero__inner">
+    <div>
+      <div class="hero__eyebrow">
+        <span class="badge badge--outline badge--teal">Contact</span>
+      </div>
+      <h1 class="hero__title">Talk to a <span class="hero__accent">specialist</span></h1>
+      <p class="hero__lead">Tell us about your project and we'll get back within one business day.</p>
+    </div>
+    <div class="hero__form">
+      <input class="mock-form-field" type="text" placeholder="Full name" />
+      <input class="mock-form-field" type="email" placeholder="Work email" />
+      <input class="mock-form-field" type="text" placeholder="Company" />
+      <button class="btn btn--primary btn--teal btn--lg" style="width:100%">Send request</button>
+    </div>
+  </div>
+</section>
+
+<div class="label">--dark — ink background</div>
+<section class="hero hero--dark">
+  <div class="hero__inner">
+    <div class="hero__eyebrow">
+      <span class="badge badge--teal">Enterprise</span>
+    </div>
+    <h1 class="hero__title">Scale without <span class="hero__accent">limits</span></h1>
+    <p class="hero__lead">Enterprise-grade monday.com architecture, security, and support — delivered by a Platinum partner.</p>
+    <div class="hero__actions">
+      <a href="#" class="btn btn--primary btn--white btn--lg">Book an exploration</a>
+      <a href="#" class="btn btn--tertiary btn--white btn--lg">See case studies</a>
+    </div>
+  </div>
+</section>
+
+
+<div class="label">--service — Figma 918:48355 (Workflow Development). Same shape covers 918:47619 Consultation and 918:47089 Training.</div>
+<section class="hero hero--service" id="svc-light">
+  <div class="hero__inner">
+    <div>
+      <div class="hero__eyebrow"><span class="chip chip--tag chip--tag-light">Workflow Development</span></div>
+      <h1 class="hero__title"><span class="hero__accent hero__accent--solid">monday.com</span> only works if it&rsquo;s built for how your team actually works</h1>
+      <p class="hero__lead">We build it that way.</p>
+      <div class="hero__actions"><a href="#" class="btn btn--primary btn--teal btn--lg">Book a free consultation</a></div>
+    </div>
+    <div class="hero__media"><img src="assets/hero-workflow-development@2x.png" alt="" /></div>
+  </div>
+</section>
+
+<div class="label">--service --dark — Figma 918:49255 (Custom scoped. Built for you.)</div>
+<section class="hero hero--service hero--dark" id="svc-dark">
+  <div class="hero__inner">
+    <div>
+      <div class="hero__eyebrow"><span class="chip chip--tag chip--category">Custom scoped. Built for you.</span></div>
+      <h1 class="hero__title">We build around your <span class="hero__accent hero__accent--solid">specific</span> needs</h1>
+      <p class="hero__lead">Whether it&rsquo;s consultative, a custom build, or training, or something we haven&rsquo;t built before. We scope it, build it, and hand it over.</p>
+      <div class="hero__actions"><a href="#" class="btn btn--primary btn--teal btn--lg">Book a free consultation</a></div>
+    </div>
+    <div class="hero__media"><img src="assets/hero-custom-scoped@2x.png" alt="" /></div>
+  </div>
+</section>
+
+<div class="label">--service — Figma 918:47089 (Training)</div>
+<section class="hero hero--service" id="svc-training">
+  <div class="hero__inner">
+    <div>
+      <div class="hero__eyebrow"><span class="chip chip--tag chip--tag-light">Training</span></div>
+      <h1 class="hero__title"><span class="hero__accent hero__accent--solid">monday.com</span> only works if your team knows how to use it.</h1>
+      <p class="hero__lead">We make sure they do.</p>
+      <div class="hero__actions"><a href="#" class="btn btn--primary btn--teal btn--lg">Book a free consultation</a></div>
+    </div>
+    <div class="hero__media"><img src="assets/hero-training@2x.png" alt="" /></div>
+  </div>
+</section>
+
+<div class="label">--service — Figma 918:47619 (Consultation)</div>
+<section class="hero hero--service" id="svc-consult">
+  <div class="hero__inner">
+    <div>
+      <div class="hero__eyebrow"><span class="chip chip--tag chip--tag-light">Consultation</span></div>
+      <h1 class="hero__title"><span class="hero__accent hero__accent--solid">monday.com</span> is only as good as the decisions behind it.</h1>
+      <p class="hero__lead">We make sure they&rsquo;re the right ones.</p>
+      <div class="hero__actions"><a href="#" class="btn btn--primary btn--teal btn--lg">Book a free consultation</a></div>
+    </div>
+    <div class="hero__media"><img src="assets/hero-consultation@2x.png" alt="" /></div>
+  </div>
+</section>
+
+<div class="label">--partner — Figma 918:51481. Partner lockups above the headline, two CTAs, trailing meta line.</div>
+<section class="hero hero--partner" id="partner">
+  <div class="hero__inner">
+    <div>
+      <div class="hero__partners">
+        <span class="partner-badge partner-badge--sm"><img class="partner-badge__img" src="../partner-badge/assets/badge-platinum-partner.svg" alt="monday.com Platinum Partner" /></span>
+        <span class="partner-badge partner-badge--sm"><img class="partner-badge__img" src="../partner-badge/assets/badge-advanced-delivery-partner.svg" alt="monday.com Advanced Delivery Partner" /></span>
+      </div>
+      <h1 class="hero__title">One partner. Every stage of your <span class="hero__accent hero__accent--solid">monday.com</span> journey.</h1>
+      <p class="hero__lead">We consult on it, build it, and train your team on it &mdash; from scratch, fixing what isn&rsquo;t working, or scaling what is.</p>
+      <div class="hero__actions">
+        <a href="#" class="btn btn--primary btn--teal btn--lg">Explore services</a>
+        <a href="#" class="btn btn--secondary btn--teal btn--lg">Explore services</a>
+      </div>
+      <p class="hero__meta">Training &middot; Workflow Development &middot; Consultation</p>
+    </div>
+    <div class="hero__media"><img src="assets/hero-monday-service@2x.png" alt="" /></div>
+  </div>
+</section>
+
+<div class="label">--compact --grid --wedge-bottom-right — Figma Hero/Small Gap 170:3391. Grid texture + angled bottom-right gap.</div>
+<section class="hero hero--compact hero--dark hero--grid hero--wedge-bottom-right" id="compact">
+  <div class="hero__inner">
+    <h1 class="hero__title">Newsroom</h1>
+    <p class="hero__lead">Find all of the latest on CarbonWeb. Please reach out to us at press@carbonweb.co for inquiries.</p>
+  </div>
+</section>
+
+<div class="label">--search --glass — Figma Carbon Blog 229:4105 + Hero/Glass Blog 229:4182 surface.</div>
+<section class="hero hero--search hero--dark hero--glass" id="search">
+  <div class="hero__inner">
+    <h1 class="hero__title">Carbon Blog</h1>
+    <p class="hero__lead">business workflow &middot; digital marketing &middot; workflow automation &middot; monday.com &middot; digital process optimization</p>
+    <div class="hero__search">
+      <input type="search" placeholder="Article name, keywords..." aria-label="Search articles"
+             style="width:100%;height:44px;padding:0 18px;border-radius:22px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.08);color:#fff;font-family:inherit;font-size:14px;" />
+    </div>
+  </div>
+</section>
+
+<div class="label">--brief --wedge-bottom-center — Figma Carbon Brief 335:3412.</div>
+<section class="hero hero--brief hero--dark hero--wedge-bottom-center" id="brief">
+  <div class="hero__inner">
+    <h1 class="hero__title">Carbon Brief</h1>
+    <p class="hero__date">May 2026</p>
+  </div>
+</section>
+
+<div class="label">--newsletter — Figma 767:5176.</div>
+<section class="hero hero--newsletter hero--dark" id="newsletter">
+  <div class="hero__inner">
+    <h1 class="hero__title">The best newsletter for anyone using monday.com</h1>
+    <p class="hero__lead">Weekly insights help you build better workflows, automate with confidence, and get the most out of monday.com.</p>
+  </div>
+</section>
+
+<div class="label">--apps — Figma 651:3511. App tiles float in the margins (hidden below 992px).</div>
+<section class="hero hero--apps" id="apps">
+  <div class="hero__tiles" aria-hidden="true">
+    <span class="hero__tile"><img src="../product-tag/assets/tag-work-management.svg" alt="" /></span>
+    <span class="hero__tile"><img src="../product-tag/assets/tag-crm.svg" alt="" /></span>
+    <span class="hero__tile"><img src="../product-tag/assets/tag-dev.svg" alt="" /></span>
+    <span class="hero__tile"><img src="../product-tag/assets/tag-service.svg" alt="" /></span>
+    <span class="hero__tile"><img src="../product-tag/assets/tag-monday.svg" alt="" /></span>
+    <span class="hero__tile"><img src="../chip/assets/app-ringcentral.svg" alt="" /></span>
+  </div>
+  <div class="hero__inner">
+    <h1 class="hero__title">We work with you to get the most out of <span class="hero__accent hero__accent--solid">monday.com</span>.</h1>
+    <p class="hero__lead">Every CarbonWeb engagement is built around getting your team to actually use monday.com independently, confidently, and long-term.</p>
+  </div>
+</section>
+
+<div class="label">--blog-cta — Figma Hero/Blog CTA 170:26778. Category chip, byline, embedded CTA card, 810&times;490 graphic slot.</div>
+<section class="hero hero--blog-cta hero--dark" id="blogcta">
+  <div class="hero__inner">
+    <div>
+      <div class="hero__eyebrow"><span class="chip chip--tag chip--category">Process automation</span></div>
+      <h1 class="hero__title">Figma ipsum component variant main layer. Mask bullet effect project create italic layer project.</h1>
+      <p class="hero__lead">Figma ipsum component variant main layer. Vector blur mask share arrow align shadow.</p>
+      <div class="hero__byline">
+        <span class="hero__byline-avatar" style="background:linear-gradient(135deg,#00B0C2,#69D757);border-radius:50%;"></span>
+        <span>
+          <span class="hero__byline-name">Name Lastname</span>
+          <span class="hero__byline-role">Position, CarbonWeb</span>
+        </span>
+        <span class="hero__byline-date">MMM DD, YYYY</span>
+      </div>
+      <div class="hero__cta-card">
+        <div class="hero__cta-card-body">
+          <p class="hero__cta-card-title">Title</p>
+          <p class="hero__cta-card-text">Figma ipsum component variant main layer. Content duplicate object style project.</p>
+        </div>
+        <a href="#" class="btn btn--primary btn--teal btn--sm">Button</a>
+      </div>
+    </div>
+    <div class="hero__graphic"></div>
+  </div>
+</section>
+
+</body>
+</html>

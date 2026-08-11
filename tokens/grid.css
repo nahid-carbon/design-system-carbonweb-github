@@ -1,0 +1,88 @@
+/* CarbonWeb Design System — Grid & Layout Tokens
+   The measurements every section is laid out on. Derived from the Figma
+   frames: 1440px artboard, 150px side margins, 1140px content column.
+
+   Use these instead of inventing widths. Components should size themselves
+   from a container token, not from a hardcoded max-width.
+*/
+
+:root {
+  /* ── Columns ── */
+  --grid-columns: 12;
+  --grid-gutter: 24px;        /* between columns */
+  --grid-gutter-sm: 16px;     /* tablet and below */
+
+  /* ── Page margins (space either side of the content column) ── */
+  --grid-margin: 150px;       /* desktop — matches the Figma 1440 artboard */
+  --grid-margin-md: 40px;
+  --grid-margin-sm: 24px;
+
+  /* ── Container widths ──
+     Pick the narrowest one that fits the content. */
+  --container-wide: 1288px;   /* full-bleed sections, hero inner */
+  --container: 1140px;        /* default content column (1440 − 2×150) */
+  --container-narrow: 1024px; /* long-form and docs content */
+  --container-header: 800px;  /* centred section headers */
+  --container-text: 640px;    /* lead paragraphs — keeps line length readable */
+
+  /* ── Vertical rhythm ── */
+  --section-py: 96px;         /* default section top/bottom padding */
+  --section-py-lg: 160px;     /* generous marketing sections */
+  --section-py-sm: 64px;      /* compact bands */
+  --section-gap: 40px;        /* between blocks inside a section */
+
+  /* ── Breakpoints ──
+     Recorded here as the single source of truth. CSS custom properties
+     cannot be used inside @media queries, so these are documentation:
+     copy the value into the query rather than redefining it. */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 992px;
+  --bp-xl: 1280px;
+}
+
+/* ── Ready-made layout helpers ── */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--grid-margin-sm);
+}
+
+.container--wide   { max-width: var(--container-wide); }
+.container--narrow { max-width: var(--container-narrow); }
+.container--header { max-width: var(--container-header); }
+.container--text   { max-width: var(--container-text); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  gap: var(--grid-gutter);
+}
+
+/* Common column splits, so sections don't hand-roll grid-template-columns */
+.grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* Text left / media right, the standard marketing split */
+.grid--split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--section-gap); }
+
+.section-pad { padding-block: var(--section-py); }
+.section-pad--lg { padding-block: var(--section-py-lg); }
+.section-pad--sm { padding-block: var(--section-py-sm); }
+
+@media (min-width: 768px) {
+  .container { padding-inline: var(--grid-margin-md); }
+}
+
+@media (max-width: 991px) {
+  .grid, .grid--3, .grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--grid-gutter-sm); }
+  .grid--split { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 767px) {
+  .grid, .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; }
+  .section-pad { padding-block: var(--section-py-sm); }
+}

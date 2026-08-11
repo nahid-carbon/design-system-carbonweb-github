@@ -1,0 +1,23 @@
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="14" height="14" fill="#F5F5F5"/>
+<g id="Chip/App">
+<rect x="-115.318" y="-119.619" width="343" height="389" rx="4.5" stroke="#9747FF" stroke-dasharray="10 5"/>
+<g id="App=Dashboards, Theme=Dark">
+<rect x="-95.8175" y="-6.38097" width="120.167" height="26.7619" rx="13.381" fill="#007682"/>
+<g id="Logos/Apps" clip-path="url(#clip0_45_483)">
+<path id="Vector" d="M12.6 0H1.4C0.626801 0 0 0.626801 0 1.4V12.6C0 13.3732 0.626801 14 1.4 14H12.6C13.3732 14 14 13.3732 14 12.6V1.4C14 0.626801 13.3732 0 12.6 0Z" fill="url(#paint0_linear_45_483)"/>
+<path id="Vector_2" d="M5.31152 3.58232H7.12329C9.01081 3.58232 10.5409 5.11247 10.5409 6.99998C10.5409 8.8875 9.01081 10.4176 7.12329 10.4176H5.31152" stroke="white" stroke-width="2.05882" stroke-linecap="round"/>
+<path id="Vector_3" d="M3.45862 5.39411L5.31462 6.90961C5.33448 6.92582 5.33485 6.95606 5.31537 6.97275L3.45862 8.56469" stroke="white" stroke-width="1.85294" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_45_483" x1="-1.14563" y1="13.7756" x2="2.46664" y2="-0.768742" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B97EEB"/>
+<stop offset="1" stop-color="#7742E0"/>
+</linearGradient>
+<clipPath id="clip0_45_483">
+<rect width="14" height="14" fill="white"/>
+</clipPath>
+</defs>
+</svg>

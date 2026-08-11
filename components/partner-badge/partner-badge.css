@@ -1,0 +1,85 @@
+/* CarbonWeb Partner Badge — official monday.com partner credential lockups.
+
+   Figma coverage:
+     Partner Badge/Channel                395:6826  → badge-channel-partner.svg
+     Partner Badge/Solutions              395:6827  → badge-solutions-partner.svg
+     Partner Badge/Advanced Delivery 2026 439:100   → badge-advanced-delivery-partner.svg
+     Partner Badge/Platinum 2026          527:6239
+       ├ Border=borderless                439:101   → badge-platinum-partner.svg
+       └ Border=border                    527:6235  → badge-platinum-partner-bordered.svg
+
+   These are monday.com-issued marks: the artwork is fixed and must not be
+   recoloured, re-typeset or rebuilt in CSS. The component only controls
+   sizing, alignment and interaction — everything visual lives in the SVG.
+   Size by HEIGHT and let the width follow; the five badges have different
+   aspect ratios. */
+
+.partner-badge {
+  --partner-badge-height: 56px;
+  display: inline-flex;
+  align-items: center;
+  height: var(--partner-badge-height);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: transform 200ms ease, filter 200ms ease;
+}
+
+.partner-badge__img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+/* Only interactive badges (links/buttons) react to pointer + focus */
+a.partner-badge:hover,
+button.partner-badge:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 6px 14px color-mix(in srgb, var(--color-ink) 14%, transparent));
+}
+
+a.partner-badge:active,
+button.partner-badge:active {
+  transform: translateY(0);
+}
+
+a.partner-badge:focus-visible,
+button.partner-badge:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 4px;
+}
+
+/* ── Sizes ── */
+
+.partner-badge--sm { --partner-badge-height: 40px; }
+.partner-badge--md { --partner-badge-height: 56px; } /* default */
+.partner-badge--lg { --partner-badge-height: 72px; }
+
+/* ── Row wrapper ── */
+
+.partner-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+@media (max-width: 767px) {
+  .partner-badge {
+    --partner-badge-height: 44px;
+  }
+
+  .partner-badge--lg {
+    --partner-badge-height: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-badge {
+    transition: none;
+  }
+
+  a.partner-badge:hover,
+  button.partner-badge:hover {
+    transform: none;
+  }
+}

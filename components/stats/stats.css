@@ -1,0 +1,106 @@
+/* CarbonWeb Stats — BEM component
+   Uses var(--color-*) tokens from ../../tokens/colors.css
+   Uses var(--radius-*) from ../../tokens/radii.css
+   Uses var(--shadow-*) from ../../tokens/shadows.css
+   Uses var(--font-*) and var(--text-*) from ../../tokens/typography.css
+   Uses var(--space-*) from ../../tokens/spacing.css
+   Numbers use Montserrat (--font-family-numeric).
+*/
+
+/* ── Row container ── */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-10);
+  align-items: flex-start;
+  font-family: var(--font-family);
+}
+
+/* ── Centered variant ── */
+.stats--centered {
+  justify-content: center;
+  text-align: center;
+}
+
+.stats--centered .stats__item {
+  align-items: center;
+}
+
+/* ── Left variant (with intro column) ── */
+.stats--left {
+  align-items: center;
+}
+
+.stats__intro {
+  flex: 1 1 280px;
+  min-width: 240px;
+}
+
+.stats__intro-title {
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.stats__intro-text {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-slate);
+  margin: 0;
+}
+
+/* ── Color variant (light teal card) ── */
+.stats--color {
+  background: var(--color-latam-teal-100);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10) var(--space-12);
+}
+
+/* ── Stat block ── */
+.stats__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1 1 0;
+  min-width: 140px;
+  transition: transform 0.2s ease;
+}
+
+/* ── Big number ── */
+.stats__number {
+  font-family: var(--font-family-numeric);
+  font-weight: var(--font-bold);
+  font-size: 42px;
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+/* Gradient text option */
+.stats__number--gradient {
+  background: linear-gradient(225deg, var(--color-teal-500), var(--color-green-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ── Caption ── */
+.stats__caption {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-slate);
+  margin: 0;
+}
+
+/* Dark caption on color variant stays slate for contrast on teal-100 */
+.stats--color .stats__caption {
+  color: var(--color-teal-950);
+}

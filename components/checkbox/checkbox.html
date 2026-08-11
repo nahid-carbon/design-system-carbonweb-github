@@ -1,0 +1,49 @@
+<!-- CarbonWeb Checkbox — usage reference -->
+
+<!-- Default -->
+<label class="checkbox">
+  <input class="checkbox__input" type="checkbox" />
+  <span class="checkbox__box">
+    <svg class="checkbox__check" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M2 6.5L4.7 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+  <span class="checkbox__label">Label</span>
+</label>
+
+<!-- Checked -->
+<label class="checkbox">
+  <input class="checkbox__input" type="checkbox" checked />
+  <span class="checkbox__box">
+    <svg class="checkbox__check" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M2 6.5L4.7 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+  <span class="checkbox__label">Checked</span>
+</label>
+
+<!-- Disabled -->
+<label class="checkbox checkbox--disabled">
+  <input class="checkbox__input" type="checkbox" disabled />
+  <span class="checkbox__box">
+    <svg class="checkbox__check" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M2 6.5L4.7 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+  <span class="checkbox__label">Disabled</span>
+</label>
+
+<!-- Group (filter list) -->
+<div class="checkbox-group" role="group" aria-labelledby="filter-title">
+  <p class="checkbox-group__title" id="filter-title">Filter by service</p>
+  <label class="checkbox">
+    <input class="checkbox__input" type="checkbox" checked />
+    <span class="checkbox__box">
+      <svg class="checkbox__check" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M2 6.5L4.7 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="checkbox__label">Workflow development</span>
+  </label>
+  <!-- ...more .checkbox rows -->
+</div>

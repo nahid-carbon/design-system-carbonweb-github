@@ -1,0 +1,37 @@
+<!-- Booking Calendar — CarbonWeb Design System -->
+<!-- Calendly-style date & time picker. Requires booking-calendar.js (renders the month grid). -->
+
+<div class="booking-calendar">
+  <h3 class="booking-calendar__title">Select a Date &amp; Time</h3>
+
+  <div class="booking-calendar__month">
+    <button class="booking-calendar__nav" data-dir="prev" aria-label="Previous month">&#8249;</button>
+    <span class="booking-calendar__month-label">December 2025</span>
+    <button class="booking-calendar__nav" data-dir="next" aria-label="Next month">&#8250;</button>
+  </div>
+
+  <div class="booking-calendar__grid">
+    <span class="booking-calendar__dow">Sun</span>
+    <span class="booking-calendar__dow">Mon</span>
+    <span class="booking-calendar__dow">Tue</span>
+    <span class="booking-calendar__dow">Wed</span>
+    <span class="booking-calendar__dow">Thu</span>
+    <span class="booking-calendar__dow">Fri</span>
+    <span class="booking-calendar__dow">Sat</span>
+    <!-- day cells rendered by booking-calendar.js -->
+  </div>
+
+  <div class="booking-calendar__slots">
+    <button class="booking-calendar__slot">9:00 am</button>
+    <button class="booking-calendar__slot">10:30 am</button>
+    <button class="booking-calendar__slot">12:00 pm</button>
+    <button class="booking-calendar__slot">1:30 pm</button>
+    <button class="booking-calendar__slot">3:00 pm</button>
+    <button class="booking-calendar__slot">4:30 pm</button>
+  </div>
+
+  <div class="booking-calendar__tz">
+    <div class="booking-calendar__tz-label">Time zone</div>
+    <span class="booking-calendar__tz-value">🌐 Eastern Time - US &amp; Canada ▾</span>
+  </div>
+</div>

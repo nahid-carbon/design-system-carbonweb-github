@@ -1,0 +1,103 @@
+/* CarbonWeb Logo Marquee — uses only var(--token) references */
+
+/* ── Keyframes ── */
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Block ── */
+
+.logo-marquee {
+  overflow: hidden;
+  position: relative;
+  padding: 24px 0;
+}
+
+/* Gradient fade masks on left/right edges */
+
+.logo-marquee::before,
+.logo-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.logo-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-surface, var(--color-white)), transparent);
+}
+
+.logo-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-surface, var(--color-white)), transparent);
+}
+
+/* ── Track ── */
+
+.logo-marquee__track {
+  display: flex;
+  gap: 64px;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+/* ── Item ── */
+
+.logo-marquee__item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.logo-marquee__item img {
+  max-height: 32px;
+  width: auto;
+  filter: grayscale(100%) opacity(0.5);
+  transition: filter 0.3s ease;
+}
+
+.logo-marquee__item:hover img {
+  filter: grayscale(0%) opacity(1);
+}
+
+/* Text-based logo placeholders (when no image available) */
+
+.logo-marquee__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 16px;
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  font-size: var(--text-base);
+  line-height: 1;
+  color: var(--color-slate-light);
+  border: 1px solid var(--color-slate-light);
+  border-radius: 6px;
+  white-space: nowrap;
+  user-select: none;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.logo-marquee__item:hover .logo-marquee__placeholder {
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+/* ── Modifiers ── */
+
+.logo-marquee--reverse .logo-marquee__track {
+  animation-direction: reverse;
+}
+
+.logo-marquee--paused:hover .logo-marquee__track {
+  animation-play-state: paused;
+}

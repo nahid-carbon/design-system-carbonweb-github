@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chip — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="chip.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .section { margin-bottom: 36px; }
+    .section h3 { font-size: 18px; font-weight: 600; margin-bottom: 14px; }
+    .label { font-size: 13px; color: var(--color-muted); margin-bottom: 10px; }
+    button.chip { border: 1px solid transparent; }
+  </style>
+</head>
+<body>
+
+<h2>Chips</h2>
+<p class="desc">Filter chips and metadata tags. Base pill (solid / light / outline / selected), the Figma Filter chip in both Light and Dark styles, and the Blog Category / Blog Product / App tag chips.</p>
+
+<div class="section">
+  <h3>Variants</h3>
+  <div class="chip-row">
+    <button class="chip">Solid Teal</button>
+    <button class="chip chip--light">Light</button>
+    <button class="chip chip--outline">Outline</button>
+    <button class="chip chip--selected" aria-pressed="true">Selected</button>
+  </div>
+</div>
+
+<div class="section">
+  <h3>With Leading Icon</h3>
+  <div class="chip-row">
+    <button class="chip">
+      <span class="chip__icon">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      Verified
+    </button>
+    <button class="chip chip--light">
+      <span class="chip__icon">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="7.333" cy="7.333" r="4.667" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M13.333 13.333l-2.667-2.666" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Search Tag
+    </button>
+    <button class="chip chip--outline">
+      <span class="chip__icon">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 3.333v9.334M3.333 8h9.334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Add Filter
+    </button>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Interactive Chip Row</h3>
+  <p class="label">Click a chip to toggle its selected state (chip.js).</p>
+  <div class="chip-row" data-toggle>
+    <button class="chip chip--outline" aria-pressed="false">CRM</button>
+    <button class="chip chip--outline chip--selected" aria-pressed="true">Work Management</button>
+    <button class="chip chip--outline" aria-pressed="false">Dev</button>
+    <button class="chip chip--outline" aria-pressed="false">Service</button>
+    <button class="chip chip--outline" aria-pressed="false">Marketing</button>
+    <button class="chip chip--outline" aria-pressed="false">Operations</button>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Light Row (toggleable)</h3>
+  <div class="chip-row" data-toggle>
+    <button class="chip chip--light" aria-pressed="false">Automations</button>
+    <button class="chip chip--light" aria-pressed="false">Dashboards</button>
+    <button class="chip chip--light" aria-pressed="false">Integrations</button>
+    <button class="chip chip--light" aria-pressed="false">Workflows</button>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Filter Chip — Style=Light</h3>
+  <p class="label">Figma: Chip/Filter 689:21718 (Style=Light &times; Selected &times; Default/Hover). 16/6 padding, 22px radius, 20px label.</p>
+  <div class="chip-row" data-toggle>
+    <button class="chip chip--filter chip--selected" aria-pressed="true">All</button>
+    <button class="chip chip--filter" aria-pressed="false">monday.com</button>
+    <button class="chip chip--filter" aria-pressed="false">Integrations</button>
+    <button class="chip chip--filter" aria-pressed="false">Process automation</button>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Filter Chip — Style=Dark / Filter Row</h3>
+  <p class="label">Figma: Chip/Filter Row 690:4. Dark unselected chips are a translucent teal gradient with a white hairline; selected stays solid teal.</p>
+  <div class="chip-row chip-row--dark" data-toggle>
+    <button class="chip chip--filter chip--dark chip--selected" aria-pressed="true">All</button>
+    <button class="chip chip--filter chip--dark" aria-pressed="false">monday.com</button>
+    <button class="chip chip--filter chip--dark" aria-pressed="false">Integrations</button>
+    <button class="chip chip--filter chip--dark" aria-pressed="false">Process automation</button>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Blog Category Tag</h3>
+  <p class="label">Figma: Chip/Blog Category 735:4410 — Theme=Dark (Teal 800) above, Theme=Light (Gray 200) below.</p>
+  <div class="chip-row" style="margin-bottom: 12px;">
+    <span class="chip chip--tag chip--category">monday.com</span>
+    <span class="chip chip--tag chip--category">Process automation</span>
+    <span class="chip chip--tag chip--category">Integrations</span>
+  </div>
+  <div class="chip-row">
+    <span class="chip chip--tag chip--category chip--tag-light">monday.com</span>
+    <span class="chip chip--tag chip--category chip--tag-light">Process automation</span>
+    <span class="chip chip--tag chip--category chip--tag-light">Integrations</span>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Blog Product Tag</h3>
+  <p class="label">Figma: Chip/Blog Product 735:4385 — Theme=Dark uses each monday product's brand fill; Theme=Light is the shared Gray 200 surface.</p>
+  <div class="chip-row" style="margin-bottom: 12px;">
+    <span class="chip chip--tag chip--product-wm">Work Management<span class="chip__logo"><img src="assets/product-work-management.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--product-dev">Dev<span class="chip__logo"><img src="assets/product-dev.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--product-crm">CRM<span class="chip__logo"><img src="assets/product-crm.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--product-service">Service<span class="chip__logo"><img src="assets/product-service.svg" alt="" /></span></span>
+  </div>
+  <div class="chip-row">
+    <span class="chip chip--tag chip--tag-light">Work Management<span class="chip__logo"><img src="assets/product-work-management.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--tag-light">Dev<span class="chip__logo"><img src="assets/product-dev.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--tag-light">CRM<span class="chip__logo"><img src="assets/product-crm.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--tag-light">Service<span class="chip__logo"><img src="assets/product-service.svg" alt="" /></span></span>
+  </div>
+</div>
+
+<div class="section">
+  <h3>App Tag</h3>
+  <p class="label">Figma: Chip/App 735:4429 — Theme=Dark (Teal 800) above, Theme=Light (Gray 200) below. Logos exported from the Figma Logos/Apps set.</p>
+  <div class="chip-row" style="margin-bottom: 12px;">
+    <span class="chip chip--tag chip--app">Mirror Magic<span class="chip__logo"><img src="assets/app-mirror-magic.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--app">Column Magic<span class="chip__logo"><img src="assets/app-column-magic.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--app">DashBoards<span class="chip__logo"><img src="assets/app-dashboards.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--app">Phoneburner<span class="chip__logo"><img src="assets/app-phoneburner.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--app">Toolbelt<span class="chip__logo"><img src="assets/app-toolbelt.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--app">RingCentral<span class="chip__logo"><img src="assets/app-ringcentral.svg" alt="" /></span></span>
+  </div>
+  <div class="chip-row">
+    <span class="chip chip--tag chip--tag-light">Mirror Magic<span class="chip__logo"><img src="assets/app-mirror-magic.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--tag-light">Column Magic<span class="chip__logo"><img src="assets/app-column-magic.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--tag-light">DashBoards<span class="chip__logo"><img src="assets/app-dashboards.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--tag-light">Phoneburner<span class="chip__logo"><img src="assets/app-phoneburner.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--tag-light">Toolbelt<span class="chip__logo"><img src="assets/app-toolbelt.svg" alt="" /></span></span>
+    <span class="chip chip--tag chip--tag-light">RingCentral<span class="chip__logo"><img src="assets/app-ringcentral.svg" alt="" /></span></span>
+  </div>
+</div>
+
+<script src="chip.js"></script>
+</body>
+</html>

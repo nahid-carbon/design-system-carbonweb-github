@@ -1,0 +1,126 @@
+<!-- CarbonWeb Chip — Markup Examples -->
+
+<!-- ══ Base chip ══ -->
+
+<!-- Solid (default) -->
+<button class="chip">Automations</button>
+
+<!-- Light -->
+<button class="chip chip--light">Dashboards</button>
+
+<!-- Outline -->
+<button class="chip chip--outline">Integrations</button>
+
+<!-- Selected -->
+<button class="chip chip--selected" aria-pressed="true">Workflows</button>
+
+<!-- With leading icon (16px) -->
+<button class="chip chip--outline">
+  <span class="chip__icon">
+    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.333 4L6 11.333 2.667 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+  Verified
+</button>
+
+<!-- Chip row (toggleable filter group) — requires chip.js -->
+<div class="chip-row" data-toggle>
+  <button class="chip chip--outline" aria-pressed="false">CRM</button>
+  <button class="chip chip--outline chip--selected" aria-pressed="true">Work Management</button>
+  <button class="chip chip--outline" aria-pressed="false">Dev</button>
+  <button class="chip chip--outline" aria-pressed="false">Service</button>
+</div>
+
+<!-- ══ Filter chip (Figma: Chip/Filter 689:21718) ══
+     Style=Light is the default. Add .chip--dark on dark sections. -->
+
+<!-- Style=Light -->
+<div class="chip-row" data-toggle>
+  <button class="chip chip--filter chip--selected" aria-pressed="true">All</button>
+  <button class="chip chip--filter" aria-pressed="false">monday.com</button>
+  <button class="chip chip--filter" aria-pressed="false">Integrations</button>
+  <button class="chip chip--filter" aria-pressed="false">Process automation</button>
+</div>
+
+<!-- Style=Dark, on the dark filter row (Figma: Chip/Filter Row 690:4) -->
+<div class="chip-row chip-row--dark" data-toggle>
+  <button class="chip chip--filter chip--dark chip--selected" aria-pressed="true">All</button>
+  <button class="chip chip--filter chip--dark" aria-pressed="false">monday.com</button>
+  <button class="chip chip--filter chip--dark" aria-pressed="false">Integrations</button>
+  <button class="chip chip--filter chip--dark" aria-pressed="false">Process automation</button>
+</div>
+
+<!-- ══ Blog Category tag (Figma: Chip/Blog Category 735:4410) ══ -->
+
+<!-- Theme=Dark -->
+<span class="chip chip--tag chip--category">monday.com</span>
+<span class="chip chip--tag chip--category">Process automation</span>
+<span class="chip chip--tag chip--category">Integrations</span>
+
+<!-- Theme=Light -->
+<span class="chip chip--tag chip--category chip--tag-light">monday.com</span>
+<span class="chip chip--tag chip--category chip--tag-light">Process automation</span>
+<span class="chip chip--tag chip--category chip--tag-light">Integrations</span>
+
+<!-- ══ Blog Product tag (Figma: Chip/Blog Product 735:4385) ══
+     Theme=Dark uses the monday product brand fill; Theme=Light is neutral.
+     The logo always trails the label (.chip__logo sets order). -->
+
+<span class="chip chip--tag chip--product-wm">
+  Work Management
+  <span class="chip__logo"><img src="assets/product-work-management.svg" alt="" /></span>
+</span>
+<span class="chip chip--tag chip--product-dev">
+  Dev
+  <span class="chip__logo"><img src="assets/product-dev.svg" alt="" /></span>
+</span>
+<span class="chip chip--tag chip--product-crm">
+  CRM
+  <span class="chip__logo"><img src="assets/product-crm.svg" alt="" /></span>
+</span>
+<span class="chip chip--tag chip--product-service">
+  Service
+  <span class="chip__logo"><img src="assets/product-service.svg" alt="" /></span>
+</span>
+
+<!-- Theme=Light — add .chip--tag-light, keep the product class off -->
+<span class="chip chip--tag chip--tag-light">
+  Work Management
+  <span class="chip__logo"><img src="assets/product-work-management.svg" alt="" /></span>
+</span>
+
+<!-- ══ App tag (Figma: Chip/App 735:4429) ══ -->
+
+<span class="chip chip--tag chip--app">
+  Mirror Magic
+  <span class="chip__logo"><img src="assets/app-mirror-magic.svg" alt="" /></span>
+</span>
+<span class="chip chip--tag chip--app">
+  Column Magic
+  <span class="chip__logo"><img src="assets/app-column-magic.svg" alt="" /></span>
+</span>
+<span class="chip chip--tag chip--app">
+  DashBoards
+  <span class="chip__logo"><img src="assets/app-dashboards.svg" alt="" /></span>
+</span>
+<span class="chip chip--tag chip--app">
+  Phoneburner
+  <span class="chip__logo"><img src="assets/app-phoneburner.svg" alt="" /></span>
+</span>
+<span class="chip chip--tag chip--app">
+  Toolbelt
+  <span class="chip__logo"><img src="assets/app-toolbelt.svg" alt="" /></span>
+</span>
+<span class="chip chip--tag chip--app">
+  RingCentral
+  <span class="chip__logo"><img src="assets/app-ringcentral.svg" alt="" /></span>
+</span>
+
+<!-- Theme=Light -->
+<span class="chip chip--tag chip--tag-light">
+  RingCentral
+  <span class="chip__logo"><img src="assets/app-ringcentral.svg" alt="" /></span>
+</span>
+
+<script src="chip.js"></script>

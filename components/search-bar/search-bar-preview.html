@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Bar — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="search-bar.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .section { margin-bottom: 40px; }
+    .section h3 { font-size: 16px; font-weight: 600; margin-bottom: 16px; color: var(--color-slate); }
+    .row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+    .dark-bg { background: var(--color-ink); padding: 32px; border-radius: var(--radius-lg); display: inline-block; }
+  </style>
+</head>
+<body>
+
+<h2>Search Bar</h2>
+<p class="desc">Pill search input with magnifier icon — light, dark, square + wide article-search size.</p>
+
+<div class="section">
+  <h3>Light (default)</h3>
+  <div class="row">
+    <div class="search-bar search-bar--light" role="search">
+      <input class="search-bar__input" type="search" placeholder="Search" aria-label="Search" />
+      <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+        <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="search-bar search-bar--square" role="search">
+      <input class="search-bar__input" type="search" placeholder="Search" aria-label="Search" />
+      <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+        <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="search-bar search-bar--disabled" role="search">
+      <input class="search-bar__input" type="search" placeholder="Search" aria-label="Search" disabled />
+      <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+        <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Dark</h3>
+  <div class="dark-bg">
+    <div class="search-bar search-bar--dark" role="search">
+      <input class="search-bar__input" type="search" placeholder="Search" aria-label="Search" />
+      <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+        <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Wide — article search (55px)</h3>
+  <div class="search-bar search-bar--wide" role="search">
+    <input class="search-bar__input" type="search" placeholder="Search" aria-label="Search articles" />
+    <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+      <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+</div>
+
+</body>
+</html>

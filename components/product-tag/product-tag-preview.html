@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Tag — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="product-tag.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .section { margin-bottom: 36px; }
+    .section h3 { font-size: 18px; font-weight: 600; margin-bottom: 14px; }
+    .label { font-size: 13px; color: var(--color-muted); margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+<h2>Product Tag</h2>
+<p class="desc">monday.com product tag with a 24px brand logo — 32px tall, 4px radius, hairline border. Used for product filters and product attribution where the pill Chip is too small to carry a logo.</p>
+
+<div class="section">
+  <h3>State=Light (default)</h3>
+  <p class="label">Figma: Chip/Products 170:40805. Hover any tag to see State=Hover.</p>
+  <div class="product-tag-row">
+    <a class="product-tag" href="#"><span class="product-tag__logo"><img src="assets/tag-monday.svg" alt="" /></span><span class="product-tag__label">All</span></a>
+    <a class="product-tag" href="#"><span class="product-tag__logo"><img src="assets/tag-work-management.svg" alt="" /></span><span class="product-tag__label">Work Management</span></a>
+    <a class="product-tag" href="#"><span class="product-tag__logo"><img src="assets/tag-crm.svg" alt="" /></span><span class="product-tag__label">CRM</span></a>
+    <a class="product-tag" href="#"><span class="product-tag__logo"><img src="assets/tag-dev.svg" alt="" /></span><span class="product-tag__label">Dev</span></a>
+    <a class="product-tag" href="#"><span class="product-tag__logo"><img src="assets/tag-service.svg" alt="" /></span><span class="product-tag__label">Service</span></a>
+  </div>
+</div>
+
+<div class="section">
+  <h3>State=Hover (pinned)</h3>
+  <p class="label">Figma: Chip/Products 848:61719. Gray 900 fill, white label, logo unchanged.</p>
+  <div class="product-tag-row">
+    <span class="product-tag product-tag--hover"><span class="product-tag__logo"><img src="assets/tag-monday.svg" alt="" /></span><span class="product-tag__label">All</span></span>
+    <span class="product-tag product-tag--hover"><span class="product-tag__logo"><img src="assets/tag-work-management.svg" alt="" /></span><span class="product-tag__label">Work Management</span></span>
+    <span class="product-tag product-tag--hover"><span class="product-tag__logo"><img src="assets/tag-crm.svg" alt="" /></span><span class="product-tag__label">CRM</span></span>
+    <span class="product-tag product-tag--hover"><span class="product-tag__logo"><img src="assets/tag-dev.svg" alt="" /></span><span class="product-tag__label">Dev</span></span>
+    <span class="product-tag product-tag--hover"><span class="product-tag__logo"><img src="assets/tag-service.svg" alt="" /></span><span class="product-tag__label">Service</span></span>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Row at Figma width (244px)</h3>
+  <p class="label">The source frame is 244&times;112 — five tags wrapping to three lines.</p>
+  <div class="product-tag-row" style="max-width: 244px;">
+    <a class="product-tag" href="#"><span class="product-tag__logo"><img src="assets/tag-monday.svg" alt="" /></span><span class="product-tag__label">All</span></a>
+    <a class="product-tag" href="#"><span class="product-tag__logo"><img src="assets/tag-work-management.svg" alt="" /></span><span class="product-tag__label">Work Management</span></a>
+    <a class="product-tag" href="#"><span class="product-tag__logo"><img src="assets/tag-crm.svg" alt="" /></span><span class="product-tag__label">CRM</span></a>
+    <a class="product-tag" href="#"><span class="product-tag__logo"><img src="assets/tag-dev.svg" alt="" /></span><span class="product-tag__label">Dev</span></a>
+    <a class="product-tag" href="#"><span class="product-tag__logo"><img src="assets/tag-service.svg" alt="" /></span><span class="product-tag__label">Service</span></a>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Static (non-interactive)</h3>
+  <p class="label">Use when the tag labels content rather than filtering it.</p>
+  <div class="product-tag-row">
+    <span class="product-tag product-tag--static"><span class="product-tag__logo"><img src="assets/tag-work-management.svg" alt="" /></span><span class="product-tag__label">Work Management</span></span>
+    <span class="product-tag product-tag--static"><span class="product-tag__logo"><img src="assets/tag-service.svg" alt="" /></span><span class="product-tag__label">Service</span></span>
+  </div>
+</div>
+
+</body>
+</html>

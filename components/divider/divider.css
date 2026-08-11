@@ -1,0 +1,53 @@
+/* CarbonWeb Divider -- uses only var(--token) references */
+
+.divider {
+  height: 1px;
+  background: color-mix(in srgb, var(--color-ink) 8%, transparent);
+  margin: 32px 0;
+  border: none;
+}
+
+/* ── Thick Variant ── */
+
+.divider--thick {
+  height: 2px;
+}
+
+/* ── Teal Variant ── */
+
+.divider--teal {
+  background: var(--color-teal-200);
+}
+
+/* ── Gradient Variant ── */
+
+.divider--gradient {
+  height: 2px;
+  background: var(--gradient-global);
+}
+
+/* ── Text Variant ── */
+
+.divider--text {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: auto;
+  background: none;
+}
+
+.divider--text::before,
+.divider--text::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+.divider__text {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-muted);
+  white-space: nowrap;
+}

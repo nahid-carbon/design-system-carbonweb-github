@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Button — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/shadows.css" />
+  <link rel="stylesheet" href="button.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #f8f9fb; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 40px; line-height: 1.6; }
+    .section { margin-bottom: 48px; }
+    .section h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+    .section .label { font-size: 13px; font-weight: 500; color: var(--color-muted); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .card { background: #ffffff; border-radius: 16px; padding: 32px 36px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .card h4 { font-size: 14px; font-weight: 600; color: var(--color-slate); margin-bottom: 16px; }
+    .row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .row:last-child { margin-bottom: 0; }
+    .dark-card { background: var(--color-ink); border-radius: 16px; padding: 32px 36px; margin-bottom: 16px; }
+    .dark-card h4 { font-size: 14px; font-weight: 600; color: var(--color-slate-light); margin-bottom: 16px; }
+    .sep { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 40px 0; }
+
+    /* Arrow icon inline SVG */
+    .arrow-svg { display: inline-block; }
+  </style>
+</head>
+<body>
+
+<h2>Buttons</h2>
+<p class="desc">4 variants &times; 5 colors &times; 2 sizes &times; 5 shapes. Hover to preview smooth interactions.</p>
+
+<!-- ════════════════════ PRIMARY ════════════════════ -->
+
+<div class="section">
+  <h3>Primary</h3>
+  <p class="label">Solid fill, white text — main CTA</p>
+
+  <div class="card">
+    <h4>Teal — All 5 shapes</h4>
+    <div class="row">
+      <!-- Leading icon -->
+      <button class="btn btn--primary btn--teal btn--lg btn--icon-left">
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Large Button
+      </button>
+      <!-- Trailing icon -->
+      <button class="btn btn--primary btn--teal btn--lg btn--icon-right">
+        Large Button
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <!-- Icon only -->
+      <button class="btn btn--primary btn--teal btn--lg btn--icon-only" aria-label="Next">
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <!-- Loading -->
+      <button class="btn btn--primary btn--teal btn--lg btn--icon-only btn--loading" disabled aria-busy="true" aria-label="Loading">
+        <span class="btn__icon btn__spinner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+    </div>
+    <div class="row">
+      <!-- Small sizes -->
+      <button class="btn btn--primary btn--teal btn--sm btn--icon-left">
+        <span class="btn__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Small Button
+      </button>
+      <button class="btn btn--primary btn--teal btn--sm btn--icon-right">
+        Small Button
+        <span class="btn__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <button class="btn btn--primary btn--teal btn--sm btn--icon-only" aria-label="Next">
+        <span class="btn__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <button class="btn btn--primary btn--teal btn--sm btn--icon-only btn--loading" disabled aria-busy="true" aria-label="Loading">
+        <span class="btn__icon btn__spinner"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>All colors — Large</h4>
+    <div class="row">
+      <button class="btn btn--primary btn--teal btn--lg btn--icon-right">Teal <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      <button class="btn btn--primary btn--green btn--lg btn--icon-right">Green <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      <button class="btn btn--primary btn--grey btn--lg btn--icon-right">Grey <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      <button class="btn btn--primary btn--ink btn--lg btn--icon-right">Ink <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+    </div>
+  </div>
+
+  <div class="dark-card">
+    <h4>White — on dark backgrounds</h4>
+    <div class="row">
+      <button class="btn btn--primary btn--white btn--lg btn--icon-left">
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Large Button
+      </button>
+      <button class="btn btn--primary btn--white btn--lg btn--icon-right">
+        Large Button
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <button class="btn btn--primary btn--white btn--lg btn--icon-only" aria-label="Next">
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <button class="btn btn--primary btn--white btn--lg btn--icon-only btn--loading" disabled aria-busy="true" aria-label="Loading">
+        <span class="btn__icon btn__spinner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+    </div>
+    <div class="row">
+      <button class="btn btn--primary btn--white btn--sm btn--icon-right">
+        Small Button
+        <span class="btn__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<hr class="sep" />
+
+<!-- ════════════════════ SECONDARY ════════════════════ -->
+
+<div class="section">
+  <h3>Secondary</h3>
+  <p class="label">Outlined pill, transparent fill — secondary actions</p>
+
+  <div class="card">
+    <h4>Teal — All 5 shapes</h4>
+    <div class="row">
+      <button class="btn btn--secondary btn--teal btn--lg btn--icon-left">
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Large Button
+      </button>
+      <button class="btn btn--secondary btn--teal btn--lg btn--icon-right">
+        Large Button
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <button class="btn btn--secondary btn--teal btn--lg btn--icon-only" aria-label="Next">
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <button class="btn btn--secondary btn--teal btn--lg btn--icon-only btn--loading" disabled aria-busy="true" aria-label="Loading">
+        <span class="btn__icon btn__spinner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+    </div>
+    <div class="row">
+      <button class="btn btn--secondary btn--teal btn--sm btn--icon-left">
+        <span class="btn__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Small Button
+      </button>
+      <button class="btn btn--secondary btn--teal btn--sm btn--icon-right">
+        Small Button
+        <span class="btn__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <button class="btn btn--secondary btn--teal btn--sm btn--icon-only" aria-label="Next">
+        <span class="btn__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>All colors — Large</h4>
+    <div class="row">
+      <button class="btn btn--secondary btn--teal btn--lg btn--icon-right">Teal <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      <button class="btn btn--secondary btn--green btn--lg btn--icon-right">Green <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      <button class="btn btn--secondary btn--grey btn--lg btn--icon-right">Grey <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      <button class="btn btn--secondary btn--ink btn--lg btn--icon-right">Ink <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+    </div>
+  </div>
+
+  <div class="dark-card">
+    <h4>White — on dark backgrounds</h4>
+    <div class="row">
+      <button class="btn btn--secondary btn--white btn--lg btn--icon-left">
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Large Button
+      </button>
+      <button class="btn btn--secondary btn--white btn--lg btn--icon-right">
+        Large Button
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <button class="btn btn--secondary btn--white btn--lg btn--icon-only" aria-label="Next">
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<hr class="sep" />
+
+<!-- ════════════════════ TERTIARY ════════════════════ -->
+
+<div class="section">
+  <h3>Tertiary</h3>
+  <p class="label">Text link with animated underline on hover</p>
+
+  <div class="card">
+    <h4>All colors</h4>
+    <div class="row">
+      <button class="btn btn--tertiary btn--teal">Teal Link</button>
+      <button class="btn btn--tertiary btn--green">Green Link</button>
+      <button class="btn btn--tertiary btn--grey">Grey Link</button>
+      <button class="btn btn--tertiary btn--ink">Ink Link</button>
+    </div>
+    <h4>With trailing icon</h4>
+    <div class="row">
+      <button class="btn btn--tertiary btn--teal btn--icon-right">
+        Learn More
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <button class="btn btn--tertiary btn--ink btn--icon-right">
+        Read Article
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="dark-card">
+    <h4>White — on dark backgrounds</h4>
+    <div class="row">
+      <button class="btn btn--tertiary btn--white">White Link</button>
+      <button class="btn btn--tertiary btn--white btn--icon-right">
+        Explore
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<hr class="sep" />
+
+<!-- ════════════════════ SQUARE ════════════════════ -->
+
+<div class="section">
+  <h3>Square</h3>
+  <p class="label">Fixed-width rounded rect — forms, modals</p>
+
+  <div class="card">
+    <h4>All colors — Large (300px)</h4>
+    <div class="row">
+      <button class="btn btn--square btn--teal btn--lg">Teal Submit</button>
+      <button class="btn btn--square btn--green btn--lg">Green Submit</button>
+      <button class="btn btn--square btn--ink btn--lg">Ink Submit</button>
+    </div>
+    <h4>Small (150px)</h4>
+    <div class="row">
+      <button class="btn btn--square btn--teal btn--sm">Teal</button>
+      <button class="btn btn--square btn--green btn--sm">Green</button>
+      <button class="btn btn--square btn--grey btn--sm">Grey</button>
+    </div>
+  </div>
+</div>
+
+<hr class="sep" />
+
+<!-- ════════════════════ STATES ════════════════════ -->
+
+<div class="section">
+  <h3>States</h3>
+  <p class="label">Disabled, loading, focus-visible</p>
+
+  <div class="card">
+    <h4>Disabled</h4>
+    <div class="row">
+      <button class="btn btn--primary btn--teal btn--lg" disabled>Disabled Primary</button>
+      <button class="btn btn--secondary btn--teal btn--lg" disabled>Disabled Secondary</button>
+      <button class="btn btn--square btn--green btn--lg" disabled>Disabled Square</button>
+      <button class="btn btn--primary btn--ink btn--lg" disabled>Disabled Ink</button>
+    </div>
+    <h4>Loading</h4>
+    <div class="row">
+      <button class="btn btn--primary btn--teal btn--lg btn--loading btn--icon-only" disabled aria-busy="true" aria-label="Loading">
+        <span class="btn__icon btn__spinner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <button class="btn btn--secondary btn--teal btn--lg btn--loading btn--icon-only" disabled aria-busy="true" aria-label="Loading">
+        <span class="btn__icon btn__spinner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <button class="btn btn--primary btn--ink btn--lg btn--loading btn--icon-only" disabled aria-busy="true" aria-label="Loading">
+        <span class="btn__icon btn__spinner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+      <button class="btn btn--primary btn--green btn--lg btn--loading btn--icon-only" disabled aria-busy="true" aria-label="Loading">
+        <span class="btn__icon btn__spinner"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<hr class="sep" />
+
+<!-- ════════════════════ INTERACTIVE RIPPLE TEST ════════════════════ -->
+
+<div class="section">
+  <h3>Interactive Ripple Test</h3>
+  <p class="label">Press and hold — ripple expands from touch point, fades on release</p>
+
+  <div class="ripple-grid">
+    <!-- Teal -->
+    <div class="ripple-cell">
+      <span class="ripple-cell__label">Teal</span>
+      <button class="btn btn--primary btn--teal btn--lg btn--ripple btn--icon-right">
+        Book a call
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+    </div>
+
+    <!-- Green -->
+    <div class="ripple-cell">
+      <span class="ripple-cell__label">Green</span>
+      <button class="btn btn--primary btn--green btn--lg btn--ripple btn--icon-right">
+        Get started
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+    </div>
+
+    <!-- Grey -->
+    <div class="ripple-cell">
+      <span class="ripple-cell__label">Grey</span>
+      <button class="btn btn--primary btn--grey btn--lg btn--ripple btn--icon-right">
+        Learn more
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+    </div>
+
+    <!-- Ink -->
+    <div class="ripple-cell">
+      <span class="ripple-cell__label">Ink</span>
+      <button class="btn btn--primary btn--ink btn--lg btn--ripple btn--icon-right">
+        Contact us
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+    </div>
+
+    <!-- Small variants -->
+    <div class="ripple-cell">
+      <span class="ripple-cell__label">Small Teal</span>
+      <button class="btn btn--primary btn--teal btn--sm btn--ripple btn--icon-left">
+        <span class="btn__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Click me
+      </button>
+    </div>
+
+    <div class="ripple-cell">
+      <span class="ripple-cell__label">Small Green</span>
+      <button class="btn btn--primary btn--green btn--sm btn--ripple">Try this</button>
+    </div>
+
+    <!-- Icon only -->
+    <div class="ripple-cell">
+      <span class="ripple-cell__label">Icon Teal</span>
+      <button class="btn btn--primary btn--teal btn--lg btn--ripple btn--icon-only" aria-label="Arrow">
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+    </div>
+
+    <div class="ripple-cell">
+      <span class="ripple-cell__label">Icon Ink</span>
+      <button class="btn btn--primary btn--ink btn--lg btn--ripple btn--icon-only" aria-label="Send">
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3.77 9.05L17.6 5.1C18.39 4.9 19.08 5.59 18.88 6.38L14.93 20.21C14.63 21.1 13.45 21.2 13.05 20.31L10.29 13.79L3.77 11.02C2.78 10.53 2.88 9.35 3.77 9.05Z" fill="currentColor"/></svg></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- White on dark -->
+  <div class="dark-card" style="padding: 40px 36px; margin-top: 16px;">
+    <h4>White — on dark background</h4>
+    <div class="row" style="gap: 20px;">
+      <button class="btn btn--primary btn--white btn--lg btn--ripple btn--icon-right">
+        White Ripple
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <button class="btn btn--primary btn--white btn--sm btn--ripple">Small White</button>
+      <button class="btn btn--primary btn--white btn--lg btn--ripple btn--icon-only" aria-label="Arrow">
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Secondary ripple -->
+  <div class="card" style="padding: 40px 36px; margin-top: 16px;">
+    <h4>Secondary — Ripple variants</h4>
+    <div class="row" style="gap: 20px;">
+      <button class="btn btn--secondary btn--teal btn--lg btn--ripple btn--icon-right">
+        Teal outline
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <button class="btn btn--secondary btn--ink btn--lg btn--ripple btn--icon-right">
+        Ink outline
+        <span class="btn__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <button class="btn btn--secondary btn--green btn--sm btn--ripple">Green small</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  document.querySelectorAll('.btn--ripple').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      var rect = btn.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var maxDist = Math.max(
+        Math.hypot(x, y),
+        Math.hypot(rect.width - x, y),
+        Math.hypot(x, rect.height - y),
+        Math.hypot(rect.width - x, rect.height - y)
+      );
+      var ripple = document.createElement('span');
+      ripple.className = 'btn__ripple-circle';
+      var size = maxDist * 2;
+      ripple.style.width = size + 'px';
+      ripple.style.height = size + 'px';
+      ripple.style.left = (x - maxDist) + 'px';
+      ripple.style.top = (y - maxDist) + 'px';
+
+      var isWhite = btn.classList.contains('btn--white');
+      ripple.style.background = isWhite
+        ? 'rgba(0, 176, 194, 0.35)'
+        : 'rgba(255, 255, 255, 0.4)';
+
+      btn.appendChild(ripple);
+      ripple.addEventListener('animationend', function() { ripple.remove(); });
+    });
+  });
+})();
+</script>
+
+<style>
+/* ── Ripple grid layout ── */
+.ripple-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.ripple-cell {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.ripple-cell__label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-slate-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Ripple mechanics ── */
+.btn--ripple {
+  position: relative;
+  overflow: hidden;
+}
+.btn__ripple-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: scale(0);
+  animation: ripple-expand 500ms cubic-bezier(0.2, 0, 0.2, 1) forwards;
+  z-index: 0;
+}
+@keyframes ripple-expand {
+  0%   { transform: scale(0); opacity: 1; }
+  70%  { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 0; }
+}
+</style>
+
+</body>
+</html>

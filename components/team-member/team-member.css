@@ -1,0 +1,103 @@
+/* CarbonWeb Team Member — BEM component
+   Uses var(--color-*) tokens from ../../tokens/colors.css
+   Uses var(--radius-*) from ../../tokens/radii.css
+   Uses var(--shadow-*) from ../../tokens/shadows.css
+   Uses var(--font-*) and var(--text-*) from ../../tokens/typography.css
+   Uses var(--space-*) from ../../tokens/spacing.css
+*/
+
+/* ── Grid wrapper ── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+/* ── Base card ── */
+.team-member {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  background: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  font-family: var(--font-family);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Photo side variants ── */
+.team-member--left  { flex-direction: row; }
+.team-member--right { flex-direction: row-reverse; }
+.team-member--right .team-member__info { text-align: right; }
+
+/* ── Avatar ── */
+.team-member__avatar {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background: linear-gradient(225deg, var(--color-teal-500), var(--color-green-500));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.team-member:hover .team-member__avatar {
+  transform: scale(1.05);
+}
+
+.team-member__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-member__initials {
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  font-size: var(--text-3xl);
+  color: var(--color-white);
+  line-height: 1;
+  user-select: none;
+}
+
+/* ── Info ── */
+.team-member__info {
+  min-width: 0;
+}
+
+.team-member__name {
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.team-member__title {
+  font-family: var(--font-family);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-teal-600);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.team-member__fact {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-style: italic;
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-slate);
+  margin: 0;
+}

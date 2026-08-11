@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glow Effect — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="glow-effect.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .sub { margin-bottom: 36px; }
+    .sub h3 { font-size: 18px; font-weight: 600; margin-bottom: 14px; }
+    .demo-section { padding: 60px 40px; border-radius: 12px; background: #f9fafb; margin-bottom: 20px; }
+    .demo-section h4 { font-size: 24px; font-weight: 700; margin-bottom: 8px; position: relative; z-index: 1; }
+    .demo-section p { font-size: 16px; color: var(--color-muted); position: relative; z-index: 1; }
+  </style>
+</head>
+<body>
+
+<h2>Glow Effect</h2>
+<p class="desc">Decorative CSS gradient glow orbs for background decoration. 4 color variants, size modifiers, position helpers, and animation.</p>
+
+<!-- Color variants -->
+<div class="sub">
+  <h3>Color Variants</h3>
+
+  <div class="glow-container demo-section" style="margin-bottom: 12px;">
+    <div class="glow glow--teal glow--top-left"></div>
+    <h4>Teal Glow</h4>
+    <p>400px default, positioned top-left.</p>
+  </div>
+
+  <div class="glow-container demo-section" style="margin-bottom: 12px;">
+    <div class="glow glow--green glow--top-right"></div>
+    <h4>Green Glow</h4>
+    <p>350px default, positioned top-right.</p>
+  </div>
+
+  <div class="glow-container demo-section" style="margin-bottom: 12px;">
+    <div class="glow glow--yellow glow--center"></div>
+    <h4>Yellow Glow</h4>
+    <p>300px default, positioned center.</p>
+  </div>
+
+  <div class="glow-container demo-section">
+    <div class="glow glow--pink glow--bottom-right"></div>
+    <h4>Pink Glow</h4>
+    <p>350px default, positioned bottom-right.</p>
+  </div>
+</div>
+
+<!-- Position helpers -->
+<div class="sub">
+  <h3>Position Helpers</h3>
+
+  <div class="glow-container demo-section" style="height: 200px;">
+    <div class="glow glow--teal glow--sm glow--top-left"></div>
+    <div class="glow glow--teal glow--sm glow--top-right"></div>
+    <div class="glow glow--green glow--sm glow--bottom-left"></div>
+    <div class="glow glow--green glow--sm glow--bottom-right"></div>
+    <div class="glow glow--yellow glow--sm glow--center"></div>
+    <h4>All 5 positions</h4>
+    <p>top-left, top-right, bottom-left, bottom-right, center</p>
+  </div>
+</div>
+
+<!-- Size modifiers -->
+<div class="sub">
+  <h3>Size Modifiers</h3>
+
+  <div class="glow-container demo-section" style="height: 200px;">
+    <div class="glow glow--teal glow--sm glow--top-left"></div>
+    <div class="glow glow--teal glow--center"></div>
+    <div class="glow glow--teal glow--lg glow--bottom-right"></div>
+    <h4>Small, Default, Large</h4>
+    <p>200px, 400px, 500px</p>
+  </div>
+</div>
+
+<!-- Animated -->
+<div class="sub">
+  <h3>Animated</h3>
+
+  <div class="glow-container demo-section" style="height: 200px;">
+    <div class="glow glow--teal glow--top-left glow--animated"></div>
+    <div class="glow glow--green glow--bottom-right glow--animated"></div>
+    <h4>Animated Glows</h4>
+    <p>Floating animation with subtle translate and scale.</p>
+  </div>
+</div>
+
+</body>
+</html>

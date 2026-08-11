@@ -1,0 +1,98 @@
+/* CarbonWeb Text Field — Template (uses only var(--token) references)
+   TODO: Finalize after design review / Figma export
+*/
+
+.text-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.text-field__label {
+  font-family: var(--font-family);
+  font-weight: var(--font-medium);
+  font-size: var(--text-sm);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+}
+
+.text-field__input {
+  font-family: var(--font-family);
+  font-weight: var(--font-medium);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-ink);
+  background: var(--color-white);
+  border: 1px solid var(--color-slate-light);
+  border-radius: var(--radius-full);
+  padding: var(--space-3) var(--space-6);
+  height: 55px;
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.text-field__input::placeholder {
+  color: var(--color-slate-light);
+}
+
+.text-field__input:focus {
+  border-color: var(--color-teal-500);
+}
+
+.text-field__helper {
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  margin: 0;
+}
+
+/* ── Error state ── */
+
+.text-field--error .text-field__input {
+  border-color: var(--color-pink-700);
+}
+.text-field--error .text-field__input:focus {
+  border-color: var(--color-pink-700);
+}
+
+.text-field__error-msg {
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  color: var(--color-pink-700);
+  margin: 0;
+}
+
+/* ── Disabled ── */
+
+.text-field--disabled .text-field__input {
+  opacity: 0.4;
+  pointer-events: none;
+  background: var(--color-neutral-50);
+}
+
+.text-field--disabled .text-field__label {
+  opacity: 0.4;
+}
+
+/* ── Floating label ── */
+
+.text-field--floating {
+  position: relative;
+}
+
+.text-field--floating .text-field__label {
+  position: absolute;
+  left: var(--space-6);
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 150ms ease;
+  pointer-events: none;
+  color: var(--color-slate-light);
+}
+
+.text-field--floating .text-field__input:focus + .text-field__label,
+.text-field--floating .text-field__input:not(:placeholder-shown) + .text-field__label {
+  top: var(--space-1);
+  font-size: var(--text-xs);
+  color: var(--color-teal-500);
+}

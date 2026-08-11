@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Link — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="text-link.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .section { margin-bottom: 36px; }
+    .section h3 { font-size: 18px; font-weight: 600; margin-bottom: 14px; }
+    .label { font-size: 13px; color: var(--color-muted); margin-bottom: 10px; }
+    .grid { display: flex; flex-wrap: wrap; align-items: center; gap: 32px; }
+    .prose { font-size: 16px; line-height: 1.7; color: var(--color-slate); max-width: 560px; }
+  </style>
+</head>
+<body>
+
+<h2>Text Links</h2>
+<p class="desc">Inline text links with a sliding arrow. Default ink→teal, always-teal, and explicit ink variants.</p>
+
+<div class="section">
+  <h3>Default</h3>
+  <p class="label">Ink text, hover turns teal and the arrow slides 4px right.</p>
+  <div class="grid">
+    <a class="text-link" href="#">
+      Learn more
+      <span class="text-link__arrow">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.333 8h9.334M9.333 4.667L12.667 8l-3.334 3.333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Teal</h3>
+  <p class="label">Always teal; hover adds underline.</p>
+  <div class="grid">
+    <a class="text-link text-link--teal" href="#">
+      Explore services
+      <span class="text-link__arrow">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.333 8h9.334M9.333 4.667L12.667 8l-3.334 3.333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </a>
+    <a class="text-link text-link--teal" href="#">Contact us</a>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Ink</h3>
+  <p class="label">Explicit ink → teal on hover.</p>
+  <div class="grid">
+    <a class="text-link text-link--ink" href="#">
+      Read the case study
+      <span class="text-link__arrow">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.333 8h9.334M9.333 4.667L12.667 8l-3.334 3.333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Inline in Body Copy</h3>
+  <p class="prose">CarbonWeb builds custom workflows on monday.com for teams that need more than the defaults.
+    <a class="text-link text-link--teal" href="#">See how we work
+      <span class="text-link__arrow">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.333 8h9.334M9.333 4.667L12.667 8l-3.334 3.333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </a>
+  </p>
+</div>
+
+</body>
+</html>

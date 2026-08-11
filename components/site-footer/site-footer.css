@@ -1,0 +1,946 @@
+/* CarbonWeb Site Footer
+   Faithful recreation of carbonweb.co footer:
+   CTA card + link columns + newsletter + hiring badge + bottom bar.
+   All hover interactions from the live site. */
+
+.site-footer {
+  font-family: var(--font-family);
+  background: var(--color-white);
+  padding: 40px 0 32px;
+}
+
+.site-footer__inner {
+  max-width: 1288px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ══════════ CTA Card — "Let's get started" ══════════ */
+
+.site-footer__cta {
+  position: relative;
+  display: grid;
+  grid-template-columns: 438px 1fr;
+  background: color-mix(in srgb, var(--color-teal-500) 18%, transparent);
+  border-radius: 12px;
+  padding: 40px 48px;
+  cursor: pointer;
+  overflow: visible;
+  margin-bottom: 56px;
+  text-decoration: none;
+  transition: background-color 250ms ease, box-shadow 250ms ease, transform 250ms ease;
+}
+
+.site-footer__cta:hover {
+  background: color-mix(in srgb, var(--color-teal-500) 24%, transparent);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--color-teal-500) 20%, transparent);
+  transform: translateY(-2px);
+}
+
+.site-footer__cta:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}
+
+.site-footer__cta-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0 0 12px;
+}
+
+.site-footer__cta-description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--color-ink) 50%, transparent);
+  margin: 0 0 24px;
+}
+
+/* Button — the DS primary Button component (.btn .btn--primary .btn--teal .btn--lg),
+   see components/button/button.css. Only footer-specific overrides live here:
+   fixed width + card-wide hover flip to green (live-site behavior). */
+.site-footer__cta-button {
+  width: 220px;
+  padding-left: 0;
+  padding-right: 0;
+  white-space: nowrap;
+}
+
+/* Hovering ANYWHERE on the CTA card flips the button teal -> green */
+.site-footer__cta:hover .site-footer__cta-button {
+  background: var(--color-green-500);
+  border-color: var(--color-green-500);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--color-green-500) 40%, transparent);
+  transform: translateY(-1px);
+}
+
+.site-footer__cta:active .site-footer__cta-button {
+  background: var(--color-green-600);
+  border-color: var(--color-green-600);
+  transform: scale(0.97);
+}
+
+/* Rocket nudges up-right on card hover */
+.site-footer__cta:hover .site-footer__cta-art {
+  transform: translate(4px, -6px) rotate(1.5deg);
+}
+
+.site-footer__cta-art {
+  position: absolute;
+  right: 24px;
+  bottom: 0;
+  width: 295px;
+  height: 230px;
+  pointer-events: none;
+  transition: transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.site-footer__cta-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ══════════ Link Columns ══════════ */
+
+.site-footer__row {
+  display: grid;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.site-footer__row--a {
+  grid-template-columns: 1fr 1fr 2fr;
+}
+
+.site-footer__row--b {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.site-footer__column-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-ink);
+  margin: 0 0 18px;
+}
+
+.site-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer__links li {
+  margin-bottom: 12px;
+}
+
+/* Links: teal on hover + animated underline slide-in */
+.site-footer__links a {
+  position: relative;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--color-slate);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.site-footer__links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: var(--color-teal-500);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms ease;
+}
+
+.site-footer__links a:hover {
+  color: var(--color-teal-500);
+}
+
+.site-footer__links a:hover::after {
+  transform: scaleX(1);
+}
+
+.site-footer__links a:active {
+  color: var(--color-teal-700);
+}
+
+/* Careers row with hiring badge */
+.site-footer__careers {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ══════════ "We're hiring!" badge — animated gradient shine ══════════ */
+
+.site-footer__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  height: 22px;
+  background: color-mix(in srgb, var(--color-teal-500) 10%, transparent);
+  border: 0.4px solid var(--color-teal-400);
+  border-radius: 4px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  transition: background-color 200ms ease, transform 200ms ease;
+}
+
+/* Badge lifts + brightens when hovering its Careers row */
+.site-footer__careers:hover .site-footer__badge {
+  background: color-mix(in srgb, var(--color-teal-500) 18%, transparent);
+  transform: translateY(-1px);
+}
+
+.site-footer__badge svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  color: var(--color-teal-600); /* megaphone icon, strokes use currentColor */
+}
+
+.site-footer__badge-text {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 17px;
+  white-space: nowrap;
+  background: linear-gradient(
+    88deg,
+    color-mix(in srgb, var(--color-teal-200) 95%, transparent) 0%,
+    color-mix(in srgb, var(--color-teal-500) 95%, transparent) 50%,
+    color-mix(in srgb, var(--color-teal-800) 95%, transparent) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: site-footer-badge-shine 1.5s linear infinite;
+}
+
+@keyframes site-footer-badge-shine {
+  to { background-position: -200% center; }
+}
+
+/* ══════════ Newsletter Card ══════════ */
+
+/* #F5F7FB — spec'd newsletter card bg (CLAUDE.md footer spec), no neutral token exists */
+.site-footer__newsletter {
+  background: var(--color-grey-100);
+  border-radius: 8px;
+  padding: 30px;
+  transition: box-shadow 250ms ease;
+}
+
+.site-footer__newsletter:focus-within {
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--color-teal-500) 12%, transparent);
+}
+
+.site-footer__newsletter-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-slate);
+  margin: 0 0 20px;
+  text-align: left;
+}
+
+.site-footer__newsletter-form {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.site-footer__newsletter-input {
+  flex: 1;
+  height: 44px;
+  padding: 0 18px;
+  font-family: var(--font-family);
+  font-size: 15px;
+  color: var(--color-ink);
+  background: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-slate) 25%, transparent);
+  border-radius: 24px;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.site-footer__newsletter-input::placeholder {
+  color: color-mix(in srgb, var(--color-slate-light) 75%, var(--color-white));
+}
+
+.site-footer__newsletter-input:hover {
+  border-color: color-mix(in srgb, var(--color-teal-500) 50%, transparent);
+}
+
+.site-footer__newsletter-input:focus {
+  border-color: var(--color-teal-500);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-teal-500) 15%, transparent);
+}
+
+/* Primary button states per DS: 500 → teal-hover → teal-700 active */
+.site-footer__newsletter-button {
+  height: 44px;
+  padding: 0 28px;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-white);
+  background: var(--color-teal-500);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 200ms ease, transform 150ms ease, box-shadow 200ms ease;
+}
+
+.site-footer__newsletter-button:hover {
+  background: var(--color-teal-hover);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-teal-500) 35%, transparent);
+  transform: translateY(-1px);
+}
+
+.site-footer__newsletter-button:active {
+  background: var(--color-teal-700);
+  transform: scale(0.97);
+}
+
+.site-footer__newsletter-button:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}
+
+/* Success / error messages — semantic feedback colors from live Brevo form;
+   no success/error tokens exist in the DS yet */
+.site-footer__newsletter-message {
+  display: none;
+  margin-top: 12px;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 3px;
+  text-align: left;
+}
+
+.site-footer__newsletter-message--success {
+  color: var(--color-success-dark);
+  background: var(--color-success-tint);
+  border: 1px solid var(--color-success);
+}
+
+.site-footer__newsletter-message--error {
+  color: var(--color-danger-dark);
+  background: var(--color-danger-tint);
+  border: 1px solid var(--color-danger);
+}
+
+.site-footer__newsletter-message.is-visible {
+  display: block;
+}
+
+/* ══════════ Bottom Bar ══════════ */
+
+.site-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+}
+
+.site-footer__wordmark {
+  display: inline-block;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.site-footer__wordmark:hover {
+  opacity: 0.75;
+  transform: translateY(-1px);
+}
+
+.site-footer__wordmark img {
+  width: 177px;
+  height: 41px;
+  display: block;
+}
+
+.site-footer__contacts {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.site-footer__contact-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-footer__contact-region {
+  color: var(--color-teal-600);
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.site-footer__contact-group a {
+  color: var(--color-slate-light);
+  font-size: 15px;
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  transition: color 200ms ease;
+}
+
+.site-footer__contact-group a:hover {
+  color: var(--color-teal-500);
+}
+
+.site-footer__contact-group a:active {
+  color: var(--color-teal-700);
+}
+
+/* Icon links: stroke inherits via currentColor, lift + scale on hover */
+.site-footer__icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-slate-light);
+  transition: color 200ms ease, transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none !important;
+}
+
+.site-footer__icon-link:hover {
+  color: var(--color-teal-500);
+  transform: translateY(-2px) scale(1.15);
+}
+
+.site-footer__icon-link:active {
+  color: var(--color-teal-700);
+  transform: translateY(0) scale(1.05);
+}
+
+.site-footer__icon-link:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.site-footer__icon-link svg {
+  display: block;
+}
+
+.site-footer__icon-link svg [stroke] {
+  stroke: currentColor;
+}
+
+.site-footer__icon-link svg .fill-path {
+  fill: currentColor;
+}
+
+/* ══════════ Divider + Legal ══════════ */
+
+.site-footer__divider {
+  border: none;
+  border-top: 1px solid color-mix(in srgb, var(--color-slate) 20%, transparent);
+  margin: 24px 0;
+}
+
+.site-footer__legal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.site-footer__legal-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer__legal-links a {
+  font-size: 16px;
+  color: var(--color-slate-light);
+  text-decoration: underline;
+  transition: color 200ms ease;
+}
+
+.site-footer__legal-links a:hover {
+  color: var(--color-teal-500);
+}
+
+.site-footer__legal-links a:active {
+  color: var(--color-teal-700);
+}
+
+.site-footer__legal-links .sep {
+  color: var(--color-slate-light);
+}
+
+.site-footer__copyright {
+  font-size: 16px;
+  color: var(--color-slate-light);
+}
+
+/* ══════════ Responsive ══════════ */
+
+@media (max-width: 1024px) {
+  .site-footer__cta {
+    grid-template-columns: 1fr;
+  }
+  .site-footer__cta-art {
+    display: none;
+  }
+  .site-footer__row--a,
+  .site-footer__row--b {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-footer__row--a,
+  .site-footer__row--b {
+    grid-template-columns: 1fr;
+  }
+  .site-footer__newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .site-footer__legal {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   V2 — Creative animated version (.site-footer--v2)
+   Adds: animated gradient top border, scroll-reveal stagger,
+   link arrow slide-ins, CTA shine sweep, breathing rocket.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Animated gradient hairline across the footer top */
+.site-footer--v2 {
+  position: relative;
+}
+
+.site-footer--v2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-teal-500),
+    var(--color-green-500),
+    var(--color-teal-300),
+    var(--color-teal-500)
+  );
+  background-size: 300% 100%;
+  animation: site-footer-border-flow 8s linear infinite;
+}
+
+@keyframes site-footer-border-flow {
+  to { background-position: -300% 0; }
+}
+
+/* ── Scroll reveal: JS adds .is-revealed to staggered children ── */
+
+.site-footer--v2 .site-footer__cta,
+.site-footer--v2 .site-footer__row > div,
+.site-footer--v2 .site-footer__bottom,
+.site-footer--v2 .site-footer__legal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms ease, transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.site-footer--v2 .site-footer__cta.is-revealed,
+.site-footer--v2 .site-footer__row > div.is-revealed,
+.site-footer--v2 .site-footer__bottom.is-revealed,
+.site-footer--v2 .site-footer__legal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── CTA: periodic light sweep + breathing rocket ── */
+
+.site-footer--v2 .site-footer__cta {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.site-footer--v2 .site-footer__cta::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -60%;
+  width: 40%;
+  height: 140%;
+  background: linear-gradient(
+    100deg,
+    transparent 20%,
+    color-mix(in srgb, var(--color-white) 45%, transparent) 50%,
+    transparent 80%
+  );
+  transform: skewX(-12deg);
+  animation: site-footer-cta-sweep 7s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes site-footer-cta-sweep {
+  0%, 60%  { left: -60%; opacity: 0; }
+  65%      { opacity: 1; }
+  95%, 100% { left: 130%; opacity: 0; }
+}
+
+.site-footer--v2 .site-footer__cta-art {
+  animation: site-footer-rocket-float 5s ease-in-out infinite;
+}
+
+@keyframes site-footer-rocket-float {
+  0%, 100% { translate: 0 0; }
+  50%      { translate: 0 -8px; }
+}
+
+/* v2 keeps hover nudge via separate transform channel (translate vs transform) */
+.site-footer--v2 .site-footer__cta:hover .site-footer__cta-art {
+  transform: translate(4px, -6px) rotate(1.5deg);
+}
+
+/* ── Links: arrow slides in, text shifts right ── */
+
+.site-footer--v2 .site-footer__links a {
+  display: inline-flex;
+  align-items: center;
+  transition: color 200ms ease, transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-footer--v2 .site-footer__links a::before {
+  content: "→";
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  color: var(--color-teal-500);
+  transform: translateX(-6px);
+  transition: width 250ms ease, opacity 250ms ease, transform 250ms ease;
+}
+
+.site-footer--v2 .site-footer__links a:hover {
+  transform: translateX(2px);
+}
+
+.site-footer--v2 .site-footer__links a:hover::before {
+  width: 18px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* v2 drops the underline slide (arrow replaces it) */
+.site-footer--v2 .site-footer__links a::after {
+  display: none;
+}
+
+/* ── Column titles: gradient ink on hover ── */
+
+.site-footer--v2 .site-footer__column-title {
+  display: inline-block;
+  transition: transform 250ms ease;
+}
+
+.site-footer--v2 .site-footer__row > div:hover .site-footer__column-title {
+  background: var(--gradient-global);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: translateX(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer--v2::before,
+  .site-footer--v2 .site-footer__cta::after,
+  .site-footer--v2 .site-footer__cta-art {
+    animation: none;
+  }
+  .site-footer--v2 .site-footer__cta,
+  .site-footer--v2 .site-footer__row > div,
+  .site-footer--v2 .site-footer__bottom,
+  .site-footer--v2 .site-footer__legal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DARK — .site-footer--dark (composes with base or --v2)
+   ═══════════════════════════════════════════════════════════════ */
+
+.site-footer--dark {
+  background: var(--color-ink);
+}
+
+.site-footer--dark .site-footer__cta {
+  background: color-mix(in srgb, var(--color-teal-500) 14%, transparent);
+}
+
+.site-footer--dark .site-footer__cta:hover {
+  background: color-mix(in srgb, var(--color-teal-500) 20%, transparent);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--color-teal-500) 25%, transparent);
+}
+
+.site-footer--dark .site-footer__cta-title {
+  color: var(--color-white);
+}
+
+.site-footer--dark .site-footer__cta-description {
+  color: color-mix(in srgb, var(--color-white) 60%, transparent);
+}
+
+.site-footer--dark .site-footer__column-title {
+  color: var(--color-white);
+}
+
+.site-footer--dark .site-footer__links a {
+  color: color-mix(in srgb, var(--color-slate-light) 85%, transparent);
+}
+
+.site-footer--dark .site-footer__links a:hover {
+  color: var(--color-teal-300);
+}
+
+.site-footer--dark .site-footer__links a::before {
+  color: var(--color-teal-300);
+}
+
+.site-footer--dark .site-footer__newsletter {
+  background: color-mix(in srgb, var(--color-white) 6%, transparent);
+}
+
+.site-footer--dark .site-footer__newsletter-title {
+  color: var(--color-white);
+}
+
+.site-footer--dark .site-footer__newsletter-input {
+  background: color-mix(in srgb, var(--color-white) 8%, transparent);
+  border-color: color-mix(in srgb, var(--color-white) 15%, transparent);
+  color: var(--color-white);
+}
+
+.site-footer--dark .site-footer__newsletter-input::placeholder {
+  color: color-mix(in srgb, var(--color-slate-light) 60%, transparent);
+}
+
+.site-footer--dark .site-footer__badge {
+  background: color-mix(in srgb, var(--color-teal-500) 18%, transparent);
+}
+
+.site-footer--dark .site-footer__badge-text {
+  background: linear-gradient(
+    88deg,
+    var(--color-teal-100) 0%,
+    var(--color-teal-300) 50%,
+    var(--color-teal-500) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.site-footer--dark .site-footer__badge svg {
+  color: var(--color-teal-300);
+}
+
+.site-footer--dark .site-footer__contact-region {
+  color: var(--color-teal-400);
+}
+
+.site-footer--dark .site-footer__divider {
+  border-top-color: color-mix(in srgb, var(--color-white) 12%, transparent);
+}
+
+.site-footer--dark .site-footer__links a:active,
+.site-footer--dark .site-footer__legal-links a:active,
+.site-footer--dark .site-footer__contact-group a:active,
+.site-footer--dark .site-footer__icon-link:active {
+  color: var(--color-teal-400);
+}
+
+.site-footer--dark .site-footer__legal-links a:hover,
+.site-footer--dark .site-footer__contact-group a:hover,
+.site-footer--dark .site-footer__icon-link:hover {
+  color: var(--color-teal-300);
+}
+
+/* Dark wordmark: invert the ink parts of the logo */
+.site-footer--dark .site-footer__wordmark img {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Dark rocket art sits on dark laptop — keep as-is, add subtle glow */
+.site-footer--dark .site-footer__cta-art img {
+  filter: drop-shadow(0 0 24px color-mix(in srgb, var(--color-teal-500) 35%, transparent));
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   V3 — Liquid Glass (.site-footer--v3)
+   Footer surfaces become liquid glass panels using the DS
+   liquid-glass-cards recipe: color-mix() box-shadow stack +
+   backdrop blur + SVG displacement lens. Include the
+   #liquidGlassLens SVG filter once per page (see liquid-glass-cards).
+   Composes with --v2 for the animations.
+   ═══════════════════════════════════════════════════════════════ */
+
+.site-footer--v3 {
+  /* glass variables (same contract as .liquid-glass-cards) */
+  --c-glass: var(--color-neutral-400);
+  --c-light: var(--color-white);
+  --c-dark: var(--color-black);
+  --glass-reflex-dark: 1;
+  --glass-reflex-light: 1;
+  --saturation: 150%;
+
+  /* vibrant brand wash so the glass has something to refract */
+  background:
+    radial-gradient(ellipse at 12% 8%, color-mix(in srgb, var(--color-teal-500) 26%, transparent) 0%, transparent 50%),
+    radial-gradient(ellipse at 88% 18%, color-mix(in srgb, var(--color-green-500) 22%, transparent) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 95%, color-mix(in srgb, var(--color-teal-300) 18%, transparent) 0%, transparent 55%),
+    linear-gradient(160deg, var(--color-grey-100), var(--color-grey-200));
+}
+
+/* ── Shared glass panel recipe ── */
+
+.site-footer--v3 .site-footer__cta,
+.site-footer--v3 .site-footer__newsletter,
+.site-footer--v3 .site-footer__badge {
+  background-color: color-mix(in srgb, var(--c-glass) 12%, transparent);
+  backdrop-filter: blur(8px) url(#liquidGlassLens) saturate(var(--saturation));
+  -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+  border: none;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+    inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+    inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+    inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+    inset -0.3px -1px 4px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+    inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+    inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+    inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+    0px 1px 5px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+    0px 6px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+}
+
+/* CTA: glass replaces the teal tint; deepen on hover instead */
+.site-footer--v3 .site-footer__cta {
+  border-radius: 24px;
+}
+
+.site-footer--v3 .site-footer__cta:hover {
+  background-color: color-mix(in srgb, var(--c-glass) 18%, transparent);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 14%), transparent),
+    inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+    inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+    inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+    inset -0.3px -1px 4px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+    inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+    inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+    inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+    0px 2px 8px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+    0px 10px 24px 0px color-mix(in srgb, var(--color-teal-500) 18%, transparent);
+}
+
+.site-footer--v3 .site-footer__newsletter {
+  border-radius: 20px;
+}
+
+.site-footer--v3 .site-footer__newsletter:focus-within {
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--color-teal-500) 40%, transparent),
+    inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+    inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+    0px 6px 20px 0px color-mix(in srgb, var(--color-teal-500) 15%, transparent);
+}
+
+/* Newsletter input reads as inner glass */
+.site-footer--v3 .site-footer__newsletter-input {
+  background: color-mix(in srgb, var(--color-white) 55%, transparent);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Badge: glassier tint */
+.site-footer--v3 .site-footer__badge {
+  border-radius: 6px;
+}
+
+/* Icon links get small glass chips */
+.site-footer--v3 .site-footer__icon-link {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background-color: color-mix(in srgb, var(--c-glass) 16%, transparent);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 12%), transparent),
+    inset 1px 1.5px 0px -0.5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 70%), transparent),
+    inset -1px -1px 0px -0.5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 50%), transparent),
+    inset -0.3px -0.5px 2px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent);
+}
+
+.site-footer--v3 .site-footer__icon-link:hover {
+  background-color: color-mix(in srgb, var(--color-teal-500) 18%, transparent);
+}
+
+/* Text tweaks for the tinted background */
+.site-footer--v3 .site-footer__cta-description {
+  color: color-mix(in srgb, var(--color-ink) 60%, transparent);
+}
+
+/* Divider slightly stronger over the wash */
+.site-footer--v3 .site-footer__divider {
+  border-top-color: color-mix(in srgb, var(--color-slate) 28%, transparent);
+}
+
+/* ── V3 + dark: night glass ── */
+
+.site-footer--v3.site-footer--dark {
+  --glass-reflex-dark: 2;
+  --glass-reflex-light: 0.35;
+  background:
+    radial-gradient(ellipse at 12% 8%, color-mix(in srgb, var(--color-teal-500) 20%, transparent) 0%, transparent 50%),
+    radial-gradient(ellipse at 88% 18%, color-mix(in srgb, var(--color-green-500) 14%, transparent) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 95%, color-mix(in srgb, var(--color-pink-500) 10%, transparent) 0%, transparent 55%),
+    linear-gradient(160deg, var(--color-ink), var(--color-surface-night));
+}
+
+.site-footer--v3.site-footer--dark .site-footer__cta,
+.site-footer--v3.site-footer--dark .site-footer__newsletter,
+.site-footer--v3.site-footer--dark .site-footer__badge,
+.site-footer--v3.site-footer--dark .site-footer__icon-link {
+  background-color: color-mix(in srgb, var(--c-glass) 8%, transparent);
+}
+
+.site-footer--v3.site-footer--dark .site-footer__newsletter-input {
+  background: color-mix(in srgb, var(--color-white) 8%, transparent);
+}

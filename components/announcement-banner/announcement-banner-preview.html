@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Announcement Banner -- CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="announcement-banner.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+    .page { padding: 48px 60px; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .sub { margin-bottom: 36px; }
+    .sub h3 { font-size: 18px; font-weight: 600; margin-bottom: 14px; }
+    .banner-stack { display: flex; flex-direction: column; gap: 16px; }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <h2>Announcement Banners</h2>
+  <p class="desc">Full-width notification banners with close button. Teal, yellow, ink, and gradient variants.</p>
+</div>
+
+<div class="sub" style="padding: 0;">
+  <div class="banner-stack">
+
+    <div class="announcement-banner" data-banner-id="preview-teal">
+      <span class="announcement-banner__text">
+        New feature released! Check out our latest workflow automations.
+        <a href="#" class="announcement-banner__link">Learn more</a>
+      </span>
+      <button class="announcement-banner__close" aria-label="Dismiss banner">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="announcement-banner announcement-banner--yellow" data-banner-id="preview-yellow">
+      <span class="announcement-banner__text">
+        monday.com Connect is happening October 2026.
+        <a href="#" class="announcement-banner__link">Register now</a>
+      </span>
+      <button class="announcement-banner__close" aria-label="Dismiss banner">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="announcement-banner announcement-banner--ink" data-banner-id="preview-ink">
+      <span class="announcement-banner__text">
+        CarbonWeb is now a monday.com Platinum Partner.
+        <a href="#" class="announcement-banner__link">Read the announcement</a>
+      </span>
+      <button class="announcement-banner__close" aria-label="Dismiss banner">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="announcement-banner announcement-banner--gradient" data-banner-id="preview-gradient">
+      <span class="announcement-banner__text">
+        Free workflow audit for new clients.
+        <a href="#" class="announcement-banner__link">Book yours today</a>
+      </span>
+      <button class="announcement-banner__close" aria-label="Dismiss banner">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<div class="page">
+  <p class="desc" style="margin-top: 16px;">Click the close button on any banner to dismiss it. Dismissed state persists for the browser session via sessionStorage.</p>
+</div>
+
+<script src="announcement-banner.js"></script>
+</body>
+</html>

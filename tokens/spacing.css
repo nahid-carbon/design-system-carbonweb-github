@@ -1,0 +1,40 @@
+/* CarbonWeb Design System — Spacing Tokens
+   8px base grid. Components reference via var(--space-*).
+*/
+
+:root {
+  --space-0: 0px;
+  --space-0-5: 2px;
+  --space-1: 4px;
+  --space-1-5: 6px;
+  --space-2: 8px;
+  --space-2-5: 10px;
+  --space-3: 12px;
+  --space-3-5: 14px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --space-10: 40px;
+  --space-11: 44px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-28: 112px;
+  --space-32: 128px;
+  --space-36: 144px;
+  --space-40: 160px;
+
+  /* Named semantic spacing */
+  --space-section-x: 150px;  /* Footer / full-width section horizontal padding */
+  --space-section-y: 64px;   /* Section vertical padding (py-16) */
+  --space-content-x: 40px;   /* Content area horizontal padding (px-10) */
+  --space-content-y: 48px;   /* Content area vertical padding (py-12) */
+  --space-sidebar: 256px;    /* Sidebar width (w-64) */
+  --space-content-max: 1024px; /* Content max-width (max-w-5xl) */
+  --space-footer-max: 1288px;  /* Footer content max-width */
+}

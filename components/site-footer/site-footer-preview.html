@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Footer — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/shadows.css" />
+  <link rel="stylesheet" href="../button/button.css" />
+  <link rel="stylesheet" href="site-footer.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #ffffff; color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+    .page-head { padding: 48px 60px 24px; }
+    .page-head h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .page-head .desc { font-size: 15px; color: var(--color-muted); line-height: 1.6; }
+    .fake-page { height: 120px; background: linear-gradient(#fafbfc, #ffffff); border-bottom: 1px solid rgba(0,0,0,0.04); display: flex; align-items: center; justify-content: center; color: var(--color-muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+
+<div class="page-head">
+  <h2>Site Footer</h2>
+  <p class="desc">Faithful recreation of the carbonweb.co footer: clickable CTA card (hover flips button teal → green), link columns with teal hover, animated "We're hiring!" badge, working newsletter validation, contact bar with icon hovers, and legal row.</p>
+</div>
+
+<div class="fake-page">page content ends here — footer below</div>
+
+<!-- ══════════ Footer ══════════ -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+
+    <a class="site-footer__cta" href="https://www.carbonweb.co/demo/" aria-label="Get Started" onclick="return false;">
+      <div>
+        <p class="site-footer__cta-title">Let&rsquo;s get started</p>
+        <p class="site-footer__cta-description">
+          Interested in working with our team of workflow experts? Get started
+          with an exploration to uncover your needs and discover how monday.com
+          can work for you.
+        </p>
+        <span class="btn btn--primary btn--teal btn--lg site-footer__cta-button">Book an exploration</span>
+      </div>
+      <div class="site-footer__cta-art">
+        <img src="assets/footer-lets-get-started-footer-banner.svg" alt="" width="295" height="230" />
+      </div>
+    </a>
+
+    <div class="site-footer__row site-footer__row--a">
+      <div>
+        <h3 class="site-footer__column-title">CarbonWeb</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">How we work</a></li>
+          <li class="site-footer__careers">
+            <a href="#">Careers</a>
+            <span class="site-footer__badge">
+              <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.68555 4.59045C10.0724 4.49748 10.4803 4.56198 10.8195 4.76975C11.1588 4.97753 11.4016 5.31156 11.4946 5.69837C11.5875 6.08518 11.523 6.49308 11.3153 6.83233C11.1075 7.17159 10.7735 7.41441 10.3866 7.50738" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.79635 5.52518L7.0817 10.8729C7.11269 11.0018 7.09119 11.1378 7.02193 11.2509C6.95267 11.364 6.84133 11.4449 6.71239 11.4759L6.22624 11.5927C6.0973 11.6237 5.96133 11.6022 5.84825 11.533C5.73516 11.4637 5.65422 11.3524 5.62323 11.2234L5.03899 8.79266" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6.76849 5.29144L8.52734 2.93001C8.57845 2.86142 8.64805 2.80882 8.72799 2.77837C8.80793 2.74792 8.89489 2.74089 8.97868 2.7581C9.06247 2.7753 9.13963 2.81604 9.2011 2.87552C9.26257 2.93501 9.30581 3.01078 9.32576 3.09396L10.7462 9.00366C10.7662 9.08682 10.7621 9.17397 10.7344 9.25489C10.7067 9.33581 10.6565 9.40716 10.5896 9.46056C10.5228 9.51397 10.4422 9.54723 10.3571 9.55643C10.2721 9.56564 10.1862 9.55041 10.1095 9.51254L7.46959 8.20837L3.58035 9.14316C3.45142 9.17415 3.31545 9.15265 3.20237 9.0834C3.08928 9.01414 3.00834 8.90279 2.97735 8.77386L2.50995 6.82924C2.47896 6.7003 2.50046 6.56434 2.56972 6.45125C2.63898 6.33817 2.75032 6.25722 2.87926 6.22623L6.76849 5.29144Z" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="site-footer__badge-text">We're hiring!</span>
+            </span>
+          </li>
+          <li><a href="#">Partnerships</a></li>
+          <li><a href="#">Emergency Response Team</a></li>
+          <li><a href="#">monday.com Partnership</a></li>
+          <li><a href="#">Newsroom</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">CarbonApps</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Our Apps</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Explore marketplace</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__newsletter">
+        <p class="site-footer__newsletter-title">Subscribe to our weekly workflow newsletter</p>
+        <form class="site-footer__newsletter-form" novalidate>
+          <input class="site-footer__newsletter-input" type="email" name="EMAIL"
+                 placeholder="example@gmail.com" autocomplete="off" required />
+          <button class="site-footer__newsletter-button" type="submit">Subscribe</button>
+        </form>
+        <div class="site-footer__newsletter-message site-footer__newsletter-message--success">
+          Subscribed! Welcome to the Digital Directive!
+        </div>
+        <div class="site-footer__newsletter-message site-footer__newsletter-message--error">
+          Your subscription could not be saved. Please try again.
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__row site-footer__row--b">
+      <div>
+        <h3 class="site-footer__column-title">monday.com</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Platform</a></li>
+          <li><a href="#">monday CRM</a></li>
+          <li><a href="#">monday Work Management</a></li>
+          <li><a href="#">monday Service</a></li>
+          <li><a href="#">monday Dev</a></li>
+          <li><a href="#">Solutions</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">monday.com Services</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Consultation</a></li>
+          <li><a href="#">Workflow Development</a></li>
+          <li><a href="#">Training</a></li>
+          <li><a href="#">Custom Work</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">Creative Services</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Evolution Plan</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">Resources</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Digital Directive</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">monday Free trial</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <a class="site-footer__wordmark" href="#" aria-label="CarbonWeb home">
+        <img src="assets/General-Horizontal-1.svg" alt="CarbonWeb" width="177" height="41" />
+      </a>
+
+      <div class="site-footer__contacts">
+        <div class="site-footer__contact-group">
+          <span class="site-footer__contact-region">US</span>
+          <a href="tel:+12166662522">(216) 666 2522</a>
+          <a class="site-footer__icon-link" href="tel:+12166662522" aria-label="Call US office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5.43188 5.99696C5.89588 6.96337 6.52841 7.86914 7.32946 8.67019C8.13051 9.47124 9.03627 10.1038 10.0027 10.5678C10.0858 10.6077 10.1274 10.6276 10.18 10.643C10.3669 10.6974 10.5964 10.6583 10.7547 10.545C10.7992 10.5131 10.8373 10.475 10.9135 10.3988C11.1466 10.1657 11.2631 10.0492 11.3803 9.97297C11.8222 9.68564 12.392 9.68564 12.8339 9.97297C12.9511 10.0492 13.0676 10.1657 13.3007 10.3988L13.4306 10.5287C13.7849 10.883 13.962 11.0601 14.0583 11.2504C14.2496 11.6287 14.2496 12.0756 14.0583 12.454C13.962 12.6442 13.7849 12.8214 13.4306 13.1757L13.3255 13.2807C12.9724 13.6338 12.7959 13.8104 12.5559 13.9452C12.2895 14.0948 11.8759 14.2024 11.5704 14.2015C11.2951 14.2007 11.1069 14.1473 10.7306 14.0405C8.70837 13.4665 6.80012 12.3835 5.20814 10.7915C3.61615 9.19952 2.53317 7.29128 1.95919 5.26902C1.85238 4.89272 1.79898 4.70457 1.79816 4.42927C1.79725 4.12379 1.90483 3.71013 2.05444 3.44379C2.18927 3.20377 2.36581 3.02723 2.7189 2.67415L2.82399 2.56906C3.17828 2.21476 3.35543 2.03762 3.54568 1.94139C3.92406 1.75001 4.3709 1.75001 4.74927 1.94139C4.93953 2.03762 5.11668 2.21476 5.47097 2.56906L5.60088 2.69897C5.83395 2.93204 5.95049 3.04858 6.02668 3.16576C6.31401 3.60769 6.31401 4.17741 6.02668 4.61934C5.95049 4.73652 5.83395 4.85306 5.60088 5.08613C5.52468 5.16234 5.48657 5.20044 5.45468 5.24498C5.34134 5.40327 5.3022 5.63277 5.35668 5.81968C5.37202 5.87227 5.39197 5.91383 5.43188 5.99696Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="sms:+12166662522" aria-label="Text US office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 13.3331L2.86667 10.7331C2.11763 9.62525 1.84666 8.31334 2.10415 7.04126C2.36163 5.76919 3.13004 4.62351 4.26651 3.81724C5.40298 3.01098 6.83017 2.59899 8.28273 2.65789C9.73528 2.71678 11.1143 3.24255 12.1635 4.13743C13.2127 5.03232 13.8606 6.23542 13.9867 7.52305C14.1128 8.81068 13.7086 10.0952 12.8492 11.1378C11.9899 12.1804 10.7338 12.9101 9.31453 13.1913C7.89529 13.4725 6.40947 13.2859 5.13333 12.6664L2 13.3331Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <span class="site-footer__contact-region">LATAM</span>
+          <a href="tel:+593998642941">+593 99 864 2941</a>
+          <a class="site-footer__icon-link" href="tel:+593998642941" aria-label="Call LATAM office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5.43188 5.99696C5.89588 6.96337 6.52841 7.86914 7.32946 8.67019C8.13051 9.47124 9.03627 10.1038 10.0027 10.5678C10.0858 10.6077 10.1274 10.6276 10.18 10.643C10.3669 10.6974 10.5964 10.6583 10.7547 10.545C10.7992 10.5131 10.8373 10.475 10.9135 10.3988C11.1466 10.1657 11.2631 10.0492 11.3803 9.97297C11.8222 9.68564 12.392 9.68564 12.8339 9.97297C12.9511 10.0492 13.0676 10.1657 13.3007 10.3988L13.4306 10.5287C13.7849 10.883 13.962 11.0601 14.0583 11.2504C14.2496 11.6287 14.2496 12.0756 14.0583 12.454C13.962 12.6442 13.7849 12.8214 13.4306 13.1757L13.3255 13.2807C12.9724 13.6338 12.7959 13.8104 12.5559 13.9452C12.2895 14.0948 11.8759 14.2024 11.5704 14.2015C11.2951 14.2007 11.1069 14.1473 10.7306 14.0405C8.70837 13.4665 6.80012 12.3835 5.20814 10.7915C3.61615 9.19952 2.53317 7.29128 1.95919 5.26902C1.85238 4.89272 1.79898 4.70457 1.79816 4.42927C1.79725 4.12379 1.90483 3.71013 2.05444 3.44379C2.18927 3.20377 2.36581 3.02723 2.7189 2.67415L2.82399 2.56906C3.17828 2.21476 3.35543 2.03762 3.54568 1.94139C3.92406 1.75001 4.3709 1.75001 4.74927 1.94139C4.93953 2.03762 5.11668 2.21476 5.47097 2.56906L5.60088 2.69897C5.83395 2.93204 5.95049 3.04858 6.02668 3.16576C6.31401 3.60769 6.31401 4.17741 6.02668 4.61934C5.95049 4.73652 5.83395 4.85306 5.60088 5.08613C5.52468 5.16234 5.48657 5.20044 5.45468 5.24498C5.34134 5.40327 5.3022 5.63277 5.35668 5.81968C5.37202 5.87227 5.39197 5.91383 5.43188 5.99696Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="sms:+593998642941" aria-label="Text LATAM office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 13.3331L2.86667 10.7331C2.11763 9.62525 1.84666 8.31334 2.10415 7.04126C2.36163 5.76919 3.13004 4.62351 4.26651 3.81724C5.40298 3.01098 6.83017 2.59899 8.28273 2.65789C9.73528 2.71678 11.1143 3.24255 12.1635 4.13743C13.2127 5.03232 13.8606 6.23542 13.9867 7.52305C14.1128 8.81068 13.7086 10.0952 12.8492 11.1378C11.9899 12.1804 10.7338 12.9101 9.31453 13.1913C7.89529 13.4725 6.40947 13.2859 5.13333 12.6664L2 13.3331Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="https://wa.me/message/I6UKQ33TOFDAP1" target="_blank" rel="noopener" aria-label="WhatsApp LATAM office">
+            <svg width="16" height="16" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path class="fill-path" fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+          </a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <a class="site-footer__icon-link" href="mailto:contact@carbonweb.co" aria-label="Email CarbonWeb">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4.66634C2 4.31272 2.14048 3.97358 2.39052 3.72353C2.64057 3.47348 2.97971 3.33301 3.33333 3.33301H12.6667C13.0203 3.33301 13.3594 3.47348 13.6095 3.72353C13.8595 3.97358 14 4.31272 14 4.66634V11.333C14 11.6866 13.8595 12.0258 13.6095 12.2758C13.3594 12.5259 13.0203 12.6663 12.6667 12.6663H3.33333C2.97971 12.6663 2.64057 12.5259 2.39052 12.2758C2.14048 12.0258 2 11.6866 2 11.333V4.66634Z" stroke="currentColor" stroke-width="1.1984" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 4.66699L8 8.66699L14 4.66699" stroke="currentColor" stroke-width="1.1984" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="mailto:contact@carbonweb.co">contact@carbonweb.co</a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <a class="site-footer__icon-link" href="https://www.linkedin.com/company/carbonwebprint/" target="_blank" rel="noopener" aria-label="CarbonWeb on LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M0.600006 2.47461C0.600006 1.97733 0.79755 1.50041 1.14918 1.14878C1.50081 0.797153 1.97773 0.599609 2.47501 0.599609H13.725C14.2223 0.599609 14.6992 0.797153 15.0508 1.14878C15.4025 1.50041 15.6 1.97733 15.6 2.47461V13.7246C15.6 14.2219 15.4025 14.6988 15.0508 15.0504C14.6992 15.4021 14.2223 15.5996 13.725 15.5996H2.47501C1.97773 15.5996 1.50081 15.4021 1.14918 15.0504C0.79755 14.6988 0.600006 14.2219 0.600006 13.7246V2.47461Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.35001 7.16211V11.8496" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.35001 4.34961V4.35961" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.10001 11.8496V7.16211" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.85 11.8496V9.03711C11.85 8.53983 11.6525 8.06292 11.3008 7.71128C10.9492 7.35965 10.4723 7.16211 9.97501 7.16211C9.47773 7.16211 9.00081 7.35965 8.64918 7.71128C8.29755 8.06292 8.10001 8.53983 8.10001 9.03711" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="https://www.instagram.com/carbon_web/" target="_blank" rel="noopener" aria-label="CarbonWeb on Instagram">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M12.2667 3.51628H12.6833M0.600006 5.93294C0.600006 4.06628 0.600006 3.13294 0.96334 2.41961C1.28291 1.79243 1.79283 1.28252 2.42001 0.962943C3.13334 0.599609 4.06667 0.599609 5.93334 0.599609H10.2667C12.1333 0.599609 13.0667 0.599609 13.78 0.962943C14.4072 1.28252 14.9171 1.79243 15.2367 2.41961C15.6 3.13294 15.6 4.06628 15.6 5.93294V10.2663C15.6 12.1329 15.6 13.0663 15.2367 13.7796C14.9171 14.4068 14.4072 14.9167 13.78 15.2363C13.0667 15.5996 12.1333 15.5996 10.2667 15.5996H5.93334C4.06667 15.5996 3.13334 15.5996 2.42001 15.2363C1.79283 14.9167 1.28291 14.4068 0.96334 13.7796C0.600006 13.0663 0.600006 12.1329 0.600006 10.2663V5.93294ZM10.985 7.67211C11.0411 8.05103 11.0221 8.43729 10.929 8.80885C10.8358 9.18041 10.6704 9.52999 10.4422 9.83762C10.2139 10.1453 9.92734 10.4049 9.59875 10.6018C9.27016 10.7987 8.90601 10.9289 8.52709 10.985C8.14817 11.0412 7.76191 11.0221 7.39035 10.929C7.01879 10.8358 6.66921 10.6704 6.36158 10.4422C5.74029 9.98125 5.32755 9.29237 5.21417 8.52711C5.10079 7.76185 5.29605 6.98289 5.757 6.3616C6.21795 5.74031 6.90683 5.32757 7.67209 5.21419C8.43735 5.10081 9.21631 5.29607 9.8376 5.75702C10.4589 6.21797 10.8716 6.90685 10.985 7.67211Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="site-footer__divider" />
+
+    <div class="site-footer__legal">
+      <ul class="site-footer__legal-links">
+        <li><a href="#">Terms and conditions</a></li>
+        <li class="sep">|</li>
+        <li><a href="#">Privacy policy</a></li>
+      </ul>
+      <span class="site-footer__copyright">&copy; 2026 Carbon Web Print LLC.</span>
+    </div>
+
+  </div>
+</footer>
+
+
+<div class="page-head" style="padding-top:56px;">
+  <h2>V2 — Creative Animated</h2>
+  <p class="desc">Animated gradient top border, staggered scroll-reveal, arrow slide-in link hovers, gradient column titles on hover, periodic CTA light sweep, floating rocket.</p>
+</div>
+
+<footer class="site-footer site-footer--v2">
+  <div class="site-footer__inner">
+
+    <a class="site-footer__cta" href="https://www.carbonweb.co/demo/" aria-label="Get Started" onclick="return false;">
+      <div>
+        <p class="site-footer__cta-title">Let&rsquo;s get started</p>
+        <p class="site-footer__cta-description">
+          Interested in working with our team of workflow experts? Get started
+          with an exploration to uncover your needs and discover how monday.com
+          can work for you.
+        </p>
+        <span class="btn btn--primary btn--teal btn--lg site-footer__cta-button">Book an exploration</span>
+      </div>
+      <div class="site-footer__cta-art">
+        <img src="assets/footer-lets-get-started-footer-banner.svg" alt="" width="295" height="230" />
+      </div>
+    </a>
+
+    <div class="site-footer__row site-footer__row--a">
+      <div>
+        <h3 class="site-footer__column-title">CarbonWeb</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">How we work</a></li>
+          <li class="site-footer__careers">
+            <a href="#">Careers</a>
+            <span class="site-footer__badge">
+              <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.68555 4.59045C10.0724 4.49748 10.4803 4.56198 10.8195 4.76975C11.1588 4.97753 11.4016 5.31156 11.4946 5.69837C11.5875 6.08518 11.523 6.49308 11.3153 6.83233C11.1075 7.17159 10.7735 7.41441 10.3866 7.50738" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.79635 5.52518L7.0817 10.8729C7.11269 11.0018 7.09119 11.1378 7.02193 11.2509C6.95267 11.364 6.84133 11.4449 6.71239 11.4759L6.22624 11.5927C6.0973 11.6237 5.96133 11.6022 5.84825 11.533C5.73516 11.4637 5.65422 11.3524 5.62323 11.2234L5.03899 8.79266" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6.76849 5.29144L8.52734 2.93001C8.57845 2.86142 8.64805 2.80882 8.72799 2.77837C8.80793 2.74792 8.89489 2.74089 8.97868 2.7581C9.06247 2.7753 9.13963 2.81604 9.2011 2.87552C9.26257 2.93501 9.30581 3.01078 9.32576 3.09396L10.7462 9.00366C10.7662 9.08682 10.7621 9.17397 10.7344 9.25489C10.7067 9.33581 10.6565 9.40716 10.5896 9.46056C10.5228 9.51397 10.4422 9.54723 10.3571 9.55643C10.2721 9.56564 10.1862 9.55041 10.1095 9.51254L7.46959 8.20837L3.58035 9.14316C3.45142 9.17415 3.31545 9.15265 3.20237 9.0834C3.08928 9.01414 3.00834 8.90279 2.97735 8.77386L2.50995 6.82924C2.47896 6.7003 2.50046 6.56434 2.56972 6.45125C2.63898 6.33817 2.75032 6.25722 2.87926 6.22623L6.76849 5.29144Z" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="site-footer__badge-text">We're hiring!</span>
+            </span>
+          </li>
+          <li><a href="#">Partnerships</a></li>
+          <li><a href="#">Emergency Response Team</a></li>
+          <li><a href="#">monday.com Partnership</a></li>
+          <li><a href="#">Newsroom</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">CarbonApps</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Our Apps</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Explore marketplace</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__newsletter">
+        <p class="site-footer__newsletter-title">Subscribe to our weekly workflow newsletter</p>
+        <form class="site-footer__newsletter-form" novalidate>
+          <input class="site-footer__newsletter-input" type="email" name="EMAIL"
+                 placeholder="example@gmail.com" autocomplete="off" required />
+          <button class="site-footer__newsletter-button" type="submit">Subscribe</button>
+        </form>
+        <div class="site-footer__newsletter-message site-footer__newsletter-message--success">
+          Subscribed! Welcome to the Digital Directive!
+        </div>
+        <div class="site-footer__newsletter-message site-footer__newsletter-message--error">
+          Your subscription could not be saved. Please try again.
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__row site-footer__row--b">
+      <div>
+        <h3 class="site-footer__column-title">monday.com</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Platform</a></li>
+          <li><a href="#">monday CRM</a></li>
+          <li><a href="#">monday Work Management</a></li>
+          <li><a href="#">monday Service</a></li>
+          <li><a href="#">monday Dev</a></li>
+          <li><a href="#">Solutions</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">monday.com Services</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Consultation</a></li>
+          <li><a href="#">Workflow Development</a></li>
+          <li><a href="#">Training</a></li>
+          <li><a href="#">Custom Work</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">Creative Services</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Evolution Plan</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">Resources</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Digital Directive</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">monday Free trial</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <a class="site-footer__wordmark" href="#" aria-label="CarbonWeb home">
+        <img src="assets/General-Horizontal-1.svg" alt="CarbonWeb" width="177" height="41" />
+      </a>
+
+      <div class="site-footer__contacts">
+        <div class="site-footer__contact-group">
+          <span class="site-footer__contact-region">US</span>
+          <a href="tel:+12166662522">(216) 666 2522</a>
+          <a class="site-footer__icon-link" href="tel:+12166662522" aria-label="Call US office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5.43188 5.99696C5.89588 6.96337 6.52841 7.86914 7.32946 8.67019C8.13051 9.47124 9.03627 10.1038 10.0027 10.5678C10.0858 10.6077 10.1274 10.6276 10.18 10.643C10.3669 10.6974 10.5964 10.6583 10.7547 10.545C10.7992 10.5131 10.8373 10.475 10.9135 10.3988C11.1466 10.1657 11.2631 10.0492 11.3803 9.97297C11.8222 9.68564 12.392 9.68564 12.8339 9.97297C12.9511 10.0492 13.0676 10.1657 13.3007 10.3988L13.4306 10.5287C13.7849 10.883 13.962 11.0601 14.0583 11.2504C14.2496 11.6287 14.2496 12.0756 14.0583 12.454C13.962 12.6442 13.7849 12.8214 13.4306 13.1757L13.3255 13.2807C12.9724 13.6338 12.7959 13.8104 12.5559 13.9452C12.2895 14.0948 11.8759 14.2024 11.5704 14.2015C11.2951 14.2007 11.1069 14.1473 10.7306 14.0405C8.70837 13.4665 6.80012 12.3835 5.20814 10.7915C3.61615 9.19952 2.53317 7.29128 1.95919 5.26902C1.85238 4.89272 1.79898 4.70457 1.79816 4.42927C1.79725 4.12379 1.90483 3.71013 2.05444 3.44379C2.18927 3.20377 2.36581 3.02723 2.7189 2.67415L2.82399 2.56906C3.17828 2.21476 3.35543 2.03762 3.54568 1.94139C3.92406 1.75001 4.3709 1.75001 4.74927 1.94139C4.93953 2.03762 5.11668 2.21476 5.47097 2.56906L5.60088 2.69897C5.83395 2.93204 5.95049 3.04858 6.02668 3.16576C6.31401 3.60769 6.31401 4.17741 6.02668 4.61934C5.95049 4.73652 5.83395 4.85306 5.60088 5.08613C5.52468 5.16234 5.48657 5.20044 5.45468 5.24498C5.34134 5.40327 5.3022 5.63277 5.35668 5.81968C5.37202 5.87227 5.39197 5.91383 5.43188 5.99696Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="sms:+12166662522" aria-label="Text US office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 13.3331L2.86667 10.7331C2.11763 9.62525 1.84666 8.31334 2.10415 7.04126C2.36163 5.76919 3.13004 4.62351 4.26651 3.81724C5.40298 3.01098 6.83017 2.59899 8.28273 2.65789C9.73528 2.71678 11.1143 3.24255 12.1635 4.13743C13.2127 5.03232 13.8606 6.23542 13.9867 7.52305C14.1128 8.81068 13.7086 10.0952 12.8492 11.1378C11.9899 12.1804 10.7338 12.9101 9.31453 13.1913C7.89529 13.4725 6.40947 13.2859 5.13333 12.6664L2 13.3331Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <span class="site-footer__contact-region">LATAM</span>
+          <a href="tel:+593998642941">+593 99 864 2941</a>
+          <a class="site-footer__icon-link" href="tel:+593998642941" aria-label="Call LATAM office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5.43188 5.99696C5.89588 6.96337 6.52841 7.86914 7.32946 8.67019C8.13051 9.47124 9.03627 10.1038 10.0027 10.5678C10.0858 10.6077 10.1274 10.6276 10.18 10.643C10.3669 10.6974 10.5964 10.6583 10.7547 10.545C10.7992 10.5131 10.8373 10.475 10.9135 10.3988C11.1466 10.1657 11.2631 10.0492 11.3803 9.97297C11.8222 9.68564 12.392 9.68564 12.8339 9.97297C12.9511 10.0492 13.0676 10.1657 13.3007 10.3988L13.4306 10.5287C13.7849 10.883 13.962 11.0601 14.0583 11.2504C14.2496 11.6287 14.2496 12.0756 14.0583 12.454C13.962 12.6442 13.7849 12.8214 13.4306 13.1757L13.3255 13.2807C12.9724 13.6338 12.7959 13.8104 12.5559 13.9452C12.2895 14.0948 11.8759 14.2024 11.5704 14.2015C11.2951 14.2007 11.1069 14.1473 10.7306 14.0405C8.70837 13.4665 6.80012 12.3835 5.20814 10.7915C3.61615 9.19952 2.53317 7.29128 1.95919 5.26902C1.85238 4.89272 1.79898 4.70457 1.79816 4.42927C1.79725 4.12379 1.90483 3.71013 2.05444 3.44379C2.18927 3.20377 2.36581 3.02723 2.7189 2.67415L2.82399 2.56906C3.17828 2.21476 3.35543 2.03762 3.54568 1.94139C3.92406 1.75001 4.3709 1.75001 4.74927 1.94139C4.93953 2.03762 5.11668 2.21476 5.47097 2.56906L5.60088 2.69897C5.83395 2.93204 5.95049 3.04858 6.02668 3.16576C6.31401 3.60769 6.31401 4.17741 6.02668 4.61934C5.95049 4.73652 5.83395 4.85306 5.60088 5.08613C5.52468 5.16234 5.48657 5.20044 5.45468 5.24498C5.34134 5.40327 5.3022 5.63277 5.35668 5.81968C5.37202 5.87227 5.39197 5.91383 5.43188 5.99696Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="sms:+593998642941" aria-label="Text LATAM office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 13.3331L2.86667 10.7331C2.11763 9.62525 1.84666 8.31334 2.10415 7.04126C2.36163 5.76919 3.13004 4.62351 4.26651 3.81724C5.40298 3.01098 6.83017 2.59899 8.28273 2.65789C9.73528 2.71678 11.1143 3.24255 12.1635 4.13743C13.2127 5.03232 13.8606 6.23542 13.9867 7.52305C14.1128 8.81068 13.7086 10.0952 12.8492 11.1378C11.9899 12.1804 10.7338 12.9101 9.31453 13.1913C7.89529 13.4725 6.40947 13.2859 5.13333 12.6664L2 13.3331Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="https://wa.me/message/I6UKQ33TOFDAP1" target="_blank" rel="noopener" aria-label="WhatsApp LATAM office">
+            <svg width="16" height="16" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path class="fill-path" fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+          </a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <a class="site-footer__icon-link" href="mailto:contact@carbonweb.co" aria-label="Email CarbonWeb">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4.66634C2 4.31272 2.14048 3.97358 2.39052 3.72353C2.64057 3.47348 2.97971 3.33301 3.33333 3.33301H12.6667C13.0203 3.33301 13.3594 3.47348 13.6095 3.72353C13.8595 3.97358 14 4.31272 14 4.66634V11.333C14 11.6866 13.8595 12.0258 13.6095 12.2758C13.3594 12.5259 13.0203 12.6663 12.6667 12.6663H3.33333C2.97971 12.6663 2.64057 12.5259 2.39052 12.2758C2.14048 12.0258 2 11.6866 2 11.333V4.66634Z" stroke="currentColor" stroke-width="1.1984" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 4.66699L8 8.66699L14 4.66699" stroke="currentColor" stroke-width="1.1984" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="mailto:contact@carbonweb.co">contact@carbonweb.co</a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <a class="site-footer__icon-link" href="https://www.linkedin.com/company/carbonwebprint/" target="_blank" rel="noopener" aria-label="CarbonWeb on LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M0.600006 2.47461C0.600006 1.97733 0.79755 1.50041 1.14918 1.14878C1.50081 0.797153 1.97773 0.599609 2.47501 0.599609H13.725C14.2223 0.599609 14.6992 0.797153 15.0508 1.14878C15.4025 1.50041 15.6 1.97733 15.6 2.47461V13.7246C15.6 14.2219 15.4025 14.6988 15.0508 15.0504C14.6992 15.4021 14.2223 15.5996 13.725 15.5996H2.47501C1.97773 15.5996 1.50081 15.4021 1.14918 15.0504C0.79755 14.6988 0.600006 14.2219 0.600006 13.7246V2.47461Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.35001 7.16211V11.8496" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.35001 4.34961V4.35961" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.10001 11.8496V7.16211" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.85 11.8496V9.03711C11.85 8.53983 11.6525 8.06292 11.3008 7.71128C10.9492 7.35965 10.4723 7.16211 9.97501 7.16211C9.47773 7.16211 9.00081 7.35965 8.64918 7.71128C8.29755 8.06292 8.10001 8.53983 8.10001 9.03711" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="https://www.instagram.com/carbon_web/" target="_blank" rel="noopener" aria-label="CarbonWeb on Instagram">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M12.2667 3.51628H12.6833M0.600006 5.93294C0.600006 4.06628 0.600006 3.13294 0.96334 2.41961C1.28291 1.79243 1.79283 1.28252 2.42001 0.962943C3.13334 0.599609 4.06667 0.599609 5.93334 0.599609H10.2667C12.1333 0.599609 13.0667 0.599609 13.78 0.962943C14.4072 1.28252 14.9171 1.79243 15.2367 2.41961C15.6 3.13294 15.6 4.06628 15.6 5.93294V10.2663C15.6 12.1329 15.6 13.0663 15.2367 13.7796C14.9171 14.4068 14.4072 14.9167 13.78 15.2363C13.0667 15.5996 12.1333 15.5996 10.2667 15.5996H5.93334C4.06667 15.5996 3.13334 15.5996 2.42001 15.2363C1.79283 14.9167 1.28291 14.4068 0.96334 13.7796C0.600006 13.0663 0.600006 12.1329 0.600006 10.2663V5.93294ZM10.985 7.67211C11.0411 8.05103 11.0221 8.43729 10.929 8.80885C10.8358 9.18041 10.6704 9.52999 10.4422 9.83762C10.2139 10.1453 9.92734 10.4049 9.59875 10.6018C9.27016 10.7987 8.90601 10.9289 8.52709 10.985C8.14817 11.0412 7.76191 11.0221 7.39035 10.929C7.01879 10.8358 6.66921 10.6704 6.36158 10.4422C5.74029 9.98125 5.32755 9.29237 5.21417 8.52711C5.10079 7.76185 5.29605 6.98289 5.757 6.3616C6.21795 5.74031 6.90683 5.32757 7.67209 5.21419C8.43735 5.10081 9.21631 5.29607 9.8376 5.75702C10.4589 6.21797 10.8716 6.90685 10.985 7.67211Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="site-footer__divider" />
+
+    <div class="site-footer__legal">
+      <ul class="site-footer__legal-links">
+        <li><a href="#">Terms and conditions</a></li>
+        <li class="sep">|</li>
+        <li><a href="#">Privacy policy</a></li>
+      </ul>
+      <span class="site-footer__copyright">&copy; 2026 Carbon Web Print LLC.</span>
+    </div>
+
+  </div>
+</footer>
+
+<div class="page-head" style="padding-top:56px;">
+  <h2>V2 — Dark</h2>
+  <p class="desc">Same interactions on ink background: teal-300 hovers, glass newsletter card, glowing rocket, inverted wordmark.</p>
+</div>
+
+<footer class="site-footer site-footer--v2 site-footer--dark">
+  <div class="site-footer__inner">
+
+    <a class="site-footer__cta" href="https://www.carbonweb.co/demo/" aria-label="Get Started" onclick="return false;">
+      <div>
+        <p class="site-footer__cta-title">Let&rsquo;s get started</p>
+        <p class="site-footer__cta-description">
+          Interested in working with our team of workflow experts? Get started
+          with an exploration to uncover your needs and discover how monday.com
+          can work for you.
+        </p>
+        <span class="btn btn--primary btn--teal btn--lg site-footer__cta-button">Book an exploration</span>
+      </div>
+      <div class="site-footer__cta-art">
+        <img src="assets/footer-lets-get-started-footer-banner.svg" alt="" width="295" height="230" />
+      </div>
+    </a>
+
+    <div class="site-footer__row site-footer__row--a">
+      <div>
+        <h3 class="site-footer__column-title">CarbonWeb</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">How we work</a></li>
+          <li class="site-footer__careers">
+            <a href="#">Careers</a>
+            <span class="site-footer__badge">
+              <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.68555 4.59045C10.0724 4.49748 10.4803 4.56198 10.8195 4.76975C11.1588 4.97753 11.4016 5.31156 11.4946 5.69837C11.5875 6.08518 11.523 6.49308 11.3153 6.83233C11.1075 7.17159 10.7735 7.41441 10.3866 7.50738" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.79635 5.52518L7.0817 10.8729C7.11269 11.0018 7.09119 11.1378 7.02193 11.2509C6.95267 11.364 6.84133 11.4449 6.71239 11.4759L6.22624 11.5927C6.0973 11.6237 5.96133 11.6022 5.84825 11.533C5.73516 11.4637 5.65422 11.3524 5.62323 11.2234L5.03899 8.79266" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6.76849 5.29144L8.52734 2.93001C8.57845 2.86142 8.64805 2.80882 8.72799 2.77837C8.80793 2.74792 8.89489 2.74089 8.97868 2.7581C9.06247 2.7753 9.13963 2.81604 9.2011 2.87552C9.26257 2.93501 9.30581 3.01078 9.32576 3.09396L10.7462 9.00366C10.7662 9.08682 10.7621 9.17397 10.7344 9.25489C10.7067 9.33581 10.6565 9.40716 10.5896 9.46056C10.5228 9.51397 10.4422 9.54723 10.3571 9.55643C10.2721 9.56564 10.1862 9.55041 10.1095 9.51254L7.46959 8.20837L3.58035 9.14316C3.45142 9.17415 3.31545 9.15265 3.20237 9.0834C3.08928 9.01414 3.00834 8.90279 2.97735 8.77386L2.50995 6.82924C2.47896 6.7003 2.50046 6.56434 2.56972 6.45125C2.63898 6.33817 2.75032 6.25722 2.87926 6.22623L6.76849 5.29144Z" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="site-footer__badge-text">We're hiring!</span>
+            </span>
+          </li>
+          <li><a href="#">Partnerships</a></li>
+          <li><a href="#">Emergency Response Team</a></li>
+          <li><a href="#">monday.com Partnership</a></li>
+          <li><a href="#">Newsroom</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">CarbonApps</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Our Apps</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Explore marketplace</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__newsletter">
+        <p class="site-footer__newsletter-title">Subscribe to our weekly workflow newsletter</p>
+        <form class="site-footer__newsletter-form" novalidate>
+          <input class="site-footer__newsletter-input" type="email" name="EMAIL"
+                 placeholder="example@gmail.com" autocomplete="off" required />
+          <button class="site-footer__newsletter-button" type="submit">Subscribe</button>
+        </form>
+        <div class="site-footer__newsletter-message site-footer__newsletter-message--success">
+          Subscribed! Welcome to the Digital Directive!
+        </div>
+        <div class="site-footer__newsletter-message site-footer__newsletter-message--error">
+          Your subscription could not be saved. Please try again.
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__row site-footer__row--b">
+      <div>
+        <h3 class="site-footer__column-title">monday.com</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Platform</a></li>
+          <li><a href="#">monday CRM</a></li>
+          <li><a href="#">monday Work Management</a></li>
+          <li><a href="#">monday Service</a></li>
+          <li><a href="#">monday Dev</a></li>
+          <li><a href="#">Solutions</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">monday.com Services</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Consultation</a></li>
+          <li><a href="#">Workflow Development</a></li>
+          <li><a href="#">Training</a></li>
+          <li><a href="#">Custom Work</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">Creative Services</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Evolution Plan</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">Resources</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Digital Directive</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">monday Free trial</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <a class="site-footer__wordmark" href="#" aria-label="CarbonWeb home">
+        <img src="assets/General-Horizontal-1.svg" alt="CarbonWeb" width="177" height="41" />
+      </a>
+
+      <div class="site-footer__contacts">
+        <div class="site-footer__contact-group">
+          <span class="site-footer__contact-region">US</span>
+          <a href="tel:+12166662522">(216) 666 2522</a>
+          <a class="site-footer__icon-link" href="tel:+12166662522" aria-label="Call US office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5.43188 5.99696C5.89588 6.96337 6.52841 7.86914 7.32946 8.67019C8.13051 9.47124 9.03627 10.1038 10.0027 10.5678C10.0858 10.6077 10.1274 10.6276 10.18 10.643C10.3669 10.6974 10.5964 10.6583 10.7547 10.545C10.7992 10.5131 10.8373 10.475 10.9135 10.3988C11.1466 10.1657 11.2631 10.0492 11.3803 9.97297C11.8222 9.68564 12.392 9.68564 12.8339 9.97297C12.9511 10.0492 13.0676 10.1657 13.3007 10.3988L13.4306 10.5287C13.7849 10.883 13.962 11.0601 14.0583 11.2504C14.2496 11.6287 14.2496 12.0756 14.0583 12.454C13.962 12.6442 13.7849 12.8214 13.4306 13.1757L13.3255 13.2807C12.9724 13.6338 12.7959 13.8104 12.5559 13.9452C12.2895 14.0948 11.8759 14.2024 11.5704 14.2015C11.2951 14.2007 11.1069 14.1473 10.7306 14.0405C8.70837 13.4665 6.80012 12.3835 5.20814 10.7915C3.61615 9.19952 2.53317 7.29128 1.95919 5.26902C1.85238 4.89272 1.79898 4.70457 1.79816 4.42927C1.79725 4.12379 1.90483 3.71013 2.05444 3.44379C2.18927 3.20377 2.36581 3.02723 2.7189 2.67415L2.82399 2.56906C3.17828 2.21476 3.35543 2.03762 3.54568 1.94139C3.92406 1.75001 4.3709 1.75001 4.74927 1.94139C4.93953 2.03762 5.11668 2.21476 5.47097 2.56906L5.60088 2.69897C5.83395 2.93204 5.95049 3.04858 6.02668 3.16576C6.31401 3.60769 6.31401 4.17741 6.02668 4.61934C5.95049 4.73652 5.83395 4.85306 5.60088 5.08613C5.52468 5.16234 5.48657 5.20044 5.45468 5.24498C5.34134 5.40327 5.3022 5.63277 5.35668 5.81968C5.37202 5.87227 5.39197 5.91383 5.43188 5.99696Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="sms:+12166662522" aria-label="Text US office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 13.3331L2.86667 10.7331C2.11763 9.62525 1.84666 8.31334 2.10415 7.04126C2.36163 5.76919 3.13004 4.62351 4.26651 3.81724C5.40298 3.01098 6.83017 2.59899 8.28273 2.65789C9.73528 2.71678 11.1143 3.24255 12.1635 4.13743C13.2127 5.03232 13.8606 6.23542 13.9867 7.52305C14.1128 8.81068 13.7086 10.0952 12.8492 11.1378C11.9899 12.1804 10.7338 12.9101 9.31453 13.1913C7.89529 13.4725 6.40947 13.2859 5.13333 12.6664L2 13.3331Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <span class="site-footer__contact-region">LATAM</span>
+          <a href="tel:+593998642941">+593 99 864 2941</a>
+          <a class="site-footer__icon-link" href="tel:+593998642941" aria-label="Call LATAM office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5.43188 5.99696C5.89588 6.96337 6.52841 7.86914 7.32946 8.67019C8.13051 9.47124 9.03627 10.1038 10.0027 10.5678C10.0858 10.6077 10.1274 10.6276 10.18 10.643C10.3669 10.6974 10.5964 10.6583 10.7547 10.545C10.7992 10.5131 10.8373 10.475 10.9135 10.3988C11.1466 10.1657 11.2631 10.0492 11.3803 9.97297C11.8222 9.68564 12.392 9.68564 12.8339 9.97297C12.9511 10.0492 13.0676 10.1657 13.3007 10.3988L13.4306 10.5287C13.7849 10.883 13.962 11.0601 14.0583 11.2504C14.2496 11.6287 14.2496 12.0756 14.0583 12.454C13.962 12.6442 13.7849 12.8214 13.4306 13.1757L13.3255 13.2807C12.9724 13.6338 12.7959 13.8104 12.5559 13.9452C12.2895 14.0948 11.8759 14.2024 11.5704 14.2015C11.2951 14.2007 11.1069 14.1473 10.7306 14.0405C8.70837 13.4665 6.80012 12.3835 5.20814 10.7915C3.61615 9.19952 2.53317 7.29128 1.95919 5.26902C1.85238 4.89272 1.79898 4.70457 1.79816 4.42927C1.79725 4.12379 1.90483 3.71013 2.05444 3.44379C2.18927 3.20377 2.36581 3.02723 2.7189 2.67415L2.82399 2.56906C3.17828 2.21476 3.35543 2.03762 3.54568 1.94139C3.92406 1.75001 4.3709 1.75001 4.74927 1.94139C4.93953 2.03762 5.11668 2.21476 5.47097 2.56906L5.60088 2.69897C5.83395 2.93204 5.95049 3.04858 6.02668 3.16576C6.31401 3.60769 6.31401 4.17741 6.02668 4.61934C5.95049 4.73652 5.83395 4.85306 5.60088 5.08613C5.52468 5.16234 5.48657 5.20044 5.45468 5.24498C5.34134 5.40327 5.3022 5.63277 5.35668 5.81968C5.37202 5.87227 5.39197 5.91383 5.43188 5.99696Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="sms:+593998642941" aria-label="Text LATAM office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 13.3331L2.86667 10.7331C2.11763 9.62525 1.84666 8.31334 2.10415 7.04126C2.36163 5.76919 3.13004 4.62351 4.26651 3.81724C5.40298 3.01098 6.83017 2.59899 8.28273 2.65789C9.73528 2.71678 11.1143 3.24255 12.1635 4.13743C13.2127 5.03232 13.8606 6.23542 13.9867 7.52305C14.1128 8.81068 13.7086 10.0952 12.8492 11.1378C11.9899 12.1804 10.7338 12.9101 9.31453 13.1913C7.89529 13.4725 6.40947 13.2859 5.13333 12.6664L2 13.3331Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="https://wa.me/message/I6UKQ33TOFDAP1" target="_blank" rel="noopener" aria-label="WhatsApp LATAM office">
+            <svg width="16" height="16" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path class="fill-path" fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+          </a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <a class="site-footer__icon-link" href="mailto:contact@carbonweb.co" aria-label="Email CarbonWeb">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4.66634C2 4.31272 2.14048 3.97358 2.39052 3.72353C2.64057 3.47348 2.97971 3.33301 3.33333 3.33301H12.6667C13.0203 3.33301 13.3594 3.47348 13.6095 3.72353C13.8595 3.97358 14 4.31272 14 4.66634V11.333C14 11.6866 13.8595 12.0258 13.6095 12.2758C13.3594 12.5259 13.0203 12.6663 12.6667 12.6663H3.33333C2.97971 12.6663 2.64057 12.5259 2.39052 12.2758C2.14048 12.0258 2 11.6866 2 11.333V4.66634Z" stroke="currentColor" stroke-width="1.1984" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 4.66699L8 8.66699L14 4.66699" stroke="currentColor" stroke-width="1.1984" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="mailto:contact@carbonweb.co">contact@carbonweb.co</a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <a class="site-footer__icon-link" href="https://www.linkedin.com/company/carbonwebprint/" target="_blank" rel="noopener" aria-label="CarbonWeb on LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M0.600006 2.47461C0.600006 1.97733 0.79755 1.50041 1.14918 1.14878C1.50081 0.797153 1.97773 0.599609 2.47501 0.599609H13.725C14.2223 0.599609 14.6992 0.797153 15.0508 1.14878C15.4025 1.50041 15.6 1.97733 15.6 2.47461V13.7246C15.6 14.2219 15.4025 14.6988 15.0508 15.0504C14.6992 15.4021 14.2223 15.5996 13.725 15.5996H2.47501C1.97773 15.5996 1.50081 15.4021 1.14918 15.0504C0.79755 14.6988 0.600006 14.2219 0.600006 13.7246V2.47461Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.35001 7.16211V11.8496" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.35001 4.34961V4.35961" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.10001 11.8496V7.16211" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.85 11.8496V9.03711C11.85 8.53983 11.6525 8.06292 11.3008 7.71128C10.9492 7.35965 10.4723 7.16211 9.97501 7.16211C9.47773 7.16211 9.00081 7.35965 8.64918 7.71128C8.29755 8.06292 8.10001 8.53983 8.10001 9.03711" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="https://www.instagram.com/carbon_web/" target="_blank" rel="noopener" aria-label="CarbonWeb on Instagram">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M12.2667 3.51628H12.6833M0.600006 5.93294C0.600006 4.06628 0.600006 3.13294 0.96334 2.41961C1.28291 1.79243 1.79283 1.28252 2.42001 0.962943C3.13334 0.599609 4.06667 0.599609 5.93334 0.599609H10.2667C12.1333 0.599609 13.0667 0.599609 13.78 0.962943C14.4072 1.28252 14.9171 1.79243 15.2367 2.41961C15.6 3.13294 15.6 4.06628 15.6 5.93294V10.2663C15.6 12.1329 15.6 13.0663 15.2367 13.7796C14.9171 14.4068 14.4072 14.9167 13.78 15.2363C13.0667 15.5996 12.1333 15.5996 10.2667 15.5996H5.93334C4.06667 15.5996 3.13334 15.5996 2.42001 15.2363C1.79283 14.9167 1.28291 14.4068 0.96334 13.7796C0.600006 13.0663 0.600006 12.1329 0.600006 10.2663V5.93294ZM10.985 7.67211C11.0411 8.05103 11.0221 8.43729 10.929 8.80885C10.8358 9.18041 10.6704 9.52999 10.4422 9.83762C10.2139 10.1453 9.92734 10.4049 9.59875 10.6018C9.27016 10.7987 8.90601 10.9289 8.52709 10.985C8.14817 11.0412 7.76191 11.0221 7.39035 10.929C7.01879 10.8358 6.66921 10.6704 6.36158 10.4422C5.74029 9.98125 5.32755 9.29237 5.21417 8.52711C5.10079 7.76185 5.29605 6.98289 5.757 6.3616C6.21795 5.74031 6.90683 5.32757 7.67209 5.21419C8.43735 5.10081 9.21631 5.29607 9.8376 5.75702C10.4589 6.21797 10.8716 6.90685 10.985 7.67211Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="site-footer__divider" />
+
+    <div class="site-footer__legal">
+      <ul class="site-footer__legal-links">
+        <li><a href="#">Terms and conditions</a></li>
+        <li class="sep">|</li>
+        <li><a href="#">Privacy policy</a></li>
+      </ul>
+      <span class="site-footer__copyright">&copy; 2026 Carbon Web Print LLC.</span>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- SVG Displacement Map Filter (liquid glass lens, once per page) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <filter id="liquidGlassLens" x="-50%" y="-50%" width="200%" height="200%">
+    <feImage href="data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoIAAgAAkA4JYgCdAEO/hH8AAD++O/8z/av+r8sf/EfRn/4/on/W/t78of67/2f/t/uf/a/sJ/p/7i/6X/2/33/xgAAAA==" result="map" />
+    <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
+    <feDisplacementMap in="blur" in2="map" scale="0.5" xChannelSelector="R" yChannelSelector="G" result="displace" />
+  </filter>
+</svg>
+
+<div class="page-head" style="padding-top:56px;">
+  <h2>V3 — Liquid Glass</h2>
+  <p class="desc">Footer surfaces as liquid glass panels (DS liquid-glass-cards recipe): CTA, newsletter, badge and icon chips get the color-mix() specular stack + backdrop blur over a vibrant brand wash. Composes with V2 animations.</p>
+</div>
+
+<footer class="site-footer site-footer--v2 site-footer--v3">
+  <div class="site-footer__inner">
+
+    <a class="site-footer__cta" href="https://www.carbonweb.co/demo/" aria-label="Get Started" onclick="return false;">
+      <div>
+        <p class="site-footer__cta-title">Let&rsquo;s get started</p>
+        <p class="site-footer__cta-description">
+          Interested in working with our team of workflow experts? Get started
+          with an exploration to uncover your needs and discover how monday.com
+          can work for you.
+        </p>
+        <span class="btn btn--primary btn--teal btn--lg site-footer__cta-button">Book an exploration</span>
+      </div>
+      <div class="site-footer__cta-art">
+        <img src="assets/footer-lets-get-started-footer-banner.svg" alt="" width="295" height="230" />
+      </div>
+    </a>
+
+    <div class="site-footer__row site-footer__row--a">
+      <div>
+        <h3 class="site-footer__column-title">CarbonWeb</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">How we work</a></li>
+          <li class="site-footer__careers">
+            <a href="#">Careers</a>
+            <span class="site-footer__badge">
+              <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.68555 4.59045C10.0724 4.49748 10.4803 4.56198 10.8195 4.76975C11.1588 4.97753 11.4016 5.31156 11.4946 5.69837C11.5875 6.08518 11.523 6.49308 11.3153 6.83233C11.1075 7.17159 10.7735 7.41441 10.3866 7.50738" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.79635 5.52518L7.0817 10.8729C7.11269 11.0018 7.09119 11.1378 7.02193 11.2509C6.95267 11.364 6.84133 11.4449 6.71239 11.4759L6.22624 11.5927C6.0973 11.6237 5.96133 11.6022 5.84825 11.533C5.73516 11.4637 5.65422 11.3524 5.62323 11.2234L5.03899 8.79266" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6.76849 5.29144L8.52734 2.93001C8.57845 2.86142 8.64805 2.80882 8.72799 2.77837C8.80793 2.74792 8.89489 2.74089 8.97868 2.7581C9.06247 2.7753 9.13963 2.81604 9.2011 2.87552C9.26257 2.93501 9.30581 3.01078 9.32576 3.09396L10.7462 9.00366C10.7662 9.08682 10.7621 9.17397 10.7344 9.25489C10.7067 9.33581 10.6565 9.40716 10.5896 9.46056C10.5228 9.51397 10.4422 9.54723 10.3571 9.55643C10.2721 9.56564 10.1862 9.55041 10.1095 9.51254L7.46959 8.20837L3.58035 9.14316C3.45142 9.17415 3.31545 9.15265 3.20237 9.0834C3.08928 9.01414 3.00834 8.90279 2.97735 8.77386L2.50995 6.82924C2.47896 6.7003 2.50046 6.56434 2.56972 6.45125C2.63898 6.33817 2.75032 6.25722 2.87926 6.22623L6.76849 5.29144Z" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="site-footer__badge-text">We're hiring!</span>
+            </span>
+          </li>
+          <li><a href="#">Partnerships</a></li>
+          <li><a href="#">Emergency Response Team</a></li>
+          <li><a href="#">monday.com Partnership</a></li>
+          <li><a href="#">Newsroom</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">CarbonApps</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Our Apps</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Explore marketplace</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__newsletter">
+        <p class="site-footer__newsletter-title">Subscribe to our weekly workflow newsletter</p>
+        <form class="site-footer__newsletter-form" novalidate>
+          <input class="site-footer__newsletter-input" type="email" name="EMAIL"
+                 placeholder="example@gmail.com" autocomplete="off" required />
+          <button class="site-footer__newsletter-button" type="submit">Subscribe</button>
+        </form>
+        <div class="site-footer__newsletter-message site-footer__newsletter-message--success">
+          Subscribed! Welcome to the Digital Directive!
+        </div>
+        <div class="site-footer__newsletter-message site-footer__newsletter-message--error">
+          Your subscription could not be saved. Please try again.
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__row site-footer__row--b">
+      <div>
+        <h3 class="site-footer__column-title">monday.com</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Platform</a></li>
+          <li><a href="#">monday CRM</a></li>
+          <li><a href="#">monday Work Management</a></li>
+          <li><a href="#">monday Service</a></li>
+          <li><a href="#">monday Dev</a></li>
+          <li><a href="#">Solutions</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">monday.com Services</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Consultation</a></li>
+          <li><a href="#">Workflow Development</a></li>
+          <li><a href="#">Training</a></li>
+          <li><a href="#">Custom Work</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">Creative Services</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Evolution Plan</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">Resources</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Digital Directive</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">monday Free trial</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <a class="site-footer__wordmark" href="#" aria-label="CarbonWeb home">
+        <img src="assets/General-Horizontal-1.svg" alt="CarbonWeb" width="177" height="41" />
+      </a>
+
+      <div class="site-footer__contacts">
+        <div class="site-footer__contact-group">
+          <span class="site-footer__contact-region">US</span>
+          <a href="tel:+12166662522">(216) 666 2522</a>
+          <a class="site-footer__icon-link" href="tel:+12166662522" aria-label="Call US office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5.43188 5.99696C5.89588 6.96337 6.52841 7.86914 7.32946 8.67019C8.13051 9.47124 9.03627 10.1038 10.0027 10.5678C10.0858 10.6077 10.1274 10.6276 10.18 10.643C10.3669 10.6974 10.5964 10.6583 10.7547 10.545C10.7992 10.5131 10.8373 10.475 10.9135 10.3988C11.1466 10.1657 11.2631 10.0492 11.3803 9.97297C11.8222 9.68564 12.392 9.68564 12.8339 9.97297C12.9511 10.0492 13.0676 10.1657 13.3007 10.3988L13.4306 10.5287C13.7849 10.883 13.962 11.0601 14.0583 11.2504C14.2496 11.6287 14.2496 12.0756 14.0583 12.454C13.962 12.6442 13.7849 12.8214 13.4306 13.1757L13.3255 13.2807C12.9724 13.6338 12.7959 13.8104 12.5559 13.9452C12.2895 14.0948 11.8759 14.2024 11.5704 14.2015C11.2951 14.2007 11.1069 14.1473 10.7306 14.0405C8.70837 13.4665 6.80012 12.3835 5.20814 10.7915C3.61615 9.19952 2.53317 7.29128 1.95919 5.26902C1.85238 4.89272 1.79898 4.70457 1.79816 4.42927C1.79725 4.12379 1.90483 3.71013 2.05444 3.44379C2.18927 3.20377 2.36581 3.02723 2.7189 2.67415L2.82399 2.56906C3.17828 2.21476 3.35543 2.03762 3.54568 1.94139C3.92406 1.75001 4.3709 1.75001 4.74927 1.94139C4.93953 2.03762 5.11668 2.21476 5.47097 2.56906L5.60088 2.69897C5.83395 2.93204 5.95049 3.04858 6.02668 3.16576C6.31401 3.60769 6.31401 4.17741 6.02668 4.61934C5.95049 4.73652 5.83395 4.85306 5.60088 5.08613C5.52468 5.16234 5.48657 5.20044 5.45468 5.24498C5.34134 5.40327 5.3022 5.63277 5.35668 5.81968C5.37202 5.87227 5.39197 5.91383 5.43188 5.99696Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="sms:+12166662522" aria-label="Text US office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 13.3331L2.86667 10.7331C2.11763 9.62525 1.84666 8.31334 2.10415 7.04126C2.36163 5.76919 3.13004 4.62351 4.26651 3.81724C5.40298 3.01098 6.83017 2.59899 8.28273 2.65789C9.73528 2.71678 11.1143 3.24255 12.1635 4.13743C13.2127 5.03232 13.8606 6.23542 13.9867 7.52305C14.1128 8.81068 13.7086 10.0952 12.8492 11.1378C11.9899 12.1804 10.7338 12.9101 9.31453 13.1913C7.89529 13.4725 6.40947 13.2859 5.13333 12.6664L2 13.3331Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <span class="site-footer__contact-region">LATAM</span>
+          <a href="tel:+593998642941">+593 99 864 2941</a>
+          <a class="site-footer__icon-link" href="tel:+593998642941" aria-label="Call LATAM office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5.43188 5.99696C5.89588 6.96337 6.52841 7.86914 7.32946 8.67019C8.13051 9.47124 9.03627 10.1038 10.0027 10.5678C10.0858 10.6077 10.1274 10.6276 10.18 10.643C10.3669 10.6974 10.5964 10.6583 10.7547 10.545C10.7992 10.5131 10.8373 10.475 10.9135 10.3988C11.1466 10.1657 11.2631 10.0492 11.3803 9.97297C11.8222 9.68564 12.392 9.68564 12.8339 9.97297C12.9511 10.0492 13.0676 10.1657 13.3007 10.3988L13.4306 10.5287C13.7849 10.883 13.962 11.0601 14.0583 11.2504C14.2496 11.6287 14.2496 12.0756 14.0583 12.454C13.962 12.6442 13.7849 12.8214 13.4306 13.1757L13.3255 13.2807C12.9724 13.6338 12.7959 13.8104 12.5559 13.9452C12.2895 14.0948 11.8759 14.2024 11.5704 14.2015C11.2951 14.2007 11.1069 14.1473 10.7306 14.0405C8.70837 13.4665 6.80012 12.3835 5.20814 10.7915C3.61615 9.19952 2.53317 7.29128 1.95919 5.26902C1.85238 4.89272 1.79898 4.70457 1.79816 4.42927C1.79725 4.12379 1.90483 3.71013 2.05444 3.44379C2.18927 3.20377 2.36581 3.02723 2.7189 2.67415L2.82399 2.56906C3.17828 2.21476 3.35543 2.03762 3.54568 1.94139C3.92406 1.75001 4.3709 1.75001 4.74927 1.94139C4.93953 2.03762 5.11668 2.21476 5.47097 2.56906L5.60088 2.69897C5.83395 2.93204 5.95049 3.04858 6.02668 3.16576C6.31401 3.60769 6.31401 4.17741 6.02668 4.61934C5.95049 4.73652 5.83395 4.85306 5.60088 5.08613C5.52468 5.16234 5.48657 5.20044 5.45468 5.24498C5.34134 5.40327 5.3022 5.63277 5.35668 5.81968C5.37202 5.87227 5.39197 5.91383 5.43188 5.99696Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="sms:+593998642941" aria-label="Text LATAM office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 13.3331L2.86667 10.7331C2.11763 9.62525 1.84666 8.31334 2.10415 7.04126C2.36163 5.76919 3.13004 4.62351 4.26651 3.81724C5.40298 3.01098 6.83017 2.59899 8.28273 2.65789C9.73528 2.71678 11.1143 3.24255 12.1635 4.13743C13.2127 5.03232 13.8606 6.23542 13.9867 7.52305C14.1128 8.81068 13.7086 10.0952 12.8492 11.1378C11.9899 12.1804 10.7338 12.9101 9.31453 13.1913C7.89529 13.4725 6.40947 13.2859 5.13333 12.6664L2 13.3331Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="https://wa.me/message/I6UKQ33TOFDAP1" target="_blank" rel="noopener" aria-label="WhatsApp LATAM office">
+            <svg width="16" height="16" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path class="fill-path" fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+          </a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <a class="site-footer__icon-link" href="mailto:contact@carbonweb.co" aria-label="Email CarbonWeb">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4.66634C2 4.31272 2.14048 3.97358 2.39052 3.72353C2.64057 3.47348 2.97971 3.33301 3.33333 3.33301H12.6667C13.0203 3.33301 13.3594 3.47348 13.6095 3.72353C13.8595 3.97358 14 4.31272 14 4.66634V11.333C14 11.6866 13.8595 12.0258 13.6095 12.2758C13.3594 12.5259 13.0203 12.6663 12.6667 12.6663H3.33333C2.97971 12.6663 2.64057 12.5259 2.39052 12.2758C2.14048 12.0258 2 11.6866 2 11.333V4.66634Z" stroke="currentColor" stroke-width="1.1984" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 4.66699L8 8.66699L14 4.66699" stroke="currentColor" stroke-width="1.1984" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="mailto:contact@carbonweb.co">contact@carbonweb.co</a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <a class="site-footer__icon-link" href="https://www.linkedin.com/company/carbonwebprint/" target="_blank" rel="noopener" aria-label="CarbonWeb on LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M0.600006 2.47461C0.600006 1.97733 0.79755 1.50041 1.14918 1.14878C1.50081 0.797153 1.97773 0.599609 2.47501 0.599609H13.725C14.2223 0.599609 14.6992 0.797153 15.0508 1.14878C15.4025 1.50041 15.6 1.97733 15.6 2.47461V13.7246C15.6 14.2219 15.4025 14.6988 15.0508 15.0504C14.6992 15.4021 14.2223 15.5996 13.725 15.5996H2.47501C1.97773 15.5996 1.50081 15.4021 1.14918 15.0504C0.79755 14.6988 0.600006 14.2219 0.600006 13.7246V2.47461Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.35001 7.16211V11.8496" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.35001 4.34961V4.35961" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.10001 11.8496V7.16211" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.85 11.8496V9.03711C11.85 8.53983 11.6525 8.06292 11.3008 7.71128C10.9492 7.35965 10.4723 7.16211 9.97501 7.16211C9.47773 7.16211 9.00081 7.35965 8.64918 7.71128C8.29755 8.06292 8.10001 8.53983 8.10001 9.03711" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="https://www.instagram.com/carbon_web/" target="_blank" rel="noopener" aria-label="CarbonWeb on Instagram">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M12.2667 3.51628H12.6833M0.600006 5.93294C0.600006 4.06628 0.600006 3.13294 0.96334 2.41961C1.28291 1.79243 1.79283 1.28252 2.42001 0.962943C3.13334 0.599609 4.06667 0.599609 5.93334 0.599609H10.2667C12.1333 0.599609 13.0667 0.599609 13.78 0.962943C14.4072 1.28252 14.9171 1.79243 15.2367 2.41961C15.6 3.13294 15.6 4.06628 15.6 5.93294V10.2663C15.6 12.1329 15.6 13.0663 15.2367 13.7796C14.9171 14.4068 14.4072 14.9167 13.78 15.2363C13.0667 15.5996 12.1333 15.5996 10.2667 15.5996H5.93334C4.06667 15.5996 3.13334 15.5996 2.42001 15.2363C1.79283 14.9167 1.28291 14.4068 0.96334 13.7796C0.600006 13.0663 0.600006 12.1329 0.600006 10.2663V5.93294ZM10.985 7.67211C11.0411 8.05103 11.0221 8.43729 10.929 8.80885C10.8358 9.18041 10.6704 9.52999 10.4422 9.83762C10.2139 10.1453 9.92734 10.4049 9.59875 10.6018C9.27016 10.7987 8.90601 10.9289 8.52709 10.985C8.14817 11.0412 7.76191 11.0221 7.39035 10.929C7.01879 10.8358 6.66921 10.6704 6.36158 10.4422C5.74029 9.98125 5.32755 9.29237 5.21417 8.52711C5.10079 7.76185 5.29605 6.98289 5.757 6.3616C6.21795 5.74031 6.90683 5.32757 7.67209 5.21419C8.43735 5.10081 9.21631 5.29607 9.8376 5.75702C10.4589 6.21797 10.8716 6.90685 10.985 7.67211Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="site-footer__divider" />
+
+    <div class="site-footer__legal">
+      <ul class="site-footer__legal-links">
+        <li><a href="#">Terms and conditions</a></li>
+        <li class="sep">|</li>
+        <li><a href="#">Privacy policy</a></li>
+      </ul>
+      <span class="site-footer__copyright">&copy; 2026 Carbon Web Print LLC.</span>
+    </div>
+
+  </div>
+</footer>
+
+<div class="page-head" style="padding-top:56px;">
+  <h2>V3 — Liquid Glass Dark</h2>
+  <p class="desc">Night glass: reflex multipliers flip (light 0.35 / dark 2), 8% glass tint over an ink gradient with teal, green and pink washes.</p>
+</div>
+
+<footer class="site-footer site-footer--v2 site-footer--v3 site-footer--dark">
+  <div class="site-footer__inner">
+
+    <a class="site-footer__cta" href="https://www.carbonweb.co/demo/" aria-label="Get Started" onclick="return false;">
+      <div>
+        <p class="site-footer__cta-title">Let&rsquo;s get started</p>
+        <p class="site-footer__cta-description">
+          Interested in working with our team of workflow experts? Get started
+          with an exploration to uncover your needs and discover how monday.com
+          can work for you.
+        </p>
+        <span class="btn btn--primary btn--teal btn--lg site-footer__cta-button">Book an exploration</span>
+      </div>
+      <div class="site-footer__cta-art">
+        <img src="assets/footer-lets-get-started-footer-banner.svg" alt="" width="295" height="230" />
+      </div>
+    </a>
+
+    <div class="site-footer__row site-footer__row--a">
+      <div>
+        <h3 class="site-footer__column-title">CarbonWeb</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">How we work</a></li>
+          <li class="site-footer__careers">
+            <a href="#">Careers</a>
+            <span class="site-footer__badge">
+              <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.68555 4.59045C10.0724 4.49748 10.4803 4.56198 10.8195 4.76975C11.1588 4.97753 11.4016 5.31156 11.4946 5.69837C11.5875 6.08518 11.523 6.49308 11.3153 6.83233C11.1075 7.17159 10.7735 7.41441 10.3866 7.50738" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.79635 5.52518L7.0817 10.8729C7.11269 11.0018 7.09119 11.1378 7.02193 11.2509C6.95267 11.364 6.84133 11.4449 6.71239 11.4759L6.22624 11.5927C6.0973 11.6237 5.96133 11.6022 5.84825 11.533C5.73516 11.4637 5.65422 11.3524 5.62323 11.2234L5.03899 8.79266" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6.76849 5.29144L8.52734 2.93001C8.57845 2.86142 8.64805 2.80882 8.72799 2.77837C8.80793 2.74792 8.89489 2.74089 8.97868 2.7581C9.06247 2.7753 9.13963 2.81604 9.2011 2.87552C9.26257 2.93501 9.30581 3.01078 9.32576 3.09396L10.7462 9.00366C10.7662 9.08682 10.7621 9.17397 10.7344 9.25489C10.7067 9.33581 10.6565 9.40716 10.5896 9.46056C10.5228 9.51397 10.4422 9.54723 10.3571 9.55643C10.2721 9.56564 10.1862 9.55041 10.1095 9.51254L7.46959 8.20837L3.58035 9.14316C3.45142 9.17415 3.31545 9.15265 3.20237 9.0834C3.08928 9.01414 3.00834 8.90279 2.97735 8.77386L2.50995 6.82924C2.47896 6.7003 2.50046 6.56434 2.56972 6.45125C2.63898 6.33817 2.75032 6.25722 2.87926 6.22623L6.76849 5.29144Z" stroke="currentColor" stroke-width="0.919271" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="site-footer__badge-text">We're hiring!</span>
+            </span>
+          </li>
+          <li><a href="#">Partnerships</a></li>
+          <li><a href="#">Emergency Response Team</a></li>
+          <li><a href="#">monday.com Partnership</a></li>
+          <li><a href="#">Newsroom</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">CarbonApps</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Our Apps</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Explore marketplace</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__newsletter">
+        <p class="site-footer__newsletter-title">Subscribe to our weekly workflow newsletter</p>
+        <form class="site-footer__newsletter-form" novalidate>
+          <input class="site-footer__newsletter-input" type="email" name="EMAIL"
+                 placeholder="example@gmail.com" autocomplete="off" required />
+          <button class="site-footer__newsletter-button" type="submit">Subscribe</button>
+        </form>
+        <div class="site-footer__newsletter-message site-footer__newsletter-message--success">
+          Subscribed! Welcome to the Digital Directive!
+        </div>
+        <div class="site-footer__newsletter-message site-footer__newsletter-message--error">
+          Your subscription could not be saved. Please try again.
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__row site-footer__row--b">
+      <div>
+        <h3 class="site-footer__column-title">monday.com</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Platform</a></li>
+          <li><a href="#">monday CRM</a></li>
+          <li><a href="#">monday Work Management</a></li>
+          <li><a href="#">monday Service</a></li>
+          <li><a href="#">monday Dev</a></li>
+          <li><a href="#">Solutions</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">monday.com Services</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Consultation</a></li>
+          <li><a href="#">Workflow Development</a></li>
+          <li><a href="#">Training</a></li>
+          <li><a href="#">Custom Work</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">Creative Services</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Evolution Plan</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="site-footer__column-title">Resources</h3>
+        <ul class="site-footer__links">
+          <li><a href="#">Digital Directive</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">monday Free trial</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <a class="site-footer__wordmark" href="#" aria-label="CarbonWeb home">
+        <img src="assets/General-Horizontal-1.svg" alt="CarbonWeb" width="177" height="41" />
+      </a>
+
+      <div class="site-footer__contacts">
+        <div class="site-footer__contact-group">
+          <span class="site-footer__contact-region">US</span>
+          <a href="tel:+12166662522">(216) 666 2522</a>
+          <a class="site-footer__icon-link" href="tel:+12166662522" aria-label="Call US office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5.43188 5.99696C5.89588 6.96337 6.52841 7.86914 7.32946 8.67019C8.13051 9.47124 9.03627 10.1038 10.0027 10.5678C10.0858 10.6077 10.1274 10.6276 10.18 10.643C10.3669 10.6974 10.5964 10.6583 10.7547 10.545C10.7992 10.5131 10.8373 10.475 10.9135 10.3988C11.1466 10.1657 11.2631 10.0492 11.3803 9.97297C11.8222 9.68564 12.392 9.68564 12.8339 9.97297C12.9511 10.0492 13.0676 10.1657 13.3007 10.3988L13.4306 10.5287C13.7849 10.883 13.962 11.0601 14.0583 11.2504C14.2496 11.6287 14.2496 12.0756 14.0583 12.454C13.962 12.6442 13.7849 12.8214 13.4306 13.1757L13.3255 13.2807C12.9724 13.6338 12.7959 13.8104 12.5559 13.9452C12.2895 14.0948 11.8759 14.2024 11.5704 14.2015C11.2951 14.2007 11.1069 14.1473 10.7306 14.0405C8.70837 13.4665 6.80012 12.3835 5.20814 10.7915C3.61615 9.19952 2.53317 7.29128 1.95919 5.26902C1.85238 4.89272 1.79898 4.70457 1.79816 4.42927C1.79725 4.12379 1.90483 3.71013 2.05444 3.44379C2.18927 3.20377 2.36581 3.02723 2.7189 2.67415L2.82399 2.56906C3.17828 2.21476 3.35543 2.03762 3.54568 1.94139C3.92406 1.75001 4.3709 1.75001 4.74927 1.94139C4.93953 2.03762 5.11668 2.21476 5.47097 2.56906L5.60088 2.69897C5.83395 2.93204 5.95049 3.04858 6.02668 3.16576C6.31401 3.60769 6.31401 4.17741 6.02668 4.61934C5.95049 4.73652 5.83395 4.85306 5.60088 5.08613C5.52468 5.16234 5.48657 5.20044 5.45468 5.24498C5.34134 5.40327 5.3022 5.63277 5.35668 5.81968C5.37202 5.87227 5.39197 5.91383 5.43188 5.99696Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="sms:+12166662522" aria-label="Text US office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 13.3331L2.86667 10.7331C2.11763 9.62525 1.84666 8.31334 2.10415 7.04126C2.36163 5.76919 3.13004 4.62351 4.26651 3.81724C5.40298 3.01098 6.83017 2.59899 8.28273 2.65789C9.73528 2.71678 11.1143 3.24255 12.1635 4.13743C13.2127 5.03232 13.8606 6.23542 13.9867 7.52305C14.1128 8.81068 13.7086 10.0952 12.8492 11.1378C11.9899 12.1804 10.7338 12.9101 9.31453 13.1913C7.89529 13.4725 6.40947 13.2859 5.13333 12.6664L2 13.3331Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <span class="site-footer__contact-region">LATAM</span>
+          <a href="tel:+593998642941">+593 99 864 2941</a>
+          <a class="site-footer__icon-link" href="tel:+593998642941" aria-label="Call LATAM office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5.43188 5.99696C5.89588 6.96337 6.52841 7.86914 7.32946 8.67019C8.13051 9.47124 9.03627 10.1038 10.0027 10.5678C10.0858 10.6077 10.1274 10.6276 10.18 10.643C10.3669 10.6974 10.5964 10.6583 10.7547 10.545C10.7992 10.5131 10.8373 10.475 10.9135 10.3988C11.1466 10.1657 11.2631 10.0492 11.3803 9.97297C11.8222 9.68564 12.392 9.68564 12.8339 9.97297C12.9511 10.0492 13.0676 10.1657 13.3007 10.3988L13.4306 10.5287C13.7849 10.883 13.962 11.0601 14.0583 11.2504C14.2496 11.6287 14.2496 12.0756 14.0583 12.454C13.962 12.6442 13.7849 12.8214 13.4306 13.1757L13.3255 13.2807C12.9724 13.6338 12.7959 13.8104 12.5559 13.9452C12.2895 14.0948 11.8759 14.2024 11.5704 14.2015C11.2951 14.2007 11.1069 14.1473 10.7306 14.0405C8.70837 13.4665 6.80012 12.3835 5.20814 10.7915C3.61615 9.19952 2.53317 7.29128 1.95919 5.26902C1.85238 4.89272 1.79898 4.70457 1.79816 4.42927C1.79725 4.12379 1.90483 3.71013 2.05444 3.44379C2.18927 3.20377 2.36581 3.02723 2.7189 2.67415L2.82399 2.56906C3.17828 2.21476 3.35543 2.03762 3.54568 1.94139C3.92406 1.75001 4.3709 1.75001 4.74927 1.94139C4.93953 2.03762 5.11668 2.21476 5.47097 2.56906L5.60088 2.69897C5.83395 2.93204 5.95049 3.04858 6.02668 3.16576C6.31401 3.60769 6.31401 4.17741 6.02668 4.61934C5.95049 4.73652 5.83395 4.85306 5.60088 5.08613C5.52468 5.16234 5.48657 5.20044 5.45468 5.24498C5.34134 5.40327 5.3022 5.63277 5.35668 5.81968C5.37202 5.87227 5.39197 5.91383 5.43188 5.99696Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="sms:+593998642941" aria-label="Text LATAM office">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 13.3331L2.86667 10.7331C2.11763 9.62525 1.84666 8.31334 2.10415 7.04126C2.36163 5.76919 3.13004 4.62351 4.26651 3.81724C5.40298 3.01098 6.83017 2.59899 8.28273 2.65789C9.73528 2.71678 11.1143 3.24255 12.1635 4.13743C13.2127 5.03232 13.8606 6.23542 13.9867 7.52305C14.1128 8.81068 13.7086 10.0952 12.8492 11.1378C11.9899 12.1804 10.7338 12.9101 9.31453 13.1913C7.89529 13.4725 6.40947 13.2859 5.13333 12.6664L2 13.3331Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="https://wa.me/message/I6UKQ33TOFDAP1" target="_blank" rel="noopener" aria-label="WhatsApp LATAM office">
+            <svg width="16" height="16" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path class="fill-path" fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+          </a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <a class="site-footer__icon-link" href="mailto:contact@carbonweb.co" aria-label="Email CarbonWeb">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4.66634C2 4.31272 2.14048 3.97358 2.39052 3.72353C2.64057 3.47348 2.97971 3.33301 3.33333 3.33301H12.6667C13.0203 3.33301 13.3594 3.47348 13.6095 3.72353C13.8595 3.97358 14 4.31272 14 4.66634V11.333C14 11.6866 13.8595 12.0258 13.6095 12.2758C13.3594 12.5259 13.0203 12.6663 12.6667 12.6663H3.33333C2.97971 12.6663 2.64057 12.5259 2.39052 12.2758C2.14048 12.0258 2 11.6866 2 11.333V4.66634Z" stroke="currentColor" stroke-width="1.1984" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 4.66699L8 8.66699L14 4.66699" stroke="currentColor" stroke-width="1.1984" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="mailto:contact@carbonweb.co">contact@carbonweb.co</a>
+        </div>
+
+        <div class="site-footer__contact-group">
+          <a class="site-footer__icon-link" href="https://www.linkedin.com/company/carbonwebprint/" target="_blank" rel="noopener" aria-label="CarbonWeb on LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M0.600006 2.47461C0.600006 1.97733 0.79755 1.50041 1.14918 1.14878C1.50081 0.797153 1.97773 0.599609 2.47501 0.599609H13.725C14.2223 0.599609 14.6992 0.797153 15.0508 1.14878C15.4025 1.50041 15.6 1.97733 15.6 2.47461V13.7246C15.6 14.2219 15.4025 14.6988 15.0508 15.0504C14.6992 15.4021 14.2223 15.5996 13.725 15.5996H2.47501C1.97773 15.5996 1.50081 15.4021 1.14918 15.0504C0.79755 14.6988 0.600006 14.2219 0.600006 13.7246V2.47461Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.35001 7.16211V11.8496" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.35001 4.34961V4.35961" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.10001 11.8496V7.16211" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.85 11.8496V9.03711C11.85 8.53983 11.6525 8.06292 11.3008 7.71128C10.9492 7.35965 10.4723 7.16211 9.97501 7.16211C9.47773 7.16211 9.00081 7.35965 8.64918 7.71128C8.29755 8.06292 8.10001 8.53983 8.10001 9.03711" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="site-footer__icon-link" href="https://www.instagram.com/carbon_web/" target="_blank" rel="noopener" aria-label="CarbonWeb on Instagram">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M12.2667 3.51628H12.6833M0.600006 5.93294C0.600006 4.06628 0.600006 3.13294 0.96334 2.41961C1.28291 1.79243 1.79283 1.28252 2.42001 0.962943C3.13334 0.599609 4.06667 0.599609 5.93334 0.599609H10.2667C12.1333 0.599609 13.0667 0.599609 13.78 0.962943C14.4072 1.28252 14.9171 1.79243 15.2367 2.41961C15.6 3.13294 15.6 4.06628 15.6 5.93294V10.2663C15.6 12.1329 15.6 13.0663 15.2367 13.7796C14.9171 14.4068 14.4072 14.9167 13.78 15.2363C13.0667 15.5996 12.1333 15.5996 10.2667 15.5996H5.93334C4.06667 15.5996 3.13334 15.5996 2.42001 15.2363C1.79283 14.9167 1.28291 14.4068 0.96334 13.7796C0.600006 13.0663 0.600006 12.1329 0.600006 10.2663V5.93294ZM10.985 7.67211C11.0411 8.05103 11.0221 8.43729 10.929 8.80885C10.8358 9.18041 10.6704 9.52999 10.4422 9.83762C10.2139 10.1453 9.92734 10.4049 9.59875 10.6018C9.27016 10.7987 8.90601 10.9289 8.52709 10.985C8.14817 11.0412 7.76191 11.0221 7.39035 10.929C7.01879 10.8358 6.66921 10.6704 6.36158 10.4422C5.74029 9.98125 5.32755 9.29237 5.21417 8.52711C5.10079 7.76185 5.29605 6.98289 5.757 6.3616C6.21795 5.74031 6.90683 5.32757 7.67209 5.21419C8.43735 5.10081 9.21631 5.29607 9.8376 5.75702C10.4589 6.21797 10.8716 6.90685 10.985 7.67211Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="site-footer__divider" />
+
+    <div class="site-footer__legal">
+      <ul class="site-footer__legal-links">
+        <li><a href="#">Terms and conditions</a></li>
+        <li class="sep">|</li>
+        <li><a href="#">Privacy policy</a></li>
+      </ul>
+      <span class="site-footer__copyright">&copy; 2026 Carbon Web Print LLC.</span>
+    </div>
+
+  </div>
+</footer>
+
+<script src="site-footer.js"></script>
+</body>
+</html>

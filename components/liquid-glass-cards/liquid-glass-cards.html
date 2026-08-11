@@ -1,0 +1,33 @@
+<!-- Liquid Glass Cards — CarbonWeb Design System -->
+<!-- Single-element glass via color-mix() box-shadow stack + SVG displacement map -->
+
+<!-- SVG Displacement Map Filter (include once per page) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <filter id="liquidGlassLens" x="-50%" y="-50%" width="200%" height="200%">
+    <feImage href="data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoIAAgAAkA4JYgCdAEO/hH8AAD++O/8z/av+r8sf/EfRn/4/on/W/t78of67/2f/t/uf/a/sJ/p/7i/6X/2/33/xgAAAA==" result="map" />
+    <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
+    <feDisplacementMap in="blur" in2="map" scale="0.5" xChannelSelector="R" yChannelSelector="G" result="displace" />
+  </filter>
+</svg>
+
+<!-- Light variant -->
+<div class="liquid-glass-cards">
+  <div class="liquid-glass-card liquid-glass-card--teal">
+    <div class="liquid-glass-card__content">
+      <div class="liquid-glass-card__icon"><!-- icon svg --></div>
+      <h3 class="liquid-glass-card__title">Card Title</h3>
+      <p class="liquid-glass-card__description">Card description.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Dark variant -->
+<div class="liquid-glass-cards liquid-glass-cards--dark">
+  <div class="liquid-glass-card liquid-glass-card--teal">
+    <div class="liquid-glass-card__content">
+      <div class="liquid-glass-card__icon"><!-- icon svg --></div>
+      <h3 class="liquid-glass-card__title">Card Title</h3>
+      <p class="liquid-glass-card__description">Card description.</p>
+    </div>
+  </div>
+</div>

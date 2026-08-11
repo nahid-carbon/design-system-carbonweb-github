@@ -1,0 +1,125 @@
+/* CarbonWeb Search Bar — uses only var(--token) references
+   Pill input with trailing magnifier icon.
+   Variants: --light (default), --dark, --square. Size: --wide (55px article search).
+*/
+
+.search-bar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 280px;
+}
+
+.search-bar__input {
+  width: 100%;
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-ink);
+  background: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-slate) 25%, transparent); /* slate at 25% */
+  border-radius: var(--radius-full);
+  padding: var(--space-3) var(--space-12) var(--space-3) var(--space-5);
+  height: 44px;
+  outline: none;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    background-color 200ms ease;
+}
+
+.search-bar__input::placeholder {
+  color: var(--color-slate-light);
+}
+
+.search-bar__icon {
+  position: absolute;
+  right: var(--space-5);
+  width: 18px;
+  height: 18px;
+  color: var(--color-slate-light);
+  pointer-events: none;
+  transition: color 200ms ease;
+}
+
+/* ── Hover ── */
+
+.search-bar__input:hover {
+  border-color: var(--color-teal-500);
+}
+
+/* ── Focus ── */
+
+.search-bar__input:focus {
+  border-color: var(--color-teal-500);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-teal-500) 15%, transparent); /* soft teal ring */
+}
+
+.search-bar__input:focus ~ .search-bar__icon,
+.search-bar:focus-within .search-bar__icon {
+  color: var(--color-teal-500);
+}
+
+.search-bar__input:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}
+
+/* ── Dark variant ── */
+
+.search-bar--dark .search-bar__input {
+  background: var(--color-ink);
+  color: var(--color-white);
+  border-color: color-mix(in srgb, var(--color-teal-500) 50%, transparent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--color-teal-500) 25%, transparent); /* teal glow */
+}
+
+.search-bar--dark .search-bar__input::placeholder {
+  color: var(--color-slate-light);
+}
+
+.search-bar--dark .search-bar__icon {
+  color: var(--color-slate-light);
+}
+
+.search-bar--dark .search-bar__input:hover {
+  border-color: var(--color-teal-500);
+}
+
+.search-bar--dark .search-bar__input:focus {
+  border-color: var(--color-teal-500);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-teal-500) 25%, transparent), 0 0 16px color-mix(in srgb, var(--color-teal-500) 35%, transparent);
+}
+
+/* ── Square variant ── */
+
+.search-bar--square .search-bar__input {
+  border-radius: var(--radius-md);
+}
+
+/* ── Wide (article search) ── */
+
+.search-bar--wide {
+  width: 100%;
+  max-width: 560px;
+}
+
+.search-bar--wide .search-bar__input {
+  height: 55px;
+  padding-left: var(--space-6);
+  padding-right: var(--space-14);
+}
+
+.search-bar--wide .search-bar__icon {
+  right: var(--space-6);
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Disabled ── */
+
+.search-bar--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}

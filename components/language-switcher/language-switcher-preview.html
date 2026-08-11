@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Language Switcher — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="language-switcher.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .section { margin-bottom: 40px; }
+    .section h3 { font-size: 16px; font-weight: 600; margin-bottom: 16px; color: var(--color-slate); }
+    .footer-mock { border-top: 1px solid rgba(94, 96, 117, 0.3); padding-top: 24px; margin-top: 240px; display: flex; align-items: center; justify-content: space-between; max-width: 700px; }
+    .footer-mock .copyright { font-size: var(--text-sm); color: var(--color-slate-light); }
+  </style>
+</head>
+<body>
+
+<h2>Language Switcher</h2>
+<p class="desc">Footer language dropdown — pill trigger, floating menu, radio-check on the selected language. Click to open.</p>
+
+<div class="section">
+  <h3>In footer context</h3>
+  <div class="footer-mock">
+    <span class="copyright">© 2025 Carbon Web Print LLC</span>
+
+    <div class="language-switcher">
+      <button class="language-switcher__trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+        <span class="language-switcher__flag" aria-hidden="true">🇺🇸</span>
+        <span class="language-switcher__label">English</span>
+        <svg class="language-switcher__chevron" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M3 5.5L7 9.5L11 5.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <ul class="language-switcher__menu" role="listbox" aria-label="Select language">
+        <li role="presentation">
+          <button class="language-switcher__option language-switcher__option--selected" type="button" role="option" aria-selected="true">
+            <span class="language-switcher__flag" aria-hidden="true">🇺🇸</span>
+            <span class="language-switcher__option-name">English</span>
+            <svg class="language-switcher__radio" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M5.5 9.2L8 11.5L12.5 6.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="language-switcher__option" type="button" role="option" aria-selected="false">
+            <span class="language-switcher__flag" aria-hidden="true">🇪🇸</span>
+            <span class="language-switcher__option-name">Español</span>
+            <svg class="language-switcher__radio" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M5.5 9.2L8 11.5L12.5 6.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="language-switcher.js"></script>
+</body>
+</html>

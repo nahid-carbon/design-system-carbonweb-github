@@ -1,0 +1,119 @@
+/* CarbonWeb Solution Grid — Service/solution card layout */
+
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ── Grid column variants ── */
+
+.solution-grid--2-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.solution-grid--4-col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ── Grid item (card) ── */
+
+.solution-grid__item {
+  background: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.solution-grid__item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Icon area ── */
+
+.solution-grid__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-teal-100);
+  color: var(--color-teal-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.solution-grid__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ── Title ── */
+
+.solution-grid__title {
+  font-family: var(--font-family);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+/* ── Description ── */
+
+.solution-grid__description {
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  font-weight: var(--font-regular);
+  line-height: var(--leading-relaxed);
+  color: var(--color-muted);
+  margin: 0;
+}
+
+/* ── Icon color variants ── */
+
+.solution-grid__icon--green {
+  background: var(--color-green-100);
+  color: var(--color-green-700);
+}
+
+.solution-grid__icon--yellow {
+  background: var(--color-yellow-100);
+  color: var(--color-yellow-700);
+}
+
+.solution-grid__icon--pink {
+  background: var(--color-pink-100);
+  color: var(--color-pink-700);
+}
+
+/* ── Responsive breakpoints ── */
+
+@media (max-width: 1024px) {
+  .solution-grid--4-col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .solution-grid,
+  .solution-grid--4-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .solution-grid,
+  .solution-grid--2-col,
+  .solution-grid--4-col {
+    grid-template-columns: 1fr;
+  }
+}

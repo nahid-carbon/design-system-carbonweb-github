@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section Divider — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="section-divider.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+    .demo-head { padding: 48px 60px 8px; }
+    .demo-head h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .demo-head .desc { font-size: 15px; color: var(--color-muted); }
+    .label { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); padding: 36px 60px 14px; }
+    .sec { padding: 64px 60px; }
+    .sec--light { background: #fff; }
+    .sec--soft { background: #f8fafc; }
+    .sec--dark { background: var(--color-ink); color: #fff; }
+    .sec--teal { background: var(--color-teal-950); color: #fff; }
+    .sec h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+    .sec p { font-size: 16px; line-height: 1.7; opacity: 0.7; max-width: 560px; }
+  </style>
+</head>
+<body>
+
+<div class="demo-head">
+  <h2>Section Divider</h2>
+  <p class="desc">Angled notch transitions between sections (carbonweb.co pattern). Six variants; color via <code>--divider-color</code> (default ink) or <code>--current</code>.</p>
+</div>
+
+<div class="label">White → dark → white (top-left in, bottom-right out)</div>
+
+<section class="sec sec--light">
+  <h3>Light section</h3>
+  <p>Regular white content section. The dark section below announces itself with an angled notch rising into this one.</p>
+</section>
+
+<div class="section-divider section-divider--top-left" aria-hidden="true"></div>
+<section class="sec sec--dark">
+  <h3>Dark section</h3>
+  <p>Ink background section bridged by the notch above and released by the notch below.</p>
+</section>
+<div class="section-divider section-divider--bottom-right" aria-hidden="true"></div>
+
+<section class="sec sec--light">
+  <h3>Back to light</h3>
+  <p>The bottom-right notch hands the layout back to a white section.</p>
+</section>
+
+<div class="label">Center notches with custom color (teal-950)</div>
+
+<section class="sec sec--soft">
+  <h3>Soft section</h3>
+  <p>Same pattern, centered tabs, and a teal-950 divider color set via <code>--divider-color</code>.</p>
+</section>
+
+<div class="section-divider section-divider--top-center" style="--divider-color: var(--color-teal-950)" aria-hidden="true"></div>
+<section class="sec sec--teal">
+  <h3>Teal-950 section</h3>
+  <p>The divider color matches the section it bridges into.</p>
+</section>
+<div class="section-divider section-divider--bottom-center" style="--divider-color: var(--color-teal-950)" aria-hidden="true"></div>
+
+<section class="sec sec--light">
+  <h3>Light again</h3>
+  <p>Center-notch exit.</p>
+</section>
+
+<div class="label">Right-side entry / left-side exit</div>
+
+<div class="section-divider section-divider--top-right" aria-hidden="true"></div>
+<section class="sec sec--dark">
+  <h3>Right notch in, left notch out</h3>
+  <p>Alternate the tab position between consecutive dark sections to keep the page rhythm moving.</p>
+</section>
+<div class="section-divider section-divider--bottom-left" aria-hidden="true"></div>
+
+<section class="sec sec--light">
+  <h3>End</h3>
+  <p>All six variants shown: top-left, top-center, top-right, bottom-left, bottom-center, bottom-right.</p>
+</section>
+
+</body>
+</html>

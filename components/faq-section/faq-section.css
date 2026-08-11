@@ -1,0 +1,187 @@
+/* CarbonWeb FAQ Section — full-page FAQ block.
+   Figma: Accordion/FAQ Section Light 99:20113 / Dark 99:20114.
+
+   Composition: angled "gap" wedges + optional blur ambience + centred
+   header + a stack of .accordion--faq cards. The cards themselves live in
+   components/accordion/ — link accordion.css alongside this file.
+
+   Geometry from Figma: 1440 frame, 143px side inset, 210px top padding,
+   800px header column, 1111px card column, 20px card gap, 90px wedges. */
+
+.faq-section {
+  position: relative;
+  isolation: isolate;
+  padding: 210px var(--space-9) 186px;
+  background: var(--color-white);
+  overflow: hidden;
+}
+
+.faq-section__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1111px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+
+.faq-section__header {
+  max-width: 800px;
+  margin: 0 auto var(--space-9);
+  text-align: center;
+}
+
+.faq-section__title {
+  font-family: var(--font-family);
+  font-size: var(--text-5xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.faq-section__subtitle {
+  margin: var(--space-3) 0 0;
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  font-weight: var(--font-regular);
+  line-height: var(--leading-relaxed);
+  color: var(--color-muted);
+}
+
+/* ── Dark theme (99:20114) — black surface, white-10% cards ── */
+
+.faq-section--dark {
+  background: var(--color-black); /* token-exception: Figma System/Black — the white-10% cards are calibrated against pure black, not --color-ink */
+}
+
+.faq-section--dark .faq-section__title {
+  color: var(--color-white);
+}
+
+.faq-section--dark .faq-section__subtitle {
+  color: color-mix(in srgb, var(--color-white) 70%, transparent);
+}
+
+/* ── Angled "gap" wedges ──
+   The section surface is clipped so the page behind shows through as a
+   90px diagonal corner: top-right on entry, bottom-left on exit.
+   Matches the section-divider notch motif at page scale. */
+
+.faq-section--wedge-top {
+  clip-path: polygon(
+    0 0,
+    72% 0,
+    78% 90px,
+    100% 90px,
+    100% 100%,
+    0 100%
+  );
+}
+
+.faq-section--wedge-bottom {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    28% 100%,
+    22% calc(100% - 90px),
+    0 calc(100% - 90px)
+  );
+}
+
+.faq-section--wedge-both {
+  clip-path: polygon(
+    0 0,
+    72% 0,
+    78% 90px,
+    100% 90px,
+    100% 100%,
+    28% 100%,
+    22% calc(100% - 90px),
+    0 calc(100% - 90px)
+  );
+}
+
+/* ── Blur ambience (dark section only) ──
+   Two soft teal/green radial washes, matching the Figma "blur" frame.
+   Decorative: aria-hidden in markup, and it never intercepts pointers. */
+
+.faq-section__ambience {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.faq-section__ambience::before,
+.faq-section__ambience::after {
+  content: '';
+  position: absolute;
+  width: 490px;
+  height: 490px;
+  border-radius: var(--radius-full);
+  filter: blur(120px);
+}
+
+/* Kept low: the cards are white-10% over black, so the washes have to stay
+   well under the card fill or the questions lose contrast. */
+.faq-section__ambience::before {
+  top: 18%;
+  left: -14%;
+  background: color-mix(in srgb, var(--color-green-500) 10%, transparent);
+}
+
+.faq-section__ambience::after {
+  top: -6%;
+  right: -12%;
+  background: color-mix(in srgb, var(--color-teal-500) 12%, transparent);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 1023px) {
+  .faq-section {
+    padding: 120px var(--space-6) 110px;
+  }
+
+  .faq-section__header {
+    margin-bottom: var(--space-7);
+  }
+
+  .faq-section__title {
+    font-size: var(--text-4xl);
+  }
+}
+
+@media (max-width: 767px) {
+  .faq-section {
+    padding: 88px var(--space-5) 80px;
+  }
+
+  /* Corner wedges shrink with the section */
+  .faq-section--wedge-top {
+    clip-path: polygon(0 0, 62% 0, 72% 48px, 100% 48px, 100% 100%, 0 100%);
+  }
+
+  .faq-section--wedge-bottom {
+    clip-path: polygon(
+      0 0, 100% 0, 100% 100%, 38% 100%,
+      28% calc(100% - 48px), 0 calc(100% - 48px)
+    );
+  }
+
+  .faq-section--wedge-both {
+    clip-path: polygon(
+      0 0, 62% 0, 72% 48px, 100% 48px, 100% 100%, 38% 100%,
+      28% calc(100% - 48px), 0 calc(100% - 48px)
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-section__ambience {
+    display: none;
+  }
+}

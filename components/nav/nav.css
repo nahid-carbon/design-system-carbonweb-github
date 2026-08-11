@@ -1,0 +1,162 @@
+/* CarbonWeb Nav — Sidebar navigation (uses only var(--token) references)
+   React implementation lives in src/components/Layout.tsx.
+   This CSS is the pure-CSS reference for non-React usage.
+*/
+
+.nav {
+  width: 256px;
+  flex-shrink: 0;
+  border-right: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+}
+
+.nav__header {
+  padding: 28px 24px;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+}
+
+.nav__icon {
+  height: 24px;
+  width: auto;
+}
+
+.nav__title {
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: var(--font-bold);
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.nav__subtitle {
+  margin: var(--space-1) 0 0;
+  font-family: var(--font-family);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  color: var(--color-muted);
+}
+
+/* ── Menu ── */
+
+.nav__menu {
+  flex: 1;
+  padding: var(--space-4) var(--space-3);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-neutral-600);
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.nav__link:hover {
+  background: var(--color-neutral-50);
+  color: var(--color-ink);
+}
+
+.nav__link--active {
+  background: var(--color-teal-100);
+  color: var(--color-teal-700);
+}
+
+.nav__link--soon {
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.nav__soon-badge {
+  font-size: 10px;
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+}
+
+/* ── Groups ── */
+
+.nav__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__group-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: none;
+  background: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-neutral-600);
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.nav__group-toggle:hover {
+  background: var(--color-neutral-50);
+  color: var(--color-ink);
+}
+
+.nav__toggle-icon {
+  font-size: 10px;
+  color: var(--color-muted);
+  transition: transform 150ms ease;
+}
+
+.nav__group--open > .nav__group-toggle .nav__toggle-icon {
+  transform: rotate(90deg);
+}
+
+.nav__group-items {
+  display: none;
+  margin-top: 2px;
+  padding-left: 12px;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav__group--open > .nav__group-items {
+  display: flex;
+}
+
+/* ── Footer ── */
+
+.nav__footer {
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+}
+
+.nav__footer p {
+  font-family: var(--font-family);
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--color-muted);
+  margin: 0;
+}

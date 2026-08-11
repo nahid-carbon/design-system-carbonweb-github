@@ -1,0 +1,137 @@
+/* CarbonWeb Contact Form — "Get in Touch" card
+   Uses only var(--token) references. Submit reuses .btn from components/button.
+*/
+
+.contact-form {
+  background: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-slate) 15%, transparent);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 10px 15px -3px color-mix(in srgb, var(--color-ink) 6%, transparent), 0 4px 6px -4px color-mix(in srgb, var(--color-ink) 6%, transparent);
+  padding: var(--space-10);
+  max-width: 560px;
+  font-family: var(--font-family);
+}
+
+.contact-form__heading {
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  font-size: var(--text-4xl); /* Heading 3 — 28px */
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.contact-form__sub {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-muted);
+  margin: 0 0 var(--space-8) 0;
+}
+
+.contact-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ── Field ── */
+
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.contact-form__label {
+  font-family: var(--font-family);
+  font-weight: var(--font-medium);
+  font-size: var(--text-sm);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+}
+
+.contact-form__input,
+.contact-form__textarea {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-ink);
+  background: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-slate) 25%, transparent); /* slate at 25% */
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+  width: 100%;
+}
+
+.contact-form__textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form__input::placeholder,
+.contact-form__textarea::placeholder {
+  color: var(--color-slate-light);
+}
+
+.contact-form__input:hover,
+.contact-form__textarea:hover {
+  border-color: var(--color-teal-500);
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+  border-color: var(--color-teal-500);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-teal-500) 15%, transparent); /* soft teal ring */
+}
+
+/* ── Error state ── */
+
+.contact-form__field--error .contact-form__input,
+.contact-form__field--error .contact-form__textarea {
+  border-color: var(--color-pink-700);
+}
+
+.contact-form__field--error .contact-form__input:focus,
+.contact-form__field--error .contact-form__textarea:focus {
+  border-color: var(--color-pink-700);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-pink-700) 12%, transparent);
+}
+
+.contact-form__error-msg {
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--color-pink-700);
+  margin: 0;
+  display: none;
+}
+
+.contact-form__field--error .contact-form__error-msg {
+  display: block;
+}
+
+/* ── Actions / Success ── */
+
+.contact-form__actions {
+  margin-top: var(--space-8);
+}
+
+.contact-form__success {
+  display: none;
+  align-items: center;
+  gap: var(--space-2-5);
+  margin-top: var(--space-5);
+  font-family: var(--font-family);
+  font-weight: var(--font-medium);
+  font-size: var(--text-base);
+  color: var(--color-green-700);
+}
+
+.contact-form--success .contact-form__success {
+  display: flex;
+}

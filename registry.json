@@ -1,0 +1,1667 @@
+{
+  "version": "1.0.0",
+  "tokens": {
+    "colors": {
+      "css": "tokens/colors.css",
+      "json": "tokens/tokens.json",
+      "description": "Global + LATAM brand color scales (100\u2013950), neutrals, interaction states, gradients"
+    },
+    "spacing": {
+      "css": "tokens/spacing.css",
+      "json": "tokens/tokens.json",
+      "description": "8px-base spacing scale + semantic layout spacing"
+    },
+    "typography": {
+      "css": "tokens/typography.css",
+      "json": "tokens/tokens.json",
+      "description": "Raleway type styles \u2014 Display, Heading, Heading SB, Paragraph, Body, UI"
+    },
+    "radii": {
+      "css": "tokens/radii.css",
+      "json": "tokens/tokens.json",
+      "description": "Border radius scale (sm/md/lg/xl/2xl/full)"
+    },
+    "shadows": {
+      "css": "tokens/shadows.css",
+      "json": "tokens/tokens.json",
+      "description": "Box shadow elevation scale (sm/md/lg/xl)"
+    }
+  },
+  "components": {
+    "button": {
+      "path": "components/button",
+      "html": "components/button/button.html",
+      "css": "components/button/button.css",
+      "rules": "components/button/button-rules.md",
+      "variants": [
+        "primary",
+        "secondary",
+        "tertiary",
+        "square"
+      ],
+      "colors": [
+        "teal",
+        "green",
+        "white",
+        "grey",
+        "ink"
+      ],
+      "sizes": [
+        "large",
+        "small"
+      ],
+      "version": "1.0.0",
+      "category": "basics",
+      "figma": "1. Basics / Button",
+      "modified": "2026-07-21",
+      "ref": "button",
+      "aliases": [],
+      "summary": "Primary, secondary, tertiary and square buttons.",
+      "level": "atom",
+      "depends_on": [
+        "color",
+        "type",
+        "radius"
+      ],
+      "css_prefix": "btn"
+    },
+    "typography": {
+      "path": "components/typography",
+      "css": "components/typography/typography.css",
+      "rules": "components/typography/typography-rules.md",
+      "variants": [
+        "display",
+        "heading",
+        "heading-sb",
+        "paragraph",
+        "body",
+        "ui"
+      ],
+      "version": "1.0.0",
+      "category": "basics",
+      "modified": "2026-07-21",
+      "ref": "typography",
+      "aliases": [],
+      "summary": "The Raleway type ramp.",
+      "level": "atom",
+      "depends_on": [
+        "color",
+        "type"
+      ],
+      "css_prefix": "text-",
+      "kind": "reference"
+    },
+    "card": {
+      "path": "components/card",
+      "html": "components/card/card.html",
+      "css": "components/card/card.css",
+      "rules": "components/card/card-rules.md",
+      "variants": [
+        "default",
+        "elevated",
+        "icon",
+        "borderless",
+        "square-graphic",
+        "rectangle-graphic",
+        "illustration",
+        "carousel",
+        "blog",
+        "blog-tint",
+        "blog-wide",
+        "note",
+        "service-price",
+        "price-horizontal",
+        "selector",
+        "directory"
+      ],
+      "version": "1.1.0",
+      "category": "content",
+      "figma": "3. Content / Cards",
+      "modified": "2026-08-04",
+      "flag": "updated",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius",
+        "shadow",
+        "button",
+        "chip",
+        "text-link"
+      ],
+      "ref": "card",
+      "aliases": [],
+      "summary": "The general card family: blog, service, pricing, carousel, directory.",
+      "level": "molecule"
+    },
+    "text-field": {
+      "path": "components/text-field",
+      "html": "components/text-field/text-field.html",
+      "css": "components/text-field/text-field.css",
+      "js": "components/text-field/text-field.js",
+      "rules": "components/text-field/text-field-rules.md",
+      "variants": [
+        "default",
+        "error",
+        "disabled",
+        "floating"
+      ],
+      "version": "1.0.0",
+      "status": "template",
+      "category": "inputs",
+      "figma": "2. Inputs / Text Field",
+      "modified": "2026-07-21",
+      "ref": "text-field",
+      "aliases": [],
+      "summary": "Single-line text input.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius"
+      ]
+    },
+    "section": {
+      "path": "components/section",
+      "html": "components/section/section.html",
+      "css": "components/section/section.css",
+      "rules": "components/section/section-rules.md",
+      "variants": [
+        "hero",
+        "feature-grid",
+        "cta-band"
+      ],
+      "version": "1.0.0",
+      "status": "template",
+      "category": "sections",
+      "modified": "2026-07-21",
+      "ref": "page-section",
+      "aliases": [
+        "section"
+      ],
+      "summary": "Generic section shell template.",
+      "level": "section",
+      "depends_on": [
+        "color",
+        "space",
+        "button"
+      ]
+    },
+    "footer": {
+      "path": "components/footer",
+      "html": "components/footer/footer.html",
+      "css": "components/footer/footer.css",
+      "rules": "components/footer/footer-rules.md",
+      "variants": [
+        "default"
+      ],
+      "version": "1.0.0",
+      "category": "sections",
+      "figma": "4. Sections / Footer",
+      "modified": "2026-07-21",
+      "ref": "footer-basic",
+      "aliases": [
+        "footer"
+      ],
+      "summary": "Minimal footer. For the real site footer use site-footer.",
+      "level": "section",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius",
+        "button"
+      ]
+    },
+    "icons": {
+      "path": "components/icons",
+      "rules": "components/icons/icons-rules.md",
+      "variants": [
+        "24x24",
+        "16x16"
+      ],
+      "version": "1.0.0",
+      "category": "basics",
+      "figma": "1. Basics / Icons",
+      "modified": "2026-07-21",
+      "ref": "icon",
+      "aliases": [
+        "icons"
+      ],
+      "summary": "The 24px and 16px SVG icon set.",
+      "level": "atom",
+      "depends_on": [],
+      "kind": "reference"
+    },
+    "nav": {
+      "path": "components/nav",
+      "html": "components/nav/nav.html",
+      "css": "components/nav/nav.css",
+      "js": "components/nav/nav.js",
+      "rules": "components/nav/nav-rules.md",
+      "variants": [
+        "sidebar"
+      ],
+      "version": "1.0.0",
+      "category": "sections",
+      "modified": "2026-07-21",
+      "ref": "sidebar-nav",
+      "aliases": [
+        "nav"
+      ],
+      "summary": "Vertical sidebar navigation.",
+      "level": "section",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius",
+        "badge"
+      ]
+    },
+    "badge": {
+      "path": "components/badge",
+      "html": "components/badge/badge.html",
+      "css": "components/badge/badge.css",
+      "rules": "components/badge/badge-rules.md",
+      "variants": [
+        "teal",
+        "green",
+        "yellow",
+        "pink",
+        "ink",
+        "outline"
+      ],
+      "version": "1.0.0",
+      "category": "basics",
+      "figma": "1. Basics / Partner Badge",
+      "modified": "2026-07-21",
+      "ref": "badge",
+      "aliases": [],
+      "summary": "Small status pill in the brand colours.",
+      "level": "atom",
+      "depends_on": [
+        "color",
+        "type"
+      ]
+    },
+    "counter": {
+      "path": "components/counter",
+      "html": "components/counter/counter.html",
+      "css": "components/counter/counter.css",
+      "js": "components/counter/counter.js",
+      "rules": "components/counter/counter-rules.md",
+      "variants": [
+        "default",
+        "teal",
+        "green"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "figma": "3. Content / Stats",
+      "modified": "2026-07-21",
+      "ref": "stat-counter",
+      "aliases": [
+        "counter"
+      ],
+      "summary": "Single animated number with a label.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type"
+      ]
+    },
+    "testimonial": {
+      "path": "components/testimonial",
+      "html": "components/testimonial/testimonial.html",
+      "css": "components/testimonial/testimonial.css",
+      "js": "components/testimonial/testimonial.js",
+      "rules": "components/testimonial/testimonial-rules.md",
+      "variants": [
+        "default",
+        "elevated",
+        "with-stat",
+        "slider"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "figma": "3. Content / Testimonials",
+      "modified": "2026-07-21",
+      "ref": "testimonial",
+      "aliases": [],
+      "summary": "Quote card, optionally with a stat or slider.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius",
+        "shadow"
+      ]
+    },
+    "logo-marquee": {
+      "path": "components/logo-marquee",
+      "html": "components/logo-marquee/logo-marquee.html",
+      "css": "components/logo-marquee/logo-marquee.css",
+      "rules": "components/logo-marquee/logo-marquee-rules.md",
+      "variants": [
+        "default",
+        "reverse",
+        "pause-on-hover"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "figma": "3. Content / Logo Wall",
+      "modified": "2026-07-21",
+      "ref": "logo-marquee",
+      "aliases": [],
+      "summary": "Scrolling client logo strip.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type"
+      ]
+    },
+    "accordion": {
+      "path": "components/accordion",
+      "html": "components/accordion/accordion.html",
+      "css": "components/accordion/accordion.css",
+      "js": "components/accordion/accordion.js",
+      "rules": "components/accordion/accordion-rules.md",
+      "variants": [
+        "default",
+        "bordered",
+        "faq",
+        "faq-dark",
+        "service",
+        "eyebrow"
+      ],
+      "version": "1.1.0",
+      "category": "content",
+      "figma": "3. Content / Accordion",
+      "modified": "2026-08-06",
+      "flag": "updated",
+      "figma_nodes": {
+        "Accordion/Item": "882:9057",
+        "Accordion/FAQ": "842:13274",
+        "Container (priced services)": "918:47005"
+      },
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius",
+        "button"
+      ],
+      "ref": "accordion",
+      "aliases": [],
+      "summary": "Collapsible rows: plain, FAQ card, priced service.",
+      "level": "molecule"
+    },
+    "tabs": {
+      "path": "components/tabs",
+      "html": "components/tabs/tabs.html",
+      "css": "components/tabs/tabs.css",
+      "js": "components/tabs/tabs.js",
+      "rules": "components/tabs/tabs-rules.md",
+      "variants": [
+        "underline",
+        "pill",
+        "vertical",
+        "contained",
+        "details",
+        "collapsible",
+        "collapsible-dark",
+        "pane",
+        "logos",
+        "products"
+      ],
+      "version": "1.1.0",
+      "category": "content",
+      "figma": "3. Content / Tabs",
+      "modified": "2026-08-04",
+      "flag": "updated",
+      "ref": "tabs",
+      "aliases": [],
+      "summary": "Tabbed panels, incl. details and collapsible.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type",
+        "chip",
+        "badge"
+      ]
+    },
+    "timeline": {
+      "path": "components/timeline",
+      "html": "components/timeline/timeline.html",
+      "css": "components/timeline/timeline.css",
+      "rules": "components/timeline/timeline-rules.md",
+      "variants": [
+        "vertical",
+        "process"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "figma": "3. Content / Timeline",
+      "modified": "2026-07-21",
+      "ref": "timeline",
+      "aliases": [],
+      "summary": "Vertical timeline of events or stages.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type",
+        "radius"
+      ]
+    },
+    "icon-box": {
+      "path": "components/icon-box",
+      "html": "components/icon-box/icon-box.html",
+      "css": "components/icon-box/icon-box.css",
+      "rules": "components/icon-box/icon-box-rules.md",
+      "variants": [
+        "centered",
+        "left",
+        "bordered"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "figma": "4. Sections / Feature Grid",
+      "modified": "2026-07-21",
+      "ref": "icon-tile",
+      "aliases": [
+        "icon-box"
+      ],
+      "summary": "Small tile: icon, title, description.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type"
+      ]
+    },
+    "toggle-card": {
+      "path": "components/toggle-card",
+      "html": "components/toggle-card/toggle-card.html",
+      "css": "components/toggle-card/toggle-card.css",
+      "js": "components/toggle-card/toggle-card.js",
+      "rules": "components/toggle-card/toggle-card-rules.md",
+      "variants": [
+        "default"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "modified": "2026-07-21",
+      "ref": "toggle-card",
+      "aliases": [],
+      "summary": "Card that expands on click.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type"
+      ]
+    },
+    "divider": {
+      "path": "components/divider",
+      "html": "components/divider/divider.html",
+      "css": "components/divider/divider.css",
+      "rules": "components/divider/divider-rules.md",
+      "variants": [
+        "default",
+        "thick",
+        "teal",
+        "gradient",
+        "text"
+      ],
+      "version": "1.0.0",
+      "category": "basics",
+      "modified": "2026-07-21",
+      "ref": "divider-line",
+      "aliases": [
+        "divider"
+      ],
+      "summary": "Plain hairline rule between content.",
+      "level": "atom",
+      "depends_on": [
+        "color",
+        "type"
+      ]
+    },
+    "announcement-banner": {
+      "path": "components/announcement-banner",
+      "html": "components/announcement-banner/announcement-banner.html",
+      "css": "components/announcement-banner/announcement-banner.css",
+      "js": "components/announcement-banner/announcement-banner.js",
+      "rules": "components/announcement-banner/announcement-banner-rules.md",
+      "variants": [
+        "teal",
+        "yellow",
+        "ink",
+        "gradient"
+      ],
+      "version": "1.0.0",
+      "category": "sections",
+      "figma": "4. Sections / CTA Banner",
+      "modified": "2026-07-21",
+      "ref": "announcement-bar",
+      "aliases": [
+        "announcement-banner"
+      ],
+      "summary": "Thin full-width notice strip at the top of a page.",
+      "level": "section",
+      "depends_on": [
+        "color",
+        "type"
+      ]
+    },
+    "mega-menu": {
+      "path": "components/mega-menu",
+      "html": "components/mega-menu/mega-menu.html",
+      "css": "components/mega-menu/mega-menu.css",
+      "js": "components/mega-menu/mega-menu.js",
+      "rules": "components/mega-menu/mega-menu-rules.md",
+      "variants": [
+        "default",
+        "full-width"
+      ],
+      "version": "1.0.0",
+      "category": "sections",
+      "figma": "4. Sections / Navbar & Mega Menu",
+      "modified": "2026-07-21",
+      "ref": "mega-menu",
+      "aliases": [],
+      "summary": "Full-width dropdown panel for the navbar.",
+      "level": "section",
+      "depends_on": [
+        "color",
+        "type",
+        "radius"
+      ]
+    },
+    "header": {
+      "path": "components/header",
+      "html": "components/header/header.html",
+      "css": "components/header/header.css",
+      "js": "components/header/header.js",
+      "rules": "components/header/header-rules.md",
+      "variants": [
+        "default",
+        "sticky",
+        "transparent"
+      ],
+      "version": "1.0.0",
+      "category": "sections",
+      "figma": "4. Sections / Navbar & Mega Menu",
+      "modified": "2026-07-21",
+      "ref": "navbar",
+      "aliases": [
+        "header"
+      ],
+      "summary": "Top site navigation bar.",
+      "level": "section",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius",
+        "button"
+      ]
+    },
+    "breadcrumb": {
+      "path": "components/breadcrumb",
+      "html": "components/breadcrumb/breadcrumb.html",
+      "css": "components/breadcrumb/breadcrumb.css",
+      "rules": "components/breadcrumb/breadcrumb-rules.md",
+      "variants": [
+        "default",
+        "with-icon"
+      ],
+      "version": "1.0.0",
+      "category": "basics",
+      "modified": "2026-07-21",
+      "ref": "breadcrumb",
+      "aliases": [],
+      "summary": "Page trail navigation.",
+      "level": "atom",
+      "depends_on": [
+        "color",
+        "type"
+      ]
+    },
+    "image-box": {
+      "path": "components/image-box",
+      "html": "components/image-box/image-box.html",
+      "css": "components/image-box/image-box.css",
+      "rules": "components/image-box/image-box-rules.md",
+      "variants": [
+        "default",
+        "rounded",
+        "overlay",
+        "hover-zoom"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "modified": "2026-07-21",
+      "ref": "image-tile",
+      "aliases": [
+        "image-box"
+      ],
+      "summary": "Framed image with optional overlay or zoom.",
+      "level": "molecule",
+      "depends_on": [
+        "color"
+      ]
+    },
+    "process-card": {
+      "path": "components/process-card",
+      "html": "components/process-card/process-card.html",
+      "css": "components/process-card/process-card.css",
+      "rules": "components/process-card/process-card-rules.md",
+      "variants": [
+        "horizontal",
+        "vertical"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "figma": "3. Content / Process Steps",
+      "modified": "2026-07-21",
+      "ref": "process-step",
+      "aliases": [
+        "process-card"
+      ],
+      "summary": "Numbered step in a how-it-works flow.",
+      "level": "molecule",
+      "depends_on": [
+        "color"
+      ]
+    },
+    "feature-list": {
+      "path": "components/feature-list",
+      "html": "components/feature-list/feature-list.html",
+      "css": "components/feature-list/feature-list.css",
+      "rules": "components/feature-list/feature-list-rules.md",
+      "variants": [
+        "arrow",
+        "check",
+        "two-col",
+        "numbered",
+        "compact"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "figma": "3. Content / Feature Checklist",
+      "modified": "2026-07-21",
+      "ref": "feature-list",
+      "aliases": [],
+      "summary": "Simple list with arrow, check or numbered markers.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type"
+      ]
+    },
+    "tooltip": {
+      "path": "components/tooltip",
+      "html": "components/tooltip/tooltip.html",
+      "css": "components/tooltip/tooltip.css",
+      "js": "components/tooltip/tooltip.js",
+      "rules": "components/tooltip/tooltip-rules.md",
+      "variants": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "version": "1.0.0",
+      "category": "basics",
+      "modified": "2026-07-21",
+      "ref": "tooltip",
+      "aliases": [],
+      "summary": "Hover tooltip in four positions.",
+      "level": "atom",
+      "depends_on": [
+        "color",
+        "type"
+      ]
+    },
+    "newsletter-form": {
+      "path": "components/newsletter-form",
+      "html": "components/newsletter-form/newsletter-form.html",
+      "css": "components/newsletter-form/newsletter-form.css",
+      "js": "components/newsletter-form/newsletter-form.js",
+      "rules": "components/newsletter-form/newsletter-form-rules.md",
+      "variants": [
+        "inline",
+        "stacked",
+        "dark"
+      ],
+      "version": "1.0.0",
+      "category": "inputs",
+      "figma": "2. Inputs / Contact Form",
+      "modified": "2026-07-21",
+      "ref": "newsletter-form",
+      "aliases": [],
+      "summary": "Email capture, inline or stacked.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type"
+      ]
+    },
+    "solution-grid": {
+      "path": "components/solution-grid",
+      "html": "components/solution-grid/solution-grid.html",
+      "css": "components/solution-grid/solution-grid.css",
+      "rules": "components/solution-grid/solution-grid-rules.md",
+      "variants": [
+        "2-col",
+        "3-col",
+        "4-col"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "modified": "2026-07-21",
+      "ref": "solution-grid",
+      "aliases": [],
+      "summary": "Grid of solution cards, 2 to 4 columns.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius",
+        "shadow"
+      ]
+    },
+    "glow-effect": {
+      "path": "components/glow-effect",
+      "html": "components/glow-effect/glow-effect.html",
+      "css": "components/glow-effect/glow-effect.css",
+      "rules": "components/glow-effect/glow-effect-rules.md",
+      "variants": [
+        "teal",
+        "green",
+        "yellow",
+        "pink",
+        "animated"
+      ],
+      "version": "1.0.0",
+      "category": "basics",
+      "modified": "2026-07-21",
+      "ref": "glow-effect",
+      "aliases": [],
+      "summary": "Reusable coloured glow wash behind an element.",
+      "level": "atom",
+      "depends_on": [
+        "color",
+        "button"
+      ],
+      "css_prefix": "glow"
+    },
+    "avatar": {
+      "path": "components/avatar",
+      "html": "components/avatar/avatar.html",
+      "css": "components/avatar/avatar.css",
+      "rules": "components/avatar/avatar-rules.md",
+      "variants": [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "2xl",
+        "group"
+      ],
+      "version": "1.0.0",
+      "category": "basics",
+      "modified": "2026-07-21",
+      "ref": "avatar",
+      "aliases": [],
+      "summary": "Single person avatar, xs through 2xl, plus stacked group.",
+      "level": "atom",
+      "depends_on": [
+        "color",
+        "type"
+      ]
+    },
+    "glowing-cards": {
+      "path": "components/glowing-cards",
+      "html": "components/glowing-cards/glowing-cards.html",
+      "css": "components/glowing-cards/glowing-cards.css",
+      "js": "components/glowing-cards/glowing-cards.js",
+      "rules": "components/glowing-cards/glowing-cards-rules.md",
+      "variants": [
+        "teal",
+        "green",
+        "yellow",
+        "pink",
+        "ink",
+        "dark",
+        "elevated"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "modified": "2026-07-21",
+      "flag": "updated",
+      "ref": "glow-card",
+      "aliases": [
+        "glowing-cards"
+      ],
+      "summary": "Card with a coloured outer glow.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type",
+        "radius"
+      ],
+      "css_prefix": "glow-card"
+    },
+    "liquid-glass-cards": {
+      "path": "components/liquid-glass-cards",
+      "html": "components/liquid-glass-cards/liquid-glass-cards.html",
+      "css": "components/liquid-glass-cards/liquid-glass-cards.css",
+      "js": "components/liquid-glass-cards/liquid-glass-cards.js",
+      "rules": "components/liquid-glass-cards/liquid-glass-cards-rules.md",
+      "variants": [
+        "teal",
+        "green",
+        "yellow",
+        "pink",
+        "ink",
+        "dark",
+        "elevated",
+        "refract"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "modified": "2026-07-21",
+      "flag": "updated",
+      "ref": "glass-card",
+      "aliases": [
+        "liquid-glass-cards"
+      ],
+      "summary": "Frosted liquid-glass card surface.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type"
+      ]
+    },
+    "monday-partner-card": {
+      "path": "components/monday-partner-card",
+      "html": "components/monday-partner-card/monday-partner-card.html",
+      "css": "components/monday-partner-card/monday-partner-card.css",
+      "rules": "components/monday-partner-card/monday-partner-card-rules.md",
+      "variants": [
+        "default",
+        "interactive"
+      ],
+      "version": "1.0.0",
+      "js": "components/monday-partner-card/monday-partner-card.js",
+      "category": "content",
+      "modified": "2026-07-22",
+      "flag": "updated",
+      "ref": "partner-card",
+      "aliases": [
+        "monday-partner-card"
+      ],
+      "summary": "WebGL shimmer card for the monday partnership.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type"
+      ]
+    },
+    "site-footer": {
+      "path": "components/site-footer",
+      "html": "components/site-footer/site-footer.html",
+      "css": "components/site-footer/site-footer.css",
+      "js": "components/site-footer/site-footer.js",
+      "rules": "components/site-footer/site-footer-rules.md",
+      "variants": [
+        "default",
+        "v2",
+        "v3-liquid-glass",
+        "dark",
+        "v2-dark",
+        "v3-dark"
+      ],
+      "version": "1.0.0",
+      "depends_on": [
+        "color",
+        "type",
+        "button"
+      ],
+      "category": "sections",
+      "figma": "4. Sections / Footer",
+      "modified": "2026-07-22",
+      "flag": "updated",
+      "ref": "site-footer",
+      "aliases": [
+        "footer-full"
+      ],
+      "summary": "The full carbonweb.co footer, v2/v3/dark.",
+      "level": "section"
+    },
+    "chip": {
+      "path": "components/chip",
+      "html": "components/chip/chip.html",
+      "css": "components/chip/chip.css",
+      "rules": "components/chip/chip-rules.md",
+      "variants": [
+        "solid",
+        "light",
+        "outline",
+        "selected",
+        "filter",
+        "filter-dark",
+        "category",
+        "product-wm",
+        "product-dev",
+        "product-crm",
+        "product-service",
+        "app",
+        "tag-light",
+        "chip-row",
+        "chip-row-dark"
+      ],
+      "version": "1.1.0",
+      "category": "basics",
+      "figma": "1. Basics / Chip (Filter Tag)",
+      "js": "components/chip/chip.js",
+      "modified": "2026-08-06",
+      "flag": "updated",
+      "figma_nodes": {
+        "Chip/Filter": "689:21718",
+        "Chip/Filter Row": "690:4",
+        "Chip/Blog Category": "735:4410",
+        "Chip/Blog Product": "735:4385",
+        "Chip/App": "735:4429"
+      },
+      "assets": "components/chip/assets",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius"
+      ],
+      "ref": "chip",
+      "aliases": [],
+      "summary": "Pill filter chips and metadata tags.",
+      "level": "atom"
+    },
+    "partner-badge": {
+      "path": "components/partner-badge",
+      "html": "components/partner-badge/partner-badge.html",
+      "css": "components/partner-badge/partner-badge.css",
+      "rules": "components/partner-badge/partner-badge-rules.md",
+      "variants": [
+        "platinum",
+        "platinum-bordered",
+        "advanced-delivery",
+        "solutions",
+        "channel",
+        "sm",
+        "md",
+        "lg",
+        "row"
+      ],
+      "version": "2.0.0",
+      "category": "basics",
+      "figma": "1. Basics / Partner Badge",
+      "modified": "2026-08-06",
+      "flag": "updated",
+      "assets": "components/partner-badge/assets",
+      "depends_on": [
+        "color",
+        "space",
+        "radius",
+        "badge"
+      ],
+      "figma_nodes": {
+        "Partner Badge/Platinum 2026": "527:6239",
+        "Platinum Border=borderless": "439:101",
+        "Platinum Border=border": "527:6235",
+        "Partner Badge/Advanced Delivery 2026": "439:100",
+        "Partner Badge/Solutions": "395:6827",
+        "Partner Badge/Channel": "395:6826"
+      },
+      "ref": "partner-badge",
+      "aliases": [],
+      "summary": "Official monday.com partner credential lockups.",
+      "level": "atom"
+    },
+    "text-link": {
+      "path": "components/text-link",
+      "html": "components/text-link/text-link.html",
+      "css": "components/text-link/text-link.css",
+      "rules": "components/text-link/text-link-rules.md",
+      "variants": [
+        "default",
+        "teal",
+        "ink"
+      ],
+      "version": "1.0.0",
+      "category": "basics",
+      "figma": "1. Basics / Text Link",
+      "modified": "2026-08-04",
+      "flag": "new",
+      "ref": "text-link",
+      "aliases": [],
+      "summary": "Inline link styles.",
+      "level": "atom",
+      "depends_on": [
+        "color",
+        "type",
+        "radius"
+      ]
+    },
+    "label": {
+      "path": "components/label",
+      "html": "components/label/label.html",
+      "css": "components/label/label.css",
+      "rules": "components/label/label-rules.md",
+      "variants": [
+        "eyebrow",
+        "eyebrow-slate",
+        "eyebrow-gradient",
+        "pill"
+      ],
+      "version": "1.0.0",
+      "category": "basics",
+      "figma": "1. Basics / Label & Eyebrow",
+      "modified": "2026-08-04",
+      "flag": "new",
+      "ref": "label",
+      "aliases": [],
+      "summary": "Eyebrow and pill section labels.",
+      "level": "atom",
+      "depends_on": [
+        "color",
+        "type",
+        "radius"
+      ],
+      "css_prefix": "label-"
+    },
+    "app-icons": {
+      "path": "components/app-icons",
+      "html": "components/app-icons/app-icons.html",
+      "css": "components/app-icons/app-icons.css",
+      "rules": "components/app-icons/app-icons-rules.md",
+      "variants": [
+        "sm",
+        "md",
+        "lg",
+        "grid"
+      ],
+      "version": "1.0.0",
+      "category": "basics",
+      "figma": "1. Basics / App Icons",
+      "modified": "2026-08-04",
+      "flag": "new",
+      "ref": "app-icon",
+      "aliases": [
+        "app-icons"
+      ],
+      "summary": "Rounded square tile holding an app or service logo.",
+      "level": "atom",
+      "depends_on": [
+        "color"
+      ],
+      "css_prefix": "app-icon"
+    },
+    "stats": {
+      "path": "components/stats",
+      "html": "components/stats/stats.html",
+      "css": "components/stats/stats.css",
+      "rules": "components/stats/stats-rules.md",
+      "variants": [
+        "centered",
+        "left",
+        "color",
+        "gradient-number"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "figma": "3. Content / Stats",
+      "js": "components/stats/stats.js",
+      "modified": "2026-08-04",
+      "flag": "new",
+      "ref": "stats",
+      "aliases": [],
+      "summary": "Metric block with several figures.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius",
+        "shadow"
+      ]
+    },
+    "pricing-card": {
+      "path": "components/pricing-card",
+      "html": "components/pricing-card/pricing-card.html",
+      "css": "components/pricing-card/pricing-card.css",
+      "rules": "components/pricing-card/pricing-card-rules.md",
+      "variants": [
+        "default",
+        "featured",
+        "dark"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "figma": "3. Content / Pricing Cards",
+      "modified": "2026-08-04",
+      "flag": "new",
+      "ref": "pricing-card",
+      "aliases": [],
+      "summary": "Plan card with price and feature list.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius",
+        "shadow"
+      ]
+    },
+    "team-member": {
+      "path": "components/team-member",
+      "html": "components/team-member/team-member.html",
+      "css": "components/team-member/team-member.css",
+      "rules": "components/team-member/team-member-rules.md",
+      "variants": [
+        "left",
+        "right"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "figma": "3. Content / Team Members",
+      "modified": "2026-08-04",
+      "flag": "new",
+      "ref": "team-member",
+      "aliases": [],
+      "summary": "Person card with photo and role.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius",
+        "shadow"
+      ]
+    },
+    "feature-checklist": {
+      "path": "components/feature-checklist",
+      "html": "components/feature-checklist/feature-checklist.html",
+      "css": "components/feature-checklist/feature-checklist.css",
+      "rules": "components/feature-checklist/feature-checklist-rules.md",
+      "variants": [
+        "light",
+        "dark"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "figma": "3. Content / Feature Checklist",
+      "js": "components/feature-checklist/feature-checklist.js",
+      "modified": "2026-08-04",
+      "flag": "new",
+      "ref": "checklist-panel",
+      "aliases": [
+        "feature-checklist"
+      ],
+      "summary": "Two-column benefit checklist on a light or dark panel.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius"
+      ]
+    },
+    "video-embed": {
+      "path": "components/video-embed",
+      "html": "components/video-embed/video-embed.html",
+      "css": "components/video-embed/video-embed.css",
+      "rules": "components/video-embed/video-embed-rules.md",
+      "variants": [
+        "default"
+      ],
+      "version": "1.0.0",
+      "category": "content",
+      "figma": "3. Content / Video Embed",
+      "js": "components/video-embed/video-embed.js",
+      "modified": "2026-08-04",
+      "flag": "new",
+      "ref": "video-embed",
+      "aliases": [],
+      "summary": "Responsive video frame.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius"
+      ]
+    },
+    "checkbox": {
+      "path": "components/checkbox",
+      "html": "components/checkbox/checkbox.html",
+      "css": "components/checkbox/checkbox.css",
+      "rules": "components/checkbox/checkbox-rules.md",
+      "variants": [
+        "default",
+        "checked",
+        "disabled",
+        "group"
+      ],
+      "version": "1.0.0",
+      "category": "inputs",
+      "figma": "2. Inputs / Checkbox",
+      "modified": "2026-08-04",
+      "flag": "new",
+      "ref": "checkbox",
+      "aliases": [],
+      "summary": "Checkbox input and checkbox group.",
+      "level": "atom",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius"
+      ]
+    },
+    "search-bar": {
+      "path": "components/search-bar",
+      "html": "components/search-bar/search-bar.html",
+      "css": "components/search-bar/search-bar.css",
+      "rules": "components/search-bar/search-bar-rules.md",
+      "variants": [
+        "light",
+        "dark",
+        "square",
+        "wide"
+      ],
+      "version": "1.0.0",
+      "category": "inputs",
+      "figma": "2. Inputs / Search & Filters",
+      "modified": "2026-08-04",
+      "flag": "new",
+      "ref": "search-bar",
+      "aliases": [],
+      "summary": "Search input, light or dark.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius"
+      ]
+    },
+    "language-switcher": {
+      "path": "components/language-switcher",
+      "html": "components/language-switcher/language-switcher.html",
+      "css": "components/language-switcher/language-switcher.css",
+      "rules": "components/language-switcher/language-switcher-rules.md",
+      "variants": [
+        "closed",
+        "open"
+      ],
+      "version": "1.0.0",
+      "category": "inputs",
+      "figma": "2. Inputs / Language Switcher",
+      "js": "components/language-switcher/language-switcher.js",
+      "modified": "2026-08-04",
+      "flag": "new",
+      "ref": "language-switcher",
+      "aliases": [],
+      "summary": "Locale dropdown.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius"
+      ]
+    },
+    "contact-form": {
+      "path": "components/contact-form",
+      "html": "components/contact-form/contact-form.html",
+      "css": "components/contact-form/contact-form.css",
+      "rules": "components/contact-form/contact-form-rules.md",
+      "variants": [
+        "default",
+        "error",
+        "success"
+      ],
+      "version": "1.0.0",
+      "category": "inputs",
+      "figma": "2. Inputs / Contact Form",
+      "js": "components/contact-form/contact-form.js",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius",
+        "button"
+      ],
+      "modified": "2026-08-04",
+      "flag": "new",
+      "ref": "contact-form",
+      "aliases": [],
+      "summary": "Multi-field contact form card.",
+      "level": "molecule"
+    },
+    "hero": {
+      "path": "components/hero",
+      "html": "components/hero/hero.html",
+      "css": "components/hero/hero.css",
+      "rules": "components/hero/hero-rules.md",
+      "variants": [
+        "base",
+        "columns",
+        "form",
+        "dark",
+        "service",
+        "partner",
+        "compact",
+        "search",
+        "brief",
+        "newsletter",
+        "apps",
+        "blog-cta",
+        "grid",
+        "grain",
+        "glass",
+        "wedge-bottom-left",
+        "wedge-bottom-right",
+        "wedge-bottom-center",
+        "wedge-top-right"
+      ],
+      "version": "1.1.0",
+      "category": "sections",
+      "figma": "4. Sections / Hero",
+      "modified": "2026-08-06",
+      "flag": "updated",
+      "assets": "components/hero/assets",
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius",
+        "button",
+        "chip",
+        "badge",
+        "avatar",
+        "partner-badge"
+      ],
+      "figma_nodes": {
+        "Hero/Form": "99:3585",
+        "Hero (calendar)": "99:3586",
+        "Hero/Small Gap": "170:3391",
+        "Hero/Glass Blog": "229:4182",
+        "Hero/Blog CTA": "170:26778",
+        "Workflow Development": "918:48355",
+        "Consultation": "918:47619",
+        "Training": "918:47089",
+        "Custom scoped (dark)": "918:49255",
+        "One partner": "918:51481",
+        "Illustration/Hero Monday Service": "918:51030",
+        "Carbon Blog": "229:4105",
+        "Carbon Brief": "335:3412",
+        "Newsletter": "767:5176",
+        "Apps hero": "651:3511",
+        "Builder Buddies": "170:3394",
+        "Process Automation": "170:3395",
+        "Experience the difference": "170:3396",
+        "Managed Services": "170:3399",
+        "Solutions Directory": "170:3400"
+      },
+      "ref": "hero",
+      "aliases": [],
+      "summary": "Page opener. 19 variants incl. service, partner, blog-cta.",
+      "level": "section"
+    },
+    "cta-banner": {
+      "path": "components/cta-banner",
+      "html": "components/cta-banner/cta-banner.html",
+      "css": "components/cta-banner/cta-banner.css",
+      "rules": "components/cta-banner/cta-banner-rules.md",
+      "variants": [
+        "base",
+        "light",
+        "split",
+        "centered",
+        "subscribe",
+        "glow",
+        "glow-avatar",
+        "quiz",
+        "quiz-highlight",
+        "vertical",
+        "products",
+        "blog-s",
+        "blog-m",
+        "blog-l"
+      ],
+      "version": "1.1.0",
+      "category": "sections",
+      "figma": "4. Sections / CTA Banner",
+      "modified": "2026-08-04",
+      "flag": "updated",
+      "ref": "cta-banner",
+      "aliases": [],
+      "summary": "Full-width call-to-action block.",
+      "level": "section",
+      "depends_on": [
+        "color",
+        "type",
+        "radius",
+        "button",
+        "avatar"
+      ]
+    },
+    "section-divider": {
+      "path": "components/section-divider",
+      "html": "components/section-divider/section-divider.html",
+      "css": "components/section-divider/section-divider.css",
+      "rules": "components/section-divider/section-divider-rules.md",
+      "variants": [
+        "top-left",
+        "top-right",
+        "top-center",
+        "bottom-left",
+        "bottom-right",
+        "bottom-center"
+      ],
+      "version": "1.0.0",
+      "category": "sections",
+      "figma": "4. Sections / Section Divider",
+      "modified": "2026-08-04",
+      "flag": "new",
+      "ref": "section-divider",
+      "aliases": [],
+      "summary": "Angled notch between a light and dark section.",
+      "level": "section",
+      "depends_on": [
+        "color"
+      ]
+    },
+    "booking-calendar": {
+      "path": "components/booking-calendar",
+      "html": "components/booking-calendar/booking-calendar.html",
+      "css": "components/booking-calendar/booking-calendar.css",
+      "js": "components/booking-calendar/booking-calendar.js",
+      "rules": "components/booking-calendar/booking-calendar-rules.md",
+      "variants": [
+        "default"
+      ],
+      "version": "1.0.0",
+      "category": "inputs",
+      "figma": "2. Inputs / Booking Calendar",
+      "flag": "new",
+      "modified": "2026-08-04",
+      "ref": "booking-calendar",
+      "aliases": [],
+      "summary": "Calendly-style date and time picker.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type",
+        "radius"
+      ]
+    },
+    "avatar-library": {
+      "path": "components/avatar-library",
+      "html": "components/avatar-library/avatar-library.html",
+      "css": "components/avatar-library/avatar-library.css",
+      "js": "components/avatar-library/avatar-library.js",
+      "rules": "components/avatar-library/avatar-library-rules.md",
+      "variants": [
+        "photo-frame",
+        "illus-frame",
+        "borderless",
+        "initials-fallback",
+        "library-app"
+      ],
+      "version": "1.0.0",
+      "category": "basics",
+      "flag": "new",
+      "modified": "2026-08-04",
+      "ref": "avatar-gallery",
+      "aliases": [
+        "avatar-library"
+      ],
+      "summary": "Hex photo/illustration frames and the searchable people app.",
+      "level": "molecule",
+      "depends_on": [
+        "color",
+        "type"
+      ],
+      "css_prefix": "avlib"
+    },
+    "product-tag": {
+      "path": "components/product-tag",
+      "html": "components/product-tag/product-tag.html",
+      "css": "components/product-tag/product-tag.css",
+      "rules": "components/product-tag/product-tag-rules.md",
+      "preview": "components/product-tag/product-tag-preview.html",
+      "assets": "components/product-tag/assets",
+      "variants": [
+        "light",
+        "hover",
+        "static",
+        "row"
+      ],
+      "version": "1.0.0",
+      "category": "basics",
+      "figma": "1. Basics / Chip (Filter Tag)",
+      "figma_nodes": {
+        "Chip/Products": "848:61721",
+        "State=Light": "170:40805",
+        "State=Hover": "848:61719"
+      },
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius"
+      ],
+      "modified": "2026-08-06",
+      "flag": "new",
+      "ref": "product-tag",
+      "aliases": [],
+      "summary": "32px monday product tag with brand logo.",
+      "level": "atom"
+    },
+    "faq-section": {
+      "path": "components/faq-section",
+      "html": "components/faq-section/faq-section.html",
+      "css": "components/faq-section/faq-section.css",
+      "rules": "components/faq-section/faq-section-rules.md",
+      "preview": "components/faq-section/faq-section-preview.html",
+      "variants": [
+        "light",
+        "dark",
+        "wedge-top",
+        "wedge-bottom",
+        "wedge-both"
+      ],
+      "version": "1.0.0",
+      "category": "sections",
+      "figma": "4. Sections / FAQ",
+      "figma_nodes": {
+        "Accordion/FAQ Section Light": "99:20113",
+        "Accordion/FAQ Section Dark": "99:20114"
+      },
+      "depends_on": [
+        "color",
+        "type",
+        "space",
+        "radius",
+        "accordion"
+      ],
+      "js": "components/accordion/accordion.js",
+      "modified": "2026-08-06",
+      "flag": "new",
+      "ref": "faq-section",
+      "aliases": [],
+      "summary": "Full FAQ page block: header, cards, angled wedges.",
+      "level": "section"
+    }
+  },
+  "naming": {
+    "format": "<ref>/<variant>",
+    "rules": [
+      "A bare <ref> means the component in its default form.",
+      "Variant names are only unique inside their component; always namespace them.",
+      "Aliases resolve to the same component as the canonical ref."
+    ],
+    "example": "use hero/service, chip/tag-category, partner-badge/platinum, site-footer/v3"
+  },
+  "foundations": {
+    "color": {
+      "ref": "color",
+      "file": "tokens/colors.css",
+      "prefix": "--color-",
+      "level": "foundation",
+      "summary": "Every colour in the system. Teal/green global brand, LATAM scales, neutrals, system greys, monday product fills."
+    },
+    "type": {
+      "ref": "type",
+      "file": "tokens/typography.css",
+      "prefix": "--font-|--text-|--leading-",
+      "level": "foundation",
+      "summary": "Raleway ramp plus Montserrat for numbers. Sizes, weights, line heights and the ready-made type classes."
+    },
+    "space": {
+      "ref": "space",
+      "file": "tokens/spacing.css",
+      "prefix": "--space-",
+      "level": "foundation",
+      "summary": "8px-base spacing scale used for every padding, margin and gap."
+    },
+    "grid": {
+      "ref": "grid",
+      "file": "tokens/grid.css",
+      "prefix": "--grid-|--container|--section-py|--bp-",
+      "level": "foundation",
+      "summary": "Columns, gutters, page margins, container widths, section rhythm and breakpoints."
+    },
+    "radius": {
+      "ref": "radius",
+      "file": "tokens/radii.css",
+      "prefix": "--radius-",
+      "level": "foundation",
+      "summary": "Corner radius scale, none through full pill."
+    },
+    "shadow": {
+      "ref": "shadow",
+      "file": "tokens/shadows.css",
+      "prefix": "--shadow-",
+      "level": "foundation",
+      "summary": "Elevation scale for cards and overlays."
+    }
+  }
+}

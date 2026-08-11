@@ -1,0 +1,66 @@
+<!-- CarbonWeb Header — Sticky site header -->
+
+<header class="header" id="header">
+  <div class="header__container">
+
+    <!-- Logo -->
+    <a href="/" class="header__logo">
+      <div class="header__logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      <span class="header__logo-text">CarbonWeb</span>
+    </a>
+
+    <!-- Navigation (center) -->
+    <nav class="header__nav">
+      <a href="/products" class="header__nav-link" data-path="/products">Products</a>
+      <a href="/services" class="header__nav-link" data-path="/services">Services</a>
+      <a href="/resources" class="header__nav-link" data-path="/resources">Resources</a>
+      <a href="/company" class="header__nav-link" data-path="/company">Company</a>
+      <a href="/contact" class="header__nav-link" data-path="/contact">Contact</a>
+    </nav>
+
+    <!-- Actions (right) -->
+    <div class="header__actions">
+      <!-- Language Switcher -->
+      <button class="header__lang" aria-label="Switch language">
+        EN
+        <span class="header__lang-chevron">
+          <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
+
+      <!-- CTA Buttons -->
+      <a href="/get-started" class="btn btn--secondary btn--teal btn--sm header__cta">Get Started</a>
+      <a href="/book-demo" class="btn btn--primary btn--teal btn--sm header__cta">Book a Demo</a>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button class="header__mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <div class="header__hamburger">
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+      </div>
+    </button>
+
+  </div>
+
+  <!-- Mobile Nav Panel -->
+  <div class="header__mobile-nav">
+    <a href="/products" class="header__nav-link" data-path="/products">Products</a>
+    <a href="/services" class="header__nav-link" data-path="/services">Services</a>
+    <a href="/resources" class="header__nav-link" data-path="/resources">Resources</a>
+    <a href="/company" class="header__nav-link" data-path="/company">Company</a>
+    <a href="/contact" class="header__nav-link" data-path="/contact">Contact</a>
+    <div class="header__mobile-actions">
+      <a href="/get-started" class="btn btn--secondary btn--teal btn--sm">Get Started</a>
+      <a href="/book-demo" class="btn btn--primary btn--teal btn--sm">Book a Demo</a>
+    </div>
+  </div>
+
+</header>

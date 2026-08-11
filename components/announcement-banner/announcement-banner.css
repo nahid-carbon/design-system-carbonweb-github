@@ -1,0 +1,78 @@
+/* CarbonWeb Announcement Banner -- uses only var(--token) references */
+
+.announcement-banner {
+  width: 100%;
+  background: var(--color-teal-500);
+  color: var(--color-white);
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  position: relative;
+}
+
+.announcement-banner__text {
+  text-align: center;
+}
+
+.announcement-banner__link {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: opacity 150ms ease;
+}
+
+.announcement-banner__link:hover {
+  opacity: 0.85;
+}
+
+.announcement-banner__close {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  opacity: 0.8;
+  transition: opacity 150ms ease;
+}
+
+.announcement-banner__close:hover {
+  opacity: 1;
+}
+
+/* ── Color Variants ── */
+
+.announcement-banner--yellow {
+  background: var(--color-yellow-500);
+  color: var(--color-ink);
+}
+
+.announcement-banner--ink {
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+.announcement-banner--gradient {
+  background: var(--gradient-global);
+  color: var(--color-white);
+}
+
+/* ── Dismissed state ── */
+
+.announcement-banner--dismissed {
+  display: none;
+}

@@ -1,0 +1,35 @@
+<!-- CarbonWeb Language Switcher — usage reference -->
+<div class="language-switcher">
+  <button class="language-switcher__trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+    <span class="language-switcher__flag" aria-hidden="true">🇺🇸</span>
+    <span class="language-switcher__label">English</span>
+    <svg class="language-switcher__chevron" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M3 5.5L7 9.5L11 5.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <ul class="language-switcher__menu" role="listbox" aria-label="Select language">
+    <li role="presentation">
+      <button class="language-switcher__option language-switcher__option--selected" type="button" role="option" aria-selected="true">
+        <span class="language-switcher__flag" aria-hidden="true">🇺🇸</span>
+        <span class="language-switcher__option-name">English</span>
+        <svg class="language-switcher__radio" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5.5 9.2L8 11.5L12.5 6.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </li>
+    <li role="presentation">
+      <button class="language-switcher__option" type="button" role="option" aria-selected="false">
+        <span class="language-switcher__flag" aria-hidden="true">🇪🇸</span>
+        <span class="language-switcher__option-name">Español</span>
+        <svg class="language-switcher__radio" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5.5 9.2L8 11.5L12.5 6.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </li>
+  </ul>
+</div>
+
+<script src="language-switcher.js"></script>

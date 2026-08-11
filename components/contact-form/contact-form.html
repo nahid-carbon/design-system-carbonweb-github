@@ -1,0 +1,49 @@
+<!-- CarbonWeb Contact Form — usage reference
+     Requires: tokens/*.css, contact-form.css, ../button/button.css, contact-form.js -->
+<form class="contact-form" novalidate>
+  <h3 class="contact-form__heading">Get in Touch</h3>
+  <p class="contact-form__sub">Any question. Any time. Let's build something great!</p>
+
+  <div class="contact-form__fields">
+    <div class="contact-form__field" data-field="name">
+      <label class="contact-form__label" for="cf-name">Your Name</label>
+      <input class="contact-form__input" type="text" id="cf-name" name="name" placeholder="Jane Smith" required />
+      <p class="contact-form__error-msg" id="cf-name-err" aria-live="polite">Please enter your name.</p>
+    </div>
+
+    <div class="contact-form__field" data-field="email">
+      <label class="contact-form__label" for="cf-email">Email</label>
+      <input class="contact-form__input" type="email" id="cf-email" name="email" placeholder="jane@company.com" required aria-describedby="cf-email-err" />
+      <p class="contact-form__error-msg" id="cf-email-err" aria-live="polite">Please enter a valid email address.</p>
+    </div>
+
+    <div class="contact-form__field" data-field="company">
+      <label class="contact-form__label" for="cf-company">Company Name</label>
+      <input class="contact-form__input" type="text" id="cf-company" name="company" placeholder="Company Inc." />
+    </div>
+
+    <div class="contact-form__field" data-field="message">
+      <label class="contact-form__label" for="cf-message">Message</label>
+      <textarea class="contact-form__textarea" id="cf-message" name="message" placeholder="How can we help?"></textarea>
+    </div>
+
+    <div class="contact-form__field" data-field="monday-url">
+      <label class="contact-form__label" for="cf-monday">monday.com URL</label>
+      <input class="contact-form__input" type="url" id="cf-monday" name="monday_url" placeholder="https://yourteam.monday.com" />
+    </div>
+  </div>
+
+  <div class="contact-form__actions">
+    <button class="btn btn--primary btn--teal btn--lg" type="submit">Send message</button>
+  </div>
+
+  <p class="contact-form__success" role="status">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M6 10.3L8.8 13L14 7.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Thanks! Your message has been sent — we'll be in touch soon.
+  </p>
+</form>
+
+<script src="contact-form.js"></script>

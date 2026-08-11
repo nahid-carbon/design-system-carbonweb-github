@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing Card — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/shadows.css" />
+  <link rel="stylesheet" href="pricing-card.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #f5f5f5; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .section { margin-bottom: 56px; }
+    .section__title { font-size: 20px; font-weight: 600; color: var(--color-ink); margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<h2>Pricing Cards</h2>
+<p class="desc">Package pricing cards — default, featured (teal glow), and dark variants in a 3-column grid.</p>
+
+<div class="section">
+  <p class="section__title">Pricing Grid</p>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <p class="pricing-card__name">Consultation</p>
+      <p class="pricing-card__desc">Strategy sessions with a certified monday.com expert to map your workflow needs.</p>
+      <p class="pricing-card__price">$215<span class="pricing-card__price-unit">/hr</span></p>
+      <p class="pricing-card__price-caption">Scoped in discovery</p>
+      <a class="pricing-card__cta" href="#">Book a discovery call</a>
+    </div>
+
+    <div class="pricing-card pricing-card--featured">
+      <p class="pricing-card__name">Workflow Development</p>
+      <p class="pricing-card__desc">End-to-end build of custom boards, automations, and integrations tailored to your team.</p>
+      <p class="pricing-card__price">$215<span class="pricing-card__price-unit">/hr</span></p>
+      <p class="pricing-card__price-caption">Scoped in discovery</p>
+      <a class="pricing-card__cta" href="#">Book a discovery call</a>
+    </div>
+
+    <div class="pricing-card pricing-card--dark">
+      <p class="pricing-card__name">Custom Work</p>
+      <p class="pricing-card__desc">Bespoke apps, API integrations, and advanced solutions beyond the platform's defaults.</p>
+      <p class="pricing-card__price">$215<span class="pricing-card__price-unit">/hr</span></p>
+      <p class="pricing-card__price-caption">Scoped in discovery</p>
+      <a class="pricing-card__cta" href="#">Book a discovery call</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

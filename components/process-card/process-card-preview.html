@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Process Card — CarbonWeb Design System</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="process-card.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: var(--font-family);
+      background: #ffffff;
+      color: var(--color-ink);
+      padding: 48px 60px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin: 0;
+    }
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    .desc {
+      font-size: 15px;
+      color: var(--color-muted);
+      margin: 0 0 32px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h2>Process Cards</h2>
+  <p class="desc">Numbered step cards with connectors to visualize sequential processes.</p>
+
+  <div class="process-cards">
+    <div class="process-card process-card--active">
+      <div class="process-card__connector"></div>
+      <div class="process-card__number">1</div>
+      <div class="process-card__pill">Free</div>
+      <h3 class="process-card__title">Discovery Call</h3>
+      <p class="process-card__description">30-minute conversation to understand your business needs and identify opportunities.</p>
+    </div>
+
+    <div class="process-card">
+      <div class="process-card__connector"></div>
+      <div class="process-card__number">2</div>
+      <h3 class="process-card__title">Scope &amp; Kickoff</h3>
+      <p class="process-card__description">Define project scope, timeline, and deliverables. Align stakeholders and set expectations.</p>
+    </div>
+
+    <div class="process-card">
+      <div class="process-card__connector"></div>
+      <div class="process-card__number">3</div>
+      <h3 class="process-card__title">Build / Sessions</h3>
+      <p class="process-card__description">Collaborative build sessions where we configure and customize your workflows together.</p>
+    </div>
+
+    <div class="process-card">
+      <div class="process-card__connector"></div>
+      <div class="process-card__number">4</div>
+      <h3 class="process-card__title">Handover &amp; Training</h3>
+      <p class="process-card__description">Complete knowledge transfer with documentation, training sessions, and admin guides.</p>
+    </div>
+
+    <div class="process-card">
+      <div class="process-card__connector"></div>
+      <div class="process-card__number">5</div>
+      <h3 class="process-card__title">Support &amp; Growth</h3>
+      <p class="process-card__description">Ongoing support, optimization recommendations, and scaling as your team grows.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+/* CarbonWeb Glow Effect — uses only var(--token) references */
+
+/* ── Base Glow ── */
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Color Variants ── */
+
+.glow--teal {
+  background: var(--color-teal-300);
+  width: 400px;
+  height: 400px;
+}
+
+.glow--green {
+  background: var(--color-green-300);
+  width: 350px;
+  height: 350px;
+}
+
+.glow--yellow {
+  background: var(--color-yellow-300);
+  width: 300px;
+  height: 300px;
+}
+
+.glow--pink {
+  background: var(--color-pink-300);
+  width: 350px;
+  height: 350px;
+}
+
+/* ── Size Modifiers ── */
+
+.glow--sm {
+  width: 200px;
+  height: 200px;
+}
+
+.glow--lg {
+  width: 500px;
+  height: 500px;
+}
+
+.glow--xl {
+  width: 700px;
+  height: 700px;
+}
+
+/* ── Position Helpers ── */
+
+.glow--top-left {
+  top: -10%;
+  left: -5%;
+}
+
+.glow--top-right {
+  top: -10%;
+  right: -5%;
+}
+
+.glow--bottom-left {
+  bottom: -10%;
+  left: -5%;
+}
+
+.glow--bottom-right {
+  bottom: -10%;
+  right: -5%;
+}
+
+.glow--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ── Animation ── */
+
+.glow--animated {
+  animation: glow-float 6s ease-in-out infinite alternate;
+}
+
+@keyframes glow-float {
+  0% {
+    transform: translate(0, 0) scale(0.9);
+  }
+  100% {
+    transform: translate(20px, -20px) scale(1.1);
+  }
+}
+
+/* Animated + centered needs a combined keyframe */
+.glow--animated.glow--center {
+  animation: glow-float-center 6s ease-in-out infinite alternate;
+}
+
+@keyframes glow-float-center {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  100% {
+    transform: translate(calc(-50% + 20px), calc(-50% - 20px)) scale(1.1);
+  }
+}
+
+/* ── Container ── */
+
+.glow-container {
+  position: relative;
+  overflow: hidden;
+}

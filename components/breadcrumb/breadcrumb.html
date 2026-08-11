@@ -1,0 +1,99 @@
+<!-- CarbonWeb Breadcrumb — Markup Examples -->
+
+<!-- Simple 2-level -->
+<nav aria-label="Breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb__item">
+      <a href="#" class="breadcrumb__link">Home</a>
+    </li>
+    <li class="breadcrumb__item">
+      <span class="breadcrumb__separator" aria-hidden="true">
+        <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="breadcrumb__current" aria-current="page">Services</span>
+    </li>
+  </ol>
+</nav>
+
+<!-- 3-level -->
+<nav aria-label="Breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb__item">
+      <a href="#" class="breadcrumb__link">Home</a>
+    </li>
+    <li class="breadcrumb__item">
+      <span class="breadcrumb__separator" aria-hidden="true">
+        <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <a href="#" class="breadcrumb__link">Services</a>
+    </li>
+    <li class="breadcrumb__item">
+      <span class="breadcrumb__separator" aria-hidden="true">
+        <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="breadcrumb__current" aria-current="page">Workflow Development</span>
+    </li>
+  </ol>
+</nav>
+
+<!-- With home icon -->
+<nav aria-label="Breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb__item">
+      <a href="#" class="breadcrumb__link" aria-label="Home">
+        <span class="breadcrumb__home-icon">
+          <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.75 7L7 1.75L12.25 7M3.5 5.25V11.375C3.5 11.72 3.78 12 4.125 12H5.875V9.125C5.875 8.78 6.155 8.5 6.5 8.5H7.5C7.845 8.5 8.125 8.78 8.125 9.125V12H9.875C10.22 12 10.5 11.72 10.5 11.375V5.25" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+    </li>
+    <li class="breadcrumb__item">
+      <span class="breadcrumb__separator" aria-hidden="true">
+        <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <a href="#" class="breadcrumb__link">Resources</a>
+    </li>
+    <li class="breadcrumb__item">
+      <span class="breadcrumb__separator" aria-hidden="true">
+        <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="breadcrumb__current" aria-current="page">Blog Post</span>
+    </li>
+  </ol>
+</nav>
+
+<!-- Dark variant -->
+<nav aria-label="Breadcrumb">
+  <ol class="breadcrumb breadcrumb--dark">
+    <li class="breadcrumb__item">
+      <a href="#" class="breadcrumb__link">Home</a>
+    </li>
+    <li class="breadcrumb__item">
+      <span class="breadcrumb__separator" aria-hidden="true">
+        <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <a href="#" class="breadcrumb__link">About</a>
+    </li>
+    <li class="breadcrumb__item">
+      <span class="breadcrumb__separator" aria-hidden="true">
+        <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="breadcrumb__current" aria-current="page">Our Team</span>
+    </li>
+  </ol>
+</nav>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Member — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/shadows.css" />
+  <link rel="stylesheet" href="team-member.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #f5f5f5; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .section { margin-bottom: 56px; }
+    .section__title { font-size: 20px; font-weight: 600; color: var(--color-ink); margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<h2>Team Members</h2>
+<p class="desc">Team member cards with gradient initial avatars — left and right photo variants.</p>
+
+<div class="section">
+  <p class="section__title">Photo Left</p>
+  <div class="team-grid">
+    <div class="team-member team-member--left">
+      <div class="team-member__avatar"><span class="team-member__initials">JK</span></div>
+      <div class="team-member__info">
+        <p class="team-member__name">Jesse Klein</p>
+        <p class="team-member__title">Head of Delivery</p>
+        <p class="team-member__fact">Once automated his own coffee order.</p>
+      </div>
+    </div>
+    <div class="team-member team-member--left">
+      <div class="team-member__avatar"><span class="team-member__initials">MS</span></div>
+      <div class="team-member__info">
+        <p class="team-member__name">Mark Swansburg</p>
+        <p class="team-member__title">Director of Engineering</p>
+        <p class="team-member__fact">Keyboard collector — 14 and counting.</p>
+      </div>
+    </div>
+    <div class="team-member team-member--left">
+      <div class="team-member__avatar"><span class="team-member__initials">AR</span></div>
+      <div class="team-member__info">
+        <p class="team-member__name">Ana Rojas</p>
+        <p class="team-member__title">LATAM Lead</p>
+        <p class="team-member__fact">Has visited 23 countries and counting.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <p class="section__title">Photo Right</p>
+  <div class="team-grid">
+    <div class="team-member team-member--right">
+      <div class="team-member__avatar"><span class="team-member__initials">LL</span></div>
+      <div class="team-member__info">
+        <p class="team-member__name">Laura Lavore</p>
+        <p class="team-member__title">VP Operations</p>
+        <p class="team-member__fact">Speaks four languages, dreams in workflows.</p>
+      </div>
+    </div>
+    <div class="team-member team-member--right">
+      <div class="team-member__avatar"><span class="team-member__initials">DP</span></div>
+      <div class="team-member__info">
+        <p class="team-member__name">Diego Paredes</p>
+        <p class="team-member__title">Solutions Architect</p>
+        <p class="team-member__fact">Brews his own kombucha at the office.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

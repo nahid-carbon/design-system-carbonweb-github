@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nav — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="nav.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #f5f5f5; color: var(--color-ink); -webkit-font-smoothing: antialiased; display: flex; gap: 48px; }
+    .demo-label { padding: 48px 32px; font-size: 15px; color: var(--color-muted); max-width: 400px; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<aside class="nav">
+  <div class="nav__header">
+    <div class="nav__brand">
+      <span class="nav__title">CarbonWeb</span>
+    </div>
+    <p class="nav__subtitle">Design System</p>
+  </div>
+
+  <nav class="nav__menu">
+    <div class="nav__group">
+      <button class="nav__group-toggle">Logos <span class="nav__toggle-icon">&#9654;</span></button>
+      <div class="nav__group-items">
+        <a href="#" class="nav__link">Global</a>
+        <a href="#" class="nav__link">LATAM</a>
+      </div>
+    </div>
+    <a href="#" class="nav__link nav__link--active">Typography</a>
+    <a href="#" class="nav__link">Colors</a>
+    <div class="nav__group">
+      <button class="nav__group-toggle">Components <span class="nav__toggle-icon">&#9654;</span></button>
+      <div class="nav__group-items">
+        <a href="#" class="nav__link">Buttons</a>
+        <a href="#" class="nav__link">Footer</a>
+        <a href="#" class="nav__link">Cards</a>
+      </div>
+    </div>
+    <span class="nav__link nav__link--soon">Templates <span class="nav__soon-badge">soon</span></span>
+  </nav>
+
+  <div class="nav__footer"><p>Raleway &middot; Global &amp; LATAM brands</p></div>
+</aside>
+
+<div class="demo-label">
+  <strong>Sidebar Nav Preview</strong><br><br>
+  256px fixed sidebar with collapsible groups, active state (teal highlight), and "coming soon" items. Click group headers to toggle.
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>

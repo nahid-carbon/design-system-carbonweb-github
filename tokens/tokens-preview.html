@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tokens — CarbonWeb DS</title>
+  <link rel="stylesheet" href="colors.css" />
+  <link rel="stylesheet" href="spacing.css" />
+  <link rel="stylesheet" href="typography.css" />
+  <link rel="stylesheet" href="radii.css" />
+  <link rel="stylesheet" href="shadows.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    .section { margin-bottom: 64px; scroll-margin-top: 24px; }
+    .section > h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .section > .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 28px; }
+    .sub { margin-bottom: 32px; }
+    .sub h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+
+    /* Swatches */
+    .swatch-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .swatch { width: 80px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .swatch-color { width: 72px; height: 48px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); }
+    .swatch-label { font-size: 11px; font-weight: 500; color: var(--color-muted); }
+    .swatch-hex { font-size: 10px; color: var(--color-slate-light); font-family: monospace; }
+
+    /* Gradient */
+    .gradient-bar { height: 56px; border-radius: 12px; margin-bottom: 8px; }
+    .gradient-label { font-size: 12px; color: var(--color-muted); font-family: monospace; margin-bottom: 24px; }
+
+    /* Type specimen */
+    .type-row { display: flex; align-items: baseline; gap: 24px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+    .type-meta { width: 180px; flex-shrink: 0; }
+    .type-meta .name { font-size: 13px; font-weight: 600; }
+    .type-meta .specs { font-size: 11px; color: var(--color-muted); font-family: monospace; }
+
+    /* Spacing */
+    .spacing-row { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+    .spacing-bar { height: 22px; background: var(--color-teal-200); border-radius: 4px; min-width: 4px; }
+    .spacing-label { font-size: 12px; font-family: monospace; color: var(--color-muted); width: 100px; flex-shrink: 0; }
+
+    /* Radius */
+    .radius-row { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+    .radius-box { width: 76px; height: 76px; background: var(--color-teal-100); border: 2px solid var(--color-teal-300); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: var(--color-teal-800); }
+
+    /* Shadow */
+    .shadow-row { display: flex; gap: 28px; margin-bottom: 20px; }
+    .shadow-box { width: 110px; height: 72px; background: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; color: var(--color-muted); }
+  </style>
+</head>
+<body>
+
+<!-- COLORS -->
+<div class="section" id="colors">
+  <h2>Colors</h2>
+  <p class="desc">Global + LATAM brand scales. Step 500 = brand normal.</p>
+
+  <div class="sub">
+    <h3>Global — Teal (Primary)</h3>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-teal-100)"></div><div class="swatch-label">100</div><div class="swatch-hex">#92F3FC</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-teal-200)"></div><div class="swatch-label">200</div><div class="swatch-hex">#80E8F2</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-teal-300)"></div><div class="swatch-label">300</div><div class="swatch-hex">#5BD6E3</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-teal-400)"></div><div class="swatch-label">400</div><div class="swatch-hex">#2BC9D9</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-teal-500)"></div><div class="swatch-label">500</div><div class="swatch-hex">#00B0C2</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-teal-600)"></div><div class="swatch-label">600</div><div class="swatch-hex">#009DAD</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-teal-700)"></div><div class="swatch-label">700</div><div class="swatch-hex">#008B99</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-teal-800)"></div><div class="swatch-label">800</div><div class="swatch-hex">#007885</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-teal-900)"></div><div class="swatch-label">900</div><div class="swatch-hex">#006670</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-teal-950)"></div><div class="swatch-label">950</div><div class="swatch-hex">#00535C</div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>Global — Green</h3>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-green-100)"></div><div class="swatch-label">100</div><div class="swatch-hex">#AAE5A1</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-green-200)"></div><div class="swatch-label">200</div><div class="swatch-hex">#92DE85</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-green-300)"></div><div class="swatch-label">300</div><div class="swatch-hex">#7CD96C</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-green-400)"></div><div class="swatch-label">400</div><div class="swatch-hex">#71D761</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-green-500)"></div><div class="swatch-label">500</div><div class="swatch-hex">#69D757</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-green-600)"></div><div class="swatch-label">600</div><div class="swatch-hex">#4FB23E</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-green-700)"></div><div class="swatch-label">700</div><div class="swatch-hex">#448C39</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-green-800)"></div><div class="swatch-label">800</div><div class="swatch-hex">#36662E</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-green-900)"></div><div class="swatch-label">900</div><div class="swatch-hex">#2C4D26</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-green-950)"></div><div class="swatch-label">950</div><div class="swatch-hex">#1F331C</div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>LATAM — Yellow</h3>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-yellow-100)"></div><div class="swatch-label">100</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-yellow-200)"></div><div class="swatch-label">200</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-yellow-300)"></div><div class="swatch-label">300</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-yellow-400)"></div><div class="swatch-label">400</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-yellow-500)"></div><div class="swatch-label">500</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-yellow-600)"></div><div class="swatch-label">600</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-yellow-700)"></div><div class="swatch-label">700</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-yellow-800)"></div><div class="swatch-label">800</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-yellow-900)"></div><div class="swatch-label">900</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-yellow-950)"></div><div class="swatch-label">950</div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>LATAM — Gold</h3>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-gold-100)"></div><div class="swatch-label">100</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-gold-200)"></div><div class="swatch-label">200</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-gold-300)"></div><div class="swatch-label">300</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-gold-400)"></div><div class="swatch-label">400</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-gold-500)"></div><div class="swatch-label">500</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-gold-600)"></div><div class="swatch-label">600</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-gold-700)"></div><div class="swatch-label">700</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-gold-800)"></div><div class="swatch-label">800</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-gold-900)"></div><div class="swatch-label">900</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-gold-950)"></div><div class="swatch-label">950</div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>LATAM — Pink</h3>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-pink-100)"></div><div class="swatch-label">100</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-pink-200)"></div><div class="swatch-label">200</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-pink-300)"></div><div class="swatch-label">300</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-pink-400)"></div><div class="swatch-label">400</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-pink-500)"></div><div class="swatch-label">500</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-pink-600)"></div><div class="swatch-label">600</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-pink-700)"></div><div class="swatch-label">700</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-pink-800)"></div><div class="swatch-label">800</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-pink-900)"></div><div class="swatch-label">900</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-pink-950)"></div><div class="swatch-label">950</div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>LATAM — Teal</h3>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-latam-teal-100)"></div><div class="swatch-label">100</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-latam-teal-200)"></div><div class="swatch-label">200</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-latam-teal-300)"></div><div class="swatch-label">300</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-latam-teal-400)"></div><div class="swatch-label">400</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-latam-teal-500)"></div><div class="swatch-label">500</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-latam-teal-600)"></div><div class="swatch-label">600</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-latam-teal-700)"></div><div class="swatch-label">700</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-latam-teal-800)"></div><div class="swatch-label">800</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-latam-teal-900)"></div><div class="swatch-label">900</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-latam-teal-950)"></div><div class="swatch-label">950</div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>LATAM — WineRed</h3>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-winered-100)"></div><div class="swatch-label">100</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-winered-200)"></div><div class="swatch-label">200</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-winered-300)"></div><div class="swatch-label">300</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-winered-400)"></div><div class="swatch-label">400</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-winered-500)"></div><div class="swatch-label">500</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-winered-600)"></div><div class="swatch-label">600</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-winered-700)"></div><div class="swatch-label">700</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-winered-800)"></div><div class="swatch-label">800</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-winered-900)"></div><div class="swatch-label">900</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-winered-950)"></div><div class="swatch-label">950</div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>Neutrals</h3>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-ink)"></div><div class="swatch-label">Ink</div><div class="swatch-hex">#0A0A0A</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-muted)"></div><div class="swatch-label">Muted</div><div class="swatch-hex">#7F8081</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-slate)"></div><div class="swatch-label">Slate</div><div class="swatch-hex">#5E6075</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-slate-light)"></div><div class="swatch-label">Slate Lt</div><div class="swatch-hex">#A3A5B5</div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>Interaction States</h3>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-teal-hover)"></div><div class="swatch-label">Teal Hvr</div><div class="swatch-hex">#005F69</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-teal-hover-text)"></div><div class="swatch-label">Hvr Text</div><div class="swatch-hex">#007682</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-teal-tertiary)"></div><div class="swatch-label">Tertiary</div><div class="swatch-hex">#116C67</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-grey-base)"></div><div class="swatch-label">Grey</div><div class="swatch-hex">#B7BFDD</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--color-grey-dark)"></div><div class="swatch-label">Grey Dk</div><div class="swatch-hex">#686A86</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- GRADIENTS -->
+<div class="section" id="gradients">
+  <h2>Gradients</h2>
+  <div class="sub">
+    <h3>Global</h3>
+    <div class="gradient-bar" style="background:var(--gradient-global)"></div>
+    <div class="gradient-label">linear-gradient(to bottom left, #00B0C2, #69D757)</div>
+    <h3>LATAM</h3>
+    <div class="gradient-bar" style="background:var(--gradient-latam)"></div>
+    <div class="gradient-label">linear-gradient(55.62deg, #FFB400 2.97%, #00B0C2 59.04%, #69D757 85.78%)</div>
+  </div>
+</div>
+
+<!-- TYPOGRAPHY -->
+<div class="section" id="typography">
+  <h2>Typography</h2>
+  <p class="desc">Raleway — all weights and sizes.</p>
+  <div class="type-row"><div class="type-meta"><div class="name">Display 1</div><div class="specs">900 / 48px / 1.3</div></div><div class="display-1">Build workflows</div></div>
+  <div class="type-row"><div class="type-meta"><div class="name">Display 2</div><div class="specs">300 / 40px / 1.3</div></div><div class="display-2">Build workflows that work</div></div>
+  <div class="type-row"><div class="type-meta"><div class="name">Heading 1</div><div class="specs">700 / 44px / 1.3</div></div><div class="heading-1">Heading One</div></div>
+  <div class="type-row"><div class="type-meta"><div class="name">Heading 2</div><div class="specs">700 / 32px / 1.3</div></div><div class="heading-2">Heading Two</div></div>
+  <div class="type-row"><div class="type-meta"><div class="name">Heading 3</div><div class="specs">700 / 28px / 1.3</div></div><div class="heading-3">Heading Three</div></div>
+  <div class="type-row"><div class="type-meta"><div class="name">Heading 4</div><div class="specs">700 / 24px / 1.3</div></div><div class="heading-4">Heading Four</div></div>
+  <div class="type-row"><div class="type-meta"><div class="name">Heading 2 SB</div><div class="specs">600 / 32px / 1.3</div></div><div class="heading-2-sb">SemiBold Heading</div></div>
+  <div class="type-row"><div class="type-meta"><div class="name">Lead Paragraph</div><div class="specs">400 / 22px / 1.5</div></div><div class="lead-paragraph">We help teams unlock the full power.</div></div>
+  <div class="type-row"><div class="type-meta"><div class="name">Body Large</div><div class="specs">400 / 20px / 1.7</div></div><div class="body-large">Body large text for content.</div></div>
+  <div class="type-row"><div class="type-meta"><div class="name">Body Normal</div><div class="specs">400 / 16px / 1.7</div></div><div class="body-normal">Body normal — default body copy.</div></div>
+  <div class="type-row"><div class="type-meta"><div class="name">Body Small</div><div class="specs">400 / 14px / 1.7</div></div><div class="body-small">Body small — captions and meta.</div></div>
+  <div class="type-row"><div class="type-meta"><div class="name">Button</div><div class="specs">500 / 16px / 1.5 / center</div></div><div class="text-button">Button Text</div></div>
+</div>
+
+<!-- SPACING -->
+<div class="section" id="spacing">
+  <h2>Spacing</h2>
+  <p class="desc">8px-base scale.</p>
+  <div class="spacing-row"><div class="spacing-label">--space-1 (4px)</div><div class="spacing-bar" style="width:4px"></div></div>
+  <div class="spacing-row"><div class="spacing-label">--space-2 (8px)</div><div class="spacing-bar" style="width:8px"></div></div>
+  <div class="spacing-row"><div class="spacing-label">--space-3 (12px)</div><div class="spacing-bar" style="width:12px"></div></div>
+  <div class="spacing-row"><div class="spacing-label">--space-4 (16px)</div><div class="spacing-bar" style="width:16px"></div></div>
+  <div class="spacing-row"><div class="spacing-label">--space-6 (24px)</div><div class="spacing-bar" style="width:24px"></div></div>
+  <div class="spacing-row"><div class="spacing-label">--space-8 (32px)</div><div class="spacing-bar" style="width:32px"></div></div>
+  <div class="spacing-row"><div class="spacing-label">--space-12 (48px)</div><div class="spacing-bar" style="width:48px"></div></div>
+  <div class="spacing-row"><div class="spacing-label">--space-16 (64px)</div><div class="spacing-bar" style="width:64px"></div></div>
+  <div class="spacing-row"><div class="spacing-label">--space-24 (96px)</div><div class="spacing-bar" style="width:96px"></div></div>
+</div>
+
+<!-- RADII -->
+<div class="section" id="radii">
+  <h2>Border Radii</h2>
+  <div class="radius-row">
+    <div class="radius-box" style="border-radius:var(--radius-none)">none</div>
+    <div class="radius-box" style="border-radius:var(--radius-sm)">sm</div>
+    <div class="radius-box" style="border-radius:var(--radius-md)">md</div>
+    <div class="radius-box" style="border-radius:var(--radius-lg)">lg</div>
+    <div class="radius-box" style="border-radius:var(--radius-xl)">xl</div>
+    <div class="radius-box" style="border-radius:var(--radius-2xl)">2xl</div>
+    <div class="radius-box" style="border-radius:var(--radius-full)">full</div>
+  </div>
+</div>
+
+<!-- SHADOWS -->
+<div class="section" id="shadows">
+  <h2>Shadows</h2>
+  <div class="shadow-row">
+    <div class="shadow-box" style="box-shadow:var(--shadow-sm)">sm</div>
+    <div class="shadow-box" style="box-shadow:var(--shadow-md)">md</div>
+    <div class="shadow-box" style="box-shadow:var(--shadow-lg)">lg</div>
+    <div class="shadow-box" style="box-shadow:var(--shadow-xl)">xl</div>
+  </div>
+</div>
+
+</body>
+</html>

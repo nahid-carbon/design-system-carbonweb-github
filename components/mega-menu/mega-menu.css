@@ -1,0 +1,186 @@
+/* CarbonWeb Design System — Mega Menu
+   Full-width dropdown navigation for the site header.
+   BEM naming. All colors via var(--color-*) tokens.
+*/
+
+/* ── Container: horizontal nav bar ── */
+.mega-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* ── Individual nav item (trigger + dropdown pair) ── */
+.mega-menu__item {
+  position: relative;
+}
+
+/* ── Trigger button / link ── */
+.mega-menu__trigger {
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: var(--font-medium);
+  color: var(--color-ink);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  line-height: var(--leading-normal);
+}
+
+.mega-menu__trigger:hover,
+.mega-menu__item--open .mega-menu__trigger {
+  color: var(--color-teal-500);
+}
+
+/* ── Chevron icon ── */
+.mega-menu__chevron {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.mega-menu__item--open .mega-menu__chevron {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdown panel ── */
+.mega-menu__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 60px color-mix(in srgb, var(--color-ink) 12%, transparent);
+  padding: 32px;
+  min-width: 600px;
+  z-index: 100;
+  margin-top: 8px;
+}
+
+.mega-menu__item--open .mega-menu__dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Column grid ── */
+.mega-menu__columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
+}
+
+/* ── Column title ── */
+.mega-menu__column-title {
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  margin-bottom: 12px;
+  line-height: var(--leading-tight);
+}
+
+/* ── Individual link row ── */
+.mega-menu__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: var(--font-regular);
+  color: var(--color-slate);
+  text-decoration: none;
+  transition: color 0.15s ease;
+  line-height: var(--leading-relaxed);
+}
+
+.mega-menu__link:hover {
+  color: var(--color-teal-500);
+}
+
+/* ── Link icon (optional leading icon) ── */
+.mega-menu__link-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--color-teal-300);
+}
+
+/* ── CTA card inside a dropdown ── */
+.mega-menu__cta {
+  background: color-mix(in srgb, var(--color-teal-100) 15%, transparent); /* teal-100 at low opacity */
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-top: 16px;
+}
+
+.mega-menu__cta-title {
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: var(--font-semibold);
+  color: var(--color-ink);
+  margin-bottom: 8px;
+  line-height: var(--leading-tight);
+}
+
+.mega-menu__cta-description {
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: var(--font-regular);
+  color: var(--color-muted);
+  margin-bottom: 12px;
+  line-height: var(--leading-relaxed);
+}
+
+.mega-menu__cta-link {
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: var(--font-semibold);
+  color: var(--color-teal-500);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.15s ease;
+}
+
+.mega-menu__cta-link:hover {
+  color: var(--color-teal-700);
+}
+
+.mega-menu__cta-arrow {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.15s ease;
+}
+
+.mega-menu__cta-link:hover .mega-menu__cta-arrow {
+  transform: translateX(2px);
+}
+
+/* ── Divider (optional, between columns and CTA) ── */
+.mega-menu__divider {
+  border: none;
+  border-top: 1px solid color-mix(in srgb, var(--color-slate-light) 30%, transparent); /* slate-light at 30% */
+  margin: 16px 0;
+}

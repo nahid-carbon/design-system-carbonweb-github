@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Avatar Library — CarbonWeb DS</title>
+<link rel="stylesheet" href="../../tokens/colors.css" />
+<link rel="stylesheet" href="../../tokens/typography.css" />
+<link rel="stylesheet" href="../../tokens/radii.css" />
+<link rel="stylesheet" href="avatar-library.css" />
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Montserrat:wght@700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>* { box-sizing: border-box; margin: 0; padding: 0; }</style>
+</head>
+<body class="avlib">
+
+<header class="avlib__top">
+  <div class="avlib__top-inner">
+    <div class="avlib__brand">
+      <div class="avlib__brand-mark"></div>
+      <div class="avlib__brand-meta">
+        <span class="eyebrow">Carbon · Brand assets</span>
+        <span class="title">Avatars &amp; Employee photos</span>
+      </div>
+    </div>
+    <div class="avlib__search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      <input id="avlib-q" type="search" placeholder="Search by name… (e.g. Nahid, Amy, Jack)" autocomplete="off" />
+      <span class="avlib__kbd">⌘K</span>
+    </div>
+    <div class="avlib__stats" id="avlib-stats"></div>
+  </div>
+  <div class="avlib__toolbar">
+    <div class="seg" id="avlib-filter" role="tablist">
+      <button data-v="all" class="on">All <span class="count" id="avlib-c-all">0</span></button>
+      <button data-v="photo">Photos <span class="count" id="avlib-c-photo">0</span></button>
+      <button data-v="avatar">Illustrated <span class="count" id="avlib-c-avatar">0</span></button>
+      <button data-v="paired">Pairs <span class="count" id="avlib-c-paired">0</span></button>
+    </div>
+    <div class="seg" id="avlib-sort">
+      <button data-v="az" class="on">A → Z</button>
+      <button data-v="za">Z → A</button>
+      <button data-v="dept">By group</button>
+    </div>
+    <div class="seg" id="avlib-border" title="Polygon border on illustrated avatars">
+      <button data-v="on" class="on">Border</button>
+      <button data-v="off">Borderless</button>
+    </div>
+    <div class="spacer"></div>
+    <label class="size">
+      Size
+      <input id="avlib-sz" type="range" min="120" max="280" step="10" value="180" />
+    </label>
+  </div>
+</header>
+
+<main class="avlib__main" id="avlib-grid"></main>
+
+<dialog class="avlib-detail" id="avlib-detail"></dialog>
+<div class="avlib-toast" id="avlib-toast"></div>
+
+<script src="avatar-library.js"></script>
+</body>
+</html>

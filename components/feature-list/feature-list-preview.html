@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feature List — CarbonWeb Design System</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="feature-list.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: var(--font-family);
+      background: #ffffff;
+      color: var(--color-ink);
+      padding: 48px 60px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin: 0;
+    }
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    .desc {
+      font-size: 15px;
+      color: var(--color-muted);
+      margin: 0 0 32px;
+      line-height: 1.6;
+    }
+    .variant-label {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-ink);
+      margin: 40px 0 6px;
+    }
+    .variant-label:first-of-type {
+      margin-top: 0;
+    }
+    .variant-desc {
+      font-size: 14px;
+      color: var(--color-muted);
+      margin: 0 0 16px;
+      line-height: 1.5;
+    }
+    .preview-section {
+      max-width: 640px;
+    }
+    .preview-section--wide {
+      max-width: 800px;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e5e5e5;
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Feature List</h2>
+  <p class="desc">Styled lists with icons for presenting features, benefits, and steps. Supports arrow, check, two-column, numbered, and compact variants.</p>
+
+  <!-- Arrow variant (default) -->
+  <div class="preview-section">
+    <h3 class="variant-label">Arrow (Default)</h3>
+    <p class="variant-desc">Teal arrow icons for listing service features and capabilities.</p>
+
+    <ul class="feature-list">
+      <li class="feature-list__item">
+        <span class="feature-list__icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+        </span>
+        Custom workflow development tailored to your team
+      </li>
+      <li class="feature-list__item">
+        <span class="feature-list__icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+        </span>
+        Dedicated project manager for every engagement
+      </li>
+      <li class="feature-list__item">
+        <span class="feature-list__icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+        </span>
+        Seamless integration with your existing tools
+      </li>
+      <li class="feature-list__item">
+        <span class="feature-list__icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+        </span>
+        Comprehensive documentation and training included
+      </li>
+    </ul>
+  </div>
+
+  <hr />
+
+  <!-- Check variant -->
+  <div class="preview-section">
+    <h3 class="variant-label">Checkmark</h3>
+    <p class="variant-desc">Green checkmarks for confirmed benefits, credentials, and guarantees.</p>
+
+    <ul class="feature-list feature-list--check">
+      <li class="feature-list__item">
+        <span class="feature-list__icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l4.5 4.5L16 5.5"/></svg>
+        </span>
+        monday.com certified partner since 2018
+      </li>
+      <li class="feature-list__item">
+        <span class="feature-list__icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l4.5 4.5L16 5.5"/></svg>
+        </span>
+        200+ successful implementations across industries
+      </li>
+      <li class="feature-list__item">
+        <span class="feature-list__icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l4.5 4.5L16 5.5"/></svg>
+        </span>
+        Ongoing support and training included
+      </li>
+      <li class="feature-list__item">
+        <span class="feature-list__icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10l4.5 4.5L16 5.5"/></svg>
+        </span>
+        Bilingual team serving US and LATAM markets
+      </li>
+    </ul>
+  </div>
+
+  <hr />
+
+  <!-- Two-column layout -->
+  <div class="preview-section--wide">
+    <h3 class="variant-label">Two-Column</h3>
+    <p class="variant-desc">Grid layout for presenting a broader set of capabilities side by side.</p>
+
+    <ul class="feature-list feature-list--two-col">
+      <li class="feature-list__item">
+        <span class="feature-list__icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+        </span>
+        Sales pipeline management
+      </li>
+      <li class="feature-list__item">
+        <span class="feature-list__icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+        </span>
+        Project tracking dashboards
+      </li>
+      <li class="feature-list__item">
+        <span class="feature-list__icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+        </span>
+        HR onboarding automation
+      </li>
+      <li class="feature-list__item">
+        <span class="feature-list__icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+        </span>
+        Resource allocation views
+      </li>
+      <li class="feature-list__item">
+        <span class="feature-list__icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+        </span>
+        Marketing campaign tracking
+      </li>
+      <li class="feature-list__item">
+        <span class="feature-list__icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+        </span>
+        Customer service management
+      </li>
+    </ul>
+  </div>
+
+  <hr />
+
+  <!-- Numbered variant -->
+  <div class="preview-section">
+    <h3 class="variant-label">Numbered</h3>
+    <p class="variant-desc">Numbered circles for sequential steps, getting-started guides, and onboarding flows.</p>
+
+    <ul class="feature-list feature-list--numbered">
+      <li class="feature-list__item">
+        <span class="feature-list__icon">1</span>
+        Schedule a free discovery call with our team
+      </li>
+      <li class="feature-list__item">
+        <span class="feature-list__icon">2</span>
+        We analyze your current workflows and pain points
+      </li>
+      <li class="feature-list__item">
+        <span class="feature-list__icon">3</span>
+        Receive a custom implementation roadmap
+      </li>
+      <li class="feature-list__item">
+        <span class="feature-list__icon">4</span>
+        Launch your optimized workspace in weeks, not months
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

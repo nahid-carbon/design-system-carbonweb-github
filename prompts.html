@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CarbonWeb DS — Prompt Library</title>
+<link rel="stylesheet" href="tokens/colors.css" />
+<link rel="stylesheet" href="tokens/typography.css" />
+<link rel="stylesheet" href="tokens/spacing.css" />
+<link rel="stylesheet" href="tokens/radii.css" />
+<link rel="stylesheet" href="tokens/grid.css" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-family); background: #f8f9fb; color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: var(--container); margin: 0 auto; padding: 44px 32px 120px; }
+  h1 { font-size: var(--text-5xl); font-weight: var(--font-black); margin-bottom: 6px; }
+  .sub { font-size: 15px; color: var(--color-muted); line-height: var(--leading-relaxed); margin-bottom: 24px; max-width: var(--container-header); }
+  .sub code { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; background: var(--color-grey-100); padding: 2px 6px; border-radius: 5px; }
+
+  .toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 22px; position: sticky; top: 0; background: #f8f9fb; padding: 12px 0; z-index: 5; }
+  .search { flex: 1; min-width: 240px; height: 44px; padding: 0 18px; font-family: inherit; font-size: 15px;
+            border: 1px solid color-mix(in srgb, var(--color-slate) 25%, transparent); border-radius: var(--radius-full); outline: none; background: #fff; transition: all 200ms ease; }
+  .search:focus { border-color: var(--color-teal-500); box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-teal-500) 15%, transparent); }
+  .count { font-size: 13px; color: var(--color-muted); white-space: nowrap; }
+
+  .group { font-size: 11px; font-weight: var(--font-semibold); letter-spacing: .08em; text-transform: uppercase; color: var(--color-muted); margin: 30px 0 12px; }
+
+  .p { background: #fff; border: 1px solid color-mix(in srgb, var(--color-ink) 7%, transparent); border-radius: var(--radius-lg); margin-bottom: 12px; overflow: hidden; }
+  .p__head { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; cursor: pointer; }
+  .p__meta { flex: 1; min-width: 0; }
+  .p__title { font-size: var(--text-lg); font-weight: var(--font-semibold); line-height: var(--leading-tight); }
+  .p__when { font-size: 13px; color: var(--color-slate); margin-top: 4px; line-height: var(--leading-relaxed); }
+  .p__actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+  .copy { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-family); font-size: 12.5px; font-weight: var(--font-semibold);
+          background: var(--color-teal-500); color: #fff; border: none; border-radius: var(--radius-full); padding: 8px 14px; cursor: pointer; transition: all 150ms ease; }
+  .copy:hover { background: var(--color-teal-600); }
+  .copy svg { width: 13px; height: 13px; }
+  .copy.is-copied { background: var(--color-green-600); }
+
+  .chev { width: 20px; height: 20px; color: var(--color-slate-light); transition: transform 200ms ease; flex-shrink: 0; margin-top: 4px; }
+  .p.is-open .chev { transform: rotate(180deg); }
+
+  .p__body { display: none; padding: 0 20px 18px; }
+  .p.is-open .p__body { display: block; }
+  pre { background: var(--color-ink); color: #eaf7f9; border-radius: var(--radius-md); padding: 16px 18px; overflow-x: auto;
+        font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12.5px; line-height: 1.75; white-space: pre-wrap; word-break: break-word; }
+  mark { background: color-mix(in srgb, var(--color-teal-300) 30%, transparent); color: #bff3f8; border-radius: 3px; padding: 0 2px; }
+
+  .hidden { display: none; }
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px); opacity: 0;
+           background: var(--color-ink); color: #fff; padding: 10px 18px; border-radius: var(--radius-full); font-size: 13px;
+           transition: all 200ms ease; pointer-events: none; z-index: 20; }
+  .toast--on { opacity: 1; transform: translateX(-50%) translateY(0); }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Prompt Library</h1>
+  <p class="sub" id="intro"></p>
+
+  <div class="toolbar">
+    <input class="search" id="q" type="search" placeholder="Search prompts…" aria-label="Search prompts" />
+    <span class="count" id="count"></span>
+  </div>
+
+  <div id="list"></div>
+</div>
+<div class="toast" id="toast">Copied</div>
+
+<script src="data.js"></script>
+<script>
+  // Load JSON over http; fall back to the embedded copy in data.js when the
+  // page is opened straight from the filesystem (file:// blocks fetch).
+  async function cwLoad(file, globalKey) {
+    try {
+      const r = await fetch(file);
+      if (r.ok) return await r.json();
+    } catch (e) { /* file:// — fall through */ }
+    if (window[globalKey]) return window[globalKey];
+    const m = document.createElement('div');
+    m.style.cssText = 'margin:24px 0;padding:16px 20px;border-radius:12px;background:#fff3f3;border:1px solid #f3c6c6;color:#8a2b2b;font-size:14px;line-height:1.6';
+    m.innerHTML = '<b>Could not load ' + file + '.</b><br>Serve the folder over http — <code>python3 -m http.server 8765</code> — then open <code>http://localhost:8765</code>. ' +
+                  'Or run <code>python3 tools/gen-data.py</code> so this page works offline.';
+    (document.querySelector('#list') || document.querySelector('.docs-main') || document.body).prepend(m);
+    throw new Error('data unavailable: ' + file);
+  }
+(async () => {
+  const data = await cwLoad('prompts.json', '__CW_PROMPTS__');
+  const list = document.getElementById('list');
+  const toast = document.getElementById('toast');
+  let t;
+
+  document.getElementById('intro').innerHTML = data.intro
+    .replace(/tools\/audit\.py/g, '<code>tools/audit.py</code>')
+    .replace(/CLAUDE\.md/g, '<code>CLAUDE.md</code>');
+
+  const COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+  const CHEV = '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+
+  const esc = s => s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+  let n = 0;
+  for (const g of data.groups) {
+    const h = document.createElement('div');
+    h.className = 'group'; h.textContent = g.name;
+    list.appendChild(h);
+
+    for (const p of g.prompts) {
+      n++;
+      const el = document.createElement('div');
+      el.className = 'p';
+      el.dataset.hay = (p.title + ' ' + p.when + ' ' + p.body).toLowerCase();
+
+      const head = document.createElement('div');
+      head.className = 'p__head';
+      head.innerHTML =
+        '<div class="p__meta"><div class="p__title"></div><div class="p__when"></div></div>' +
+        '<div class="p__actions"><button class="copy" type="button">' + COPY + 'Copy prompt</button></div>' + CHEV;
+      head.querySelector('.p__title').textContent = p.title;
+      head.querySelector('.p__when').textContent = p.when;
+      head.onclick = e => { if (!e.target.closest('.copy')) el.classList.toggle('is-open'); };
+
+      const btn = head.querySelector('.copy');
+      btn.onclick = () => {
+        navigator.clipboard.writeText(p.body);
+        btn.classList.add('is-copied');
+        btn.lastChild.textContent = 'Copied';
+        toast.textContent = 'Copied “' + p.title + '”';
+        toast.classList.add('toast--on');
+        clearTimeout(t);
+        t = setTimeout(() => {
+          toast.classList.remove('toast--on');
+          btn.classList.remove('is-copied');
+          btn.lastChild.textContent = 'Copy prompt';
+        }, 1600);
+      };
+
+      const body = document.createElement('div');
+      body.className = 'p__body';
+      // highlight the ⟨fill me in⟩ placeholders
+      body.innerHTML = '<pre>' + esc(p.body).replace(/⟨[^⟩]*⟩/g, m => '<mark>' + m + '</mark>') + '</pre>';
+
+      el.appendChild(head);
+      el.appendChild(body);
+      list.appendChild(el);
+    }
+  }
+  document.getElementById('count').textContent = n + ' prompts';
+
+  document.getElementById('q').addEventListener('input', e => {
+    const q = e.target.value.toLowerCase().trim();
+    let shown = 0;
+    document.querySelectorAll('.p').forEach(el => {
+      const hit = !q || el.dataset.hay.includes(q);
+      el.classList.toggle('hidden', !hit);
+      if (hit) shown++;
+    });
+    document.querySelectorAll('.group').forEach(g => {
+      let c = 0;
+      for (let s = g.nextElementSibling; s && s.classList.contains('p'); s = s.nextElementSibling)
+        if (!s.classList.contains('hidden')) c++;
+      g.classList.toggle('hidden', c === 0);
+    });
+    document.getElementById('count').textContent = q ? shown + ' match' : n + ' prompts';
+  });
+})();
+</script>
+</body>
+</html>

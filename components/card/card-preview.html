@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card — CarbonWeb DS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/shadows.css" />
+  <link rel="stylesheet" href="../button/button.css" />
+  <link rel="stylesheet" href="../chip/chip.css" />
+  <link rel="stylesheet" href="../text-link/text-link.css" />
+  <link rel="stylesheet" href="card.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #f5f5f5; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .section { margin-bottom: 56px; }
+    .section > h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .section > .label { font-size: 13px; color: var(--color-muted); margin-bottom: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+    .row { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+  </style>
+</head>
+<body>
+
+<h2>Cards</h2>
+<p class="desc">Content containers. Variants sourced from Figma page "3. Content / Cards".</p>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Default &amp; Elevated</h3>
+  <p class="label">Base variants</p>
+  <div class="grid">
+    <div class="card">
+      <div class="card__body">
+        <h3 class="card__title">Default Card</h3>
+        <p class="card__description">A basic card with a subtle border. Good for grouping related content.</p>
+      </div>
+    </div>
+    <div class="card card--elevated">
+      <div class="card__body">
+        <h3 class="card__title">Elevated Card</h3>
+        <p class="card__description">Shadow-lifted card for featured or interactive content.</p>
+      </div>
+      <div class="card__actions">
+        <button class="btn btn--primary btn--teal btn--sm">Action</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Icon Card</h3>
+  <p class="label">Figma: Card/Icon (92:574) · grid wrapper: Card Section Icon (170:49867)</p>
+  <div class="card-grid card-grid--icon">
+    <div class="card card--icon">
+      <div class="card__body">
+        <div class="card__icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 class="card__title">Fixing broken or messy setups</h3>
+        <p class="card__description">Boards, workflows, or automations that grew messy over time and no longer work the way your team needs them to.</p>
+      </div>
+    </div>
+    <div class="card card--icon">
+      <div class="card__body">
+        <div class="card__icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 class="card__title">Fixing broken or messy setups</h3>
+        <p class="card__description">Boards, workflows, or automations that grew messy over time and no longer work the way your team needs them to.</p>
+      </div>
+    </div>
+    <div class="card card--icon">
+      <div class="card__body">
+        <div class="card__icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 class="card__title">Fixing broken or messy setups</h3>
+        <p class="card__description">Boards, workflows, or automations that grew messy over time and no longer work the way your team needs them to.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Borderless Card</h3>
+  <p class="label">Figma: Card/Borderless (92:888) · grid wrapper: Card Section Borderless (170:49866)</p>
+  <div class="card-grid card-grid--borderless">
+    <div class="card card--borderless">
+      <div class="card__body">
+        <div class="card__icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-500)" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="5" width="16" height="3.5" rx="1.75"/><rect x="4" y="10.25" width="16" height="3.5" rx="1.75"/><rect x="4" y="15.5" width="16" height="3.5" rx="1.75"/><path d="M14 3.5l1.5 1.5L18.5 2" stroke-width="1.6"/></svg>
+        </div>
+        <p class="card__description">Figma ipsum component variant main layer</p>
+      </div>
+    </div>
+    <div class="card card--borderless">
+      <div class="card__body">
+        <div class="card__icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-500)" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="5" width="16" height="3.5" rx="1.75"/><rect x="4" y="10.25" width="16" height="3.5" rx="1.75"/><rect x="4" y="15.5" width="16" height="3.5" rx="1.75"/><path d="M14 3.5l1.5 1.5L18.5 2" stroke-width="1.6"/></svg>
+        </div>
+        <p class="card__description">Figma ipsum component variant main layer</p>
+      </div>
+    </div>
+    <div class="card card--borderless">
+      <div class="card__body">
+        <div class="card__icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-500)" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="5" width="16" height="3.5" rx="1.75"/><rect x="4" y="10.25" width="16" height="3.5" rx="1.75"/><rect x="4" y="15.5" width="16" height="3.5" rx="1.75"/><path d="M14 3.5l1.5 1.5L18.5 2" stroke-width="1.6"/></svg>
+        </div>
+        <p class="card__description">Figma ipsum component variant main layer</p>
+      </div>
+    </div>
+    <div class="card card--borderless">
+      <div class="card__body">
+        <div class="card__icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-teal-500)" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="5" width="16" height="3.5" rx="1.75"/><rect x="4" y="10.25" width="16" height="3.5" rx="1.75"/><rect x="4" y="15.5" width="16" height="3.5" rx="1.75"/><path d="M14 3.5l1.5 1.5L18.5 2" stroke-width="1.6"/></svg>
+        </div>
+        <p class="card__description">Figma ipsum component variant main layer</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Square Graphic Card</h3>
+  <p class="label">Figma: Card/Square Graphic (170:47705) · grid wrapper: 2 Columns (170:48779)</p>
+  <div class="card-grid card-grid--2col" style="max-width: 1120px;">
+    <a class="card card--square-graphic card--hoverable" href="#">
+      <div class="card__body">
+        <h3 class="card__title">Software Consulting</h3>
+        <p class="card__description">As long-term users on monday.com, we guide you through the monday ecosystem and app marketplace, ensuring your workflow is efficient and effective.</p>
+      </div>
+      <div class="card__media">
+        <img src="assets/app-collage@2x.png" alt="App ecosystem collage" width="500" height="300" />
+      </div>
+    </a>
+    <a class="card card--square-graphic card--hoverable" href="#">
+      <div class="card__body">
+        <h3 class="card__title">Software Consulting</h3>
+        <p class="card__description">As long-term users on monday.com, we guide you through the monday ecosystem and app marketplace, ensuring your workflow is efficient and effective.</p>
+      </div>
+      <div class="card__media">
+        <img src="assets/app-collage@2x.png" alt="App ecosystem collage" width="500" height="300" />
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Rectangle Graphic Card</h3>
+  <p class="label">Figma: Card/Rectangle Graphic (170:48849) · grid wrapper: Section Rectangle Graphic (170:49128)</p>
+  <div class="card-grid card-grid--rectangle" style="max-width: 1120px;">
+    <div class="card card--rectangle-graphic">
+      <div class="card__body">
+        <h3 class="card__title">CarbonWeb Packages</h3>
+        <p class="card__description">Get up and running on monday.com with clearly defined packaged services for onboarding, training, adoption, data migration and more!</p>
+        <div><a class="btn btn--primary btn--white btn--lg" href="#">Large Button</a></div>
+      </div>
+      <div class="card__media">
+        <img src="assets/robot-unbox@2x.png" alt="Robot arm unboxing monday.com" width="235" height="182" />
+      </div>
+    </div>
+    <div class="card card--rectangle-graphic">
+      <div class="card__body">
+        <h3 class="card__title">CarbonWeb Packages</h3>
+        <p class="card__description">Get up and running on monday.com with clearly defined packaged services for onboarding, training, adoption, data migration and more!</p>
+        <div><a class="btn btn--primary btn--white btn--lg" href="#">Large Button</a></div>
+      </div>
+      <div class="card__media">
+        <img src="assets/robot-unbox@2x.png" alt="Robot arm unboxing monday.com" width="235" height="182" />
+      </div>
+    </div>
+    <div class="card card--rectangle-graphic">
+      <div class="card__body">
+        <h3 class="card__title">CarbonWeb Packages</h3>
+        <p class="card__description">Get up and running on monday.com with clearly defined packaged services for onboarding, training, adoption, data migration and more!</p>
+        <div><a class="btn btn--primary btn--white btn--lg" href="#">Large Button</a></div>
+      </div>
+      <div class="card__media">
+        <img src="assets/robot-unbox@2x.png" alt="Robot arm unboxing monday.com" width="235" height="182" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Illustration Card</h3>
+  <p class="label">Figma: Card/Illustration (593:5488) · grid wrapper: Section Illustration (593:9366). Hover reveals color.</p>
+  <div class="card-grid card-grid--2col" style="max-width: 1120px;">
+    <a class="card card--illustration card--hoverable" href="#">
+      <div class="card__body">
+        <h3 class="card__title">Custom Workflow</h3>
+        <p class="card__description">From building small workflows to an entire system buildout on monday.com, we build the workflows of your dreams.</p>
+      </div>
+      <div class="card__media">
+        <img src="assets/workflow-illustration@2x.png" alt="Workflow illustration" width="503" height="242" />
+      </div>
+    </a>
+    <a class="card card--illustration card--hoverable" href="#">
+      <div class="card__body">
+        <h3 class="card__title">Custom Workflow</h3>
+        <p class="card__description">From building small workflows to an entire system buildout on monday.com, we build the workflows of your dreams.</p>
+      </div>
+      <div class="card__media">
+        <img src="assets/workflow-illustration@2x.png" alt="Workflow illustration" width="503" height="242" />
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Carousel Card</h3>
+  <p class="label">Figma: Card/Carousel (170:49604) · grid wrapper: Card Section Carousel (170:49865)</p>
+  <div class="card-grid card-grid--carousel" style="max-width: 1120px;">
+    <a class="card card--carousel card--hoverable" href="#">
+      <div class="card__media">
+        <img src="assets/google-ads-demo@2x.png" alt="Google Ads demo on laptop and phone" width="540" height="317" />
+      </div>
+      <div class="card__body">
+        <span class="card__meta-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          15 minutes
+        </span>
+        <h3 class="card__title">Google Ads Exploration</h3>
+        <p class="card__description">Promote your business, help sell products or services, raise awareness, and increase traffic to your website</p>
+      </div>
+      <div class="card__footer-link">
+        <span class="text-link">Get a Demo
+          <span class="text-link__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </div>
+    </a>
+    <a class="card card--carousel card--hoverable" href="#">
+      <div class="card__media">
+        <img src="assets/google-ads-demo@2x.png" alt="Google Ads demo on laptop and phone" width="540" height="317" />
+      </div>
+      <div class="card__body">
+        <span class="card__meta-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          15 minutes
+        </span>
+        <h3 class="card__title">Google Ads Exploration</h3>
+        <p class="card__description">Promote your business, help sell products or services, raise awareness, and increase traffic to your website</p>
+      </div>
+      <div class="card__footer-link">
+        <span class="text-link">Get a Demo
+          <span class="text-link__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </div>
+    </a>
+  </div>
+  <div class="card-carousel__nav">
+    <button class="card-carousel__arrow" disabled aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="card-carousel__dots">
+      <button class="card-carousel__dot" aria-label="Slide 1"></button>
+      <button class="card-carousel__dot" aria-current="true" aria-label="Slide 2"></button>
+      <button class="card-carousel__dot" aria-label="Slide 3"></button>
+      <button class="card-carousel__dot" aria-label="Slide 4"></button>
+    </div>
+    <button class="card-carousel__arrow" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Blog Card</h3>
+  <p class="label">Figma: Blog Graphic Space (735:4976), Blog Integrations (735:4874), Blog Monday (735:4763), Blog Process Automation (735:4917)</p>
+  <div class="card-grid card-grid--blog" style="max-width: 1120px;">
+    <a class="card card--blog card--hoverable" href="#">
+      <div class="card__media card__media--placeholder" role="img" aria-label="Article graphic"></div>
+      <div class="card__body">
+        <div class="card__chips">
+          <span class="chip chip--outline">Integrations</span>
+          <span class="chip chip--outline">Mirror Magic</span>
+        </div>
+        <h3 class="card__title">DashBoards: How Audible Feedback on monday.com Improves Your Work Environment</h3>
+        <p class="card__description">Discover how audible feedback changes the way teams work on monday.com and fosters a more positive workplace culture.</p>
+      </div>
+      <div class="card__actions">
+        <span class="btn btn--secondary btn--teal btn--sm">Read more</span>
+      </div>
+    </a>
+    <a class="card card--blog card--tint card--hoverable" href="#" style="--card-tint-bg: var(--color-latam-teal-600);">
+      <div class="card__media card__media--placeholder" role="img" aria-label="Article graphic"></div>
+      <div class="card__body">
+        <div class="card__chips">
+          <span class="chip">Process automation</span>
+          <span class="chip">Mirror Magic</span>
+        </div>
+        <h3 class="card__title">DashBoards: How Audible Feedback on monday.com Improves Your Work Environment</h3>
+        <p class="card__description">Discover how audible feedback changes the way teams work on monday.com and fosters a more positive workplace culture.</p>
+      </div>
+      <div class="card__actions">
+        <span class="btn btn--secondary btn--white btn--sm">Read more</span>
+      </div>
+    </a>
+    <a class="card card--blog card--hoverable" href="#">
+      <div class="card__media card__media--placeholder" role="img" aria-label="Article graphic"></div>
+      <div class="card__body">
+        <div class="card__chips">
+          <span class="chip chip--outline">monday.com</span>
+          <span class="chip chip--outline">CRM</span>
+        </div>
+        <h3 class="card__title">DashBoards: How Audible Feedback on monday.com Improves Your Work Environment</h3>
+        <p class="card__description">Discover how audible feedback changes the way teams work on monday.com and fosters a more positive workplace culture.</p>
+      </div>
+      <div class="card__actions">
+        <span class="btn btn--secondary btn--teal btn--sm">Read more</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Blog Full Width Card</h3>
+  <p class="label">Figma: Blog Full Width (738:5501)</p>
+  <a class="card card--blog-wide card--hoverable" href="#" style="max-width: 1120px;">
+    <div class="card__content">
+      <h3 class="card__title">Migrating to monday CRM: What Changes, What Stays, and What…</h3>
+      <p class="card__description">Looking to make the switch to monday CRM? Discover everything you need to know before tackling your data migration.</p>
+      <div class="card__footer">
+        <div class="card__chips">
+          <span class="chip chip--light">monday.com</span>
+          <span class="chip chip--light">CRM</span>
+        </div>
+        <span class="btn btn--secondary btn--white btn--sm btn--icon-right">Read more
+          <span class="btn__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </div>
+    </div>
+    <div class="card__media card__media--placeholder" role="img" aria-label="Article graphic"></div>
+  </a>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Note Card</h3>
+  <p class="label">Figma: Note Wide (796:33721)</p>
+  <div class="card card--note" style="max-width: 1120px;">
+    <p class="card__description">None of these are monday.com problems. They're training problems. And all three are fixable.</p>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Service With Price Card</h3>
+  <p class="label">Figma: Service With Price (795:33585) · section example 918:45088</p>
+  <div class="card-grid card-grid--service-price" style="max-width: 1120px;">
+    <div class="card card--service-price">
+      <div class="card__band">
+        <h3 class="card__title">Managed Services</h3>
+        <p class="card__description">For teams that want CarbonWeb to take shared responsibility for their monday.com environment, not just build when asked, but maintain, scale, and own what's inside it.</p>
+      </div>
+      <ul class="card__checklist">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Ongoing maintenance and platform management</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>New build requests and workflow improvements</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>New user onboarding and ownership transitions</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Shared project board for task management and prioritization</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Available in monthly hour blocks from 10 to 40+ hours</li>
+      </ul>
+      <div class="card__band card__band--footer">
+        <div class="card__price-block">
+          <p class="card__price-value">From $195 <span class="card__price-unit">/hr</span></p>
+          <p class="card__price-note">Ongoing, month to month</p>
+        </div>
+        <a class="btn btn--primary btn--white btn--sm" href="#">Book a consultation</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Price Horizontal Card</h3>
+  <p class="label">Figma: Price Horizontal (800:49379) · section example 918:45560</p>
+  <div class="card card--price-horizontal" style="max-width: 1120px;">
+    <div class="card__content">
+      <h3 class="card__title">Adoption Partnership</h3>
+      <p class="card__subtitle">Not every team needs a one-time project. Some need an ongoing partner.</p>
+      <p class="card__description">Training is a great start. For teams that want continued growth, we offer a monthly partnership to keep adoption on track. Adoption Partnership gives you:</p>
+      <ul class="card__checklist card__checklist--inline">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Recurring Training Sessions</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Office hours</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Admin guidance</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Adoption reinforcement</li>
+      </ul>
+    </div>
+    <div class="card__price-panel">
+      <div class="card__price-block">
+        <p class="card__price-value">$195 <span class="card__price-unit">/hr</span></p>
+      </div>
+      <p class="card__price-note">There's no fixed deadline and no defined end point. This is for teams building long-term platform maturity, not just checking a training box.</p>
+      <a class="btn btn--primary btn--white btn--sm" href="#">Book a consultation</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Selector Card</h3>
+  <p class="label">Figma: Card/Selector (854:45656) — default, hover, selected, disabled</p>
+  <div class="card-grid card-grid--selector" style="max-width: 1120px;">
+    <button class="card card--selector" type="button" aria-pressed="false">
+      <div class="card__body">
+        <span class="card__eyebrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.55 1 1.3 1 2.1V16h6v-.4c0-.8.4-1.55 1-2.1A6 6 0 0 0 12 3z"/></svg>
+          Training
+        </span>
+        <h3 class="card__title">We need our team to use monday.com better</h3>
+        <p class="card__description">We train your people to use monday.com with confidence.</p>
+      </div>
+      <span class="card__checkbox" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>
+      </span>
+    </button>
+    <button class="card card--selector card--selected" type="button" aria-pressed="true">
+      <div class="card__body">
+        <span class="card__eyebrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.55 1 1.3 1 2.1V16h6v-.4c0-.8.4-1.55 1-2.1A6 6 0 0 0 12 3z"/></svg>
+          Training
+        </span>
+        <h3 class="card__title">We need our team to use monday.com better</h3>
+        <p class="card__description">We train your people to use monday.com with confidence.</p>
+      </div>
+      <span class="card__checkbox" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>
+      </span>
+    </button>
+    <button class="card card--selector card--disabled" type="button" disabled aria-pressed="false">
+      <div class="card__body">
+        <span class="card__eyebrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.55 1 1.3 1 2.1V16h6v-.4c0-.8.4-1.55 1-2.1A6 6 0 0 0 12 3z"/></svg>
+          Training
+        </span>
+        <h3 class="card__title">We need our team to use monday.com better</h3>
+        <p class="card__description">We train your people to use monday.com with confidence.</p>
+      </div>
+      <span class="card__checkbox" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>
+      </span>
+    </button>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Directory Card</h3>
+  <p class="label">Figma: Card/Directory (94:4868) — hover: lift + shadow, learn-more turns teal (94:5163)</p>
+  <div class="card-grid card-grid--2col" style="max-width: 900px;">
+    <a class="card card--directory" href="#">
+      <div class="card__media">
+        <img src="assets/directory-board@2x.png" alt="Hiring Board on monday.com" width="365" height="232" />
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">HiringPortal</h3>
+        <p class="card__description">Share custom candidate pipelines, enhance client collaboration, and provide real-time hiring insights to improve efficiency and placements.</p>
+      </div>
+      <div class="card__footer">
+        <span class="card__product-tag">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="8" cy="12" r="4" fill="var(--color-teal-500)"/><circle cx="16" cy="12" r="4" fill="var(--color-green-500)"/></svg>
+          monday CRM
+        </span>
+        <span class="text-link">Learn more
+          <span class="text-link__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </div>
+    </a>
+    <a class="card card--directory" href="#">
+      <div class="card__media">
+        <img src="assets/directory-board@2x.png" alt="Hiring Board on monday.com" width="365" height="232" />
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">HiringPortal</h3>
+        <p class="card__description">Share custom candidate pipelines, enhance client collaboration, and provide real-time hiring insights to improve efficiency and placements.</p>
+      </div>
+      <div class="card__footer">
+        <span class="card__product-tag">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="8" cy="12" r="4" fill="var(--color-teal-500)"/><circle cx="16" cy="12" r="4" fill="var(--color-green-500)"/></svg>
+          monday CRM
+        </span>
+        <span class="text-link">Learn more
+          <span class="text-link__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<div class="section">
+  <h3>Pricing Card (composition)</h3>
+  <p class="label">Base composition example</p>
+  <div class="grid" style="max-width: 340px;">
+    <div class="card card--elevated">
+      <div class="card__body">
+        <h3 class="card__title">Pro Plan</h3>
+        <p class="card__price">$49<span class="card__period">/month</span></p>
+        <ul class="card__features">
+          <li>Unlimited workflows</li>
+          <li>Priority support</li>
+          <li>Custom integrations</li>
+        </ul>
+      </div>
+      <div class="card__actions">
+        <button class="btn btn--primary btn--teal btn--lg" style="width:100%">Get Started</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

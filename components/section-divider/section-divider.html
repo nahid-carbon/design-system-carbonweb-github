@@ -1,0 +1,27 @@
+<!-- CarbonWeb Section Divider — Markup Examples -->
+
+<!-- White → dark transition: divider goes right BEFORE the dark section -->
+<section class="my-light-section">...</section>
+<div class="section-divider section-divider--top-left" aria-hidden="true"></div>
+<section style="background: var(--color-ink)">...</section>
+
+<!-- Dark → white transition: divider goes right AFTER the dark section -->
+<section style="background: var(--color-ink)">...</section>
+<div class="section-divider section-divider--bottom-right" aria-hidden="true"></div>
+<section class="my-light-section">...</section>
+
+<!-- Custom color via --divider-color -->
+<div class="section-divider section-divider--top-center" style="--divider-color: var(--color-teal-950)" aria-hidden="true"></div>
+
+<!-- Color inherited from parent text color -->
+<div style="color: var(--color-teal-950)">
+  <div class="section-divider section-divider--current section-divider--bottom-center" aria-hidden="true"></div>
+</div>
+
+<!-- All six variants -->
+<div class="section-divider section-divider--top-left" aria-hidden="true"></div>
+<div class="section-divider section-divider--top-center" aria-hidden="true"></div>
+<div class="section-divider section-divider--top-right" aria-hidden="true"></div>
+<div class="section-divider section-divider--bottom-left" aria-hidden="true"></div>
+<div class="section-divider section-divider--bottom-center" aria-hidden="true"></div>
+<div class="section-divider section-divider--bottom-right" aria-hidden="true"></div>

@@ -1,0 +1,60 @@
+/* CarbonWeb App Icons — hexagonal integration logo containers */
+
+.app-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;  /* --md default */
+  height: 64px;
+  background: var(--color-white);
+  clip-path: polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+  /* clip-path clips box-shadow, so the shadow lives on a wrapper drop-shadow */
+  filter: drop-shadow(0 1px 4px color-mix(in srgb, var(--color-ink) 10%, transparent));
+  transition: transform 200ms ease, filter 200ms ease;
+}
+
+.app-icon:hover {
+  transform: scale(1.08) translateY(-1px);
+  filter: drop-shadow(0 6px 14px color-mix(in srgb, var(--color-ink) 18%, transparent));
+}
+
+.app-icon:active {
+  transform: scale(1.02);
+  filter: drop-shadow(0 2px 6px color-mix(in srgb, var(--color-teal-700) 30%, transparent)); /* teal-700 tinted */
+}
+
+.app-icon:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}
+
+/* ── Logo ── */
+
+.app-icon img,
+.app-icon svg {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+/* ── Sizes ── */
+
+.app-icon--sm {
+  width: 40px;
+  height: 40px;
+}
+
+.app-icon--lg {
+  width: 96px;
+  height: 96px;
+}
+
+/* ── Grid Wrapper ── */
+
+.app-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 16px;
+  justify-items: center;
+  align-items: center;
+}

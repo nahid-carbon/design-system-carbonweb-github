@@ -1,0 +1,235 @@
+/* CarbonWeb Liquid Glass Cards — Apple-inspired liquid glass effect
+   Single-element glass via color-mix() box-shadow stack + SVG displacement map
+   Reference: Den Dionigi's liquid glass technique */
+
+/* ── Glass variables ── */
+
+.liquid-glass-cards {
+  --c-glass: var(--color-neutral-400);
+  --c-light: var(--color-white);
+  --c-dark: var(--color-black);
+  --glass-reflex-dark: 1;
+  --glass-reflex-light: 1;
+  --saturation: 150%;
+
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 4px;
+}
+
+/* ── Individual card ── */
+
+.liquid-glass-card {
+  position: relative;
+  flex: 1 1 260px;
+  border-radius: 24px;
+  padding: 32px 28px;
+  border: none;
+  background-color: color-mix(in srgb, var(--c-glass) 12%, transparent);
+  backdrop-filter: blur(8px) url(#liquidGlassLens) saturate(var(--saturation));
+  -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+
+  box-shadow:
+    /* 1px outline */
+    inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+    /* top-left rim highlight */
+    inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+    /* bottom-right rim highlight */
+    inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+    /* bottom inner glow */
+    inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+    /* inner edge shadow */
+    inset -0.3px -1px 4px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+    /* top-left inner shadow */
+    inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+    /* top inner depth */
+    inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+    /* bottom-right inner shadow */
+    inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+    /* outer shadow close */
+    0px 1px 5px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+    /* outer shadow far */
+    0px 6px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+
+  transition: box-shadow 400ms cubic-bezier(1, 0, 0.4, 1),
+              transform 300ms ease,
+              background-color 400ms cubic-bezier(1, 0, 0.4, 1);
+}
+
+.liquid-glass-card:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Mouse-tracking specular highlight ── */
+
+.liquid-glass-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    500px circle at var(--glass-x, 50%) var(--glass-y, 50%),
+    color-mix(in srgb, var(--c-light) 18%, transparent),
+    transparent 40%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.liquid-glass-cards:hover .liquid-glass-card::after {
+  opacity: 1;
+}
+
+/* ── Card content ── */
+
+.liquid-glass-card__content {
+  position: relative;
+  z-index: 1;
+}
+
+.liquid-glass-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  background-color: color-mix(in srgb, var(--c-glass) 24%, transparent);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 12%), transparent),
+    inset 1px 1.5px 0px -0.5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 70%), transparent),
+    inset -1px -1px 0px -0.5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 50%), transparent),
+    inset -0.3px -0.5px 2px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent);
+}
+
+.liquid-glass-card__title {
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+
+.liquid-glass-card__description {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-muted);
+}
+
+/* ── Glow border overlay (created by JS) ── */
+
+.liquid-glass-cards__glow {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-wrap: wrap;
+  pointer-events: none;
+  -webkit-mask: radial-gradient(
+    25rem 25rem at var(--glow-x, 0) var(--glow-y, 0),
+    var(--color-black) 1%,
+    transparent 50%
+  );
+  mask: radial-gradient(
+    25rem 25rem at var(--glow-x, 0) var(--glow-y, 0),
+    var(--color-black) 1%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.liquid-glass-cards:hover .liquid-glass-cards__glow {
+  opacity: 1;
+}
+
+.liquid-glass-cards__glow .liquid-glass-card {
+  background: var(--glass-glow-bg);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-radius: 24px;
+  box-shadow: inset 0 0 0 1px var(--glass-glow-color);
+}
+
+.liquid-glass-cards__glow .liquid-glass-card::after {
+  display: none;
+}
+
+.liquid-glass-cards__glow .liquid-glass-card > * {
+  visibility: hidden;
+}
+
+/* ── Color variants ── */
+
+.liquid-glass-card--teal {
+  --glass-glow-color: color-mix(in srgb, var(--color-teal-500) 70%, transparent);
+  --glass-glow-bg: color-mix(in srgb, var(--color-teal-500) 8%, transparent);
+}
+.liquid-glass-card--teal .liquid-glass-card__icon {
+  color: var(--color-teal-800);
+}
+
+.liquid-glass-card--green {
+  --glass-glow-color: color-mix(in srgb, var(--color-green-500) 70%, transparent);
+  --glass-glow-bg: color-mix(in srgb, var(--color-green-500) 8%, transparent);
+}
+.liquid-glass-card--green .liquid-glass-card__icon {
+  color: var(--color-green-800);
+}
+
+.liquid-glass-card--yellow {
+  --glass-glow-color: color-mix(in srgb, var(--color-yellow-500) 70%, transparent);
+  --glass-glow-bg: color-mix(in srgb, var(--color-yellow-500) 8%, transparent);
+}
+.liquid-glass-card--yellow .liquid-glass-card__icon {
+  color: var(--color-yellow-800);
+}
+
+.liquid-glass-card--pink {
+  --glass-glow-color: color-mix(in srgb, var(--color-pink-500) 70%, transparent);
+  --glass-glow-bg: color-mix(in srgb, var(--color-pink-500) 8%, transparent);
+}
+.liquid-glass-card--pink .liquid-glass-card__icon {
+  color: var(--color-pink-800);
+}
+
+.liquid-glass-card--ink {
+  --glass-glow-color: color-mix(in srgb, var(--color-slate) 60%, transparent);
+  --glass-glow-bg: color-mix(in srgb, var(--color-slate) 6%, transparent);
+}
+.liquid-glass-card--ink .liquid-glass-card__icon {
+  color: var(--color-ink);
+}
+
+/* ── Dark variant ── */
+
+.liquid-glass-cards--dark {
+  --glass-reflex-dark: 2;
+  --glass-reflex-light: 0.3;
+}
+
+.liquid-glass-cards--dark .liquid-glass-card__title {
+  color: var(--color-white);
+}
+
+.liquid-glass-cards--dark .liquid-glass-card__description {
+  color: color-mix(in srgb, var(--color-white) 55%, transparent);
+}
+
+.liquid-glass-cards--dark .liquid-glass-card__icon {
+  color: var(--color-white);
+}
+
+/* ── Elevated variant ── */
+
+.liquid-glass-card--elevated {
+  background-color: color-mix(in srgb, var(--c-glass) 18%, transparent);
+}

@@ -1,0 +1,47 @@
+/* CarbonWeb Typography Component — uses only var(--token) references.
+   Applies the type scale from tokens/typography.css to semantic HTML elements
+   and utility classes for use in page layouts.
+*/
+
+/* ── Base ── */
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Headings (semantic HTML mapping) ── */
+h1 { font-weight: var(--font-bold); font-size: var(--text-7xl); line-height: var(--leading-tight); color: var(--color-ink); margin: 0; }
+h2 { font-weight: var(--font-bold); font-size: var(--text-5xl); line-height: var(--leading-tight); color: var(--color-ink); margin: 0; }
+h3 { font-weight: var(--font-bold); font-size: var(--text-4xl); line-height: var(--leading-tight); color: var(--color-ink); margin: 0; }
+h4 { font-weight: var(--font-bold); font-size: var(--text-3xl); line-height: var(--leading-tight); color: var(--color-ink); margin: 0; }
+h5 { font-weight: var(--font-bold); font-size: var(--text-xl);  line-height: var(--leading-tight); color: var(--color-ink); margin: 0; }
+h6 { font-weight: var(--font-bold); font-size: var(--text-base); line-height: var(--leading-tight); color: var(--color-ink); margin: 0; }
+
+/* ── Paragraph ── */
+p { margin: 0; }
+
+/* ── Links ── */
+a {
+  color: var(--color-slate);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+a:hover {
+  color: var(--color-ink);
+}
+
+/* ── Caption / meta text ── */
+.text-muted {
+  color: var(--color-muted);
+}
+.text-slate {
+  color: var(--color-slate);
+}
+.text-slate-light {
+  color: var(--color-slate-light);
+}

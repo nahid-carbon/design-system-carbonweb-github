@@ -1,0 +1,67 @@
+/* CarbonWeb Section — Template (uses only var(--token) references)
+   TODO: Finalize after design review / Figma export
+*/
+
+.section {
+  width: 100%;
+}
+
+.section__container {
+  max-width: var(--space-footer-max);
+  margin: 0 auto;
+  padding: var(--space-section-y) var(--space-section-x);
+}
+
+.section__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.section__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-10);
+}
+
+.section__actions {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+/* ── Hero ── */
+
+.section--hero {
+  background: var(--color-white);
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+}
+
+.section--hero .section__content {
+  max-width: 700px;
+}
+
+/* ── Feature Grid ── */
+
+.section--feature-grid {
+  background: var(--color-white);
+}
+
+.section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+/* ── CTA Band ── */
+
+.section--cta-band {
+  background: var(--gradient-global);
+}
+
+.section--cta-band .section__content {
+  align-items: center;
+  text-align: center;
+}

@@ -1,0 +1,74 @@
+/* CarbonWeb Section Divider — angled notch section transition
+   From carbonweb.co: black angled notch shapes bridging sections.
+   A 48px strip whose clip-path paints an angled tab in the divider color.
+   Color: set --divider-color (defaults to ink) or rely on currentColor
+   by adding the --current modifier.
+
+   Placement:
+   - --top-*    → place immediately BEFORE a dark section (tab points up
+                  into the light section above).
+   - --bottom-* → place immediately AFTER a dark section (tab points down
+                  into the light section below). */
+
+.section-divider {
+  --divider-color: var(--color-ink);
+  display: block;
+  width: 100%;
+  height: 48px;
+  background: var(--divider-color);
+  pointer-events: none;
+}
+
+/* Inherit color from parent text color instead of the custom property */
+.section-divider--current {
+  background: currentColor;
+}
+
+/* ── Top variants (tab rises into the section above) ──
+   Overlap the section below by 1px to avoid sub-pixel seams. */
+
+.section-divider--top-left,
+.section-divider--top-right,
+.section-divider--top-center {
+  margin-bottom: -1px;
+}
+
+.section-divider--top-left {
+  clip-path: polygon(0 0, 28% 0, 36% 100%, 0 100%);
+}
+
+.section-divider--top-right {
+  clip-path: polygon(72% 0, 100% 0, 100% 100%, 64% 100%);
+}
+
+.section-divider--top-center {
+  clip-path: polygon(36% 0, 64% 0, 70% 100%, 30% 100%);
+}
+
+/* ── Bottom variants (tab descends into the section below) ── */
+
+.section-divider--bottom-left,
+.section-divider--bottom-right,
+.section-divider--bottom-center {
+  margin-top: -1px;
+}
+
+.section-divider--bottom-left {
+  clip-path: polygon(0 0, 36% 0, 28% 100%, 0 100%);
+}
+
+.section-divider--bottom-right {
+  clip-path: polygon(64% 0, 100% 0, 100% 100%, 72% 100%);
+}
+
+.section-divider--bottom-center {
+  clip-path: polygon(30% 0, 70% 0, 64% 100%, 36% 100%);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 767px) {
+  .section-divider {
+    height: 36px;
+  }
+}

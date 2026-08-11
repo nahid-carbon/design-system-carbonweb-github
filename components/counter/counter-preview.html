@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Counter / Stats — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="counter.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .sub { margin-bottom: 48px; }
+    .sub h3 { font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+    .inline-group { display: flex; gap: 48px; align-items: flex-start; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<h2>Counters / Stats</h2>
+<p class="desc">Animated count-up numbers triggered on scroll. Scroll down to see the animation.</p>
+
+<!-- Single counter (default) -->
+<div class="sub">
+  <h3>Default</h3>
+  <div class="counter">
+    <div class="counter__value">
+      <span class="counter__number" data-to="250">0</span>
+    </div>
+    <p class="counter__title">Projects Completed</p>
+  </div>
+</div>
+
+<!-- With prefix -->
+<div class="sub">
+  <h3>With Prefix</h3>
+  <div class="counter">
+    <div class="counter__value">
+      <span class="counter__prefix">$</span>
+      <span class="counter__number" data-to="5">0</span>
+      <span class="counter__suffix">M+</span>
+    </div>
+    <p class="counter__title">Revenue Generated for Clients</p>
+  </div>
+</div>
+
+<!-- Teal variant -->
+<div class="sub">
+  <h3>Teal Variant</h3>
+  <div class="counter counter--teal">
+    <div class="counter__value">
+      <span class="counter__number" data-to="98">0</span>
+      <span class="counter__suffix">%</span>
+    </div>
+    <p class="counter__title">Client Satisfaction Rate</p>
+  </div>
+</div>
+
+<!-- Green variant -->
+<div class="sub">
+  <h3>Green Variant</h3>
+  <div class="counter counter--green">
+    <div class="counter__value">
+      <span class="counter__number" data-to="50">0</span>
+      <span class="counter__suffix">+</span>
+    </div>
+    <p class="counter__title">Integrations Delivered</p>
+  </div>
+</div>
+
+<!-- Colored variants side by side -->
+<div class="sub">
+  <h3>Color Variants (side by side)</h3>
+  <div class="inline-group">
+    <div class="counter">
+      <div class="counter__value">
+        <span class="counter__number" data-to="42">0</span>
+      </div>
+      <p class="counter__title">Default (Ink)</p>
+    </div>
+    <div class="counter counter--teal">
+      <div class="counter__value">
+        <span class="counter__number" data-to="42">0</span>
+      </div>
+      <p class="counter__title">Teal</p>
+    </div>
+    <div class="counter counter--green">
+      <div class="counter__value">
+        <span class="counter__number" data-to="42">0</span>
+      </div>
+      <p class="counter__title">Green</p>
+    </div>
+  </div>
+</div>
+
+<!-- Group of 3 (matching CarbonWeb site) -->
+<div class="sub">
+  <h3>Counter Group (Site Example)</h3>
+  <div class="counter-group counter-group--dividers">
+
+    <div class="counter counter--teal">
+      <div class="counter__value">
+        <span class="counter__number" data-to="10">0</span>
+        <span class="counter__suffix">k+</span>
+      </div>
+      <p class="counter__title">Hours of Professional Service</p>
+    </div>
+
+    <div class="counter counter--teal">
+      <div class="counter__value">
+        <span class="counter__number" data-to="15">0</span>
+        <span class="counter__suffix">+</span>
+      </div>
+      <p class="counter__title">Industries Served</p>
+    </div>
+
+    <div class="counter counter--teal">
+      <div class="counter__value">
+        <span class="counter__number" data-to="20">0</span>
+        <span class="counter__suffix">+</span>
+      </div>
+      <p class="counter__title">monday.com Experts</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Group without dividers -->
+<div class="sub">
+  <h3>Counter Group (No Dividers)</h3>
+  <div class="counter-group">
+
+    <div class="counter counter--green">
+      <div class="counter__value">
+        <span class="counter__prefix">#</span>
+        <span class="counter__number" data-to="1">0</span>
+      </div>
+      <p class="counter__title">monday.com Partner</p>
+    </div>
+
+    <div class="counter counter--green">
+      <div class="counter__value">
+        <span class="counter__number" data-to="500">0</span>
+        <span class="counter__suffix">+</span>
+      </div>
+      <p class="counter__title">Workflows Built</p>
+    </div>
+
+    <div class="counter counter--green">
+      <div class="counter__value">
+        <span class="counter__number" data-to="99">0</span>
+        <span class="counter__suffix">%</span>
+      </div>
+      <p class="counter__title">Uptime Guaranteed</p>
+    </div>
+
+  </div>
+</div>
+
+<script src="counter.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+/* CarbonWeb Avatar & Photo Library
+   Imported from the Carbon Avatar Library (claude.ai/design project).
+   Two asset kinds sharing the brand hexagon:
+   - .photo-frame  : cutout employee photo on teal hex backplate (SVG mask)
+   - .illus-frame  : illustrated avatar on Carbon "C" hex backplate
+   Tokenized to the DS palette; Raleway UI, JetBrains Mono metadata. */
+
+.avlib {
+  --avlib-line: var(--color-neutral-200);
+  --avlib-line-2: var(--color-neutral-300);
+  --avlib-bg: var(--color-neutral-50);
+  --avlib-shadow: 0 1px 2px color-mix(in srgb, var(--color-ink) 4%, transparent), 0 8px 24px color-mix(in srgb, var(--color-ink) 6%, transparent);
+  font-family: var(--font-family);
+  color: var(--color-ink);
+  background: var(--avlib-bg);
+}
+.avlib .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+/* ── Sticky header ── */
+.avlib__top {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--color-white) 92%, transparent);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--avlib-line);
+}
+.avlib__top-inner {
+  max-width: 1480px; margin: 0 auto; padding: 18px 32px;
+  display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
+}
+.avlib__brand { display: flex; align-items: center; gap: 12px; }
+.avlib__brand-mark { width: 40px; height: 40px; background: url('assets/_bg-bordered.png') center / contain no-repeat; }
+.avlib__brand-meta { display: flex; flex-direction: column; line-height: 1.1; }
+.avlib__brand-meta .eyebrow { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-muted); font-weight: 600; }
+.avlib__brand-meta .title { font-weight: 700; font-size: 17px; letter-spacing: -.01em; }
+
+.avlib__search { position: relative; max-width: 480px; width: 100%; justify-self: center; }
+.avlib__search input {
+  width: 100%; height: 44px;
+  border: 1px solid var(--avlib-line); border-radius: 10px;
+  padding: 0 14px 0 42px; font-family: inherit; font-size: 14px;
+  background: var(--color-white); color: var(--color-ink); outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.avlib__search input:focus { border-color: var(--color-teal-500); box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-teal-500) 12%, transparent); }
+.avlib__search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--color-muted); }
+.avlib__kbd {
+  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: var(--color-muted); border: 1px solid var(--avlib-line);
+  padding: 2px 6px; border-radius: 5px; background: var(--avlib-bg);
+}
+.avlib__stats { display: flex; gap: 18px; font-size: 12px; color: var(--color-muted); align-items: center; }
+.avlib__stats b { color: var(--color-ink); font-weight: 700; font-family: 'Montserrat', var(--font-family); }
+
+/* ── Toolbar ── */
+.avlib__toolbar {
+  max-width: 1480px; margin: 0 auto; padding: 18px 32px 6px;
+  display: flex; gap: 18px; align-items: center; flex-wrap: wrap;
+  border-bottom: 1px solid var(--avlib-line);
+}
+.avlib .seg { display: inline-flex; background: var(--color-white); border: 1px solid var(--avlib-line); border-radius: 10px; padding: 3px; gap: 2px; }
+.avlib .seg button {
+  appearance: none; border: 0; background: transparent;
+  font-family: inherit; font-size: 13px; font-weight: 600;
+  padding: 7px 14px; border-radius: 7px; color: var(--color-muted); cursor: pointer;
+  display: inline-flex; gap: 8px; align-items: center;
+  transition: background .12s, color .12s;
+}
+.avlib .seg button:hover { color: var(--color-ink); }
+.avlib .seg button.on { background: var(--color-ink); color: var(--color-white); }
+.avlib .seg .count { font-family: 'JetBrains Mono', monospace; font-size: 11px; background: color-mix(in srgb, var(--color-white) 18%, transparent); padding: 1px 6px; border-radius: 4px; }
+.avlib .seg button:not(.on) .count { background: var(--avlib-bg); color: var(--color-muted); }
+.avlib__toolbar .spacer { flex: 1; }
+.avlib__toolbar label.size { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; color: var(--color-muted); font-weight: 600; }
+.avlib__toolbar label.size input { accent-color: var(--color-teal-500); width: 120px; }
+
+/* ── Grid & cards ── */
+.avlib__main { max-width: 1480px; margin: 0 auto; padding: 28px 32px 120px; }
+.avlib section.group { margin-top: 36px; }
+.avlib section.group:first-of-type { margin-top: 8px; }
+.avlib .group-head { display: flex; align-items: baseline; gap: 14px; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px dashed var(--avlib-line-2); }
+.avlib .group-head h2 { margin: 0; font-size: 18px; font-weight: 700; letter-spacing: -.01em; }
+.avlib .group-head .desc { font-size: 12px; color: var(--color-muted); flex: 1; }
+.avlib .group-head .pill { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 999px; background: var(--avlib-bg); color: var(--color-muted); border: 1px solid var(--avlib-line); }
+
+.avlib .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--card-min, 180px), 1fr)); gap: 20px; }
+
+.avlib .card {
+  background: var(--color-white); border: 1px solid var(--avlib-line); border-radius: 14px;
+  padding: 16px 14px 12px;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  position: relative; cursor: pointer;
+  transition: border-color .15s, box-shadow .15s, transform .15s;
+}
+.avlib .card:hover { border-color: var(--avlib-line-2); box-shadow: var(--avlib-shadow); }
+.avlib .hex-wrap { width: 100%; aspect-ratio: 1 / 1; position: relative; display: grid; place-items: center; }
+
+/* Cutout photo: the hex SVG drives BOTH the teal backplate and the alpha mask */
+.avlib .photo-frame { width: 86%; aspect-ratio: 294 / 331; position: relative; transition: transform .25s ease; }
+.avlib .card:hover .photo-frame { transform: scale(1.03); }
+.avlib .photo-frame .backplate { position: absolute; inset: 0; background-image: url('assets/_hex-bg.svg'); background-size: 100% 100%; background-repeat: no-repeat; }
+.avlib .photo-frame .portrait {
+  position: absolute; inset: 0;
+  background-repeat: no-repeat; background-size: 110% auto; background-position: center bottom;
+  -webkit-mask-image: url('assets/_hex-bg.svg'); mask-image: url('assets/_hex-bg.svg');
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+}
+
+/* Illustrated avatar: Carbon "C" hex backplate, portrait clipped to hex */
+.avlib .illus-frame { width: 86%; aspect-ratio: 1 / 1; position: relative; transition: transform .25s ease; }
+.avlib .card:hover .illus-frame { transform: scale(1.03); }
+.avlib .illus-frame .backplate { position: absolute; inset: 0; background-image: url('assets/_bg-bordered.png'); background-size: contain; background-position: center; background-repeat: no-repeat; }
+.avlib .illus-frame.borderless .backplate { background-image: url('assets/_bg-borderless.png'); }
+.avlib .illus-frame .portrait {
+  position: absolute; inset: 0;
+  background-repeat: no-repeat; background-size: cover; background-position: center;
+  clip-path: polygon(50% 1%, 93% 25.5%, 93% 74.5%, 50% 99%, 7% 74.5%, 7% 25.5%);
+}
+
+/* Missing-image fallback: initials on brand-gradient hex */
+.avlib .portrait.is-missing {
+  background: var(--gradient-global) !important;
+  display: grid; place-items: center;
+}
+.avlib .portrait.is-missing::after {
+  content: attr(data-initials);
+  font-family: var(--font-family);
+  font-weight: 700; font-size: 28px; color: var(--color-white);
+}
+
+.avlib .name { font-size: 13px; font-weight: 600; text-align: center; line-height: 1.25; letter-spacing: -.005em; margin-top: 2px; color: var(--color-ink); width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.avlib .meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--color-muted); letter-spacing: .02em; }
+
+.avlib .actions { position: absolute; inset: 14px 12px auto auto; display: flex; gap: 6px; opacity: 0; transform: translateY(-4px); transition: opacity .15s, transform .15s; pointer-events: none; }
+.avlib .card:hover .actions { opacity: 1; transform: none; pointer-events: auto; }
+.avlib .iconbtn {
+  appearance: none; cursor: pointer; width: 28px; height: 28px; border-radius: 8px;
+  background: color-mix(in srgb, var(--color-white) 92%, transparent); border: 1px solid var(--avlib-line);
+  display: grid; place-items: center; color: var(--color-ink);
+  transition: background .12s, color .12s, border-color .12s;
+}
+.avlib .iconbtn:hover { background: var(--color-ink); color: var(--color-white); border-color: var(--color-ink); }
+.avlib .iconbtn.flash { background: var(--color-green-500); color: var(--color-ink); border-color: var(--color-green-500); }
+
+/* ── Detail dialog ── */
+.avlib-detail { border: 0; padding: 0; border-radius: 18px; max-width: min(92vw, 880px); width: 100%; background: var(--color-white); box-shadow: 0 30px 80px color-mix(in srgb, var(--color-ink) 25%, transparent); font-family: var(--font-family); }
+.avlib-detail::backdrop { background: color-mix(in srgb, var(--color-ink) 55%, transparent); backdrop-filter: blur(4px); }
+.avlib-detail .detail-inner { display: grid; grid-template-columns: 1.1fr 1fr; }
+.avlib-detail .detail-preview { background: radial-gradient(circle at 20% 20%, var(--color-success-tint) 0%, var(--color-neutral-50) 60%); padding: 36px; display: grid; place-items: center; position: relative; min-height: 380px; }
+.avlib-detail .detail-side { padding: 32px 30px; border-left: 1px solid var(--color-neutral-200); display: flex; flex-direction: column; gap: 18px; }
+.avlib-detail .name-big { font-size: 22px; font-weight: 700; letter-spacing: -.01em; margin: 0; }
+.avlib-detail .kind-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--color-neutral-50); color: var(--color-muted); border: 1px solid var(--color-neutral-200); width: fit-content; text-transform: uppercase; letter-spacing: .08em; }
+.avlib-detail .detail-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-top: 1px dashed var(--color-neutral-200); font-size: 13px; }
+.avlib-detail .detail-row b { font-weight: 600; }
+.avlib-detail .detail-row .val { color: var(--color-muted); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+.avlib-detail .detail-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+.avlib-detail .btn2 {
+  appearance: none; border: 1px solid var(--color-neutral-200); background: var(--color-white); color: var(--color-ink);
+  font-family: inherit; font-weight: 600; font-size: 13px;
+  padding: 9px 14px; border-radius: 9px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background .12s, color .12s, border-color .12s;
+}
+.avlib-detail .btn2:hover { border-color: var(--color-ink); }
+.avlib-detail .btn2.primary { background: var(--color-teal-500); color: var(--color-white); border-color: var(--color-teal-500); }
+.avlib-detail .btn2.primary:hover { background: var(--color-teal-hover); border-color: var(--color-teal-hover); }
+.avlib-detail .close-x { position: absolute; right: 14px; top: 14px; width: 32px; height: 32px; border-radius: 8px; background: var(--color-white); border: 1px solid var(--color-neutral-200); display: grid; place-items: center; cursor: pointer; }
+.avlib-detail .illus-frame, .avlib-detail .photo-frame { position: relative; }
+.avlib-detail .illus-frame .backplate { position: absolute; inset: 0; background: url('assets/_bg-bordered.png') center / contain no-repeat; }
+.avlib-detail .illus-frame.borderless .backplate { background-image: url('assets/_bg-borderless.png'); }
+.avlib-detail .illus-frame .portrait { position: absolute; inset: 0; background-repeat: no-repeat; background-size: cover; background-position: center; clip-path: polygon(50% 1%, 93% 25.5%, 93% 74.5%, 50% 99%, 7% 74.5%, 7% 25.5%); }
+.avlib-detail .photo-frame { aspect-ratio: 294 / 331; }
+.avlib-detail .illus-frame { aspect-ratio: 1 / 1; }
+.avlib-detail .photo-frame .backplate { position: absolute; inset: 0; background: url('assets/_hex-bg.svg') 0 0 / 100% 100% no-repeat; }
+.avlib-detail .photo-frame .portrait { position: absolute; inset: 0; background-repeat: no-repeat; background-size: 110% auto; background-position: center bottom; -webkit-mask: url('assets/_hex-bg.svg') 0 0 / 100% 100% no-repeat; mask: url('assets/_hex-bg.svg') 0 0 / 100% 100% no-repeat; }
+
+/* ── Toast + empty ── */
+.avlib-toast {
+  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px);
+  background: var(--color-ink); color: var(--color-white); padding: 10px 16px; border-radius: 10px;
+  font-size: 13px; font-weight: 600; font-family: var(--font-family);
+  opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 100;
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--color-ink) 20%, transparent);
+}
+.avlib-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
+.avlib-toast .check { color: var(--color-green-500); margin-right: 8px; }
+.avlib .empty { text-align: center; padding: 80px 20px; color: var(--color-muted); }
+.avlib .empty h3 { color: var(--color-ink); margin: 0 0 8px; font-size: 16px; }
+
+@media (max-width: 760px) {
+  .avlib__top-inner { grid-template-columns: auto 1fr; }
+  .avlib__stats { display: none; }
+  .avlib__toolbar { padding: 14px 16px; }
+  .avlib__main { padding: 20px 16px 80px; }
+  .avlib-detail .detail-inner { grid-template-columns: 1fr; }
+  .avlib-detail .detail-side { border-left: 0; border-top: 1px solid var(--color-neutral-200); }
+}

@@ -1,0 +1,5 @@
+#!/bin/sh
+# CarbonWeb Design System — audit the components you touched.
+# Pre-existing issues elsewhere won't block you; new ones will.
+# Install:  python3 tools/install-hooks.py     Bypass once:  git commit --no-verify
+exec python3 "$(git rev-parse --show-toplevel)/tools/audit.py" --changed

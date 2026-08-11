@@ -1,0 +1,98 @@
+/* CarbonWeb Badge — uses only var(--token) references */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: var(--font-semibold);
+  line-height: 1.5;
+  white-space: nowrap;
+  border: 1.5px solid transparent;
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+/* ── Color Variants ── */
+
+.badge--teal {
+  background: var(--color-teal-100);
+  color: var(--color-teal-700);
+}
+
+.badge--green {
+  background: var(--color-green-100);
+  color: var(--color-green-700);
+}
+
+.badge--yellow {
+  background: var(--color-yellow-100);
+  color: var(--color-yellow-700);
+}
+
+.badge--pink {
+  background: var(--color-pink-100);
+  color: var(--color-pink-700);
+}
+
+.badge--ink {
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+/* ── Outline Modifier ── */
+
+.badge--outline {
+  background: transparent;
+}
+
+.badge--outline.badge--teal {
+  border-color: var(--color-teal-500);
+  color: var(--color-teal-700);
+}
+
+.badge--outline.badge--green {
+  border-color: var(--color-green-500);
+  color: var(--color-green-700);
+}
+
+.badge--outline.badge--yellow {
+  border-color: var(--color-yellow-500);
+  color: var(--color-yellow-700);
+}
+
+.badge--outline.badge--pink {
+  border-color: var(--color-pink-500);
+  color: var(--color-pink-700);
+}
+
+.badge--outline.badge--ink {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+/* ── Dot Element ── */
+
+.badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Icon Slot ── */
+
+.badge__icon {
+  display: inline-flex;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.badge__icon svg {
+  width: 100%;
+  height: 100%;
+}

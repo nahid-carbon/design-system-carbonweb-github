@@ -1,0 +1,235 @@
+<!-- CarbonWeb Card — markup snippets
+     Variants from Figma page "3. Content / Cards".
+     Link tokens/*.css + button.css + chip.css + text-link.css + card.css.
+     Real graphics live in components/card/assets/*@2x.png (display at half size).
+-->
+
+<!-- Default Card -->
+<div class="card">
+  <div class="card__body">
+    <h3 class="card__title">Card Title</h3>
+    <p class="card__description">Card description text goes here.</p>
+  </div>
+</div>
+
+<!-- Elevated Card -->
+<div class="card card--elevated">
+  <div class="card__body">
+    <h3 class="card__title">Elevated Card</h3>
+    <p class="card__description">Card with shadow elevation.</p>
+  </div>
+  <div class="card__actions">
+    <button class="btn btn--primary btn--teal btn--sm">Action</button>
+  </div>
+</div>
+
+<!-- Icon Card (grid wrapper: .card-grid--icon) -->
+<div class="card card--icon">
+  <div class="card__body">
+    <div class="card__icon-box"><!-- inline 36x36 svg icon --></div>
+    <h3 class="card__title">Feature title</h3>
+    <p class="card__description">Feature description.</p>
+  </div>
+</div>
+
+<!-- Borderless Card (grid wrapper: .card-grid--borderless) -->
+<div class="card card--borderless">
+  <div class="card__body">
+    <div class="card__icon-box"><!-- inline 44x44 svg icon --></div>
+    <p class="card__description">Short centered label copy.</p>
+  </div>
+</div>
+
+<!-- Square Graphic Card (grid wrapper: .card-grid--2col) -->
+<a class="card card--square-graphic card--hoverable" href="#">
+  <div class="card__body">
+    <h3 class="card__title">Software Consulting</h3>
+    <p class="card__description">Description copy.</p>
+  </div>
+  <div class="card__media">
+    <img src="assets/app-collage@2x.png" alt="" width="500" height="300" />
+  </div>
+</a>
+
+<!-- Rectangle Graphic Card (grid wrapper: .card-grid--rectangle) -->
+<div class="card card--rectangle-graphic">
+  <div class="card__body">
+    <h3 class="card__title">CarbonWeb Packages</h3>
+    <p class="card__description">Description copy.</p>
+    <div><a class="btn btn--primary btn--white btn--lg" href="#">Large Button</a></div>
+  </div>
+  <div class="card__media">
+    <img src="assets/robot-unbox@2x.png" alt="" width="235" height="182" />
+  </div>
+</div>
+
+<!-- Illustration Card (greyscale, colors on hover; grid wrapper: .card-grid--2col) -->
+<a class="card card--illustration card--hoverable" href="#">
+  <div class="card__body">
+    <h3 class="card__title">Custom Workflow</h3>
+    <p class="card__description">Description copy.</p>
+  </div>
+  <div class="card__media">
+    <img src="assets/workflow-illustration@2x.png" alt="" width="503" height="242" />
+  </div>
+</a>
+
+<!-- Carousel Card (wrapper: .card-grid--carousel + .card-carousel__nav) -->
+<a class="card card--carousel card--hoverable" href="#">
+  <div class="card__media">
+    <img src="assets/google-ads-demo@2x.png" alt="" width="540" height="317" />
+  </div>
+  <div class="card__body">
+    <span class="card__meta-chip"><!-- 20x20 svg -->15 minutes</span>
+    <h3 class="card__title">Google Ads Exploration</h3>
+    <p class="card__description">Description copy.</p>
+  </div>
+  <div class="card__footer-link">
+    <span class="text-link">Get a Demo
+      <span class="text-link__arrow"><!-- arrow svg --></span>
+    </span>
+  </div>
+</a>
+
+<!-- Carousel nav -->
+<div class="card-carousel__nav">
+  <button class="card-carousel__arrow" disabled aria-label="Previous"><!-- arrow svg --></button>
+  <div class="card-carousel__dots">
+    <button class="card-carousel__dot" aria-label="Slide 1"></button>
+    <button class="card-carousel__dot" aria-current="true" aria-label="Slide 2"></button>
+  </div>
+  <button class="card-carousel__arrow" aria-label="Next"><!-- arrow svg --></button>
+</div>
+
+<!-- Blog Card (white; grid wrapper: .card-grid--blog) -->
+<a class="card card--blog card--hoverable" href="#">
+  <div class="card__media card__media--placeholder" role="img" aria-label="Article graphic"></div>
+  <div class="card__body">
+    <div class="card__chips">
+      <span class="chip chip--outline">Integrations</span>
+      <span class="chip chip--outline">Mirror Magic</span>
+    </div>
+    <h3 class="card__title">Article title</h3>
+    <p class="card__description">Article excerpt.</p>
+  </div>
+  <div class="card__actions">
+    <span class="btn btn--secondary btn--teal btn--sm">Read more</span>
+  </div>
+</a>
+
+<!-- Blog Card, tinted (set --card-tint-bg to any color token) -->
+<a class="card card--blog card--tint card--hoverable" href="#" style="--card-tint-bg: var(--color-latam-teal-600);">
+  <div class="card__media card__media--placeholder" role="img" aria-label="Article graphic"></div>
+  <div class="card__body">
+    <div class="card__chips">
+      <span class="chip">Process automation</span>
+    </div>
+    <h3 class="card__title">Article title</h3>
+    <p class="card__description">Article excerpt.</p>
+  </div>
+  <div class="card__actions">
+    <span class="btn btn--secondary btn--white btn--sm">Read more</span>
+  </div>
+</a>
+
+<!-- Blog Full Width Card -->
+<a class="card card--blog-wide card--hoverable" href="#">
+  <div class="card__content">
+    <h3 class="card__title">Article title</h3>
+    <p class="card__description">Article excerpt.</p>
+    <div class="card__footer">
+      <div class="card__chips">
+        <span class="chip chip--light">monday.com</span>
+        <span class="chip chip--light">CRM</span>
+      </div>
+      <span class="btn btn--secondary btn--white btn--sm">Read more</span>
+    </div>
+  </div>
+  <div class="card__media card__media--placeholder" role="img" aria-label="Article graphic"></div>
+</a>
+
+<!-- Note Card (full-width callout bar) -->
+<div class="card card--note">
+  <p class="card__description">None of these are monday.com problems. They're training problems.</p>
+</div>
+
+<!-- Service With Price Card (grid wrapper: .card-grid--service-price) -->
+<div class="card card--service-price">
+  <div class="card__band">
+    <h3 class="card__title">Managed Services</h3>
+    <p class="card__description">Service description.</p>
+  </div>
+  <ul class="card__checklist">
+    <li><!-- check svg -->Ongoing maintenance and platform management</li>
+    <li><!-- check svg -->New build requests and workflow improvements</li>
+  </ul>
+  <div class="card__band card__band--footer">
+    <div class="card__price-block">
+      <p class="card__price-value">From $195 <span class="card__price-unit">/hr</span></p>
+      <p class="card__price-note">Ongoing, month to month</p>
+    </div>
+    <a class="btn btn--primary btn--white btn--sm" href="#">Book a consultation</a>
+  </div>
+</div>
+
+<!-- Price Horizontal Card -->
+<div class="card card--price-horizontal">
+  <div class="card__content">
+    <h3 class="card__title">Adoption Partnership</h3>
+    <p class="card__subtitle">Teal lead-in sentence.</p>
+    <p class="card__description">Body copy.</p>
+    <ul class="card__checklist card__checklist--inline">
+      <li><!-- check svg -->Recurring Training Sessions</li>
+      <li><!-- check svg -->Office hours</li>
+    </ul>
+  </div>
+  <div class="card__price-panel">
+    <div class="card__price-block">
+      <p class="card__price-value">$195 <span class="card__price-unit">/hr</span></p>
+    </div>
+    <p class="card__price-note">Supporting note copy.</p>
+    <a class="btn btn--primary btn--white btn--sm" href="#">Book a consultation</a>
+  </div>
+</div>
+
+<!-- Selector Card (toggle .card--selected; disable with .card--disabled + disabled) -->
+<button class="card card--selector" type="button" aria-pressed="false">
+  <div class="card__body">
+    <span class="card__eyebrow"><!-- 16x16 svg -->Training</span>
+    <h3 class="card__title">We need our team to use monday.com better</h3>
+    <p class="card__description">We train your people to use monday.com with confidence.</p>
+  </div>
+  <span class="card__checkbox" aria-hidden="true"><!-- check svg --></span>
+</button>
+
+<!-- Directory Card (grid wrapper: .card-grid--2col) -->
+<a class="card card--directory" href="#">
+  <div class="card__media">
+    <img src="assets/directory-board@2x.png" alt="Product screenshot" width="365" height="232" />
+  </div>
+  <div class="card__body">
+    <h3 class="card__title">HiringPortal</h3>
+    <p class="card__description">Product description.</p>
+  </div>
+  <div class="card__footer">
+    <span class="card__product-tag"><!-- 24x24 product logo -->monday CRM</span>
+    <span class="text-link">Learn more
+      <span class="text-link__arrow"><!-- arrow svg --></span>
+    </span>
+  </div>
+</a>
+
+<!-- Pricing Card (composition) -->
+<div class="card card--elevated">
+  <div class="card__body">
+    <h3 class="card__title">Pro Plan</h3>
+    <p class="card__price">$49<span class="card__period">/month</span></p>
+    <ul class="card__features">
+      <li>Feature one</li>
+      <li>Feature two</li>
+    </ul>
+  </div>
+  <div class="card__actions">
+    <button class="btn btn--primary btn--teal btn--lg">Get Started</button>
+  </div>
+</div>

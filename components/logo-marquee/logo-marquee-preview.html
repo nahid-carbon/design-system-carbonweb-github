@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logo Marquee — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="logo-marquee.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .sub { margin-bottom: 36px; }
+    .sub h3 { font-size: 18px; font-weight: 600; margin-bottom: 14px; }
+  </style>
+</head>
+<body>
+
+<h2>Logo Marquee</h2>
+<p class="desc">Scrolling logo strip for trust signals and partner showcases. Hover items to reveal full color.</p>
+
+<!-- Default -->
+<div class="sub">
+  <h3>Default</h3>
+  <div class="logo-marquee">
+    <div class="logo-marquee__track">
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Abbvie</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Celsius</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">David Yurman</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">TikTok</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Zippo</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Feastables</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Rocket</span></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Abbvie</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Celsius</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">David Yurman</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">TikTok</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Zippo</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Feastables</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Rocket</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Reverse -->
+<div class="sub">
+  <h3>Reverse Direction</h3>
+  <div class="logo-marquee logo-marquee--reverse">
+    <div class="logo-marquee__track">
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Abbvie</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Celsius</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">David Yurman</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">TikTok</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Zippo</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Feastables</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Rocket</span></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Abbvie</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Celsius</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">David Yurman</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">TikTok</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Zippo</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Feastables</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Rocket</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Pause on Hover -->
+<div class="sub">
+  <h3>Pause on Hover</h3>
+  <div class="logo-marquee logo-marquee--paused">
+    <div class="logo-marquee__track">
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Abbvie</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Celsius</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">David Yurman</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">TikTok</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Zippo</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Feastables</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Rocket</span></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Abbvie</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Celsius</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">David Yurman</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">TikTok</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Zippo</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Feastables</span></div>
+      <div class="logo-marquee__item"><span class="logo-marquee__placeholder">Rocket</span></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

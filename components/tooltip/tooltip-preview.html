@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tooltip / Hotspot — CarbonWeb Design System</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="tooltip.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-family);
+      background: #ffffff;
+      color: var(--color-ink);
+      -webkit-font-smoothing: antialiased;
+      padding: 48px 40px;
+    }
+    .preview-section {
+      max-width: 720px;
+      margin: 0 auto 56px;
+    }
+    .preview-section:last-child { margin-bottom: 0; }
+    .preview-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .preview-desc {
+      font-size: 15px;
+      color: var(--color-muted);
+      margin-bottom: 32px;
+    }
+    .preview-sub {
+      margin-bottom: 36px;
+    }
+    .preview-sub h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    /* Demo area for hotspots */
+    .demo-area {
+      position: relative;
+      background: #f5f7fb;
+      border-radius: 12px;
+      padding: 80px 60px;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 120px;
+    }
+    .demo-area--positions {
+      gap: 80px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 100px 60px;
+    }
+    .demo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .demo-item__label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .inline-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-ink);
+      max-width: 540px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="preview-section">
+  <h2 class="preview-title">Tooltip / Hotspot</h2>
+  <p class="preview-desc">Clickable hotspots that reveal info popovers, plus inline hover tooltips.</p>
+
+  <div class="preview-sub">
+    <h3>Hotspots — Click to toggle</h3>
+    <div class="demo-area">
+      <div class="hotspot hotspot--top">
+        <button class="hotspot__dot" aria-expanded="false" aria-label="More info about workflow automation">
+          <span class="hotspot__dot-icon">+</span>
+        </button>
+        <div class="hotspot__popover" role="tooltip">
+          <div class="hotspot__title">Workflow Automation</div>
+          <div class="hotspot__text">Streamline your processes with custom automations that save hours of manual work every week.</div>
+        </div>
+      </div>
+
+      <div class="hotspot hotspot--top">
+        <button class="hotspot__dot" aria-expanded="false" aria-label="More info about integrations">
+          <span class="hotspot__dot-icon">i</span>
+        </button>
+        <div class="hotspot__popover" role="tooltip">
+          <div class="hotspot__title">200+ Integrations</div>
+          <div class="hotspot__text">Connect with Slack, Salesforce, HubSpot, and hundreds more for seamless data flow across your tech stack.</div>
+        </div>
+      </div>
+
+      <div class="hotspot hotspot--top">
+        <button class="hotspot__dot" aria-expanded="false" aria-label="More info about analytics">
+          <span class="hotspot__dot-icon">+</span>
+        </button>
+        <div class="hotspot__popover" role="tooltip">
+          <div class="hotspot__title">Real-time Analytics</div>
+          <div class="hotspot__text">Track KPIs and performance metrics with customizable dashboards that update in real time.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-sub">
+    <h3>Position Variants</h3>
+    <div class="demo-area demo-area--positions">
+      <div class="demo-item">
+        <div class="demo-item__label">Top</div>
+        <div class="hotspot hotspot--top">
+          <button class="hotspot__dot" aria-expanded="false" aria-label="Top tooltip demo">
+            <span class="hotspot__dot-icon">+</span>
+          </button>
+          <div class="hotspot__popover" role="tooltip">
+            <div class="hotspot__title">Top Position</div>
+            <div class="hotspot__text">This popover appears above the hotspot dot.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-item">
+        <div class="demo-item__label">Bottom</div>
+        <div class="hotspot hotspot--bottom">
+          <button class="hotspot__dot" aria-expanded="false" aria-label="Bottom tooltip demo">
+            <span class="hotspot__dot-icon">+</span>
+          </button>
+          <div class="hotspot__popover" role="tooltip">
+            <div class="hotspot__title">Bottom Position</div>
+            <div class="hotspot__text">This popover appears below the hotspot dot.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-item">
+        <div class="demo-item__label">Left</div>
+        <div class="hotspot hotspot--left">
+          <button class="hotspot__dot" aria-expanded="false" aria-label="Left tooltip demo">
+            <span class="hotspot__dot-icon">+</span>
+          </button>
+          <div class="hotspot__popover" role="tooltip">
+            <div class="hotspot__title">Left Position</div>
+            <div class="hotspot__text">This popover appears to the left of the hotspot dot.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-item">
+        <div class="demo-item__label">Right</div>
+        <div class="hotspot hotspot--right">
+          <button class="hotspot__dot" aria-expanded="false" aria-label="Right tooltip demo">
+            <span class="hotspot__dot-icon">+</span>
+          </button>
+          <div class="hotspot__popover" role="tooltip">
+            <div class="hotspot__title">Right Position</div>
+            <div class="hotspot__text">This popover appears to the right of the hotspot dot.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-sub">
+    <h3>Simple Tooltips — Hover to reveal</h3>
+    <p class="inline-text">
+      Our <span class="tooltip">
+        <span class="tooltip__trigger">CRM platform</span>
+        <span class="tooltip__content" role="tooltip">Customer Relationship Management</span>
+      </span> integrates with all major
+      <span class="tooltip">
+        <span class="tooltip__trigger">ERP systems</span>
+        <span class="tooltip__content" role="tooltip">Enterprise Resource Planning</span>
+      </span> to provide a unified view of your
+      <span class="tooltip">
+        <span class="tooltip__trigger">customer journey</span>
+        <span class="tooltip__content" role="tooltip">The complete path a customer takes from awareness to purchase and beyond</span>
+      </span>.
+    </p>
+  </div>
+</div>
+
+<script src="tooltip.js"></script>
+</body>
+</html>

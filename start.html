@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CarbonWeb DS — Start Here</title>
+<link rel="stylesheet" href="tokens/colors.css" />
+<link rel="stylesheet" href="tokens/typography.css" />
+<link rel="stylesheet" href="tokens/spacing.css" />
+<link rel="stylesheet" href="tokens/radii.css" />
+<link rel="stylesheet" href="tokens/shadows.css" />
+<link rel="stylesheet" href="tokens/grid.css" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-family); background: #f8f9fb; color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 48px 32px 100px; }
+  code { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .88em;
+         background: var(--color-grey-100); padding: 2px 6px; border-radius: 5px; }
+
+  h1 { font-size: 40px; font-weight: var(--font-black); line-height: var(--leading-tight); letter-spacing: -.01em; }
+  .lede { font-size: 17px; line-height: 1.65; color: var(--color-slate); margin-top: 10px; max-width: 640px; }
+  .read { display: inline-block; margin-top: 14px; font-size: 12px; font-weight: var(--font-semibold);
+          letter-spacing: .05em; text-transform: uppercase; color: var(--color-teal-700);
+          background: color-mix(in srgb, var(--color-teal-500) 12%, transparent);
+          padding: 5px 12px; border-radius: var(--radius-full); }
+
+  h2 { font-size: 13px; font-weight: var(--font-bold); letter-spacing: .09em; text-transform: uppercase;
+       color: var(--color-muted); margin: 52px 0 16px; }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 28px; }
+  .stat { background: #fff; border: 1px solid color-mix(in srgb, var(--color-ink) 7%, transparent);
+          border-radius: var(--radius-lg); padding: 18px 20px; }
+  .stat b { display: block; font-family: var(--font-family-numeric); font-size: 30px;
+            font-weight: var(--font-bold); line-height: 1; color: var(--color-teal-600); }
+  .stat span { display: block; font-size: 12.5px; color: var(--color-slate); margin-top: 6px; }
+
+  /* layer diagram */
+  .layers { display: grid; gap: 10px; }
+  .layer { display: grid; grid-template-columns: 130px 1fr; gap: 18px; align-items: center;
+           background: #fff; border: 1px solid color-mix(in srgb, var(--color-ink) 7%, transparent);
+           border-radius: var(--radius-lg); padding: 16px 20px; position: relative; }
+  .layer__tag { font-size: 11px; font-weight: var(--font-bold); letter-spacing: .06em; text-transform: uppercase;
+                padding: 5px 10px; border-radius: var(--radius-full); text-align: center; }
+  .layer__what { font-size: 14px; color: var(--color-slate); line-height: 1.6; }
+  .layer__what b { color: var(--color-ink); font-weight: var(--font-semibold); }
+  .layer__ex { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; color: var(--color-muted); }
+  .l-foundation { background: color-mix(in srgb, var(--color-teal-500) 15%, transparent); color: var(--color-teal-700); }
+  .l-atom       { background: color-mix(in srgb, var(--color-green-500) 20%, transparent); color: var(--color-green-700); }
+  .l-molecule   { background: color-mix(in srgb, var(--color-yellow-500) 22%, transparent); color: #7F5700; }
+  .l-section    { background: color-mix(in srgb, var(--color-slate) 12%, transparent); color: var(--color-slate); }
+  .arrow { text-align: center; color: var(--color-slate-light); font-size: 15px; line-height: 1; margin: -4px 0; }
+  .rule { margin-top: 14px; font-size: 13.5px; color: var(--color-slate); line-height: 1.65;
+          border-left: 3px solid var(--color-teal-500); padding-left: 14px; }
+
+  /* anatomy */
+  .anat { background: #fff; border: 1px solid color-mix(in srgb, var(--color-ink) 7%, transparent);
+          border-radius: var(--radius-lg); padding: 22px 24px; }
+  .anat__row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .anat__name { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 16px;
+                font-weight: var(--font-semibold); color: var(--color-teal-700); }
+  .anat__deps { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; align-items: baseline; }
+  .anat__deps > b { font-size: 12px; font-weight: var(--font-semibold); color: var(--color-slate); }
+  .dep { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; padding: 2px 8px;
+         border-radius: var(--radius-full); background: color-mix(in srgb, var(--color-teal-500) 10%, transparent); color: var(--color-teal-700); }
+  .dep--atom { background: color-mix(in srgb, var(--color-green-500) 16%, transparent); color: var(--color-green-700); }
+  .anat__vars { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+  .v { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; background: var(--color-grey-100);
+       color: var(--color-slate); border-radius: 6px; padding: 3px 9px; }
+  .callouts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+  .callout { font-size: 12.5px; color: var(--color-slate); line-height: 1.6; }
+  .callout b { display: block; color: var(--color-ink); font-size: 12px; font-weight: var(--font-semibold);
+               text-transform: uppercase; letter-spacing: .05em; margin-bottom: 3px; }
+
+  /* cards */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .card2 { background: #fff; border: 1px solid color-mix(in srgb, var(--color-ink) 7%, transparent);
+           border-radius: var(--radius-lg); padding: 20px; }
+  .card2 h3 { font-size: 15px; font-weight: var(--font-semibold); margin-bottom: 6px; }
+  .card2 p { font-size: 13.5px; color: var(--color-slate); line-height: 1.6; }
+  .card2 .n { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%;
+              background: var(--color-teal-500); color: #fff; font-size: 12px; font-weight: var(--font-bold);
+              font-family: var(--font-family-numeric); margin-bottom: 10px; }
+
+  pre { background: var(--color-ink); color: #eaf7f9; border-radius: var(--radius-md); padding: 15px 18px;
+        overflow-x: auto; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12.5px; line-height: 1.7; }
+  pre .c { color: #7f9ba0; }
+  pre .t { color: #7ee7f0; }
+
+  ol.steps { list-style: none; counter-reset: s; display: grid; gap: 10px; }
+  ol.steps li { counter-increment: s; display: grid; grid-template-columns: 26px 1fr; gap: 14px;
+                background: #fff; border: 1px solid color-mix(in srgb, var(--color-ink) 7%, transparent);
+                border-radius: var(--radius-lg); padding: 14px 18px; font-size: 14px; line-height: 1.6; color: var(--color-slate); }
+  ol.steps li::before { content: counter(s); display: grid; place-items: center; width: 24px; height: 24px;
+        border-radius: 50%; background: color-mix(in srgb, var(--color-teal-500) 14%, transparent);
+        color: var(--color-teal-700); font-size: 12px; font-weight: var(--font-bold); font-family: var(--font-family-numeric); }
+  ol.steps b { color: var(--color-ink); font-weight: var(--font-semibold); }
+
+  .rules { display: grid; gap: 8px; }
+  .r { display: grid; grid-template-columns: 22px 1fr; gap: 12px; font-size: 14px; line-height: 1.6; color: var(--color-slate); }
+  .r svg { width: 17px; height: 17px; color: var(--color-green-600); margin-top: 2px; }
+  .r b { color: var(--color-ink); font-weight: var(--font-semibold); }
+
+  .next { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .next a { display: block; background: #fff; border: 1px solid color-mix(in srgb, var(--color-ink) 7%, transparent);
+            border-radius: var(--radius-lg); padding: 15px 18px; text-decoration: none; color: inherit;
+            transition: border-color 200ms ease, transform 200ms ease; }
+  .next a:hover { border-color: var(--color-teal-500); transform: translateY(-2px); }
+  .next b { display: block; font-size: 14px; font-weight: var(--font-semibold); }
+  .next span { display: block; font-size: 12.5px; color: var(--color-slate); margin-top: 3px; }
+
+  @media (max-width: 860px) {
+    .stats, .cards, .callouts, .next { grid-template-columns: repeat(2, 1fr); }
+    .layer { grid-template-columns: 1fr; gap: 8px; }
+    .layer__tag { justify-self: start; }
+  }
+  @media (max-width: 560px) { .stats, .cards, .callouts, .next { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>The CarbonWeb Design System</h1>
+  <p class="lede">A library of ready-made, on-brand pieces you assemble pages from — instead of designing
+     and coding the same card, button and hero over and over. Plain HTML and CSS. No framework, no build step.</p>
+  <span class="read">4 min read</span>
+
+  <div class="stats" id="stats"></div>
+
+  <!-- ── 1. How it's organised ── -->
+  <h2>1 · How it's organised</h2>
+  <div class="layers">
+    <div class="layer">
+      <span class="layer__tag l-foundation">Foundation</span>
+      <div><div class="layer__what"><b>The raw decisions.</b> Colour, type, spacing, grid, radius, shadow — as variables.</div>
+           <div class="layer__ex">color · type · space · grid · radius · shadow</div></div>
+    </div>
+    <div class="arrow">↓ built from</div>
+    <div class="layer">
+      <span class="layer__tag l-atom">Atom</span>
+      <div><div class="layer__what"><b>The smallest pieces.</b> Made only from foundations.</div>
+           <div class="layer__ex">button · chip · badge · avatar · text-link</div></div>
+    </div>
+    <div class="arrow">↓ built from</div>
+    <div class="layer">
+      <span class="layer__tag l-molecule">Molecule</span>
+      <div><div class="layer__what"><b>Assemblies.</b> Foundations plus atoms.</div>
+           <div class="layer__ex">card · accordion · tabs · pricing-card</div></div>
+    </div>
+    <div class="arrow">↓ built from</div>
+    <div class="layer">
+      <span class="layer__tag l-section">Section</span>
+      <div><div class="layer__what"><b>Full-width page blocks.</b> Anything below.</div>
+           <div class="layer__ex">hero · faq-section · cta-banner · site-footer</div></div>
+    </div>
+  </div>
+  <p class="rule">Each level may only use the ones below it. That single rule is what keeps the system
+     consistent — nothing reinvents a colour or restyles a button.</p>
+
+  <!-- ── 2. Reading a component ── -->
+  <h2>2 · How to read a component</h2>
+  <div class="anat">
+    <div class="anat__row">
+      <span class="anat__name">card</span>
+      <span class="layer__tag l-molecule">Molecule</span>
+    </div>
+    <div class="anat__deps">
+      <b>built from</b>
+      <span class="dep">color</span><span class="dep">type</span><span class="dep">space</span>
+      <span class="dep">radius</span><span class="dep">shadow</span>
+      <span class="dep dep--atom">button</span><span class="dep dep--atom">chip</span><span class="dep dep--atom">text-link</span>
+    </div>
+    <div class="anat__vars">
+      <span class="v">card/blog</span><span class="v">card/icon</span><span class="v">card/carousel</span>
+      <span class="v">card/service-price</span><span class="v">+10 more</span>
+    </div>
+    <div class="callouts">
+      <div class="callout"><b>Name</b> what you call it. Click to copy.</div>
+      <div class="callout"><b>Built from</b> teal = foundations, green = atoms. Read from the real CSS, so it's never out of date.</div>
+      <div class="callout"><b>Variants</b> forms of the same component, written <code>name/variant</code>.</div>
+    </div>
+  </div>
+
+  <!-- ── 3. Using it ── -->
+  <h2>3 · Using it</h2>
+  <div class="cards">
+    <div class="card2"><span class="n">1</span><h3>Find it</h3>
+      <p>Open <b>Reference Names</b> to search everything, or browse the sidebar to see each component live.</p></div>
+    <div class="card2"><span class="n">2</span><h3>Name it</h3>
+      <p>Every piece has one unique name. A bare name is the default form; variants add a slash.</p></div>
+    <div class="card2"><span class="n">3</span><h3>Ask for it</h3>
+      <p>List the names you want and an assistant builds the page — no need to describe anything.</p></div>
+  </div>
+  <pre style="margin-top:12px;"><span class="c">Build a services page with:</span>
+<span class="t">hero/service</span>, <span class="t">chip/tag-category</span>, <span class="t">icon-tile</span>, <span class="t">accordion/service</span>,
+<span class="t">faq-section/dark</span>, <span class="t">cta-banner/glow</span>, <span class="t">site-footer/v2</span></pre>
+  <p class="rule">Building by hand instead? Each component's panel gives you the exact
+     <code>&lt;link&gt;</code> imports and markup to copy.</p>
+
+  <!-- ── 4. Adding ── -->
+  <h2>4 · Adding a component</h2>
+  <ol class="steps">
+    <li><span><b>Scaffold it.</b> One command writes all four files, already wired to the tokens, and registers it.
+        What it produces already passes the checker.</span></li>
+    <li><span><b>Build it</b> with tokens only, reusing atoms rather than restyling them.</span></li>
+    <li><span><b>Fill in the rules file</b> — when to use it, and when not to. This is what stops the next person misusing it.</span></li>
+    <li><span><b>Run the checker.</b> <code>python3 tools/audit.py</code> must pass for whatever you touched.</span></li>
+  </ol>
+  <pre style="margin-top:12px;">python3 tools/new-component.py metric-tile \
+  --category content --level molecule \
+  --summary <span class="t">"Compact tile showing a single metric."</span> --variants teal,dark</pre>
+
+  <!-- ── 5. Rules ── -->
+  <h2>5 · The five rules</h2>
+  <div class="rules" id="rules"></div>
+
+  <!-- ── Next ── -->
+  <h2>Where to go next</h2>
+  <div class="next">
+    <a href="reference.html"><b>Reference Names →</b><span>Every name in the system, searchable</span></a>
+    <a href="prompts.html"><b>Prompt Library →</b><span>14 ready-made prompts for common tasks</span></a>
+    <a href="docs.html"><b>Component Reference →</b><span>All components, imports and code on one page</span></a>
+    <a href="CONTRIBUTING.md" target="_blank" rel="noopener"><b>Contributing guide →</b><span>The full process, in detail</span></a>
+  </div>
+
+</div>
+
+<script src="data.js"></script>
+<script>
+  async function cwLoad(file, key) {
+    try { const r = await fetch(file); if (r.ok) return await r.json(); } catch (e) {}
+    return window[key] || null;
+  }
+  // Inside the library shell, route the "next" links through the sidebar so the
+  // active state stays in sync. Standalone, they behave as normal links.
+  if (window.parent !== window) {
+    document.querySelectorAll('.next a').forEach(a => {
+      const href = a.getAttribute('href');
+      if (a.target === '_blank') return;
+      a.addEventListener('click', e => {
+        try {
+          const btn = window.parent.document.querySelector('.nav-link[data-src="' + href + '"]');
+          if (btn) { e.preventDefault(); btn.click(); }
+        } catch (err) { /* different origin — let the link work normally */ }
+      });
+    });
+  }
+
+  (async () => {
+    const CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+    document.getElementById('rules').innerHTML = [
+      ['Use the tokens.', 'Never hardcode a colour, spacing value or width that a foundation already covers.'],
+      ['Reuse atoms.', "Compose a button — don't restyle one."],
+      ['One unique name.', 'No two things in the library may share a name.'],
+      ['Write the rules file.', 'A component nobody knows how to use is not finished.'],
+      ['The checker passes.', 'It runs automatically before every commit.']
+    ].map(([b, t]) => '<div class="r">' + CHECK + '<div><b>' + b + '</b> ' + t + '</div></div>').join('');
+
+    const reg = await cwLoad('registry.json', '__CW_REGISTRY__');
+    const pr  = await cwLoad('prompts.json', '__CW_PROMPTS__');
+    if (!reg) return;
+    const c = reg.components;
+    const names = Object.keys(c).length +
+      Object.values(c).reduce((n, v) => n + (v.variants || []).filter(x => x !== 'default').length, 0) +
+      Object.keys(reg.foundations || {}).length;
+    const stats = [
+      [Object.keys(c).length, 'components'],
+      [Object.keys(reg.foundations || {}).length, 'foundations'],
+      [names, 'names you can use'],
+      [pr ? pr.groups.reduce((n, g) => n + g.prompts.length, 0) : 14, 'ready-made prompts']
+    ];
+    document.getElementById('stats').innerHTML = stats
+      .map(([n, l]) => '<div class="stat"><b>' + n + '</b><span>' + l + '</span></div>').join('');
+  })();
+</script>
+</body>
+</html>

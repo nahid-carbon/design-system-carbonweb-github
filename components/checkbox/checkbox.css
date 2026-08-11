@@ -1,0 +1,130 @@
+/* CarbonWeb Checkbox — uses only var(--token) references
+   Hidden native input + styled 20px box. States: default, checked, disabled.
+*/
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-ink);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hidden native input (kept accessible) */
+.checkbox__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Styled box */
+.checkbox__box {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid color-mix(in srgb, var(--color-slate) 40%, transparent); /* slate at 40% */
+  background: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+/* Checkmark SVG */
+.checkbox__check {
+  width: 12px;
+  height: 12px;
+  color: var(--color-white);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+
+.checkbox__check path {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  transition: stroke-dashoffset 150ms ease 50ms;
+}
+
+/* ── Hover ── */
+
+.checkbox:hover .checkbox__box {
+  border-color: var(--color-teal-500);
+  background: color-mix(in srgb, var(--color-teal-500) 6%, transparent); /* subtle teal tint */
+}
+
+/* ── Checked ── */
+
+.checkbox__input:checked + .checkbox__box {
+  background: var(--color-teal-500);
+  border-color: var(--color-teal-500);
+}
+
+.checkbox__input:checked + .checkbox__box .checkbox__check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.checkbox__input:checked + .checkbox__box .checkbox__check path {
+  stroke-dashoffset: 0;
+}
+
+/* Checked hover / active */
+.checkbox:hover .checkbox__input:checked + .checkbox__box {
+  background: var(--color-teal-600);
+  border-color: var(--color-teal-600);
+}
+.checkbox:active .checkbox__input:checked + .checkbox__box {
+  background: var(--color-teal-700);
+  border-color: var(--color-teal-700);
+}
+.checkbox:active .checkbox__box {
+  border-color: var(--color-teal-700);
+}
+
+/* ── Focus ── */
+
+.checkbox__input:focus-visible + .checkbox__box {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}
+
+/* ── Disabled ── */
+
+.checkbox--disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ── Group ── */
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.checkbox-group__title {
+  font-family: var(--font-family);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  margin: 0 0 var(--space-1) 0;
+}

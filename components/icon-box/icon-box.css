@@ -1,0 +1,73 @@
+/* CarbonWeb Icon Box -- uses only var(--token) references */
+
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+  text-align: center;
+}
+
+.icon-box__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-teal-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: var(--color-teal-500);
+  flex-shrink: 0;
+}
+
+.icon-box__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-box__title {
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-ink);
+}
+
+.icon-box__description {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+/* ── Left-aligned Variant ── */
+
+.icon-box--left {
+  flex-direction: row;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.icon-box--left .icon-box__icon {
+  margin-bottom: 0;
+  margin-right: 16px;
+}
+
+/* ── Bordered Variant ── */
+
+.icon-box--bordered {
+  border: 1px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
+  border-radius: 12px;
+}
+
+/* ── Hover Variant ── */
+
+.icon-box--hover {
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.icon-box--hover:hover {
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--color-ink) 8%, transparent);
+  transform: translateY(-2px);
+}

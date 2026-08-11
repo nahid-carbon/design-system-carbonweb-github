@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonial — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/shadows.css" />
+  <link rel="stylesheet" href="testimonial.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #f5f5f5; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .section { margin-bottom: 56px; }
+    .section__title { font-size: 20px; font-weight: 600; color: var(--color-ink); margin-bottom: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+    .slider-wrap { max-width: 560px; }
+  </style>
+</head>
+<body>
+
+<h2>Testimonials</h2>
+<p class="desc">Customer testimonial cards — default, elevated, with stat, and slider carousel.</p>
+
+<!-- Single card (default) -->
+<div class="section">
+  <p class="section__title">Default Card</p>
+  <div class="grid">
+    <div class="testimonial">
+      <p class="testimonial__quote">"CarbonWeb transformed the way our team collaborates. The workflow automation alone saved us 20 hours a week."</p>
+      <div class="testimonial__author">
+        <div class="testimonial__avatar"></div>
+        <div>
+          <p class="testimonial__name">Jesse Klein</p>
+          <p class="testimonial__role">COO, Horizon Enterprises</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial testimonial--elevated">
+      <p class="testimonial__quote">"The onboarding was seamless and the support team was incredible. We were fully operational in under a week."</p>
+      <div class="testimonial__author">
+        <div class="testimonial__avatar"></div>
+        <div>
+          <p class="testimonial__name">Laura Lavore</p>
+          <p class="testimonial__role">VP Operations, Nexus Global</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card with stat -->
+<div class="section">
+  <p class="section__title">With Stat</p>
+  <div class="grid">
+    <div class="testimonial testimonial--elevated">
+      <p class="testimonial__stat">100%</p>
+      <p class="testimonial__stat-label">Workflow adoption in 30 days</p>
+      <p class="testimonial__quote">"Every single team member adopted the new workflow within the first month. We now have 24/7 visibility across all departments."</p>
+      <div class="testimonial__author">
+        <div class="testimonial__avatar"></div>
+        <div>
+          <p class="testimonial__name">Jesse Klein</p>
+          <p class="testimonial__role">COO, Horizon Enterprises</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial testimonial--elevated">
+      <p class="testimonial__stat">+125%</p>
+      <p class="testimonial__stat-label">Team efficiency improvement</p>
+      <p class="testimonial__quote">"Since switching to CarbonWeb, our team efficiency has more than doubled. The custom integrations made all the difference."</p>
+      <div class="testimonial__author">
+        <div class="testimonial__avatar"></div>
+        <div>
+          <p class="testimonial__name">Mark Swansburg</p>
+          <p class="testimonial__role">Director of Engineering, Steelpoint</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slider -->
+<div class="section">
+  <p class="section__title">Slider Carousel</p>
+  <div class="slider-wrap">
+    <div class="testimonial-slider" data-testimonial-slider>
+      <div class="testimonial-slider__track">
+        <div class="testimonial">
+          <p class="testimonial__stat">100%</p>
+          <p class="testimonial__stat-label">Workflow adoption &middot; 24/7 visibility</p>
+          <p class="testimonial__quote">"Every single team member adopted the new workflow within the first month. We now have 24/7 visibility across all departments."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar"></div>
+            <div>
+              <p class="testimonial__name">Jesse Klein</p>
+              <p class="testimonial__role">COO, Horizon Enterprises</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <p class="testimonial__stat">+125%</p>
+          <p class="testimonial__stat-label">Team efficiency improvement</p>
+          <p class="testimonial__quote">"Since switching to CarbonWeb, our team efficiency has more than doubled. The custom integrations made all the difference."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar"></div>
+            <div>
+              <p class="testimonial__name">Mark Swansburg</p>
+              <p class="testimonial__role">Director of Engineering, Steelpoint</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <p class="testimonial__stat">100%</p>
+          <p class="testimonial__stat-label">Digital transformation</p>
+          <p class="testimonial__quote">"CarbonWeb helped us achieve a complete digital transformation. Our legacy systems are finally connected and our data is unified."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar"></div>
+            <div>
+              <p class="testimonial__name">Laura Lavore</p>
+              <p class="testimonial__role">VP Operations, Nexus Global</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-slider__dots">
+        <button class="testimonial-slider__dot testimonial-slider__dot--active" aria-label="Show testimonial 1"></button>
+        <button class="testimonial-slider__dot" aria-label="Show testimonial 2"></button>
+        <button class="testimonial-slider__dot" aria-label="Show testimonial 3"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="testimonial.js"></script>
+</body>
+</html>

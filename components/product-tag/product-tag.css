@@ -1,0 +1,83 @@
+/* CarbonWeb Product Tag — monday.com product tag with 24px brand logo.
+   Figma: Chip/Products 848:61721 (State=Light 170:40805 / State=Hover 848:61719).
+
+   Not a pill: 32px tall, 4px radius, hairline border, logo-first.
+   Use the pill Chip (.chip--tag.chip--product-*) when you need the small
+   inline blog/metadata form instead. */
+
+.product-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 4px 10px 4px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-light);
+  background: var(--color-white);
+  color: var(--color-grey-900);
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  line-height: 20px;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 200ms ease, color 200ms ease,
+    border-color 200ms ease;
+}
+
+/* State=Hover (848:61719) — dark fill, white label, logo unchanged.
+   Also available as a static modifier for documentation/screenshots. */
+.product-tag:hover,
+.product-tag--hover {
+  background: var(--color-grey-900);
+  color: var(--color-white);
+}
+
+.product-tag:active {
+  background: var(--color-ink);
+}
+
+.product-tag:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}
+
+/* Non-interactive usage (a plain label rather than a filter control) */
+.product-tag--static,
+.product-tag--static:hover {
+  background: var(--color-white);
+  color: var(--color-grey-900);
+  cursor: default;
+}
+
+.product-tag__logo {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.product-tag__logo img,
+.product-tag__logo svg {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+.product-tag__label {
+  display: inline-block;
+  padding-left: 4px; /* Figma Content frame offset */
+}
+
+/* Row wrapper — wraps at the container width (Figma row is 244px wide) */
+.product-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-tag {
+    transition: none;
+  }
+}

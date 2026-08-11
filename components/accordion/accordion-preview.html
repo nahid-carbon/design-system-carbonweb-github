@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accordion — CarbonWeb Design System</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../button/button.css" />
+  <link rel="stylesheet" href="accordion.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-family);
+      background: #ffffff;
+      color: var(--color-ink);
+      -webkit-font-smoothing: antialiased;
+      padding: 48px 40px;
+    }
+    .preview-section--wide { max-width: 1120px; }
+    .preview-heading { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+    .preview-note { font-size: 13px; color: var(--color-muted); margin-bottom: 14px; line-height: 1.6; }
+    .preview-section {
+      max-width: 720px;
+      margin: 0 auto 56px;
+    }
+    .preview-section:last-child {
+      margin-bottom: 0;
+    }
+    .preview-title {
+      font-family: var(--font-family);
+      font-weight: var(--font-bold);
+      font-size: var(--text-5xl);
+      line-height: var(--leading-tight);
+      color: var(--color-ink);
+      margin-bottom: 8px;
+    }
+    .preview-subtitle {
+      font-family: var(--font-family);
+      font-weight: var(--font-regular);
+      font-size: var(--text-base);
+      line-height: var(--leading-relaxed);
+      color: var(--color-muted);
+      margin-bottom: 32px;
+    }
+    .preview-label {
+      font-family: var(--font-family);
+      font-weight: var(--font-semibold);
+      font-size: var(--text-sm);
+      line-height: var(--leading-tight);
+      color: var(--color-slate-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="preview-section">
+    <h1 class="preview-title">Accordion</h1>
+    <p class="preview-subtitle">Expandable content sections for progressive disclosure. Variants: default, bordered, FAQ.</p>
+  </div>
+
+  <!-- ── Default ── -->
+  <div class="preview-section">
+    <p class="preview-label">Default</p>
+    <div class="accordion" role="region" aria-label="Default accordion">
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="d-panel-1" id="d-trigger-1">
+          <span>Our Approach</span>
+          <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+        <div class="accordion__panel" id="d-panel-1" role="region" aria-labelledby="d-trigger-1">
+          <div class="accordion__content">We take a consultative approach, working closely with your team to understand your unique workflows before recommending solutions. Every implementation is tailored to your specific business needs.</div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="d-panel-2" id="d-trigger-2">
+          <span>Platform Expertise</span>
+          <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+        <div class="accordion__panel" id="d-panel-2" role="region" aria-labelledby="d-trigger-2">
+          <div class="accordion__content">As a monday.com Platinum Partner, our team has deep expertise in the platform's capabilities, integrations, and best practices. We help you unlock the full potential of your tools.</div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="d-panel-3" id="d-trigger-3">
+          <span>Ongoing Support</span>
+          <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+        <div class="accordion__panel" id="d-panel-3" role="region" aria-labelledby="d-trigger-3">
+          <div class="accordion__content">Our relationship doesn't end at launch. We provide dedicated support, training, and optimization services to ensure your team continues to get maximum value from your workflows.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Bordered ── -->
+  <div class="preview-section">
+    <p class="preview-label">Bordered</p>
+    <div class="accordion accordion--bordered" role="region" aria-label="Bordered accordion">
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="b-panel-1" id="b-trigger-1">
+          <span>Consultation</span>
+          <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+        <div class="accordion__panel" id="b-panel-1" role="region" aria-labelledby="b-trigger-1">
+          <div class="accordion__content">We begin every engagement with a thorough discovery session to map your current processes, identify pain points, and define success metrics for your implementation.</div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="b-panel-2" id="b-trigger-2">
+          <span>Workflow Development</span>
+          <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+        <div class="accordion__panel" id="b-panel-2" role="region" aria-labelledby="b-trigger-2">
+          <div class="accordion__content">Our certified developers build custom workflows, automations, and integrations that connect your tools and streamline your operations from end to end.</div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="b-panel-3" id="b-trigger-3">
+          <span>Training</span>
+          <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+        <div class="accordion__panel" id="b-panel-3" role="region" aria-labelledby="b-trigger-3">
+          <div class="accordion__content">We deliver hands-on training sessions for your team, ensuring everyone is confident and productive from day one. Training can be customized by role and skill level.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FAQ (single-open) ── -->
+  <div class="preview-section">
+    <p class="preview-label">FAQ (single-open mode)</p>
+    <div class="accordion accordion--faq" data-single="true" role="region" aria-label="Frequently Asked Questions">
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-panel-1" id="faq-trigger-1">
+          <span>What is monday.com?</span>
+          <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+        <div class="accordion__panel" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1">
+          <div class="accordion__content">monday.com is a cloud-based Work OS that lets teams build custom workflows to manage projects, processes, and everyday work. It provides a visual and intuitive platform for collaboration across departments.</div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-panel-2" id="faq-trigger-2">
+          <span>How long does implementation take?</span>
+          <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+        <div class="accordion__panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2">
+          <div class="accordion__content">Implementation timelines vary depending on the scope and complexity of your needs. A basic setup can be completed in 2-4 weeks, while enterprise-level deployments with custom integrations typically take 6-12 weeks.</div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-panel-3" id="faq-trigger-3">
+          <span>Do you offer ongoing support?</span>
+          <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+        <div class="accordion__panel" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3">
+          <div class="accordion__content">Yes. We offer tiered support plans that include dedicated account management, training sessions, workflow audits, and priority response times. Our team is available to help you adapt and scale as your business grows.</div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-panel-4" id="faq-trigger-4">
+          <span>What industries do you serve?</span>
+          <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+        <div class="accordion__panel" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4">
+          <div class="accordion__content">We work across a wide range of industries including technology, healthcare, finance, retail, manufacturing, and education. Our solutions are flexible enough to adapt to any sector's unique requirements and compliance needs.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="preview-section preview-section--wide">
+  <h3 class="preview-heading">FAQ variant &mdash; Theme=Light</h3>
+  <p class="preview-note">Figma: Accordion/FAQ 842:13274. 20px-radius Gray 100 card, 32px padding, chevron in a 40px puck, Heading 5 (SB) question / Body Large answer.</p>
+  <div class="accordion accordion--faq" data-single="true" role="region" aria-label="FAQ light">
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="fl1p" id="fl1t">
+          <span>How does CarbonWeb customize monday.com solutions for different industries and team sizes?</span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+        <div class="accordion__panel" id="fl1p" role="region" aria-labelledby="fl1t">
+          <div class="accordion__content">CarbonWeb takes a consultative approach. We begin by understanding your specific workflow, team structure, and business goals. Then we configure monday.com&rsquo;s boards, automations, and integrations to match your unique processes &mdash; no matter the size or industry of your business.</div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="fl2p" id="fl2t">
+          <span>What does a typical implementation timeline look like?</span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+        <div class="accordion__panel" id="fl2p" role="region" aria-labelledby="fl2t">
+          <div class="accordion__content">Most scoped builds run four to eight weeks from discovery to handover, depending on the number of boards, integrations, and automations involved.</div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="preview-section preview-section--wide">
+  <h3 class="preview-heading">FAQ variant &mdash; Theme=Dark</h3>
+  <p class="preview-note">Same card on a dark surface: white-10% fill, white label. Shown here on the Figma section black.</p>
+  <div style="background:#000; padding:40px; border-radius:16px;">
+    <div class="accordion accordion--faq accordion--dark" data-single="true" role="region" aria-label="FAQ dark">
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="fd1p" id="fd1t">
+          <span>How does CarbonWeb customize monday.com solutions for different industries and team sizes?</span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+        <div class="accordion__panel" id="fd1p" role="region" aria-labelledby="fd1t">
+          <div class="accordion__content">CarbonWeb takes a consultative approach. We begin by understanding your specific workflow, team structure, and business goals. Then we configure monday.com&rsquo;s boards, automations, and integrations to match your unique processes &mdash; no matter the size or industry of your business.</div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="fd2p" id="fd2t">
+          <span>What does a typical implementation timeline look like?</span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+        <div class="accordion__panel" id="fd2p" role="region" aria-labelledby="fd2t">
+          <div class="accordion__content">Most scoped builds run four to eight weeks from discovery to handover, depending on the number of boards, integrations, and automations involved.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="preview-section preview-section--wide">
+  <h3 class="preview-heading">Service variant (priced)</h3>
+  <p class="preview-note">Figma: Accordion/Item 882:9057 inside Container 918:47005. Collapsed rows are flat white with a hairline; the open row becomes a teal-outlined tinted card with a Montserrat price and CTA.</p>
+  <span class="accordion__eyebrow">Workflow Development</span>
+  <div class="accordion accordion--service" data-single="true" role="region" aria-label="Service packages">
+      <div class="accordion__item accordion__item--open">
+        <button class="accordion__trigger" aria-expanded="true" aria-controls="sv1p" id="sv1t">
+          <span class="accordion__heading">
+            <span class="accordion__title">Basic Workflow Development</span>
+            <span class="accordion__subtitle">You know what you need built. It just doesn&rsquo;t fit a fixed package.</span>
+          </span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+        <div class="accordion__panel" id="sv1p" role="region" aria-labelledby="sv1t" style="max-height:none">
+          <div class="accordion__content">
+            <p class="accordion__desc">A scoped, one-time build around your specific workflow, process, or system needs. We design and deliver a monday.com solution shaped entirely around your requirements &mdash; not a template, not a workaround. Your workflow, built properly.</p>
+            <div class="accordion__cta">
+              <p class="accordion__price">$215/hr<span class="accordion__price-note">Scoped in discovery</span></p>
+              <a href="#" class="btn btn--primary btn--teal btn--sm">Book a discovery call</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="sv2p" id="sv2t">
+          <span class="accordion__heading">
+            <span class="accordion__title">Advanced Workflow Development</span>
+            <span class="accordion__subtitle">Multi-board processes, integrations, and automation at scale.</span>
+          </span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+        <div class="accordion__panel" id="sv2p" role="region" aria-labelledby="sv2t">
+          <div class="accordion__content">
+            <p class="accordion__desc">A deeper engagement covering cross-board architecture, third-party integrations, and automation design, delivered and documented for your team.</p>
+            <div class="accordion__cta">
+              <p class="accordion__price">$265/hr<span class="accordion__price-note">Scoped in discovery</span></p>
+              <a href="#" class="btn btn--primary btn--teal btn--sm">Book a discovery call</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="sv3p" id="sv3t">
+          <span class="accordion__heading">
+            <span class="accordion__title">Workflow Audit</span>
+            <span class="accordion__subtitle">Already on monday.com, but it isn&rsquo;t working the way you hoped.</span>
+          </span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9" /></svg>
+        </button>
+        <div class="accordion__panel" id="sv3p" role="region" aria-labelledby="sv3t">
+          <div class="accordion__content">
+            <p class="accordion__desc">We review your existing account end to end and hand back a prioritised remediation plan you can act on with or without us.</p>
+            <div class="accordion__cta">
+              <p class="accordion__price">$1,900<span class="accordion__price-note">Fixed scope</span></p>
+              <a href="#" class="btn btn--primary btn--teal btn--sm">Book a discovery call</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+  <script src="accordion.js"></script>
+</body>
+</html>

@@ -1,0 +1,757 @@
+/* CarbonWeb CTA Banner — full-width call-to-action band
+   Base: rounded-2xl dark gradient card (ink → teal-950) with subtle radial
+   teal glow, white heading with teal accent span, description, pill CTA.
+   Variants: --light (teal-tint bg, ink text), --split (text + media slot),
+   --centered. Card glow intensifies on hover; CTA lifts. */
+
+/* ── Base card ── */
+
+.cta-banner {
+  position: relative;
+  font-family: var(--font-family);
+  max-width: 1288px;
+  margin: 0 auto;
+  border-radius: var(--radius-2xl);
+  background: linear-gradient(120deg, var(--color-ink) 0%, var(--color-teal-950) 100%);
+  padding: 64px 72px;
+  overflow: hidden;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+/* Radial teal glow layer */
+.cta-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(560px 380px at 82% 20%, color-mix(in srgb, var(--color-teal-500) 28%, transparent) 0%, transparent 70%),
+    radial-gradient(440px 320px at 8% 90%, color-mix(in srgb, var(--color-green-500) 12%, transparent) 0%, transparent 70%);
+  opacity: 0.7;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+}
+
+.cta-banner:hover {
+  box-shadow: 0 16px 48px color-mix(in srgb, var(--color-teal-500) 22%, transparent);
+}
+
+.cta-banner:hover::before {
+  opacity: 1;
+}
+
+/* ── Content ── */
+
+.cta-banner__content {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+}
+
+.cta-banner__title {
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  color: var(--color-white);
+  margin: 0 0 16px;
+}
+
+/* Teal accent word in the heading */
+.cta-banner__accent {
+  color: var(--color-teal-400);
+}
+
+.cta-banner__description {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: color-mix(in srgb, var(--color-white) 72%, transparent);
+  margin: 0 0 32px;
+}
+
+.cta-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Extra lift on the DS button inside the banner */
+.cta-banner__actions .btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Variant: --light (teal tint, ink text) ── */
+
+.cta-banner--light {
+  background: color-mix(in srgb, var(--color-teal-500) 18%, var(--color-white));
+}
+
+.cta-banner--light::before {
+  background:
+    radial-gradient(560px 380px at 82% 20%, color-mix(in srgb, var(--color-teal-500) 18%, transparent) 0%, transparent 70%),
+    radial-gradient(440px 320px at 8% 90%, color-mix(in srgb, var(--color-green-500) 12%, transparent) 0%, transparent 70%);
+}
+
+.cta-banner--light:hover {
+  box-shadow: 0 12px 36px color-mix(in srgb, var(--color-teal-500) 20%, transparent);
+}
+
+.cta-banner--light .cta-banner__title {
+  color: var(--color-ink);
+}
+
+.cta-banner--light .cta-banner__accent {
+  color: var(--color-teal-700);
+}
+
+.cta-banner--light .cta-banner__description {
+  color: color-mix(in srgb, var(--color-ink) 62%, transparent);
+}
+
+/* ── Variant: --split (text left, media slot right) ── */
+
+.cta-banner--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.cta-banner__media {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.cta-banner__media img,
+.cta-banner__media > * {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius-xl);
+}
+
+/* ── Variant: --centered ── */
+
+.cta-banner--centered {
+  text-align: center;
+}
+
+.cta-banner--centered .cta-banner__content {
+  margin: 0 auto;
+}
+
+.cta-banner--centered .cta-banner__actions {
+  justify-content: center;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Figma-derived variants (page: 4. Sections / CTA Banner)
+   ═══════════════════════════════════════════════════════════ */
+
+/* Shared atoms */
+
+.cta-banner__eyebrow {
+  display: block;
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-teal-500);
+  margin: 0 0 8px;
+}
+
+.cta-banner__fine-print {
+  font-size: var(--text-xs);
+  font-style: italic;
+  color: color-mix(in srgb, currentColor 55%, transparent);
+  margin: 20px 0 0;
+}
+
+/* Check bullets (Blog banners) */
+.cta-banner__checks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 32px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.cta-banner__check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-sm);
+  color: var(--color-white);
+}
+
+.cta-banner__check::before {
+  content: "";
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background:
+    center / 10px no-repeat
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5 4.7 9 10 3.5' fill='none' stroke='%23003a40' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"),
+    var(--color-teal-400);
+}
+
+/* Graphic placeholder slot (token-gradient, used when no asset) */
+.cta-banner__graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--color-teal-100) 55%, var(--color-white)),
+    color-mix(in srgb, var(--color-green-100) 55%, var(--color-white)));
+  border: 1px dashed color-mix(in srgb, var(--color-teal-500) 45%, transparent);
+  color: var(--color-teal-800);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  min-height: 180px;
+}
+
+/* ── Variant: --subscribe (Figma 809:16949 "CTA Banner/Subscribe") ── */
+
+.cta-banner--subscribe {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 56px;
+  align-items: center;
+  background: var(--color-ink);
+  padding: 56px 72px;
+}
+
+.cta-banner--subscribe::before {
+  background:
+    radial-gradient(620px 480px at 100% 100%, color-mix(in srgb, var(--color-teal-800) 65%, transparent) 0%, transparent 70%),
+    radial-gradient(420px 320px at 88% 20%, color-mix(in srgb, var(--color-green-500) 18%, transparent) 0%, transparent 70%);
+}
+
+.cta-banner--subscribe .cta-banner__title {
+  font-size: var(--text-3xl);
+  margin-bottom: 24px;
+}
+
+.cta-banner__form {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  max-width: 506px;
+  padding: 4px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-teal-500);
+  background: color-mix(in srgb, var(--color-white) 6%, transparent);
+  transition: box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.cta-banner__form:focus-within {
+  border-color: var(--color-teal-300);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-teal-500) 25%, transparent);
+}
+
+.cta-banner__input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  color: var(--color-white);
+  padding: 12px 20px;
+  outline: none;
+}
+
+.cta-banner__input::placeholder {
+  color: color-mix(in srgb, var(--color-white) 45%, transparent);
+}
+
+.cta-banner--subscribe .cta-banner__media {
+  justify-self: end;
+}
+
+.cta-banner--subscribe .cta-banner__media img {
+  width: 246px;
+  border-radius: 0;
+}
+
+/* ── Variant: --glow (dark charcoal glow card, base for split/avatar)
+      Figma 664:11243 "Glow Split", 871:31313 "Glow Avatar" ── */
+
+.cta-banner--glow {
+  background: color-mix(in srgb, var(--color-ink) 84%, var(--color-white));
+  border-radius: var(--radius-3xl, 40px);
+}
+
+.cta-banner--glow::before {
+  background:
+    radial-gradient(480px 360px at 88% 12%, color-mix(in srgb, var(--color-green-700) 30%, transparent) 0%, transparent 70%);
+}
+
+.cta-banner--glow:hover {
+  box-shadow: 0 16px 48px color-mix(in srgb, var(--color-ink) 45%, transparent);
+}
+
+.cta-banner--glow .cta-banner__accent {
+  color: var(--color-teal-500);
+}
+
+/* Glow Split: right-hand stack of glass info cards */
+.cta-banner__info-stack {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cta-banner__info-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-white) 7%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-white) 10%, transparent);
+  transition: background-color 200ms ease, transform 200ms ease;
+}
+
+.cta-banner__info-card:hover {
+  background: color-mix(in srgb, var(--color-white) 12%, transparent);
+  transform: translateY(-2px);
+}
+
+.cta-banner__info-icon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--color-teal-950);
+  color: var(--color-teal-300);
+}
+
+.cta-banner__info-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.cta-banner__info-title {
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+  color: var(--color-white);
+  margin: 0 0 2px;
+}
+
+.cta-banner__info-desc {
+  font-size: var(--text-sm);
+  color: color-mix(in srgb, var(--color-white) 60%, transparent);
+  margin: 0;
+}
+
+/* Glow Avatar: hexagon avatar cluster on the right */
+.cta-banner--glow-avatar .cta-banner__media {
+  justify-self: end;
+}
+
+.cta-banner--glow-avatar .cta-banner__media img {
+  width: 454px;
+  max-width: 100%;
+  border-radius: 0;
+  transition: transform 200ms ease;
+}
+
+.cta-banner--glow-avatar:hover .cta-banner__media img {
+  transform: translateY(-3px);
+}
+
+/* ── Variant: --quiz (Figma 871:31698 "Quiz Card",
+      871:31697 "Quiz Card Highlight", 918:45805/45807) ── */
+
+.cta-banner--quiz {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+  background: color-mix(in srgb, var(--color-teal-200) 42%, var(--color-white));
+  border-radius: var(--radius-3xl, 40px);
+}
+
+.cta-banner--quiz::before {
+  background: none;
+}
+
+.cta-banner--quiz:hover {
+  box-shadow: 0 12px 36px color-mix(in srgb, var(--color-teal-500) 18%, transparent);
+}
+
+.cta-banner--quiz .cta-banner__title {
+  color: var(--color-ink);
+}
+
+.cta-banner--quiz .cta-banner__accent {
+  color: var(--color-teal-500);
+}
+
+.cta-banner--quiz .cta-banner__description {
+  color: color-mix(in srgb, var(--color-ink) 62%, transparent);
+}
+
+.cta-banner--quiz .cta-banner__fine-print {
+  color: color-mix(in srgb, var(--color-ink) 40%, transparent);
+}
+
+/* White answer panel */
+.cta-banner__panel {
+  position: relative;
+  z-index: 1;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--color-ink) 6%, transparent);
+}
+
+.cta-banner__panel-title {
+  font-weight: var(--font-bold);
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  margin: 0 0 18px;
+}
+
+.cta-banner__panel-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-grey-base) 16%, var(--color-white));
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.cta-banner__panel-item + .cta-banner__panel-item {
+  margin-top: 12px;
+}
+
+.cta-banner__panel-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+/* Gradient highlight rows (Quiz Card Highlight) */
+.cta-banner__panel-item--vibe {
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--color-pink-100) 70%, var(--color-white)) 0%,
+    color-mix(in srgb, var(--color-yellow-200) 70%, var(--color-white)) 45%,
+    color-mix(in srgb, var(--color-pink-500) 55%, var(--color-white)) 100%);
+}
+
+.cta-banner__panel-item--agent {
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--color-teal-100) 45%, var(--color-white)) 0%,
+    color-mix(in srgb, var(--color-green-100) 40%, var(--color-white)) 45%,
+    color-mix(in srgb, var(--color-grey-base) 35%, var(--color-white)) 100%);
+}
+
+/* ── Variant: --vertical (Figma 170:28850 "Vertical") ── */
+
+.cta-banner--vertical {
+  background: none;
+  border-radius: 0;
+  text-align: center;
+  padding: 64px 40px 0;
+  overflow: visible;
+}
+
+.cta-banner--vertical::before {
+  background: none;
+}
+
+.cta-banner--vertical:hover {
+  box-shadow: none;
+}
+
+.cta-banner--vertical .cta-banner__content {
+  margin: 0 auto;
+  max-width: 680px;
+}
+
+.cta-banner--vertical .cta-banner__title {
+  color: var(--color-ink);
+  font-size: var(--text-4xl);
+}
+
+.cta-banner--vertical .cta-banner__description {
+  color: var(--color-muted);
+}
+
+.cta-banner--vertical .cta-banner__actions {
+  justify-content: center;
+}
+
+.cta-banner--vertical .cta-banner__media {
+  margin-top: 48px;
+}
+
+/* ── Variant: --products (Figma 242:31614 / 94:15608 "Products") ── */
+
+.cta-banner--products {
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.cta-banner--products::before {
+  background: none;
+}
+
+.cta-banner--products:hover {
+  box-shadow: none;
+}
+
+.cta-banner__products-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+
+.cta-banner__products-header .cta-banner__title {
+  color: var(--color-ink);
+  font-size: var(--text-3xl);
+}
+
+.cta-banner__products-header .cta-banner__description {
+  color: var(--color-muted);
+  margin-bottom: 0;
+}
+
+.cta-banner__product {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  border-radius: var(--radius-2xl);
+  padding: 40px 48px;
+  overflow: hidden;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.cta-banner__product + .cta-banner__product {
+  margin-top: 24px;
+}
+
+.cta-banner__product:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px color-mix(in srgb, var(--color-ink) 10%, transparent);
+}
+
+/* Row tints — token mixes only */
+.cta-banner__product--tint-grey   { background: color-mix(in srgb, var(--color-grey-base) 35%, var(--color-white)); }
+.cta-banner__product--tint-teal   { background: color-mix(in srgb, var(--color-teal-200) 35%, var(--color-white)); }
+.cta-banner__product--tint-pink   { background: color-mix(in srgb, var(--color-pink-200) 40%, var(--color-white)); }
+.cta-banner__product--tint-green  { background: color-mix(in srgb, var(--color-green-200) 30%, var(--color-white)); }
+.cta-banner__product--tint-yellow { background: color-mix(in srgb, var(--color-yellow-200) 45%, var(--color-white)); }
+
+.cta-banner__product-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: var(--font-bold);
+  font-size: var(--text-xl);
+  color: var(--color-ink);
+  margin: 0 0 14px;
+}
+
+.cta-banner__product-logo img,
+.cta-banner__product-logo svg {
+  height: 28px;
+  width: auto;
+}
+
+.cta-banner__product-desc {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: color-mix(in srgb, var(--color-ink) 72%, transparent);
+  margin: 0 0 22px;
+}
+
+.cta-banner__product-media img,
+.cta-banner__product-media .cta-banner__graphic {
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+}
+
+/* ── Variants: --blog-s / --blog-m / --blog-l
+      (Figma 170:26327 / 170:26453 / 170:26395 "Blog" sets) ── */
+
+.cta-banner--blog-s,
+.cta-banner--blog-m,
+.cta-banner--blog-l {
+  background: var(--color-teal-950);
+  border-radius: var(--radius-xl);
+}
+
+.cta-banner--blog-s::before,
+.cta-banner--blog-m::before,
+.cta-banner--blog-l::before {
+  background: none;
+}
+
+.cta-banner--blog-s:hover,
+.cta-banner--blog-m:hover,
+.cta-banner--blog-l:hover {
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--color-teal-950) 45%, transparent);
+}
+
+/* Small: single horizontal bar */
+.cta-banner--blog-s {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 28px 36px;
+}
+
+.cta-banner--blog-s .cta-banner__content {
+  flex: 1;
+  max-width: none;
+}
+
+.cta-banner--blog-s .cta-banner__title {
+  font-size: var(--text-xl);
+  margin-bottom: 4px;
+}
+
+.cta-banner--blog-s .cta-banner__description {
+  font-size: var(--text-sm);
+  margin-bottom: 0;
+}
+
+.cta-banner--blog-s .cta-banner__checks {
+  flex: 1.2;
+  margin: 0;
+}
+
+.cta-banner--blog-s .cta-banner__actions {
+  flex: none;
+}
+
+/* Medium: card, text + button left, graphic right */
+.cta-banner--blog-m {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  gap: 40px;
+  align-items: center;
+  padding: 40px 44px;
+}
+
+.cta-banner--blog-m .cta-banner__title {
+  font-size: var(--text-3xl);
+}
+
+.cta-banner--blog-m .cta-banner__description {
+  font-size: var(--text-sm);
+  margin-bottom: 24px;
+}
+
+.cta-banner--blog-m .cta-banner__media .cta-banner__graphic {
+  aspect-ratio: 1;
+  min-height: 0;
+}
+
+/* Large: logo + title + checks + button left, graphic right */
+.cta-banner--blog-l {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+  padding: 48px 56px;
+}
+
+.cta-banner__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-white);
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+  margin: 0 0 12px;
+}
+
+.cta-banner__logo img,
+.cta-banner__logo svg {
+  height: 22px;
+  width: auto;
+}
+
+.cta-banner--blog-l .cta-banner__title {
+  font-size: var(--text-4xl);
+}
+
+.cta-banner--blog-l .cta-banner__description {
+  font-size: var(--text-base);
+  margin-bottom: 20px;
+}
+
+/* ── Focus ── */
+
+.cta-banner input:focus-visible,
+.cta-banner button:focus-visible {
+  outline: 2px solid var(--color-teal-300);
+  outline-offset: 3px;
+}
+
+/* ── Focus ── */
+
+.cta-banner a:focus-visible {
+  outline: 2px solid var(--color-teal-300);
+  outline-offset: 3px;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 991px) {
+  .cta-banner {
+    padding: 48px 40px;
+  }
+  .cta-banner__title {
+    font-size: var(--text-4xl);
+  }
+  .cta-banner--split,
+  .cta-banner--subscribe,
+  .cta-banner--quiz,
+  .cta-banner--blog-m,
+  .cta-banner--blog-l,
+  .cta-banner__product {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .cta-banner--blog-s {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .cta-banner--glow-avatar .cta-banner__media img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .cta-banner {
+    padding: 36px 24px;
+    border-radius: var(--radius-xl);
+  }
+  .cta-banner__title {
+    font-size: var(--text-3xl);
+  }
+  .cta-banner__description {
+    font-size: var(--text-base);
+  }
+}

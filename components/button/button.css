@@ -1,0 +1,560 @@
+/* CarbonWeb Button — uses only var(--token) references
+   4 variants × 4 colors × 2 sizes × 5 shapes */
+
+/* ── Base ── */
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-weight: var(--font-bold);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  background: none;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background-color 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active {
+  transform: scale(0.97);
+  transition-duration: 80ms;
+}
+
+/* ── Sizes ── */
+
+.btn--lg {
+  padding: 16px 32px;
+  gap: 10px;
+  min-height: 56px;
+}
+.btn--sm {
+  padding: 10px 20px;
+  gap: 8px;
+  min-height: 42px;
+  font-size: var(--text-sm);
+}
+
+/* Icon padding adjustments */
+.btn--lg.btn--icon-left  { padding-left: 24px; }
+.btn--lg.btn--icon-right { padding-right: 24px; }
+.btn--lg.btn--icon-only  { padding: 14px; width: 56px; height: 56px; }
+.btn--sm.btn--icon-left  { padding-left: 16px; }
+.btn--sm.btn--icon-right { padding-right: 16px; }
+.btn--sm.btn--icon-only  { padding: 10px; width: 42px; height: 42px; }
+
+/* ── Shapes ── */
+
+.btn--primary,
+.btn--secondary {
+  border-radius: var(--radius-full);
+}
+
+.btn--square {
+  border-radius: var(--radius-md);
+}
+.btn--square.btn--lg { width: 300px; }
+.btn--square.btn--sm { width: 150px; }
+
+.btn--tertiary {
+  padding: 4px 2px;
+  border: none;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ── Icons ── */
+
+.btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn__icon svg {
+  width: 100%;
+  height: 100%;
+}
+.btn--sm .btn__icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Trailing icon slides right on hover */
+.btn--icon-right:hover .btn__icon {
+  transform: translateX(3px);
+}
+/* Leading icon slides left on hover */
+.btn--icon-left:hover .btn__icon {
+  transform: translateX(-3px);
+}
+
+/* ── Color: Teal ── */
+
+/* Primary */
+.btn--primary.btn--teal {
+  background: var(--color-teal-500);
+  border-color: var(--color-teal-500);
+  color: var(--color-white);
+}
+.btn--primary.btn--teal:hover {
+  background: var(--color-teal-hover);
+  border-color: var(--color-teal-hover);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-teal-500) 30%, transparent), 0 0 20px color-mix(in srgb, var(--color-teal-500) 25%, transparent), 0 4px 14px color-mix(in srgb, var(--color-teal-500) 20%, transparent);
+  transform: translateY(-1px);
+}
+.btn--primary.btn--teal:active {
+  background: var(--color-teal-800);
+  border-color: var(--color-teal-800);
+  box-shadow: 0 2px 6px color-mix(in srgb, var(--color-teal-500) 20%, transparent);
+  transform: scale(0.97);
+}
+
+/* Secondary */
+.btn--secondary.btn--teal {
+  background: transparent;
+  border-color: var(--color-teal-500);
+  color: var(--color-teal-500);
+}
+.btn--secondary.btn--teal:hover {
+  background: var(--color-teal-100);
+  border-color: var(--color-teal-600);
+  color: var(--color-teal-700);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-teal-500) 20%, transparent), 0 0 16px color-mix(in srgb, var(--color-teal-500) 20%, transparent), 0 4px 14px color-mix(in srgb, var(--color-teal-500) 10%, transparent);
+  transform: translateY(-1px);
+}
+.btn--secondary.btn--teal:active {
+  background: var(--color-teal-200);
+  border-color: var(--color-teal-700);
+  color: var(--color-teal-800);
+  transform: scale(0.97);
+}
+
+/* Tertiary */
+.btn--tertiary.btn--teal {
+  color: var(--color-teal-500);
+}
+.btn--tertiary.btn--teal::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-teal-600);
+  transition: width 280ms cubic-bezier(0.4, 0, 0.2, 1), left 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn--tertiary.btn--teal:hover {
+  color: var(--color-teal-700);
+}
+.btn--tertiary.btn--teal:hover::after {
+  width: 100%;
+  left: 0;
+}
+.btn--tertiary.btn--teal:active {
+  color: var(--color-teal-800);
+  transform: none;
+}
+
+/* Square */
+.btn--square.btn--teal {
+  background: var(--color-teal-500);
+  border-color: var(--color-teal-500);
+  color: var(--color-white);
+}
+.btn--square.btn--teal:hover {
+  background: var(--color-teal-hover);
+  border-color: var(--color-teal-hover);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-teal-500) 30%, transparent), 0 0 20px color-mix(in srgb, var(--color-teal-500) 25%, transparent), 0 4px 14px color-mix(in srgb, var(--color-teal-500) 20%, transparent);
+  transform: translateY(-1px);
+}
+.btn--square.btn--teal:active {
+  background: var(--color-teal-800);
+  border-color: var(--color-teal-800);
+  transform: scale(0.97);
+}
+
+/* ── Color: Green ── */
+
+.btn--primary.btn--green {
+  background: var(--color-green-500);
+  border-color: var(--color-green-500);
+  color: var(--color-white);
+}
+.btn--primary.btn--green:hover {
+  background: var(--color-green-700);
+  border-color: var(--color-green-700);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-green-500) 30%, transparent), 0 0 20px color-mix(in srgb, var(--color-green-500) 25%, transparent), 0 4px 14px color-mix(in srgb, var(--color-green-500) 20%, transparent);
+  transform: translateY(-1px);
+}
+.btn--primary.btn--green:active {
+  background: var(--color-green-800);
+  border-color: var(--color-green-800);
+  transform: scale(0.97);
+}
+
+.btn--secondary.btn--green {
+  background: transparent;
+  border-color: var(--color-green-500);
+  color: var(--color-green-500);
+}
+.btn--secondary.btn--green:hover {
+  background: var(--color-green-100);
+  border-color: var(--color-green-600);
+  color: var(--color-green-700);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-green-500) 20%, transparent), 0 0 16px color-mix(in srgb, var(--color-green-500) 20%, transparent), 0 4px 14px color-mix(in srgb, var(--color-green-500) 10%, transparent);
+  transform: translateY(-1px);
+}
+.btn--secondary.btn--green:active {
+  background: var(--color-green-200);
+  border-color: var(--color-green-700);
+  transform: scale(0.97);
+}
+
+.btn--tertiary.btn--green {
+  color: var(--color-green-600);
+}
+.btn--tertiary.btn--green::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-green-700);
+  transition: width 280ms cubic-bezier(0.4, 0, 0.2, 1), left 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn--tertiary.btn--green:hover {
+  color: var(--color-green-700);
+}
+.btn--tertiary.btn--green:hover::after {
+  width: 100%;
+  left: 0;
+}
+.btn--tertiary.btn--green:active {
+  color: var(--color-green-800);
+  transform: none;
+}
+
+.btn--square.btn--green {
+  background: var(--color-green-500);
+  border-color: var(--color-green-500);
+  color: var(--color-white);
+}
+.btn--square.btn--green:hover {
+  background: var(--color-green-700);
+  border-color: var(--color-green-700);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-green-500) 30%, transparent), 0 0 20px color-mix(in srgb, var(--color-green-500) 25%, transparent), 0 4px 14px color-mix(in srgb, var(--color-green-500) 20%, transparent);
+  transform: translateY(-1px);
+}
+.btn--square.btn--green:active {
+  background: var(--color-green-800);
+  border-color: var(--color-green-800);
+  transform: scale(0.97);
+}
+
+/* ── Color: White ── */
+
+.btn--primary.btn--white {
+  background: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-teal-500);
+}
+.btn--primary.btn--white:hover {
+  background: color-mix(in srgb, var(--color-white) 90%, transparent);
+  border-color: color-mix(in srgb, var(--color-white) 90%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-white) 30%, transparent), 0 0 20px color-mix(in srgb, var(--color-white) 20%, transparent), 0 4px 20px color-mix(in srgb, var(--color-white) 15%, transparent);
+  transform: translateY(-1px);
+}
+.btn--primary.btn--white:active {
+  background: color-mix(in srgb, var(--color-white) 80%, transparent);
+  transform: scale(0.97);
+}
+
+.btn--secondary.btn--white {
+  background: transparent;
+  border-color: color-mix(in srgb, var(--color-white) 70%, transparent);
+  color: var(--color-white);
+}
+.btn--secondary.btn--white:hover {
+  background: color-mix(in srgb, var(--color-white) 12%, transparent);
+  border-color: var(--color-white);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-white) 20%, transparent), 0 0 16px color-mix(in srgb, var(--color-white) 15%, transparent), 0 4px 20px color-mix(in srgb, var(--color-white) 8%, transparent);
+  transform: translateY(-1px);
+}
+.btn--secondary.btn--white:active {
+  background: color-mix(in srgb, var(--color-white) 20%, transparent);
+  transform: scale(0.97);
+}
+
+.btn--tertiary.btn--white {
+  color: var(--color-white);
+}
+.btn--tertiary.btn--white::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-white);
+  transition: width 280ms cubic-bezier(0.4, 0, 0.2, 1), left 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn--tertiary.btn--white:hover::after {
+  width: 100%;
+  left: 0;
+}
+.btn--tertiary.btn--white:active {
+  color: color-mix(in srgb, var(--color-white) 80%, transparent);
+  transform: none;
+}
+
+.btn--square.btn--white {
+  background: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-teal-500);
+}
+.btn--square.btn--white:hover {
+  background: color-mix(in srgb, var(--color-white) 90%, transparent);
+  border-color: color-mix(in srgb, var(--color-white) 90%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-white) 30%, transparent), 0 0 20px color-mix(in srgb, var(--color-white) 20%, transparent), 0 4px 20px color-mix(in srgb, var(--color-white) 15%, transparent);
+  transform: translateY(-1px);
+}
+.btn--square.btn--white:active {
+  background: color-mix(in srgb, var(--color-white) 80%, transparent);
+  transform: scale(0.97);
+}
+
+/* ── Color: Grey ── */
+
+.btn--primary.btn--grey {
+  background: var(--color-grey-base);
+  border-color: var(--color-grey-base);
+  color: var(--color-white);
+}
+.btn--primary.btn--grey:hover {
+  background: var(--color-grey-dark);
+  border-color: var(--color-grey-dark);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-grey-dark) 25%, transparent), 0 0 18px color-mix(in srgb, var(--color-grey-dark) 20%, transparent), 0 4px 14px color-mix(in srgb, var(--color-grey-dark) 15%, transparent);
+  transform: translateY(-1px);
+}
+.btn--primary.btn--grey:active {
+  background: var(--color-slate);
+  border-color: var(--color-slate);
+  transform: scale(0.97);
+}
+
+.btn--secondary.btn--grey {
+  background: transparent;
+  border-color: var(--color-grey-base);
+  color: var(--color-slate);
+}
+.btn--secondary.btn--grey:hover {
+  background: color-mix(in srgb, var(--color-grey-base) 12%, transparent);
+  border-color: var(--color-grey-dark);
+  color: var(--color-grey-dark);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-grey-base) 20%, transparent), 0 0 16px color-mix(in srgb, var(--color-grey-base) 18%, transparent), 0 4px 14px color-mix(in srgb, var(--color-grey-base) 10%, transparent);
+  transform: translateY(-1px);
+}
+.btn--secondary.btn--grey:active {
+  background: color-mix(in srgb, var(--color-grey-base) 22%, transparent);
+  border-color: var(--color-slate);
+  transform: scale(0.97);
+}
+
+.btn--tertiary.btn--grey {
+  color: var(--color-slate);
+}
+.btn--tertiary.btn--grey::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-grey-dark);
+  transition: width 280ms cubic-bezier(0.4, 0, 0.2, 1), left 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn--tertiary.btn--grey:hover {
+  color: var(--color-grey-dark);
+}
+.btn--tertiary.btn--grey:hover::after {
+  width: 100%;
+  left: 0;
+}
+.btn--tertiary.btn--grey:active {
+  color: var(--color-ink);
+  transform: none;
+}
+
+.btn--square.btn--grey {
+  background: var(--color-grey-base);
+  border-color: var(--color-grey-base);
+  color: var(--color-white);
+}
+.btn--square.btn--grey:hover {
+  background: var(--color-grey-dark);
+  border-color: var(--color-grey-dark);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-grey-dark) 25%, transparent), 0 0 18px color-mix(in srgb, var(--color-grey-dark) 20%, transparent), 0 4px 14px color-mix(in srgb, var(--color-grey-dark) 15%, transparent);
+  transform: translateY(-1px);
+}
+.btn--square.btn--grey:active {
+  background: var(--color-slate);
+  border-color: var(--color-slate);
+  transform: scale(0.97);
+}
+
+/* ── Color: Ink (Dark) ── */
+
+.btn--primary.btn--ink {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-white);
+}
+.btn--primary.btn--ink:hover {
+  background: var(--color-neutral-800);
+  border-color: var(--color-neutral-800);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-ink) 30%, transparent), 0 0 18px color-mix(in srgb, var(--color-ink) 20%, transparent), 0 4px 14px color-mix(in srgb, var(--color-ink) 20%, transparent);
+  transform: translateY(-1px);
+}
+.btn--primary.btn--ink:active {
+  background: var(--color-black);
+  border-color: var(--color-black);
+  transform: scale(0.97);
+}
+
+.btn--secondary.btn--ink {
+  background: transparent;
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+.btn--secondary.btn--ink:hover {
+  background: color-mix(in srgb, var(--color-ink) 6%, transparent);
+  border-color: var(--color-neutral-800);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-ink) 15%, transparent), 0 0 16px color-mix(in srgb, var(--color-ink) 12%, transparent), 0 4px 14px color-mix(in srgb, var(--color-ink) 8%, transparent);
+  transform: translateY(-1px);
+}
+.btn--secondary.btn--ink:active {
+  background: color-mix(in srgb, var(--color-ink) 12%, transparent);
+  transform: scale(0.97);
+}
+
+.btn--tertiary.btn--ink {
+  color: var(--color-ink);
+}
+.btn--tertiary.btn--ink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-ink);
+  transition: width 280ms cubic-bezier(0.4, 0, 0.2, 1), left 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn--tertiary.btn--ink:hover::after {
+  width: 100%;
+  left: 0;
+}
+.btn--tertiary.btn--ink:active {
+  transform: none;
+}
+
+.btn--square.btn--ink {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-white);
+}
+.btn--square.btn--ink:hover {
+  background: var(--color-neutral-800);
+  border-color: var(--color-neutral-800);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-ink) 30%, transparent), 0 0 18px color-mix(in srgb, var(--color-ink) 20%, transparent), 0 4px 14px color-mix(in srgb, var(--color-ink) 20%, transparent);
+  transform: translateY(-1px);
+}
+.btn--square.btn--ink:active {
+  background: var(--color-black);
+  transform: scale(0.97);
+}
+
+/* ── Loading ── */
+
+.btn--loading {
+  pointer-events: none;
+  cursor: default;
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+.btn__spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn__spinner svg {
+  animation: btn-spin 0.8s linear infinite;
+}
+
+/* ── Disabled ── */
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ── Focus ── */
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-teal-300);
+  outline-offset: 3px;
+}
+.btn--tertiary:focus-visible {
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ── Ripple effect (optional — add .btn--ripple class) ── */
+
+.btn--ripple {
+  overflow: hidden;
+}
+.btn--ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-white) 30%, transparent);
+  transform: translate(-50%, -50%);
+  transition: width 400ms ease, height 400ms ease, opacity 400ms ease;
+  opacity: 0;
+}
+.btn--ripple:active::before {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+  transition: width 0ms, height 0ms, opacity 400ms ease;
+}

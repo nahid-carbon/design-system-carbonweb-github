@@ -1,0 +1,130 @@
+/* CarbonWeb Timeline — uses only var(--token) references */
+
+/* ── Vertical Timeline (default) ── */
+
+.timeline {
+  position: relative;
+  padding-left: 32px;
+}
+
+.timeline__track {
+  position: absolute;
+  left: 11px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-teal-200);
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: 48px;
+  padding-left: 32px;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: -32px;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-teal-500);
+  border: 3px solid var(--color-white);
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.timeline__dot--inactive {
+  background: var(--color-grey-base);
+}
+
+.timeline__year {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-teal-500);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.timeline__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+
+.timeline__description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+/* ── Process Variant (numbered steps) ── */
+
+.timeline--process {
+  display: flex;
+  padding-left: 0;
+}
+
+.timeline--process .timeline__track {
+  left: 0;
+  right: 0;
+  top: 11px;
+  bottom: auto;
+  width: auto;
+  height: 2px;
+}
+
+.timeline--process .timeline__item {
+  flex: 1;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-top: 48px;
+  text-align: center;
+}
+
+.timeline--process .timeline__dot {
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--color-white);
+  font-family: var(--font-family);
+}
+
+/* ── Cards (used in process variant) ── */
+
+.timeline__card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  border: 1px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
+}
+
+.timeline__card-number {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-teal-500);
+}
+
+.timeline__card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 8px 0;
+}
+
+.timeline__card-desc {
+  font-size: 14px;
+  color: var(--color-muted);
+  line-height: 1.6;
+}

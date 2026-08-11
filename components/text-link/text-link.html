@@ -1,0 +1,34 @@
+<!-- CarbonWeb Text Link — Markup Examples -->
+
+<!-- Default (ink → teal on hover, arrow slides right) -->
+<a class="text-link" href="#">
+  Learn more
+  <span class="text-link__arrow">
+    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.333 8h9.334M9.333 4.667L12.667 8l-3.334 3.333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</a>
+
+<!-- Teal variant (always teal, underline on hover) -->
+<a class="text-link text-link--teal" href="#">
+  Explore services
+  <span class="text-link__arrow">
+    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.333 8h9.334M9.333 4.667L12.667 8l-3.334 3.333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</a>
+
+<!-- Ink variant (explicit ink → teal) -->
+<a class="text-link text-link--ink" href="#">
+  Read the case study
+  <span class="text-link__arrow">
+    <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.333 8h9.334M9.333 4.667L12.667 8l-3.334 3.333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</a>
+
+<!-- No arrow (plain inline link) -->
+<a class="text-link text-link--teal" href="#">Contact us</a>

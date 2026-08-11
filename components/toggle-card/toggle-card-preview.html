@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toggle Card -- CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="toggle-card.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .sub { margin-bottom: 36px; }
+    .sub h3 { font-size: 18px; font-weight: 600; margin-bottom: 14px; }
+    .wrapper { max-width: 640px; }
+  </style>
+</head>
+<body>
+
+<h2>Toggle Cards</h2>
+<p class="desc">Expandable content cards with single-open accordion behavior. Click a header to toggle.</p>
+
+<div class="sub">
+  <h3>Service accordion (single-open)</h3>
+  <div class="wrapper" data-single>
+
+    <div class="toggle-card">
+      <button class="toggle-card__header" aria-expanded="false">
+        <div class="toggle-card__header-text">
+          <div class="toggle-card__title">Consultation</div>
+          <div class="toggle-card__subtitle">Strategic guidance for your monday.com setup</div>
+        </div>
+        <svg class="toggle-card__chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="toggle-card__body">
+        <div class="toggle-card__content">
+          Our consultation service provides expert analysis of your current workflows, identifies bottlenecks, and delivers a tailored implementation roadmap. We work closely with your team to understand business objectives and translate them into efficient monday.com configurations.
+        </div>
+      </div>
+    </div>
+
+    <div class="toggle-card">
+      <button class="toggle-card__header" aria-expanded="false">
+        <div class="toggle-card__header-text">
+          <div class="toggle-card__title">Workflow Development</div>
+          <div class="toggle-card__subtitle">Custom automations and integrations</div>
+        </div>
+        <svg class="toggle-card__chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="toggle-card__body">
+        <div class="toggle-card__content">
+          We design and build custom workflows that automate repetitive tasks, connect your tools, and streamline operations. From simple automations to complex multi-board integrations, our team delivers solutions that scale with your business.
+        </div>
+      </div>
+    </div>
+
+    <div class="toggle-card">
+      <button class="toggle-card__header" aria-expanded="false">
+        <div class="toggle-card__header-text">
+          <div class="toggle-card__title">Training</div>
+          <div class="toggle-card__subtitle">Hands-on learning for your team</div>
+        </div>
+        <svg class="toggle-card__chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="toggle-card__body">
+        <div class="toggle-card__content">
+          Empower your team with comprehensive monday.com training sessions. We cover everything from platform basics to advanced features, ensuring your team can independently manage and optimize their workflows.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="toggle-card.js"></script>
+</body>
+</html>

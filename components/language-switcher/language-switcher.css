@@ -1,0 +1,153 @@
+/* CarbonWeb Language Switcher — uses only var(--token) references
+   Footer language dropdown. Pill trigger + floating menu with radio-check.
+*/
+
+.language-switcher {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-family);
+}
+
+/* ── Trigger (pill button) ── */
+
+.language-switcher__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-family);
+  font-weight: var(--font-medium);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--color-slate);
+  background: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-slate) 25%, transparent);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-4);
+  cursor: pointer;
+  transition:
+    border-color 200ms ease,
+    color 200ms ease,
+    background-color 200ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.language-switcher__trigger:hover {
+  border-color: var(--color-teal-500);
+  color: var(--color-ink);
+  background: color-mix(in srgb, var(--color-teal-500) 4%, transparent);
+}
+
+.language-switcher__trigger:active {
+  border-color: var(--color-teal-700);
+  color: var(--color-teal-700);
+}
+
+.language-switcher__trigger:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}
+
+.language-switcher__flag {
+  font-size: var(--text-base);
+  line-height: 1;
+}
+
+.language-switcher__chevron {
+  width: 14px;
+  height: 14px;
+  color: var(--color-slate-light);
+  transition: transform 200ms ease;
+}
+
+.language-switcher--open .language-switcher__chevron {
+  transform: rotate(180deg);
+}
+
+.language-switcher--open .language-switcher__trigger {
+  border-color: var(--color-teal-500);
+}
+
+/* ── Menu ── */
+
+.language-switcher__menu {
+  position: absolute;
+  bottom: calc(100% + var(--space-2));
+  left: 0;
+  min-width: 180px;
+  background: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-slate) 15%, transparent);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 15px -3px color-mix(in srgb, var(--color-ink) 10%, transparent), 0 4px 6px -4px color-mix(in srgb, var(--color-ink) 10%, transparent);
+  padding: var(--space-1-5);
+  margin: 0;
+  list-style: none;
+  z-index: 50;
+  opacity: 0;
+  transform: translateY(4px);
+  visibility: hidden;
+  transition: opacity 200ms ease, transform 200ms ease, visibility 200ms;
+}
+
+.language-switcher--open .language-switcher__menu {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+/* ── Options ── */
+
+.language-switcher__option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  width: 100%;
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--color-ink);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-2-5) var(--space-3);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.language-switcher__option:hover {
+  background: color-mix(in srgb, var(--color-teal-500) 6%, transparent);
+}
+
+.language-switcher__option:active {
+  color: var(--color-teal-700);
+}
+
+.language-switcher__option:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: -2px;
+}
+
+.language-switcher__option--selected {
+  background: color-mix(in srgb, var(--color-teal-500) 10%, transparent); /* teal-50-ish tint */
+  font-weight: var(--font-medium);
+}
+
+.language-switcher__option-name {
+  flex: 1;
+}
+
+/* Radio check (teal circle check) */
+.language-switcher__radio {
+  width: 18px;
+  height: 18px;
+  color: var(--color-teal-500);
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.language-switcher__option--selected .language-switcher__radio {
+  opacity: 1;
+  transform: scale(1);
+}

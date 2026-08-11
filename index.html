@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarbonWeb Design System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Raleway', sans-serif; background: #f8f9fb; color: #0a0a0a; display: flex; height: 100vh; overflow: hidden; -webkit-font-smoothing: antialiased; }
+
+    /* Sidebar */
+    .sidebar { width: 240px; min-width: 240px; background: #fff; border-right: 1px solid #e8e8ee; display: flex; flex-direction: column; height: 100vh; overflow-y: auto; }
+    .sidebar__header { padding: 28px 24px 20px; border-bottom: 1px solid #f0f0f5; }
+    .sidebar__brand { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+    .sidebar__icon { width: 28px; height: 28px; border-radius: 6px; background: linear-gradient(135deg, #00B0C2, #69D757); }
+    .sidebar__title { font-size: 16px; font-weight: 700; color: #0a0a0a; }
+    .sidebar__sub { font-size: 12px; color: #a3a5b5; font-weight: 500; }
+
+    /* Nav */
+    .sidebar__nav { flex: 1; padding: 12px 0; }
+    .nav-section { padding: 0 12px; margin-bottom: 4px; }
+    .nav-section__label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #a3a5b5; padding: 12px 12px 6px; }
+    .nav-link { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 6px; font-size: 13px; font-weight: 500; color: #5e6075; text-decoration: none; cursor: pointer; transition: all 0.15s; border: none; background: none; width: 100%; text-align: left; }
+    .nav-link:hover { background: #f5f7fb; color: #0a0a0a; }
+    .nav-link--active { background: #e6f7f9; color: #008b99; font-weight: 600; }
+    .nav-link__dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .nav-link__dot--token { background: #00B0C2; }
+    .nav-link__dot--component { background: #69D757; }
+    .nav-link__dot--template { background: #FFB400; }
+    .nav-link__badge { font-size: 9px; font-weight: 600; background: #FFB400; color: #fff; padding: 1px 6px; border-radius: 9999px; margin-left: auto; }
+    .nav-link__flag { font-size: 8px; font-weight: 700; letter-spacing: 0.05em; padding: 1px 5px; border-radius: 4px; margin-left: auto; }
+    .nav-link__flag--new { background: #E3F9DE; color: #448C39; }
+    .nav-link__flag--upd { background: #FFF3D6; color: #A37300; }
+
+    /* Footer */
+    .sidebar__footer { padding: 16px 24px; border-top: 1px solid #f0f0f5; font-size: 11px; color: #a3a5b5; }
+
+    /* Content */
+    .content { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+    .content__header { padding: 16px 28px; background: #fff; border-bottom: 1px solid #e8e8ee; display: flex; align-items: center; gap: 12px; min-height: 56px; }
+    .content__crumb { font-size: 13px; color: #a3a5b5; }
+    .content__crumb-sep { color: #d0d0d8; }
+    .content__page { font-size: 14px; font-weight: 600; color: #0a0a0a; }
+    .content__frame { flex: 1; border: none; width: 100%; height: 100%; background: #fff; }
+    .content__modified { margin-left: auto; font-size: 12px; color: #a3a5b5; }
+    .content__flag { font-size: 9px; font-weight: 700; letter-spacing: 0.05em; padding: 2px 8px; border-radius: 5px; }
+    .content__flag--new { background: #E3F9DE; color: #448C39; }
+    .content__flag--upd { background: #FFF3D6; color: #A37300; }
+
+    /* ── Inline component reference panel ── */
+    .refpanel { display: none; flex-direction: column; border-top: 2px solid #e8e8ee; background: #fff; max-height: 45%; }
+    .refpanel.is-open { display: flex; }
+    .refpanel__bar { display: flex; align-items: center; gap: 10px; padding: 10px 24px; border-bottom: 1px solid #f0f0f5; cursor: pointer; user-select: none; }
+    .refpanel__bar:hover { background: #f8fafb; }
+    .refpanel__title { font-size: 13px; font-weight: 700; color: #0a0a0a; }
+    .refpanel__hint { font-size: 11px; color: #a3a5b5; }
+    .refpanel__chev { margin-left: auto; font-size: 11px; color: #a3a5b5; transition: transform 200ms; }
+    .refpanel.is-collapsed .refpanel__body { display: none; }
+    .refpanel.is-collapsed .refpanel__chev { transform: rotate(180deg); }
+    .refpanel__body { overflow-y: auto; padding: 16px 24px 24px; }
+    .refblock { margin-bottom: 14px; }
+    .refblock__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px; }
+    .refblock__label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #a3a5b5; }
+    .refalias { margin-left: 10px; font-size: 11px; color: #6b7280; font-family: var(--font-family); }
+    .refbuilt { display: flex; flex-wrap: wrap; gap: 6px; }
+    .refdep { font-family: ui-monospace, monospace; font-size: 11.5px; padding: 3px 9px; border-radius: 20px;
+      background: rgba(0,176,194,.12); color: #007885; }
+    .refdep--atom { background: rgba(105,215,87,.18); color: #448C39; }
+    .previewbadge { margin-left: auto; display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(13,17,23,.92); color: #7ee7f0; font-family: ui-monospace, monospace; font-size: 12px;
+      padding: 6px 11px; border-radius: 8px; border: none; cursor: pointer; backdrop-filter: blur(6px); transition: all 150ms ease; }
+    .previewbadge:hover { background: #0d1117; }
+    .previewbadge svg { width: 12px; height: 12px; opacity: .6; }
+    .previewbadge:hover svg { opacity: 1; }
+    .previewbadge.is-copied { background: #00B0C2; color: #fff; }
+    .previewbadge.is-copied svg { opacity: 1; }
+    .refname { display: inline-block; background: #0d1117; color: #7ee7f0; font-family: ui-monospace, monospace; font-size: 13px; padding: 5px 12px; border-radius: 8px; }
+    .refcode { background: #0d1117; color: #e6edf3; border-radius: 8px; padding: 12px 16px; font-family: ui-monospace, monospace; font-size: 12px; line-height: 1.6; overflow: auto; max-height: 220px; white-space: pre; }
+    .refvariants { display: flex; flex-wrap: wrap; gap: 6px; }
+    .refvariants span { font-family: ui-monospace, monospace; font-size: 11.5px; background: #f0f2f7; color: #5e6075; padding: 2px 8px; border-radius: 5px; }
+    .refrules { font-size: 13px; line-height: 1.7; color: #5e6075; white-space: pre-wrap; max-height: 220px; overflow-y: auto; background: #f8fafb; border-radius: 8px; padding: 12px 16px; }
+    .copy-btn { display: inline-flex; align-items: center; gap: 4px; font-family: inherit; font-size: 11px; font-weight: 600; color: #009DAD; background: rgba(0,176,194,0.08); border: none; border-radius: 6px; padding: 3px 9px; cursor: pointer; transition: all 150ms ease; }
+    .copy-btn:hover { background: rgba(0,176,194,0.16); color: #007885; }
+    .copy-btn:active { transform: scale(0.95); }
+    .copy-btn.copied { background: #E3F9DE; color: #448C39; }
+  </style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar__header">
+    <div class="sidebar__brand">
+      <div class="sidebar__icon"></div>
+      <span class="sidebar__title">CarbonWeb</span>
+    </div>
+    <p class="sidebar__sub">Design System</p>
+  </div>
+
+  <nav class="sidebar__nav">
+    <div class="nav-section">
+      <div class="nav-section__label">Start</div>
+      <button class="nav-link nav-link--active" data-src="start.html" data-label="Start Here">
+        <span class="nav-link__dot nav-link__dot--token"></span> Start Here
+      </button>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section__label">Reference</div>
+      <button class="nav-link" data-src="reference.html" data-label="Reference Names">
+        <span class="nav-link__dot nav-link__dot--token"></span> Reference Names
+      </button>
+      <button class="nav-link" data-src="docs.html" data-label="Component Reference">
+        <span class="nav-link__dot nav-link__dot--token"></span> Component Reference
+      </button>
+      <button class="nav-link" data-src="prompts.html" data-label="Prompt Library">
+        <span class="nav-link__dot nav-link__dot--token"></span> Prompt Library
+      </button>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section__label">Tokens</div>
+      <button class="nav-link" data-src="tokens/tokens-preview.html" data-label="Tokens">
+        <span class="nav-link__dot nav-link__dot--token"></span> All Tokens
+      </button>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section__label">1 · Basics</div>
+      <button class="nav-link" data-src="components/app-icons/app-icons-preview.html" data-label="App Icons" data-slug="app-icons" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> App Icons<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/avatar/avatar-preview.html" data-label="Avatar" data-slug="avatar" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Avatar
+      </button>
+      <button class="nav-link" data-src="components/avatar-library/avatar-library-preview.html" data-label="Avatar Library" data-slug="avatar-library" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Avatar Library<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/badge/badge-preview.html" data-label="Badge" data-slug="badge" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Badge
+      </button>
+      <button class="nav-link" data-src="components/breadcrumb/breadcrumb-preview.html" data-label="Breadcrumb" data-slug="breadcrumb" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Breadcrumb
+      </button>
+      <button class="nav-link" data-src="components/button/button-preview.html" data-label="Button" data-slug="button" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Button
+      </button>
+      <button class="nav-link" data-src="components/chip/chip-preview.html" data-label="Chip" data-slug="chip" data-modified="2026-08-06">
+        <span class="nav-link__dot nav-link__dot--component"></span> Chip<span class="nav-link__flag nav-link__flag--upd">UPD</span>
+      </button>
+      <button class="nav-link" data-src="components/divider/divider-preview.html" data-label="Divider" data-slug="divider" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Divider
+      </button>
+      <button class="nav-link" data-src="components/glow-effect/glow-effect-preview.html" data-label="Glow Effect" data-slug="glow-effect" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Glow Effect
+      </button>
+      <button class="nav-link" data-src="components/icons/icons-preview.html" data-label="Icons" data-slug="icons" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Icons
+      </button>
+      <button class="nav-link" data-src="components/label/label-preview.html" data-label="Label" data-slug="label" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Label<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/partner-badge/partner-badge-preview.html" data-label="Partner Badge" data-slug="partner-badge" data-modified="2026-08-06">
+        <span class="nav-link__dot nav-link__dot--component"></span> Partner Badge<span class="nav-link__flag nav-link__flag--upd">UPD</span>
+      </button>
+      <button class="nav-link" data-src="components/product-tag/product-tag-preview.html" data-label="Product Tag" data-slug="product-tag" data-modified="2026-08-06">
+        <span class="nav-link__dot nav-link__dot--component"></span> Product Tag<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/text-link/text-link-preview.html" data-label="Text Link" data-slug="text-link" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Text Link<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/tooltip/tooltip-preview.html" data-label="Tooltip" data-slug="tooltip" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Tooltip
+      </button>
+      <button class="nav-link" data-src="components/typography/typography-preview.html" data-label="Typography" data-slug="typography" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Typography
+      </button>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section__label">2 · Inputs</div>
+      <button class="nav-link" data-src="components/booking-calendar/booking-calendar-preview.html" data-label="Booking Calendar" data-slug="booking-calendar" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Booking Calendar<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/checkbox/checkbox-preview.html" data-label="Checkbox" data-slug="checkbox" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Checkbox<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/contact-form/contact-form-preview.html" data-label="Contact Form" data-slug="contact-form" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Contact Form<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/language-switcher/language-switcher-preview.html" data-label="Language Switcher" data-slug="language-switcher" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Language Switcher<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/newsletter-form/newsletter-form-preview.html" data-label="Newsletter Form" data-slug="newsletter-form" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Newsletter Form
+      </button>
+      <button class="nav-link" data-src="components/search-bar/search-bar-preview.html" data-label="Search Bar" data-slug="search-bar" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Search Bar<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/text-field/text-field-preview.html" data-label="Text Field" data-slug="text-field" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Text Field
+      </button>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section__label">3 · Content</div>
+      <button class="nav-link" data-src="components/accordion/accordion-preview.html" data-label="Accordion" data-slug="accordion" data-modified="2026-08-06">
+        <span class="nav-link__dot nav-link__dot--component"></span> Accordion<span class="nav-link__flag nav-link__flag--upd">UPD</span>
+      </button>
+      <button class="nav-link" data-src="components/card/card-preview.html" data-label="Card" data-slug="card" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Card<span class="nav-link__flag nav-link__flag--upd">UPD</span>
+      </button>
+      <button class="nav-link" data-src="components/counter/counter-preview.html" data-label="Counter" data-slug="counter" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Counter
+      </button>
+      <button class="nav-link" data-src="components/feature-checklist/feature-checklist-preview.html" data-label="Feature Checklist" data-slug="feature-checklist" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Feature Checklist<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/feature-list/feature-list-preview.html" data-label="Feature List" data-slug="feature-list" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Feature List
+      </button>
+      <button class="nav-link" data-src="components/glowing-cards/glowing-cards-preview.html" data-label="Glowing Cards" data-slug="glowing-cards" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Glowing Cards<span class="nav-link__flag nav-link__flag--upd">UPD</span>
+      </button>
+      <button class="nav-link" data-src="components/icon-box/icon-box-preview.html" data-label="Icon Box" data-slug="icon-box" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Icon Box
+      </button>
+      <button class="nav-link" data-src="components/image-box/image-box-preview.html" data-label="Image Box" data-slug="image-box" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Image Box
+      </button>
+      <button class="nav-link" data-src="components/liquid-glass-cards/liquid-glass-cards-preview.html" data-label="Liquid Glass Cards" data-slug="liquid-glass-cards" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Liquid Glass Cards<span class="nav-link__flag nav-link__flag--upd">UPD</span>
+      </button>
+      <button class="nav-link" data-src="components/logo-marquee/logo-marquee-preview.html" data-label="Logo Marquee" data-slug="logo-marquee" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Logo Marquee
+      </button>
+      <button class="nav-link" data-src="components/monday-partner-card/monday-partner-card-preview.html" data-label="Monday Partner Card" data-slug="monday-partner-card" data-modified="2026-07-22">
+        <span class="nav-link__dot nav-link__dot--component"></span> Monday Partner Card<span class="nav-link__flag nav-link__flag--upd">UPD</span>
+      </button>
+      <button class="nav-link" data-src="components/pricing-card/pricing-card-preview.html" data-label="Pricing Card" data-slug="pricing-card" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Pricing Card<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/process-card/process-card-preview.html" data-label="Process Card" data-slug="process-card" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Process Card
+      </button>
+      <button class="nav-link" data-src="components/solution-grid/solution-grid-preview.html" data-label="Solution Grid" data-slug="solution-grid" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Solution Grid
+      </button>
+      <button class="nav-link" data-src="components/stats/stats-preview.html" data-label="Stats" data-slug="stats" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Stats<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/tabs/tabs-preview.html" data-label="Tabs" data-slug="tabs" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Tabs<span class="nav-link__flag nav-link__flag--upd">UPD</span>
+      </button>
+      <button class="nav-link" data-src="components/team-member/team-member-preview.html" data-label="Team Member" data-slug="team-member" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Team Member<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/testimonial/testimonial-preview.html" data-label="Testimonial" data-slug="testimonial" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Testimonial
+      </button>
+      <button class="nav-link" data-src="components/timeline/timeline-preview.html" data-label="Timeline" data-slug="timeline" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Timeline
+      </button>
+      <button class="nav-link" data-src="components/toggle-card/toggle-card-preview.html" data-label="Toggle Card" data-slug="toggle-card" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Toggle Card
+      </button>
+      <button class="nav-link" data-src="components/video-embed/video-embed-preview.html" data-label="Video Embed" data-slug="video-embed" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Video Embed<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section__label">4 · Sections</div>
+      <button class="nav-link" data-src="components/announcement-banner/announcement-banner-preview.html" data-label="Announcement Banner" data-slug="announcement-banner" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Announcement Banner
+      </button>
+      <button class="nav-link" data-src="components/cta-banner/cta-banner-preview.html" data-label="Cta Banner" data-slug="cta-banner" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Cta Banner<span class="nav-link__flag nav-link__flag--upd">UPD</span>
+      </button>
+      <button class="nav-link" data-src="components/faq-section/faq-section-preview.html" data-label="FAQ Section" data-slug="faq-section" data-modified="2026-08-06">
+        <span class="nav-link__dot nav-link__dot--component"></span> FAQ Section<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/footer/footer-preview.html" data-label="Footer" data-slug="footer" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Footer
+      </button>
+      <button class="nav-link" data-src="components/header/header-preview.html" data-label="Header" data-slug="header" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Header
+      </button>
+      <button class="nav-link" data-src="components/hero/hero-preview.html" data-label="Hero" data-slug="hero" data-modified="2026-08-06">
+        <span class="nav-link__dot nav-link__dot--component"></span> Hero<span class="nav-link__flag nav-link__flag--upd">UPD</span>
+      </button>
+      <button class="nav-link" data-src="components/mega-menu/mega-menu-preview.html" data-label="Mega Menu" data-slug="mega-menu" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Mega Menu
+      </button>
+      <button class="nav-link" data-src="components/nav/nav-preview.html" data-label="Nav" data-slug="nav" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Nav
+      </button>
+      <button class="nav-link" data-src="components/section/section-preview.html" data-label="Section" data-slug="section" data-modified="2026-07-21">
+        <span class="nav-link__dot nav-link__dot--component"></span> Section
+      </button>
+      <button class="nav-link" data-src="components/section-divider/section-divider-preview.html" data-label="Section Divider" data-slug="section-divider" data-modified="2026-08-04">
+        <span class="nav-link__dot nav-link__dot--component"></span> Section Divider<span class="nav-link__flag nav-link__flag--new">NEW</span>
+      </button>
+      <button class="nav-link" data-src="components/site-footer/site-footer-preview.html" data-label="Site Footer" data-slug="site-footer" data-modified="2026-07-22">
+        <span class="nav-link__dot nav-link__dot--component"></span> Site Footer<span class="nav-link__flag nav-link__flag--upd">UPD</span>
+      </button>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section__label">Templates</div>
+      <button class="nav-link" data-src="components/card/card-preview.html" data-label="Card">
+        <span class="nav-link__dot nav-link__dot--template"></span> Card <span class="nav-link__badge">template</span>
+      </button>
+      <button class="nav-link" data-src="components/text-field/text-field-preview.html" data-label="Text Field">
+        <span class="nav-link__dot nav-link__dot--template"></span> Text Field <span class="nav-link__badge">template</span>
+      </button>
+      <button class="nav-link" data-src="components/section/section-preview.html" data-label="Section">
+        <span class="nav-link__dot nav-link__dot--template"></span> Section <span class="nav-link__badge">template</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="sidebar__footer">Raleway &middot; Global &amp; LATAM</div>
+</aside>
+
+<main class="content">
+  <div class="content__header">
+    <span class="content__crumb">Design System</span>
+    <span class="content__crumb-sep">/</span>
+    <span class="content__page" id="page-label">Start Here</span>
+    <span class="content__flag" id="page-flag" style="display:none"></span>
+    <span class="content__modified" id="page-modified"></span>
+    <button class="previewbadge" id="page-ref" type="button" hidden></button>
+  </div>
+  <iframe class="content__frame" id="frame" src="start.html"></iframe>
+
+  <!-- Inline reference: name / import / code / variants / rules for the previewed component -->
+  <div class="refpanel" id="refpanel">
+    <div class="refpanel__bar" id="refpanel-bar">
+      <span class="refpanel__title">Component Reference</span>
+      <span class="refpanel__hint" id="ref-hint"></span>
+      <span class="refpanel__chev">▼</span>
+    </div>
+    <div class="refpanel__body" id="refpanel-body"></div>
+  </div>
+</main>
+
+<script src="data.js"></script>
+<script>
+  const links = document.querySelectorAll('.nav-link');
+  const frame = document.getElementById('frame');
+  const label = document.getElementById('page-label');
+  const flagEl = document.getElementById('page-flag');
+  const modEl = document.getElementById('page-modified');
+  const refpanel = document.getElementById('refpanel');
+  const refbody = document.getElementById('refpanel-body');
+  const refhint = document.getElementById('ref-hint');
+
+  let registry = null;
+  fetch('registry.json').then(r => r.json())
+    .catch(() => window.__CW_REGISTRY__)          // file:// fallback (data.js)
+    .then(j => { registry = j; });
+
+  document.getElementById('refpanel-bar').addEventListener('click', () => {
+    refpanel.classList.toggle('is-collapsed');
+  });
+
+  function legacyCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    ta.remove();
+  }
+  function copyBtn(text) {
+    const b = document.createElement('button');
+    b.className = 'copy-btn'; b.textContent = '⧉ Copy';
+    b.addEventListener('click', () => {
+      const done = () => { b.classList.add('copied'); b.textContent = '✓ Copied';
+        setTimeout(() => { b.classList.remove('copied'); b.textContent = '⧉ Copy'; }, 1500); };
+      if (navigator.clipboard && navigator.clipboard.writeText)
+        navigator.clipboard.writeText(text).then(done, () => { legacyCopy(text); done(); });
+      else { legacyCopy(text); done(); }
+    });
+    return b;
+  }
+  function refBlock(labelText, el, copyText) {
+    const wrap = document.createElement('div'); wrap.className = 'refblock';
+    const head = document.createElement('div'); head.className = 'refblock__head';
+    head.innerHTML = '<span class="refblock__label">' + labelText + '</span>';
+    if (copyText) head.appendChild(copyBtn(copyText));
+    wrap.appendChild(head); wrap.appendChild(el);
+    return wrap;
+  }
+  async function fetchText(p) { try { const r = await fetch(p); return r.ok ? await r.text() : null; } catch (e) { return null; } }
+
+  const PREVIEW_COPY_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+
+  function setPreviewBadge(ref) {
+    const el = document.getElementById('page-ref');
+    if (!el) return;
+    if (!ref) { el.hidden = true; return; }
+    el.hidden = false;
+    el.innerHTML = '<span></span>' + PREVIEW_COPY_SVG;
+    el.firstChild.textContent = ref;
+    el.title = 'Copy \u201c' + ref + '\u201d';
+    el.setAttribute('aria-label', 'Copy reference name ' + ref);
+    el.onclick = () => {
+      navigator.clipboard.writeText(ref);
+      el.classList.add('is-copied');
+      setTimeout(() => el.classList.remove('is-copied'), 800);
+    };
+  }
+
+  async function renderRef(slug) {
+    refbody.innerHTML = '';
+    const c = registry && registry.components[slug];
+    if (!c) { refpanel.classList.remove('is-open'); setPreviewBadge(null); return; }
+    setPreviewBadge(c.ref || slug);
+    refpanel.classList.add('is-open');
+    const ref = c.ref || slug;
+    refhint.textContent = ref + (c.figma ? ' · Figma: ' + c.figma : '');
+
+    const nameEl = document.createElement('span'); nameEl.className = 'refname'; nameEl.textContent = ref;
+    if (c.aliases && c.aliases.length) {
+      const al = document.createElement('span'); al.className = 'refalias';
+      al.textContent = 'also: ' + c.aliases.join(', ');
+      nameEl.appendChild(al);
+    }
+    refbody.appendChild(refBlock('Reference name — variants are ' + ref + '/…', nameEl, ref));
+
+    if (c.depends_on && c.depends_on.length) {
+      const FOUND = new Set(['color','type','space','grid','radius','shadow']);
+      const b = document.createElement('div'); b.className = 'refbuilt';
+      b.innerHTML = c.depends_on.map(d =>
+        '<span class="refdep' + (FOUND.has(d) ? '' : ' refdep--atom') + '">' + d + '</span>').join('');
+      refbody.appendChild(refBlock('Built from', b, c.depends_on.join(', ')));
+    }
+
+    const imports = ['colors','spacing','typography','radii','shadows','grid'].map(t => '<link rel="stylesheet" href="tokens/' + t + '.css" />');
+    (c.depends_on || []).forEach(d => { if (d.endsWith('.css') && !d.startsWith('tokens/')) imports.push('<link rel="stylesheet" href="' + d + '" />'); });
+    if (c.css) imports.push('<link rel="stylesheet" href="' + c.css + '" />');
+    if (c.js) imports.push('<script src="' + c.js + '"><\/script>');
+    const importText = imports.join('\n');
+    const imp = document.createElement('div'); imp.className = 'refcode'; imp.textContent = importText;
+    refbody.appendChild(refBlock('Import', imp, importText));
+
+    if (c.html) {
+      const htmlSrc = await fetchText(c.html);
+      if (htmlSrc) {
+        const code = document.createElement('div'); code.className = 'refcode'; code.textContent = htmlSrc.trim();
+        refbody.appendChild(refBlock('Code', code, htmlSrc.trim()));
+      }
+    }
+    if (c.variants && c.variants.length) {
+      const v = document.createElement('div'); v.className = 'refvariants';
+      c.variants.forEach(x => { const s = document.createElement('span'); s.textContent = x; v.appendChild(s); });
+      refbody.appendChild(refBlock('Variants', v, c.variants.join(', ')));
+    }
+    if (c.rules) {
+      const rulesSrc = await fetchText(c.rules);
+      if (rulesSrc) {
+        const r = document.createElement('div'); r.className = 'refrules'; r.textContent = rulesSrc;
+        refbody.appendChild(refBlock('Rules', r, rulesSrc));
+      }
+    }
+  }
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('nav-link--active'));
+      link.classList.add('nav-link--active');
+      frame.src = link.dataset.src;
+      label.textContent = link.dataset.label;
+
+      const slug = link.dataset.slug;
+      const mod = link.dataset.modified;
+      const c = registry && slug ? registry.components[slug] : null;
+      modEl.textContent = mod ? 'Last modified: ' + mod : '';
+      if (c && c.flag) {
+        flagEl.style.display = '';
+        flagEl.className = 'content__flag content__flag--' + (c.flag === 'new' ? 'new' : 'upd');
+        flagEl.textContent = c.flag === 'new' ? 'NEW' : 'UPDATED';
+      } else flagEl.style.display = 'none';
+
+      if (slug) renderRef(slug); else { refpanel.classList.remove('is-open'); }
+    });
+  });
+</script>
+
+</body>
+</html>

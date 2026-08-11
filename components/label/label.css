@@ -1,0 +1,81 @@
+/* CarbonWeb Label — eyebrow tag + pill label link */
+
+/* ── Eyebrow ── */
+
+.label-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: var(--color-teal-600);
+}
+
+.label-eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* Slate variant */
+.label-eyebrow--slate {
+  color: var(--color-slate);
+}
+
+/* Gradient variant — global gradient text clip; dot stays teal */
+.label-eyebrow--gradient {
+  background: var(--gradient-global);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.label-eyebrow--gradient::before {
+  background: var(--color-teal-500);
+}
+
+/* ── Pill Label (bordered link) ── */
+
+.label-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-teal-500);
+  background: transparent;
+  font-family: var(--font-family);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  line-height: 1.5;
+  color: var(--color-teal-600);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease,
+    border-color 200ms ease, transform 200ms ease;
+}
+
+.label-pill:hover {
+  background: var(--color-latam-teal-100); /* soft teal-50-style tint */
+  color: var(--color-teal-700);
+  transform: translateY(-1px);
+}
+
+.label-pill:active {
+  background: var(--color-latam-teal-200);
+  border-color: var(--color-teal-700);
+  color: var(--color-teal-700);
+  transform: translateY(0);
+}
+
+.label-pill:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}

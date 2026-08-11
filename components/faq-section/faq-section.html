@@ -1,0 +1,59 @@
+<!-- CarbonWeb FAQ Section — Markup Examples
+     Figma: Accordion/FAQ Section Light 99:20113 / Dark 99:20114
+     Requires: faq-section.css + ../accordion/accordion.css + accordion.js -->
+
+<!-- Light (99:20113) — bottom wedge only -->
+<section class="faq-section faq-section--wedge-bottom">
+  <div class="faq-section__inner">
+    <div class="faq-section__header">
+      <h2 class="faq-section__title">Frequently Asked Questions</h2>
+      <p class="faq-section__subtitle">Get the answers you need about monday.com, features, pricing, and integrations in our comprehensive FAQ section.</p>
+    </div>
+
+    <div class="accordion accordion--faq" data-single="true" role="region" aria-label="Frequently asked questions">
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-p1" id="faq-t1">
+          <span>How does CarbonWeb customize monday.com solutions for different industries and team sizes?</span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+        <div class="accordion__panel" id="faq-p1" role="region" aria-labelledby="faq-t1">
+          <div class="accordion__content">
+            CarbonWeb takes a consultative approach. We begin by understanding your specific workflow, team structure, and business goals. Then we configure monday.com's boards, automations, and integrations to match your unique processes — no matter the size or industry of your business.
+          </div>
+        </div>
+      </div>
+      <!-- repeat .accordion__item per question -->
+    </div>
+  </div>
+</section>
+
+<!-- Dark (99:20114) — wedges top and bottom + blur ambience -->
+<section class="faq-section faq-section--dark faq-section--wedge-both">
+  <div class="faq-section__ambience" aria-hidden="true"></div>
+  <div class="faq-section__inner">
+    <div class="faq-section__header">
+      <h2 class="faq-section__title">Frequently Asked Questions</h2>
+      <p class="faq-section__subtitle">Get the answers you need about monday.com, features, pricing, and integrations in our comprehensive FAQ section.</p>
+    </div>
+
+    <div class="accordion accordion--faq accordion--dark" data-single="true" role="region" aria-label="Frequently asked questions">
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false" aria-controls="faq-d1" id="faq-dt1">
+          <span>How does CarbonWeb customize monday.com solutions for different industries and team sizes?</span>
+          <svg class="accordion__icon accordion__icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+        <div class="accordion__panel" id="faq-d1" role="region" aria-labelledby="faq-dt1">
+          <div class="accordion__content">
+            CarbonWeb takes a consultative approach. We begin by understanding your specific workflow, team structure, and business goals.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../accordion/accordion.js"></script>

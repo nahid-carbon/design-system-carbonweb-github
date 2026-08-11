@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avatar Preview — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="avatar.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+    .preview-section { padding: 48px 60px; }
+    .preview-section + .preview-section { border-top: 1px solid rgba(0, 0, 0, 0.06); }
+    .section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--color-muted); margin-bottom: 20px; }
+    h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+    .row { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .row-label { font-size: 13px; font-weight: 500; color: var(--color-muted); min-width: 50px; }
+    .card { padding: 32px; border-radius: 12px; background: #f9fafb; border: 1px solid rgba(0, 0, 0, 0.06); }
+    .testimonial { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px; }
+    .testimonial-content { flex: 1; }
+    .testimonial-content p { font-size: 16px; line-height: 1.7; color: var(--color-slate); margin-bottom: 8px; }
+    .testimonial-content .name { font-size: 14px; font-weight: 600; color: var(--color-ink); }
+    .testimonial-content .role { font-size: 13px; color: var(--color-muted); }
+    .comment { display: flex; gap: 12px; align-items: flex-start; padding: 16px; border-radius: 8px; background: #fff; border: 1px solid rgba(0, 0, 0, 0.06); margin-bottom: 12px; }
+    .comment-body { flex: 1; }
+    .comment-body .meta { font-size: 13px; margin-bottom: 4px; }
+    .comment-body .meta strong { font-weight: 600; }
+    .comment-body .meta span { color: var(--color-muted); margin-left: 8px; }
+    .comment-body p { font-size: 14px; line-height: 1.6; color: var(--color-slate); }
+    .team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
+    .team-member { text-align: center; }
+    .team-member .avatar { margin-bottom: 8px; }
+    .team-member .name { font-size: 14px; font-weight: 600; }
+    .team-member .role { font-size: 12px; color: var(--color-muted); }
+  </style>
+</head>
+<body>
+
+<!-- Size Scale -->
+<section class="preview-section">
+  <p class="section-label">Size Scale</p>
+  <div class="row">
+    <span class="row-label">xs</span>
+    <div class="avatar avatar--xs" aria-label="Extra small">A</div>
+    <span class="row-label">sm</span>
+    <div class="avatar avatar--sm" aria-label="Small">AB</div>
+    <span class="row-label">md</span>
+    <div class="avatar avatar--md" aria-label="Medium">CD</div>
+    <span class="row-label">lg</span>
+    <div class="avatar avatar--lg" aria-label="Large">EF</div>
+    <span class="row-label">xl</span>
+    <div class="avatar avatar--xl" aria-label="Extra large">GH</div>
+    <span class="row-label">2xl</span>
+    <div class="avatar avatar--2xl" aria-label="Double extra large">JK</div>
+  </div>
+</section>
+
+<!-- Color Variants -->
+<section class="preview-section">
+  <p class="section-label">Color Variants</p>
+  <div class="row">
+    <div class="avatar avatar--xl" aria-label="Default teal">JD</div>
+    <div class="avatar avatar--xl avatar--green" aria-label="Green">MK</div>
+    <div class="avatar avatar--xl avatar--yellow" aria-label="Yellow">NP</div>
+    <div class="avatar avatar--xl avatar--pink" aria-label="Pink">RS</div>
+    <div class="avatar avatar--xl avatar--ink" aria-label="Ink">TU</div>
+  </div>
+</section>
+
+<!-- Avatar Groups -->
+<section class="preview-section">
+  <p class="section-label">Avatar Groups</p>
+
+  <h3>3-person group</h3>
+  <div class="row">
+    <div class="avatar-group">
+      <div class="avatar avatar--md">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%2300B0C2'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='14' font-family='sans-serif'%3EAB%3C/text%3E%3C/svg%3E" alt="User A" />
+      </div>
+      <div class="avatar avatar--md">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%2369D757'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='14' font-family='sans-serif'%3ECD%3C/text%3E%3C/svg%3E" alt="User B" />
+      </div>
+      <div class="avatar avatar--md">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%23FFB400'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='14' font-family='sans-serif'%3EEF%3C/text%3E%3C/svg%3E" alt="User C" />
+      </div>
+    </div>
+  </div>
+
+  <h3>5-person group with count</h3>
+  <div class="row">
+    <div class="avatar-group">
+      <div class="avatar avatar--lg" aria-label="User 1">AB</div>
+      <div class="avatar avatar--lg avatar--green" aria-label="User 2">CD</div>
+      <div class="avatar avatar--lg avatar--yellow" aria-label="User 3">EF</div>
+      <div class="avatar avatar--lg avatar--pink" aria-label="User 4">GH</div>
+      <div class="avatar avatar--lg avatar--ink" aria-label="User 5">JK</div>
+      <div class="avatar-group__count" style="width: 48px; height: 48px;">+12</div>
+    </div>
+  </div>
+
+  <h3>Small group</h3>
+  <div class="row">
+    <div class="avatar-group">
+      <div class="avatar avatar--sm" aria-label="User A">A</div>
+      <div class="avatar avatar--sm avatar--green" aria-label="User B">B</div>
+      <div class="avatar avatar--sm avatar--pink" aria-label="User C">C</div>
+      <div class="avatar-group__count" style="width: 32px; height: 32px; font-size: 10px;">+5</div>
+    </div>
+  </div>
+</section>
+
+<!-- Status Indicators -->
+<section class="preview-section">
+  <p class="section-label">Status Indicators</p>
+  <div class="row">
+    <div class="avatar avatar--lg" aria-label="Online user">
+      JD
+      <span class="avatar__status avatar__status--online"></span>
+    </div>
+    <div class="avatar avatar--lg avatar--green" aria-label="Offline user">
+      MK
+      <span class="avatar__status avatar__status--offline"></span>
+    </div>
+    <div class="avatar avatar--lg avatar--pink" aria-label="Busy user">
+      RS
+      <span class="avatar__status avatar__status--busy"></span>
+    </div>
+    <div class="avatar avatar--xl avatar--ink" aria-label="Online admin">
+      AD
+      <span class="avatar__status avatar__status--online"></span>
+    </div>
+    <div class="avatar avatar--2xl" aria-label="Busy large user">
+      NP
+      <span class="avatar__status avatar__status--busy"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial Example -->
+<section class="preview-section">
+  <p class="section-label">In Context -- Testimonial</p>
+  <div class="card">
+    <div class="testimonial">
+      <div class="avatar avatar--xl" aria-label="Maria Garcia">MG</div>
+      <div class="testimonial-content">
+        <p>"CarbonWeb transformed our workflow management. The team's expertise with monday.com integrations saved us hundreds of hours."</p>
+        <div class="name">Maria Garcia</div>
+        <div class="role">VP of Operations, TechCorp</div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="avatar avatar--xl avatar--green" aria-label="James Chen">JC</div>
+      <div class="testimonial-content">
+        <p>"The custom automations they built for our sales pipeline were exactly what we needed. Highly recommend their services."</p>
+        <div class="name">James Chen</div>
+        <div class="role">Sales Director, CloudBase Inc</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comment Thread Example -->
+<section class="preview-section">
+  <p class="section-label">In Context -- Comment Thread</p>
+  <div class="card">
+    <div class="comment">
+      <div class="avatar avatar--md" aria-label="Sarah Kim">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%2300B0C2'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='14' font-family='sans-serif'%3ESK%3C/text%3E%3C/svg%3E" alt="Sarah Kim" />
+      </div>
+      <div class="comment-body">
+        <div class="meta"><strong>Sarah Kim</strong><span>2 hours ago</span></div>
+        <p>Updated the dashboard to include the new KPIs we discussed. Can everyone take a look?</p>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar avatar--md avatar--green" aria-label="Tom Rivera">TR</div>
+      <div class="comment-body">
+        <div class="meta"><strong>Tom Rivera</strong><span>1 hour ago</span></div>
+        <p>Looks great! The conversion rate widget is exactly what we needed.</p>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar avatar--md avatar--yellow" aria-label="Ana Lopez">AL</div>
+      <div class="comment-body">
+        <div class="meta"><strong>Ana Lopez</strong><span>30 min ago</span></div>
+        <p>Agreed. Can we also add the regional breakdown for LATAM?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Grid Example -->
+<section class="preview-section">
+  <p class="section-label">In Context -- Team Grid</p>
+  <div class="card">
+    <div class="team-grid">
+      <div class="team-member">
+        <div class="avatar avatar--xl" aria-label="David Park" style="margin: 0 auto;">DP</div>
+        <div class="name">David Park</div>
+        <div class="role">Lead Engineer</div>
+      </div>
+      <div class="team-member">
+        <div class="avatar avatar--xl avatar--green" aria-label="Lisa Wang" style="margin: 0 auto;">LW</div>
+        <div class="name">Lisa Wang</div>
+        <div class="role">Designer</div>
+      </div>
+      <div class="team-member">
+        <div class="avatar avatar--xl avatar--yellow" aria-label="Carlos Ruiz" style="margin: 0 auto;">CR</div>
+        <div class="name">Carlos Ruiz</div>
+        <div class="role">PM</div>
+      </div>
+      <div class="team-member">
+        <div class="avatar avatar--xl avatar--pink" aria-label="Emma Jones" style="margin: 0 auto;">EJ</div>
+        <div class="name">Emma Jones</div>
+        <div class="role">QA Lead</div>
+      </div>
+      <div class="team-member">
+        <div class="avatar avatar--xl avatar--ink" aria-label="Omar Hassan" style="margin: 0 auto;">OH</div>
+        <div class="name">Omar Hassan</div>
+        <div class="role">DevOps</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

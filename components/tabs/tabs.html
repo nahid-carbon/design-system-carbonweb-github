@@ -1,0 +1,173 @@
+<!-- CarbonWeb Design System — Tabs Markup
+     Variants shown: Underline (default), Pill, Vertical, Details,
+     Collapsible (light/dark), Pane, Logos, Products.
+     Each tab group uses data-tab to link tabs to panels.
+-->
+
+<!-- ── Underline Tabs (default) ── -->
+
+<div class="tabs" data-tabs>
+  <div class="tabs__list" role="tablist" aria-label="Underline tabs">
+    <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" data-tab="u-tab1" aria-controls="u-panel1" id="u-tab1">Tab One</button>
+    <button class="tabs__tab" role="tab" aria-selected="false" data-tab="u-tab2" aria-controls="u-panel2" id="u-tab2">Tab Two</button>
+    <button class="tabs__tab" role="tab" aria-selected="false" data-tab="u-tab3" aria-controls="u-panel3" id="u-tab3">Tab Three</button>
+  </div>
+  <div class="tabs__panels">
+    <div class="tabs__panel tabs__panel--active" role="tabpanel" id="u-panel1" aria-labelledby="u-tab1">Panel one content.</div>
+    <div class="tabs__panel" role="tabpanel" id="u-panel2" aria-labelledby="u-tab2">Panel two content.</div>
+    <div class="tabs__panel" role="tabpanel" id="u-panel3" aria-labelledby="u-tab3">Panel three content.</div>
+  </div>
+</div>
+
+
+<!-- ── Pill Tabs ── -->
+
+<div class="tabs tabs--pill" data-tabs>
+  <div class="tabs__list" role="tablist" aria-label="Pill tabs">
+    <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" data-tab="p-tab1" aria-controls="p-panel1" id="p-tab1">Tab One</button>
+    <button class="tabs__tab" role="tab" aria-selected="false" data-tab="p-tab2" aria-controls="p-panel2" id="p-tab2">Tab Two</button>
+    <button class="tabs__tab" role="tab" aria-selected="false" data-tab="p-tab3" aria-controls="p-panel3" id="p-tab3">Tab Three</button>
+  </div>
+  <div class="tabs__panels">
+    <div class="tabs__panel tabs__panel--active" role="tabpanel" id="p-panel1" aria-labelledby="p-tab1">Panel one content.</div>
+    <div class="tabs__panel" role="tabpanel" id="p-panel2" aria-labelledby="p-tab2">Panel two content.</div>
+    <div class="tabs__panel" role="tabpanel" id="p-panel3" aria-labelledby="p-tab3">Panel three content.</div>
+  </div>
+</div>
+
+
+<!-- ── Vertical Tabs ── -->
+
+<div class="tabs tabs--vertical" data-tabs>
+  <div class="tabs__list" role="tablist" aria-label="Vertical tabs" aria-orientation="vertical">
+    <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" data-tab="v-tab1" aria-controls="v-panel1" id="v-tab1">Tab One</button>
+    <button class="tabs__tab" role="tab" aria-selected="false" data-tab="v-tab2" aria-controls="v-panel2" id="v-tab2">Tab Two</button>
+    <button class="tabs__tab" role="tab" aria-selected="false" data-tab="v-tab3" aria-controls="v-panel3" id="v-tab3">Tab Three</button>
+  </div>
+  <div class="tabs__panels">
+    <div class="tabs__panel tabs__panel--active" role="tabpanel" id="v-panel1" aria-labelledby="v-tab1">Panel one content.</div>
+    <div class="tabs__panel" role="tabpanel" id="v-panel2" aria-labelledby="v-tab2">Panel two content.</div>
+    <div class="tabs__panel" role="tabpanel" id="v-panel3" aria-labelledby="v-tab3">Panel three content.</div>
+  </div>
+</div>
+
+
+<!-- ── Details Tabs (card tabs + rich detail panel) ── -->
+
+<div class="tabs tabs--details" data-tabs>
+  <div class="tabs__list" role="tablist" aria-label="Details tabs" aria-orientation="vertical">
+    <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" data-tab="dt-tab1" aria-controls="dt-panel1" id="dt-tab1">
+      <span class="tabs__tab-title">Tab title</span>
+      <span class="tabs__tab-desc">Short supporting description for this tab.</span>
+    </button>
+    <button class="tabs__tab" role="tab" aria-selected="false" data-tab="dt-tab2" aria-controls="dt-panel2" id="dt-tab2">
+      <span class="tabs__tab-title">Tab title</span>
+      <span class="tabs__tab-desc">Short supporting description for this tab.</span>
+    </button>
+  </div>
+  <div class="tabs__panels">
+    <div class="tabs__panel tabs__panel--active" role="tabpanel" id="dt-panel1" aria-labelledby="dt-tab1">
+      <div class="tabs__detail-header">
+        <span class="tabs__detail-icon"><!-- 20x20 svg icon --></span>
+        <h4 class="tabs__detail-title">Detail title</h4>
+      </div>
+      <p class="tabs__detail-body">Detail body copy.</p>
+      <ul class="tabs__checklist">
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5 6 12.5 14 4"/></svg>Checklist item</li>
+      </ul>
+      <div class="tabs__detail-footer">
+        <div><span class="tabs__price-label">Price</span><span class="tabs__price-value">From $2,925</span></div>
+        <button class="tabs__cta" type="button">Book a consultation</button>
+      </div>
+    </div>
+    <div class="tabs__panel" role="tabpanel" id="dt-panel2" aria-labelledby="dt-tab2">Second detail panel.</div>
+  </div>
+</div>
+
+
+<!-- ── Collapsible Tabs (accordion rows; add .tabs--dark inside dark sections) ── -->
+
+<div class="tabs tabs--collapsible" data-tabs>
+  <div class="tabs__list" role="tablist" aria-label="Collapsible tabs" aria-orientation="vertical">
+    <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" aria-expanded="true" data-tab="cl-tab1" aria-controls="cl-panel1" id="cl-tab1">
+      <span class="tabs__tab-row">
+        <span class="tabs__tab-icon"><!-- 16x16 svg icon --></span>
+        <span class="tabs__tab-title">Tab label</span>
+        <span class="tabs__chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5.5 7 9.5 11 5.5"/></svg></span>
+      </span>
+      <span class="tabs__tab-desc">Supporting description text that expands when active.</span>
+    </button>
+    <button class="tabs__tab" role="tab" aria-selected="false" aria-expanded="false" data-tab="cl-tab2" aria-controls="cl-panel2" id="cl-tab2">
+      <span class="tabs__tab-row">
+        <span class="tabs__tab-icon"><!-- 16x16 svg icon --></span>
+        <span class="tabs__tab-title">Tab label</span>
+        <span class="tabs__chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5.5 7 9.5 11 5.5"/></svg></span>
+      </span>
+      <span class="tabs__tab-desc">Supporting description text that expands when active.</span>
+    </button>
+  </div>
+  <div class="tabs__panels">
+    <div class="tabs__panel tabs__panel--active" role="tabpanel" id="cl-panel1" aria-labelledby="cl-tab1"><div class="tabs__media">Graphic</div></div>
+    <div class="tabs__panel" role="tabpanel" id="cl-panel2" aria-labelledby="cl-tab2"><div class="tabs__media">Graphic</div></div>
+  </div>
+</div>
+
+
+<!-- ── Pane Tabs (slim collapsible rows with dot-chip label) ── -->
+
+<div class="tabs tabs--pane" data-tabs>
+  <div class="tabs__list" role="tablist" aria-label="Pane tabs" aria-orientation="vertical">
+    <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" aria-expanded="true" data-tab="pa-tab1" aria-controls="pa-panel1" id="pa-tab1">
+      <span class="tabs__tab-row">
+        <span class="tabs__pane-chip"><span class="tabs__pane-dot"></span>Training</span>
+        <span class="tabs__chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5.5 7 9.5 11 5.5"/></svg></span>
+      </span>
+      <span class="tabs__tab-desc">
+        <ul class="tabs__checklist">
+          <li><span class="tabs__check-badge"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 8.5 6 12.5 14 4"/></svg></span>Checklist item</li>
+        </ul>
+      </span>
+    </button>
+  </div>
+  <div class="tabs__panels" hidden>
+    <div class="tabs__panel tabs__panel--active" role="tabpanel" id="pa-panel1" aria-labelledby="pa-tab1"></div>
+  </div>
+</div>
+
+
+<!-- ── Logo Tabs (greyscale logo -> full color when active; add .tabs--on-dark on dark bg) ── -->
+
+<div class="tabs tabs--logos" data-tabs>
+  <div class="tabs__list" role="tablist" aria-label="Logo tabs">
+    <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" data-tab="lo-tab1" aria-controls="lo-panel1" id="lo-tab1">
+      <span class="tabs__logo"><img src="client-logo.svg" alt="Client name" /></span>
+    </button>
+    <button class="tabs__tab" role="tab" aria-selected="false" data-tab="lo-tab2" aria-controls="lo-panel2" id="lo-tab2">
+      <span class="tabs__logo"><img src="client-logo-2.svg" alt="Client name" /></span>
+    </button>
+  </div>
+  <div class="tabs__panels">
+    <div class="tabs__panel tabs__panel--active" role="tabpanel" id="lo-panel1" aria-labelledby="lo-tab1">Testimonial one.</div>
+    <div class="tabs__panel" role="tabpanel" id="lo-panel2" aria-labelledby="lo-tab2">Testimonial two.</div>
+  </div>
+</div>
+
+
+<!-- ── Product Tabs (greyscale product logo strip -> full color when active) ── -->
+
+<div class="tabs tabs--products" data-tabs>
+  <div class="tabs__list" role="tablist" aria-label="Product tabs">
+    <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" data-tab="po-tab1" aria-controls="po-panel1" id="po-tab1">
+      <span class="tabs__product-icon" style="background:#6C6CFF;"><!-- 16x16 svg --></span>
+      <span class="tabs__product-name"><strong>monday</strong> work<br>management</span>
+    </button>
+    <button class="tabs__tab" role="tab" aria-selected="false" data-tab="po-tab2" aria-controls="po-panel2" id="po-tab2">
+      <span class="tabs__product-icon" style="background:#00D2D2;"><!-- 16x16 svg --></span>
+      <span class="tabs__product-name"><strong>monday</strong> CRM</span>
+    </button>
+  </div>
+  <div class="tabs__panels">
+    <div class="tabs__panel tabs__panel--active" role="tabpanel" id="po-panel1" aria-labelledby="po-tab1">Product one content.</div>
+    <div class="tabs__panel" role="tabpanel" id="po-panel2" aria-labelledby="po-tab2">Product two content.</div>
+  </div>
+</div>

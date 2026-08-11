@@ -1,0 +1,231 @@
+/* CarbonWeb Footer — uses only var(--token) references
+   Full implementation lives in src/components/ui/Footer.tsx (React).
+   This CSS is the pure-CSS reference for non-React usage.
+*/
+
+.footer {
+  background: var(--color-white);
+  padding: var(--space-16) var(--space-section-x);
+}
+
+.footer__container {
+  max-width: var(--space-footer-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 82px;
+}
+
+/* ── CTA Card ── */
+
+.footer__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-teal-500) 18%, var(--color-white));
+}
+
+.footer__cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+  padding: var(--space-8);
+  max-width: 569px;
+}
+
+.footer__cta-content p {
+  color: var(--color-ink);
+  opacity: 0.5;
+}
+
+.footer__cta-illustration {
+  width: 525px;
+  height: 267px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* ── Link Columns ── */
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 35px;
+}
+
+.footer__links-row-a {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.footer__columns-left {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+}
+
+.footer__links-row-b {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.footer__column-title {
+  font-family: var(--font-family);
+  font-weight: var(--font-medium);
+  font-size: var(--text-xl);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.footer__column-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.footer__column-links a {
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  color: var(--color-slate);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.footer__column-links a:hover {
+  color: var(--color-ink);
+}
+
+/* ── Newsletter ── */
+
+.footer__newsletter {
+  width: 47%;
+  flex-shrink: 0;
+  background: var(--color-grey-100);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.footer__newsletter-form {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.footer__newsletter-form input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Bottom Bar ── */
+
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.footer__bottom-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.footer__contacts {
+  display: flex;
+  align-items: center;
+  gap: 31px;
+}
+
+.footer__region {
+  font-family: var(--font-family);
+  font-weight: var(--font-medium);
+  font-size: var(--text-base);
+  color: var(--color-teal-600);
+}
+
+.footer__phone {
+  font-family: var(--font-family);
+  font-weight: var(--font-medium);
+  font-size: var(--text-base);
+  color: var(--color-slate-light);
+}
+
+.footer__email {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-family);
+  font-weight: var(--font-medium);
+  font-size: var(--text-base);
+  color: var(--color-slate-light);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.footer__email:hover {
+  color: var(--color-slate);
+}
+
+.footer__divider {
+  height: 1px;
+  width: 100%;
+  background: var(--color-slate);
+  opacity: 0.3;
+}
+
+.footer__legal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__legal-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  font-size: var(--text-base);
+  color: var(--color-slate-light);
+}
+
+.footer__legal-links a {
+  color: var(--color-slate-light);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.footer__legal-links a:hover {
+  color: var(--color-slate);
+}
+
+.footer__legal-sep {
+  width: 1px;
+  height: 17px;
+  background: var(--color-slate-light);
+}
+
+.footer__copyright {
+  font-family: var(--font-family);
+  font-size: var(--text-lg);
+  color: var(--color-slate-light);
+  margin: 0;
+}

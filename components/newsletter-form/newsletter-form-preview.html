@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newsletter Form — CarbonWeb Design System</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/shadows.css" />
+  <link rel="stylesheet" href="newsletter-form.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-family);
+      background: #f8f9fb;
+      color: var(--color-ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 48px 40px;
+    }
+    .preview-header {
+      max-width: 720px;
+      margin: 0 auto 40px;
+    }
+    .preview-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .preview-desc {
+      font-size: 15px;
+      color: var(--color-muted);
+      line-height: 1.6;
+    }
+    .preview-card {
+      max-width: 720px;
+      margin: 0 auto 32px;
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 40px;
+    }
+    .preview-card:last-child {
+      margin-bottom: 0;
+    }
+    .preview-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .preview-card .card-desc {
+      font-size: 14px;
+      color: var(--color-muted);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .dark-wrapper {
+      background: var(--color-ink);
+      padding: 32px;
+      border-radius: var(--radius-md);
+    }
+  </style>
+</head>
+<body>
+
+<div class="preview-header">
+  <h2 class="preview-title">Newsletter Form</h2>
+  <p class="preview-desc">Email subscription form with inline validation. Supports inline (pill), stacked, and dark variants. Try submitting with valid and invalid emails to see error/success states.</p>
+</div>
+
+<!-- Inline (default) -->
+<div class="preview-card">
+  <h3>Inline (default)</h3>
+  <p class="card-desc">Input and button side by side in a pill shape. Used in footer newsletter signup areas.</p>
+  <form class="newsletter-form" novalidate>
+    <div class="newsletter-form__heading">Stay in the loop</div>
+    <div class="newsletter-form__subtext">Get the latest CarbonWeb updates delivered to your inbox.</div>
+    <div class="newsletter-form__field">
+      <input class="newsletter-form__input" type="email" placeholder="Enter your email" aria-label="Email address" required />
+      <button class="newsletter-form__button" type="submit">Subscribe</button>
+    </div>
+    <div class="newsletter-form__error">Please enter a valid email address.</div>
+    <div class="newsletter-form__success">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="currentColor" opacity="0.2"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      You're subscribed! Check your inbox for confirmation.
+    </div>
+  </form>
+</div>
+
+<!-- Stacked -->
+<div class="preview-card">
+  <h3>Stacked</h3>
+  <p class="card-desc">Input and button stacked vertically. Ideal for standalone signup sections and landing pages.</p>
+  <form class="newsletter-form newsletter-form--stacked" novalidate>
+    <div class="newsletter-form__heading">Subscribe to our newsletter</div>
+    <div class="newsletter-form__subtext">Weekly insights on workflow automation and CRM best practices.</div>
+    <div class="newsletter-form__field">
+      <input class="newsletter-form__input" type="email" placeholder="you@company.com" aria-label="Email address" required />
+      <button class="newsletter-form__button" type="submit">Subscribe</button>
+    </div>
+    <div class="newsletter-form__error">Please enter a valid email address.</div>
+    <div class="newsletter-form__success">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="currentColor" opacity="0.2"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      You're subscribed! Check your inbox for confirmation.
+    </div>
+  </form>
+</div>
+
+<!-- Dark -->
+<div class="preview-card">
+  <h3>Dark variant</h3>
+  <p class="card-desc">For dark background sections. Adjusts input styling and text colors for proper contrast.</p>
+  <div class="dark-wrapper">
+    <form class="newsletter-form newsletter-form--dark" novalidate>
+      <div class="newsletter-form__heading">The Digital Directive</div>
+      <div class="newsletter-form__subtext">Join 5,000+ leaders getting weekly workflow insights.</div>
+      <div class="newsletter-form__field">
+        <input class="newsletter-form__input" type="email" placeholder="Enter your email" aria-label="Email address" required />
+        <button class="newsletter-form__button" type="submit">Subscribe</button>
+      </div>
+      <div class="newsletter-form__error">Please enter a valid email address.</div>
+      <div class="newsletter-form__success">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="currentColor" opacity="0.2"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        You're subscribed! Check your inbox for confirmation.
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="newsletter-form.js"></script>
+</body>
+</html>

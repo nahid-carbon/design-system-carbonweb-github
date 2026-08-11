@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabs — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="tabs.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; }
+    .sub { margin-bottom: 48px; }
+    .sub h3 { font-size: 18px; font-weight: 600; margin-bottom: 14px; }
+    .panel-content { font-size: 16px; line-height: 1.7; color: var(--color-ink); }
+    .panel-content p { margin-bottom: 12px; }
+    .panel-content strong { font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<h2>Tabs</h2>
+<p class="desc">9 variants: underline (default), pill, vertical, contained, details, collapsible (light/dark), pane, logos, products. Click or use arrow keys to navigate.</p>
+
+
+<!-- ── Underline Tabs ── -->
+
+<div class="sub">
+  <h3>Underline</h3>
+  <div class="tabs" data-tabs>
+    <div class="tabs__list" role="tablist" aria-label="Service areas">
+      <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" data-tab="explore" aria-controls="panel-explore" id="tab-explore">Explore</button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="build" aria-controls="panel-build" id="tab-build">Build</button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="scale" aria-controls="panel-scale" id="tab-scale">Scale</button>
+    </div>
+    <div class="tabs__panels">
+      <div class="tabs__panel tabs__panel--active panel-content" role="tabpanel" id="panel-explore" aria-labelledby="tab-explore">
+        <p><strong>Discover what monday.com can do for your team.</strong></p>
+        <p>Our exploration phase maps your current workflows, identifies bottlenecks, and designs a tailored implementation roadmap. We run stakeholder interviews, audit existing tools, and deliver a prioritized feature plan within two weeks.</p>
+      </div>
+      <div class="tabs__panel panel-content" role="tabpanel" id="panel-build" aria-labelledby="tab-build">
+        <p><strong>Custom workflows built for the way you work.</strong></p>
+        <p>CarbonWeb engineers build automations, integrations, and dashboards on monday.com that match your exact business processes. Every workflow is documented, tested, and handed off with training materials for your team.</p>
+      </div>
+      <div class="tabs__panel panel-content" role="tabpanel" id="panel-scale" aria-labelledby="tab-scale">
+        <p><strong>Grow without growing pains.</strong></p>
+        <p>As your organization scales, we optimize board structures, roll out cross-departmental templates, and provide ongoing support. Our managed services include quarterly reviews, performance tuning, and priority access to new features.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Pill Tabs ── -->
+
+<div class="sub">
+  <h3>Pill</h3>
+  <div class="tabs tabs--pill" data-tabs>
+    <div class="tabs__list" role="tablist" aria-label="Product categories">
+      <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" data-tab="monday" aria-controls="panel-monday" id="tab-monday">monday.com</button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="services" aria-controls="panel-services" id="tab-services">Services</button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="creative" aria-controls="panel-creative" id="tab-creative">Creative</button>
+    </div>
+    <div class="tabs__panels">
+      <div class="tabs__panel tabs__panel--active panel-content" role="tabpanel" id="panel-monday" aria-labelledby="tab-monday">
+        <p><strong>monday.com Platform</strong></p>
+        <p>A Work OS that powers teams to run projects and workflows with confidence. Includes monday Work Management, monday CRM, monday Service, and monday Dev -- all configurable to fit any team size or industry.</p>
+      </div>
+      <div class="tabs__panel panel-content" role="tabpanel" id="panel-services" aria-labelledby="tab-services">
+        <p><strong>Professional Services</strong></p>
+        <p>From consultation to custom workflow development, our certified monday.com experts handle the heavy lifting. Training sessions, onboarding support, and emergency response teams are available for every tier.</p>
+      </div>
+      <div class="tabs__panel panel-content" role="tabpanel" id="panel-creative" aria-labelledby="tab-creative">
+        <p><strong>Creative Services</strong></p>
+        <p>Web design, brand identity, and digital campaigns crafted by CarbonWeb's in-house creative team. Our Evolution Plan provides continuous design iteration so your brand never falls behind.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Vertical Tabs ── -->
+
+<div class="sub">
+  <h3>Vertical</h3>
+  <div class="tabs tabs--vertical" data-tabs>
+    <div class="tabs__list" role="tablist" aria-label="Company sections" aria-orientation="vertical">
+      <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" data-tab="about" aria-controls="panel-about" id="tab-about">About</button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="careers" aria-controls="panel-careers" id="tab-careers">Careers</button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="contact" aria-controls="panel-contact" id="tab-contact">Contact</button>
+    </div>
+    <div class="tabs__panels">
+      <div class="tabs__panel tabs__panel--active panel-content" role="tabpanel" id="panel-about" aria-labelledby="tab-about">
+        <p><strong>About CarbonWeb</strong></p>
+        <p>CarbonWeb is monday.com's top global partner, delivering workflow automation, creative services, and custom integrations across North America and Latin America. Founded with the mission to make work simpler, faster, and more transparent.</p>
+      </div>
+      <div class="tabs__panel panel-content" role="tabpanel" id="panel-careers" aria-labelledby="tab-careers">
+        <p><strong>Join Our Team</strong></p>
+        <p>We are always looking for passionate people who love solving problems with technology. Open roles span engineering, design, project management, and client success. Remote-first culture with offices in Cleveland and Quito.</p>
+      </div>
+      <div class="tabs__panel panel-content" role="tabpanel" id="panel-contact" aria-labelledby="tab-contact">
+        <p><strong>Get in Touch</strong></p>
+        <p>US: (216) 666 2522 | LATAM: +593 99 864 2941</p>
+        <p>Email: contact@carbonweb.co</p>
+        <p>Book an exploration call to see how CarbonWeb can transform the way your team works.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Contained Tabs ── -->
+
+<div class="sub">
+  <h3>Contained</h3>
+  <div class="tabs tabs--contained" data-tabs>
+    <div class="tabs__list" role="tablist" aria-label="Plan details">
+      <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" data-tab="starter" aria-controls="panel-starter" id="tab-starter">Starter</button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="pro" aria-controls="panel-pro" id="tab-pro">Pro</button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="enterprise" aria-controls="panel-enterprise" id="tab-enterprise">Enterprise</button>
+    </div>
+    <div class="tabs__panels">
+      <div class="tabs__panel tabs__panel--active panel-content" role="tabpanel" id="panel-starter" aria-labelledby="tab-starter">
+        <p><strong>Starter Plan</strong></p>
+        <p>Ideal for small teams getting started with monday.com. Includes initial setup consultation, one custom workflow, and 30 days of email support.</p>
+      </div>
+      <div class="tabs__panel panel-content" role="tabpanel" id="panel-pro" aria-labelledby="tab-pro">
+        <p><strong>Pro Plan</strong></p>
+        <p>For growing teams that need advanced automations and integrations. Unlimited workflows, API-level customization, dedicated account manager, and quarterly optimization reviews.</p>
+      </div>
+      <div class="tabs__panel panel-content" role="tabpanel" id="panel-enterprise" aria-labelledby="tab-enterprise">
+        <p><strong>Enterprise Plan</strong></p>
+        <p>Full-service partnership with CarbonWeb. Includes 24/7 priority support, custom app development, cross-platform integrations, training programs, and an emergency response team on standby.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Details Tabs (Figma: Tab Details / tab details section) ── -->
+
+<div class="sub">
+  <h3>Details (Figma: "Tab Details" / "tab details section")</h3>
+  <div class="tabs tabs--details" data-tabs>
+    <div class="tabs__list" role="tablist" aria-label="Training packages" aria-orientation="vertical">
+      <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" data-tab="d-adv" aria-controls="panel-d-adv" id="tab-d-adv">
+        <span class="tabs__tab-title">Advanced Champion Training</span>
+        <span class="tabs__tab-desc">For the people inside your org who will own, lead, and grow your monday.com environment</span>
+      </button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="d-basic" aria-controls="panel-d-basic" id="tab-d-basic">
+        <span class="tabs__tab-title">Basic Champion Training</span>
+        <span class="tabs__tab-desc">Core workflow understanding and the confidence to answer the team's questions</span>
+      </button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="d-team" aria-controls="panel-d-team" id="tab-d-team">
+        <span class="tabs__tab-title">Team Onboarding</span>
+        <span class="tabs__tab-desc">Get your whole team trained on monday.com from scratch</span>
+      </button>
+    </div>
+    <div class="tabs__panels">
+      <div class="tabs__panel tabs__panel--active" role="tabpanel" id="panel-d-adv" aria-labelledby="tab-d-adv">
+        <div class="tabs__detail-header">
+          <span class="tabs__detail-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="11" rx="2"/><path d="M7 18h6"/></svg></span>
+          <h4 class="tabs__detail-title">Advanced Champion Training</h4>
+        </div>
+        <p class="tabs__detail-body">Your champion will leave with deep workflow ownership, the confidence to lead the team, and the practical knowledge to keep adoption consistent over time.</p>
+        <ul class="tabs__checklist">
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5 6 12.5 14 4"/></svg>Discovery &amp; Solution Design</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5 6 12.5 14 4"/></svg>Strategic Advisory Retainer (ongoing)</li>
+        </ul>
+        <div class="tabs__detail-footer">
+          <div><span class="tabs__price-label">Price</span><span class="tabs__price-value">From $4,850</span></div>
+          <button class="tabs__cta" type="button">Book a consultation</button>
+        </div>
+      </div>
+      <div class="tabs__panel" role="tabpanel" id="panel-d-basic" aria-labelledby="tab-d-basic">
+        <div class="tabs__detail-header">
+          <span class="tabs__detail-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="11" rx="2"/><path d="M7 18h6"/></svg></span>
+          <h4 class="tabs__detail-title">Basic Champion Training</h4>
+        </div>
+        <p class="tabs__detail-body">Your champion will leave with core workflow understanding, the confidence to answer the team's questions, and the practical knowledge to keep adoption consistent over time.</p>
+        <ul class="tabs__checklist">
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5 6 12.5 14 4"/></svg>Discovery &amp; Solution Design</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5 6 12.5 14 4"/></svg>Strategic Advisory Retainer (ongoing)</li>
+        </ul>
+        <div class="tabs__detail-footer">
+          <div><span class="tabs__price-label">Price</span><span class="tabs__price-value">From $2,925</span></div>
+          <button class="tabs__cta" type="button">Book a consultation</button>
+        </div>
+      </div>
+      <div class="tabs__panel" role="tabpanel" id="panel-d-team" aria-labelledby="tab-d-team">
+        <div class="tabs__detail-header">
+          <span class="tabs__detail-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="11" rx="2"/><path d="M7 18h6"/></svg></span>
+          <h4 class="tabs__detail-title">Team Onboarding</h4>
+        </div>
+        <p class="tabs__detail-body">Getting your team trained on monday.com from scratch, with internal champions built to own and manage the platform day to day.</p>
+        <ul class="tabs__checklist">
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5 6 12.5 14 4"/></svg>Live team workshops</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5 6 12.5 14 4"/></svg>Champion enablement plan</li>
+        </ul>
+        <div class="tabs__detail-footer">
+          <div><span class="tabs__price-label">Price</span><span class="tabs__price-value">From $1,950</span></div>
+          <button class="tabs__cta" type="button">Book a consultation</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Collapsible Tabs, light (Figma: Tab set / Vertical Light Section) ── -->
+
+<div class="sub">
+  <h3>Collapsible (Figma: "Tab set" / "Vertical Light Section")</h3>
+  <div class="tabs tabs--collapsible" data-tabs>
+    <div class="tabs__list" role="tablist" aria-label="Features" aria-orientation="vertical">
+      <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" aria-expanded="true" data-tab="c-1" aria-controls="panel-c-1" id="tab-c-1">
+        <span class="tabs__tab-row">
+          <span class="tabs__tab-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></span>
+          <span class="tabs__tab-title">AI Automations</span>
+          <span class="tabs__chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5.5 7 9.5 11 5.5"/></svg></span>
+        </span>
+        <span class="tabs__tab-desc">Supporting description text for this tab that can wrap onto a second line before it gets truncated.</span>
+      </button>
+      <button class="tabs__tab" role="tab" aria-selected="false" aria-expanded="false" data-tab="c-2" aria-controls="panel-c-2" id="tab-c-2">
+        <span class="tabs__tab-row">
+          <span class="tabs__tab-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></span>
+          <span class="tabs__tab-title">Smart Summaries</span>
+          <span class="tabs__chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5.5 7 9.5 11 5.5"/></svg></span>
+        </span>
+        <span class="tabs__tab-desc">Digest long updates into instant, actionable summaries for every board.</span>
+      </button>
+      <button class="tabs__tab" role="tab" aria-selected="false" aria-expanded="false" data-tab="c-3" aria-controls="panel-c-3" id="tab-c-3">
+        <span class="tabs__tab-row">
+          <span class="tabs__tab-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></span>
+          <span class="tabs__tab-title">Workflow Builder</span>
+          <span class="tabs__chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5.5 7 9.5 11 5.5"/></svg></span>
+        </span>
+        <span class="tabs__tab-desc">Design multi-step automations across boards without writing code.</span>
+      </button>
+    </div>
+    <div class="tabs__panels">
+      <div class="tabs__panel tabs__panel--active" role="tabpanel" id="panel-c-1" aria-labelledby="tab-c-1"><div class="tabs__media">Graphic — AI Automations</div></div>
+      <div class="tabs__panel" role="tabpanel" id="panel-c-2" aria-labelledby="tab-c-2"><div class="tabs__media">Graphic — Smart Summaries</div></div>
+      <div class="tabs__panel" role="tabpanel" id="panel-c-3" aria-labelledby="tab-c-3"><div class="tabs__media">Graphic — Workflow Builder</div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Collapsible Tabs, dark (Figma: Vertical Dark Section) ── -->
+
+<div class="sub">
+  <h3>Collapsible Dark (Figma: "Vertical Dark Section")</h3>
+  <div style="background:#0A0A0A; border-radius:16px; padding:40px;">
+    <div class="tabs tabs--collapsible tabs--dark" data-tabs>
+      <div class="tabs__list" role="tablist" aria-label="AI features" aria-orientation="vertical">
+        <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" aria-expanded="true" data-tab="cd-1" aria-controls="panel-cd-1" id="tab-cd-1">
+          <span class="tabs__tab-row">
+            <span class="tabs__tab-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></span>
+            <span class="tabs__tab-title">AI Assistant</span>
+            <span class="tabs__chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5.5 7 9.5 11 5.5"/></svg></span>
+          </span>
+          <span class="tabs__tab-desc">Supporting description text for this tab that can wrap onto a second line before it gets truncated.</span>
+        </button>
+        <button class="tabs__tab" role="tab" aria-selected="false" aria-expanded="false" data-tab="cd-2" aria-controls="panel-cd-2" id="tab-cd-2">
+          <span class="tabs__tab-row">
+            <span class="tabs__tab-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></span>
+            <span class="tabs__tab-title">Auto Categorize</span>
+            <span class="tabs__chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5.5 7 9.5 11 5.5"/></svg></span>
+          </span>
+          <span class="tabs__tab-desc">Let AI file incoming requests into the right group automatically.</span>
+        </button>
+        <button class="tabs__tab" role="tab" aria-selected="false" aria-expanded="false" data-tab="cd-3" aria-controls="panel-cd-3" id="tab-cd-3">
+          <span class="tabs__tab-row">
+            <span class="tabs__tab-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg></span>
+            <span class="tabs__tab-title">Sentiment Detection</span>
+            <span class="tabs__chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5.5 7 9.5 11 5.5"/></svg></span>
+          </span>
+          <span class="tabs__tab-desc">Flag urgent or negative client messages before they escalate.</span>
+        </button>
+      </div>
+      <div class="tabs__panels">
+        <div class="tabs__panel tabs__panel--active" role="tabpanel" id="panel-cd-1" aria-labelledby="tab-cd-1"><div class="tabs__media">Graphic — AI Assistant</div></div>
+        <div class="tabs__panel" role="tabpanel" id="panel-cd-2" aria-labelledby="tab-cd-2"><div class="tabs__media">Graphic — Auto Categorize</div></div>
+        <div class="tabs__panel" role="tabpanel" id="panel-cd-3" aria-labelledby="tab-cd-3"><div class="tabs__media">Graphic — Sentiment Detection</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Pane Tabs (Figma: Vertical Collapsible Pane) ── -->
+
+<div class="sub">
+  <h3>Pane (Figma: "Vertical Collapsible Pane")</h3>
+  <div style="background:#C2C2C2; border-radius:12px; padding:40px;">
+    <div class="tabs tabs--pane" data-tabs style="max-width:460px;">
+      <div class="tabs__list" role="tablist" aria-label="Service areas" aria-orientation="vertical">
+        <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" aria-expanded="true" data-tab="pn-1" aria-controls="panel-pn-1" id="tab-pn-1">
+          <span class="tabs__tab-row">
+            <span class="tabs__pane-chip"><span class="tabs__pane-dot"></span>Training</span>
+            <span class="tabs__chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5.5 7 9.5 11 5.5"/></svg></span>
+          </span>
+          <span class="tabs__tab-desc">
+            <ul class="tabs__checklist">
+              <li><span class="tabs__check-badge"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 8.5 6 12.5 14 4"/></svg></span>Getting your team trained on monday.com from scratch</li>
+              <li><span class="tabs__check-badge"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 8.5 6 12.5 14 4"/></svg></span>Building internal champions to own and manage the platform day to day</li>
+            </ul>
+          </span>
+        </button>
+        <button class="tabs__tab" role="tab" aria-selected="false" aria-expanded="false" data-tab="pn-2" aria-controls="panel-pn-2" id="tab-pn-2">
+          <span class="tabs__tab-row">
+            <span class="tabs__pane-chip"><span class="tabs__pane-dot"></span>Workflows</span>
+            <span class="tabs__chevron"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5.5 7 9.5 11 5.5"/></svg></span>
+          </span>
+          <span class="tabs__tab-desc">
+            <ul class="tabs__checklist">
+              <li><span class="tabs__check-badge"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 8.5 6 12.5 14 4"/></svg></span>Custom workflow development matched to your processes</li>
+              <li><span class="tabs__check-badge"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 8.5 6 12.5 14 4"/></svg></span>Automations and integrations documented and tested</li>
+            </ul>
+          </span>
+        </button>
+      </div>
+      <div class="tabs__panels" hidden>
+        <div class="tabs__panel tabs__panel--active" role="tabpanel" id="panel-pn-1" aria-labelledby="tab-pn-1"></div>
+        <div class="tabs__panel" role="tabpanel" id="panel-pn-2" aria-labelledby="tab-pn-2"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Logo Tabs (Figma: Logos / Logo Tab set / Logos Section) ── -->
+
+<div class="sub">
+  <h3>Logos (Figma: "Logos" / "Logos Section")</h3>
+  <div class="tabs tabs--logos" data-tabs>
+    <div class="tabs__list" role="tablist" aria-label="Client testimonials">
+      <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" data-tab="lg-1" aria-controls="panel-lg-1" id="tab-lg-1">
+        <span class="tabs__logo"><svg width="150" height="44" viewBox="0 0 150 44"><text x="75" y="24" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="24" fill="#6B21A8">Klein<tspan fill="#7A8E8C">Hersh</tspan></text><text x="75" y="38" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#7F8081">STRATEGIC LEADERSHIP PLACEMENT</text></svg></span>
+      </button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="lg-2" aria-controls="panel-lg-2" id="tab-lg-2">
+        <span class="tabs__logo"><svg width="150" height="44" viewBox="0 0 150 44"><text x="75" y="28" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="20" fill="#00B0C2">NorthPeak</text></svg></span>
+      </button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="lg-3" aria-controls="panel-lg-3" id="tab-lg-3">
+        <span class="tabs__logo"><svg width="150" height="44" viewBox="0 0 150 44"><text x="75" y="28" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="20" fill="#69D757">Brightline</text></svg></span>
+      </button>
+    </div>
+    <div class="tabs__panels">
+      <div class="tabs__panel tabs__panel--active panel-content" role="tabpanel" id="panel-lg-1" aria-labelledby="tab-lg-1">
+        <p><strong>KleinHersh</strong> — "CarbonWeb has been a partner of ours for almost 3 years. From the beginning, they have always worked to exceed expectations." — Jesse Klein, COO &amp; Managing Director</p>
+      </div>
+      <div class="tabs__panel panel-content" role="tabpanel" id="panel-lg-2" aria-labelledby="tab-lg-2">
+        <p><strong>NorthPeak</strong> — "Our workflows finally match the way our teams actually work."</p>
+      </div>
+      <div class="tabs__panel panel-content" role="tabpanel" id="panel-lg-3" aria-labelledby="tab-lg-3">
+        <p><strong>Brightline</strong> — "Adoption went from a struggle to a given within one quarter."</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Product Tabs (Figma: Products set / Products Cards section) ── -->
+
+<div class="sub">
+  <h3>Products (Figma: "Products set" / "Products Cards section")</h3>
+  <div class="tabs tabs--products" data-tabs>
+    <div class="tabs__list" role="tablist" aria-label="monday.com products">
+      <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" data-tab="pr-wm" aria-controls="panel-pr-wm" id="tab-pr-wm">
+        <span class="tabs__product-icon" style="background:#6C6CFF;"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="4" cy="4" r="1.6"/><circle cx="8" cy="4" r="1.6"/><circle cx="12" cy="4" r="1.6"/><circle cx="4" cy="8" r="1.6"/><circle cx="12" cy="8" r="1.6"/><circle cx="4" cy="12" r="1.6"/><circle cx="8" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/></svg></span>
+        <span class="tabs__product-name"><strong>monday</strong> work<br>management</span>
+      </button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="pr-sv" aria-controls="panel-pr-sv" id="tab-pr-sv">
+        <span class="tabs__product-icon" style="background:#F5476B;"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M11 2c-3 0-5 1.6-5 3.6 0 3.4 6 2.2 6 4.8 0 1.2-1.4 2-3 2s-3-.8-3-2H4c0 2 2 3.6 5 3.6s5-1.6 5-3.6c0-3.4-6-2.2-6-4.8 0-1.2 1.4-2 3-2s3 .8 3 2h2c0-2-2-3.6-5-3.6z" transform="scale(0.9)"/></svg></span>
+        <span class="tabs__product-name"><strong>monday</strong> service</span>
+      </button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="pr-dev" aria-controls="panel-pr-dev" id="tab-pr-dev">
+        <span class="tabs__product-icon" style="background:#00CA72;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="5"/><path d="M8 3v3"/></svg></span>
+        <span class="tabs__product-name"><strong>monday</strong> dev</span>
+      </button>
+      <button class="tabs__tab" role="tab" aria-selected="false" data-tab="pr-crm" aria-controls="panel-pr-crm" id="tab-pr-crm">
+        <span class="tabs__product-icon" style="background:#00D2D2;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8a5 5 0 0 1 9-3M13 8a5 5 0 0 1-9 3"/></svg></span>
+        <span class="tabs__product-name"><strong>monday</strong> CRM</span>
+      </button>
+    </div>
+    <div class="tabs__panels">
+      <div class="tabs__panel tabs__panel--active panel-content" role="tabpanel" id="panel-pr-wm" aria-labelledby="tab-pr-wm"><p><strong>monday work management</strong> — Run projects and workflows with confidence across every team.</p></div>
+      <div class="tabs__panel panel-content" role="tabpanel" id="panel-pr-sv" aria-labelledby="tab-pr-sv"><p><strong>monday service</strong> — AI-powered service management for internal and external requests.</p></div>
+      <div class="tabs__panel panel-content" role="tabpanel" id="panel-pr-dev" aria-labelledby="tab-pr-dev"><p><strong>monday dev</strong> — Product and dev lifecycle management built on the Work OS.</p></div>
+      <div class="tabs__panel panel-content" role="tabpanel" id="panel-pr-crm" aria-labelledby="tab-pr-crm"><p><strong>monday CRM</strong> — Manage the full sales cycle from lead to post-sale in one place.</p></div>
+    </div>
+  </div>
+</div>
+
+<script src="tabs.js"></script>
+</body>
+</html>

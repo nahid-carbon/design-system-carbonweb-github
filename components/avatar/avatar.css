@@ -1,0 +1,151 @@
+/* CarbonWeb Avatar — uses only var(--token) references */
+
+/* ── Base Avatar ── */
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+  background: var(--color-teal-100);
+  color: var(--color-teal-700);
+  font-family: var(--font-family);
+  font-weight: 600;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+/* ── Sizes ── */
+
+.avatar--xs {
+  width: 24px;
+  height: 24px;
+  font-size: 10px;
+}
+
+.avatar--sm {
+  width: 32px;
+  height: 32px;
+  font-size: 12px;
+}
+
+.avatar--md {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.avatar--lg {
+  width: 48px;
+  height: 48px;
+  font-size: 16px;
+}
+
+.avatar--xl {
+  width: 64px;
+  height: 64px;
+  font-size: 20px;
+}
+
+.avatar--2xl {
+  width: 80px;
+  height: 80px;
+  font-size: 24px;
+}
+
+/* ── Color Variants ── */
+
+.avatar--green {
+  background: var(--color-green-100);
+  color: var(--color-green-700);
+}
+
+.avatar--yellow {
+  background: var(--color-yellow-100);
+  color: var(--color-yellow-700);
+}
+
+.avatar--pink {
+  background: var(--color-pink-100);
+  color: var(--color-pink-700);
+}
+
+.avatar--ink {
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+/* ── Border Modifier ── */
+
+.avatar--bordered {
+  border: 2px solid var(--color-white);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+/* ── Avatar Group ── */
+
+.avatar-group {
+  display: flex;
+}
+
+.avatar-group .avatar {
+  margin-left: -8px;
+  border: 2px solid var(--color-white);
+}
+
+.avatar-group .avatar:first-child {
+  margin-left: 0;
+}
+
+.avatar-group__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--color-grey-base);
+  color: var(--color-ink);
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  margin-left: -8px;
+  border: 2px solid var(--color-white);
+}
+
+/* ── Status Indicator ── */
+
+.avatar__status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+}
+
+.avatar__status--online {
+  background: var(--color-success);
+}
+
+.avatar__status--offline {
+  background: var(--color-grey-base);
+}
+
+.avatar__status--busy {
+  background: var(--color-danger);
+}

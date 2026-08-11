@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partner Badge — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="partner-badge.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #fff; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 32px; max-width: 720px; line-height: 1.6; }
+    .section { margin-bottom: 40px; }
+    .section h3 { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+    .label { font-size: 13px; color: var(--color-muted); margin-bottom: 14px; line-height: 1.6; }
+    .surface-dark { background: var(--color-ink); padding: 32px; border-radius: 16px; }
+    .surface-tint { background: var(--color-grey-100); padding: 32px; border-radius: 16px; }
+    .note { font-size: 13px; line-height: 1.6; color: var(--color-slate); background: var(--color-grey-100); border-left: 3px solid var(--color-teal-500); padding: 14px 18px; border-radius: 8px; max-width: 760px; }
+  </style>
+</head>
+<body>
+
+<h2>Partner Badge</h2>
+<p class="desc">Official monday.com partner credential lockups, exported from Figma as SVG. The artwork is monday.com-issued and fixed — the component only controls size, alignment and interaction. Size by height; each badge keeps its own aspect ratio.</p>
+
+<div class="section">
+  <h3>Platinum Partner</h3>
+  <p class="label">Figma: Partner Badge/Platinum 2026 (527:6239) — Border=borderless (439:101) and Border=border (527:6235).</p>
+  <div class="partner-badge-row">
+    <a class="partner-badge" href="#"><img class="partner-badge__img" src="assets/badge-platinum-partner.svg" alt="monday.com Platinum Partner" /></a>
+    <a class="partner-badge" href="#"><img class="partner-badge__img" src="assets/badge-platinum-partner-bordered.svg" alt="monday.com Platinum Partner" /></a>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Advanced Delivery Partner</h3>
+  <p class="label">Figma: Partner Badge/Advanced Delivery 2026 (439:100).</p>
+  <a class="partner-badge" href="#"><img class="partner-badge__img" src="assets/badge-advanced-delivery-partner.svg" alt="monday.com Advanced Delivery Partner" /></a>
+</div>
+
+<div class="section">
+  <h3>Solutions &amp; Channel Partner</h3>
+  <p class="label">Figma: Partner Badge/Solutions (395:6827) and Partner Badge/Channel (395:6826).</p>
+  <div class="partner-badge-row">
+    <a class="partner-badge" href="#"><img class="partner-badge__img" src="assets/badge-solutions-partner.svg" alt="monday.com Solutions Partner" /></a>
+    <a class="partner-badge" href="#"><img class="partner-badge__img" src="assets/badge-channel-partner.svg" alt="monday.com Channel Partner" /></a>
+  </div>
+  <p class="note" style="margin-top:16px;"><strong>Source defect:</strong> both symbols are 176px wide but their medal graphic extends to 207px, so the circular mark is clipped at the right edge in Figma — and therefore in these exports. Widening the two symbols to ~208px (matching the 2026 badges) and re-exporting will fix it.</p>
+</div>
+
+<div class="section">
+  <h3>Sizes</h3>
+  <p class="label">--sm 40px · --md 56px (default) · --lg 72px. Height is the control; width follows.</p>
+  <div class="partner-badge-row">
+    <span class="partner-badge partner-badge--sm"><img class="partner-badge__img" src="assets/badge-platinum-partner.svg" alt="monday.com Platinum Partner" /></span>
+    <span class="partner-badge partner-badge--md"><img class="partner-badge__img" src="assets/badge-platinum-partner.svg" alt="monday.com Platinum Partner" /></span>
+    <span class="partner-badge partner-badge--lg"><img class="partner-badge__img" src="assets/badge-platinum-partner.svg" alt="monday.com Platinum Partner" /></span>
+  </div>
+</div>
+
+<div class="section">
+  <h3>On a dark surface</h3>
+  <p class="label">The badges carry their own surface, so they sit on dark sections unchanged. Never recolour them to match the background.</p>
+  <div class="surface-dark">
+    <div class="partner-badge-row">
+      <span class="partner-badge"><img class="partner-badge__img" src="assets/badge-platinum-partner.svg" alt="monday.com Platinum Partner" /></span>
+      <span class="partner-badge"><img class="partner-badge__img" src="assets/badge-advanced-delivery-partner.svg" alt="monday.com Advanced Delivery Partner" /></span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>On a tinted surface</h3>
+  <p class="label">Use the bordered Platinum lockup where the badge's own white would otherwise disappear.</p>
+  <div class="surface-tint">
+    <div class="partner-badge-row">
+      <span class="partner-badge"><img class="partner-badge__img" src="assets/badge-platinum-partner.svg" alt="monday.com Platinum Partner" /></span>
+      <span class="partner-badge"><img class="partner-badge__img" src="assets/badge-platinum-partner-bordered.svg" alt="monday.com Platinum Partner" /></span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

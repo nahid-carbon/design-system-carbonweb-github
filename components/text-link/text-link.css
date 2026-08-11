@@ -1,0 +1,75 @@
+/* CarbonWeb Text Link — inline "Learn more →" link */
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  line-height: 1.5;
+  color: var(--color-ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+
+.text-link:hover {
+  color: var(--color-teal-500);
+}
+
+.text-link:active {
+  color: var(--color-teal-700);
+}
+
+.text-link:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Arrow ── */
+
+.text-link__arrow {
+  display: inline-flex;
+  transition: transform 200ms ease;
+}
+
+.text-link:hover .text-link__arrow {
+  transform: translateX(4px);
+}
+
+.text-link__arrow svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Teal Variant (always teal, underline on hover) ── */
+
+.text-link--teal {
+  color: var(--color-teal-500);
+}
+
+.text-link--teal:hover {
+  color: var(--color-teal-600);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.text-link--teal:active {
+  color: var(--color-teal-700);
+}
+
+/* ── Ink Variant (explicit ink → teal) ── */
+
+.text-link--ink {
+  color: var(--color-ink);
+}
+
+.text-link--ink:hover {
+  color: var(--color-teal-500);
+}
+
+.text-link--ink:active {
+  color: var(--color-teal-700);
+}

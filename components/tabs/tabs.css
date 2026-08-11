@@ -1,0 +1,694 @@
+/* CarbonWeb Design System — Tabs Component
+   BEM naming. All colors via var(--color-*) tokens from ../../tokens/colors.css.
+   Variants: underline (default), pill, vertical, contained,
+   details, collapsible (+ --dark), pane, logos (+ --on-dark), products.
+*/
+
+/* ── Base ── */
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
+}
+
+/* ── Tab List ── */
+
+.tabs__list {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* ── Individual Tab ── */
+
+.tabs__tab {
+  background: none;
+  border: none;
+  padding: 12px 20px;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tabs__tab:hover {
+  color: var(--color-ink);
+}
+
+.tabs__tab:focus-visible {
+  outline: 2px solid var(--color-teal-400);
+  outline-offset: -2px;
+  border-radius: 4px;
+}
+
+.tabs__tab--active {
+  color: var(--color-teal-500);
+  border-bottom-color: var(--color-teal-500);
+  font-weight: 600;
+}
+
+/* ── Panels ── */
+
+.tabs__panels {
+  padding-top: 24px;
+}
+
+.tabs__panel {
+  display: none;
+}
+
+.tabs__panel--active {
+  display: block;
+}
+
+/* ── Pill Variant ── */
+
+.tabs--pill .tabs__list {
+  border-bottom: none;
+  gap: 4px;
+}
+
+.tabs--pill .tabs__tab {
+  border-bottom: none;
+  border-radius: 8px;
+  margin-bottom: 0;
+}
+
+.tabs--pill .tabs__tab:hover {
+  background: color-mix(in srgb, var(--color-ink) 4%, transparent);
+  color: var(--color-ink);
+}
+
+.tabs--pill .tabs__tab--active {
+  background: var(--color-teal-100);
+  color: var(--color-teal-700);
+  border-bottom: none;
+}
+
+/* ── Vertical Variant ── */
+
+.tabs--vertical {
+  flex-direction: row;
+}
+
+.tabs--vertical .tabs__list {
+  flex-direction: column;
+  border-bottom: none;
+  border-right: 2px solid color-mix(in srgb, var(--color-ink) 6%, transparent);
+  gap: 0;
+  min-width: 180px;
+}
+
+.tabs--vertical .tabs__tab {
+  border-bottom: none;
+  border-right: 2px solid transparent;
+  margin-bottom: 0;
+  margin-right: -2px;
+  text-align: left;
+}
+
+.tabs--vertical .tabs__tab--active {
+  color: var(--color-teal-500);
+  border-right-color: var(--color-teal-500);
+  border-bottom: none;
+  font-weight: 600;
+}
+
+.tabs--vertical .tabs__panels {
+  padding-top: 0;
+  padding-left: 24px;
+  flex: 1;
+}
+
+/* ── Contained Variant ── */
+
+.tabs--contained .tabs__list {
+  border-bottom: none;
+  gap: 0;
+  background: color-mix(in srgb, var(--color-ink) 4%, transparent);
+  border-radius: 8px 8px 0 0;
+  padding: 4px 4px 0;
+}
+
+.tabs--contained .tabs__tab {
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+}
+
+.tabs--contained .tabs__tab:hover {
+  background: color-mix(in srgb, var(--color-ink) 6%, transparent);
+  color: var(--color-ink);
+}
+
+.tabs--contained .tabs__tab--active {
+  background: var(--color-teal-500);
+  color: var(--color-white);
+  border-bottom: none;
+  font-weight: 600;
+}
+
+/* ── Details Variant (Figma: Tab Details / tab details section) ──
+   Vertical stack of card tabs on the left; rich detail panel on the right.
+   Active card fills teal-500 with white text. */
+
+.tabs--details {
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.tabs--details .tabs__list {
+  flex-direction: column;
+  border-bottom: none;
+  gap: 16px;
+  min-width: 300px;
+  max-width: 340px;
+  flex-shrink: 0;
+}
+
+.tabs--details .tabs__tab {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  background: var(--color-grey-100);
+  border-radius: 12px;
+  padding: 20px 18px;
+  border-bottom: none;
+  margin-bottom: 0;
+  white-space: normal;
+  transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
+}
+
+.tabs--details .tabs__tab:hover {
+  background: var(--color-latam-teal-100);
+}
+
+.tabs--details .tabs__tab-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.3;
+  transition: color 200ms ease;
+}
+
+.tabs--details .tabs__tab-desc {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-slate);
+  line-height: 1.5;
+  transition: color 200ms ease;
+}
+
+.tabs--details .tabs__tab--active {
+  background: var(--color-teal-500);
+}
+
+.tabs--details .tabs__tab--active:hover {
+  background: var(--color-teal-600);
+}
+
+.tabs--details .tabs__tab--active .tabs__tab-title,
+.tabs--details .tabs__tab--active .tabs__tab-desc {
+  color: var(--color-white);
+}
+
+.tabs--details .tabs__panels {
+  padding-top: 0;
+  flex: 1;
+}
+
+.tabs--details .tabs__panel--active {
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
+  background: var(--color-grey-100);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.tabs__detail-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.tabs__detail-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--color-latam-teal-100);
+  color: var(--color-teal-500);
+  flex-shrink: 0;
+}
+
+.tabs__detail-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.tabs__detail-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-ink);
+  margin: 0 0 16px;
+}
+
+.tabs__checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tabs__checklist li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--color-ink);
+}
+
+.tabs__checklist svg {
+  color: var(--color-teal-500);
+  flex-shrink: 0;
+}
+
+.tabs__detail-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 32px;
+}
+
+.tabs__price-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  margin-bottom: 4px;
+}
+
+.tabs__price-value {
+  font-family: 'Montserrat', var(--font-family);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.tabs__cta {
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-white);
+  background: var(--color-teal-500);
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.tabs__cta:hover {
+  background: var(--color-teal-hover);
+}
+
+.tabs__cta:focus-visible {
+  outline: 2px solid var(--color-teal-400);
+  outline-offset: 2px;
+}
+
+/* ── Collapsible Variant (Figma: Tab set / Vertical Light & Dark Sections) ──
+   Vertical accordion rows: active row fills teal-500 and expands its
+   supporting description with a max-height transition. */
+
+.tabs--collapsible {
+  flex-direction: row;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.tabs--collapsible .tabs__list {
+  flex-direction: column;
+  border-bottom: none;
+  gap: 10px;
+  min-width: 320px;
+  max-width: 380px;
+  flex: 1;
+}
+
+.tabs--collapsible .tabs__tab {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background: var(--color-grey-100);
+  border-radius: 10px;
+  padding: 14px 18px;
+  border-bottom: none;
+  margin-bottom: 0;
+  white-space: normal;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.tabs--collapsible .tabs__tab:hover {
+  background: var(--color-latam-teal-100);
+}
+
+.tabs__tab-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.tabs--collapsible .tabs__tab-icon {
+  display: inline-flex;
+  color: var(--color-latam-teal-800);
+  flex-shrink: 0;
+  transition: color 200ms ease;
+}
+
+.tabs--collapsible .tabs__tab-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-ink);
+  transition: color 200ms ease;
+}
+
+.tabs__chevron {
+  margin-left: auto;
+  display: inline-flex;
+  color: var(--color-ink);
+  transition: transform 200ms ease, color 200ms ease;
+  flex-shrink: 0;
+}
+
+.tabs--collapsible .tabs__tab-desc {
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-white);
+  transition: max-height 200ms ease, opacity 200ms ease, margin-top 200ms ease;
+}
+
+.tabs--collapsible .tabs__tab--active {
+  background: var(--color-teal-500);
+}
+
+.tabs--collapsible .tabs__tab--active .tabs__tab-title,
+.tabs--collapsible .tabs__tab--active .tabs__tab-icon,
+.tabs--collapsible .tabs__tab--active .tabs__chevron {
+  color: var(--color-white);
+}
+
+.tabs--collapsible .tabs__tab--active .tabs__chevron {
+  transform: rotate(180deg);
+}
+
+.tabs--collapsible .tabs__tab--active .tabs__tab-desc {
+  max-height: 120px;
+  opacity: 1;
+  margin-top: 8px;
+}
+
+.tabs--collapsible .tabs__panels {
+  padding-top: 0;
+  flex: 1;
+}
+
+.tabs__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  border-radius: 16px;
+  background: var(--color-latam-teal-100);
+  border: 1px solid var(--color-latam-teal-300);
+  color: var(--color-teal-800);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Dark-section wrapper (Figma: Vertical Dark Section) */
+
+.tabs--collapsible.tabs--dark .tabs__tab {
+  background: color-mix(in srgb, var(--color-white) 8%, transparent);
+}
+
+.tabs--collapsible.tabs--dark .tabs__tab:hover {
+  background: color-mix(in srgb, var(--color-white) 16%, transparent);
+}
+
+.tabs--collapsible.tabs--dark .tabs__tab-title,
+.tabs--collapsible.tabs--dark .tabs__tab-icon,
+.tabs--collapsible.tabs--dark .tabs__chevron {
+  color: var(--color-white);
+}
+
+.tabs--collapsible.tabs--dark .tabs__tab--active {
+  background: var(--color-teal-500);
+}
+
+/* ── Pane Variant (Figma: Vertical Collapsible Pane) ──
+   Slim white rows with a dot-chip label; active row expands a checklist. */
+
+.tabs--pane .tabs__list {
+  flex-direction: column;
+  border-bottom: none;
+  gap: 12px;
+}
+
+.tabs--pane .tabs__tab {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  background: var(--color-white);
+  border-radius: 4px;
+  padding: 16px 20px;
+  border-bottom: none;
+  margin-bottom: 0;
+  white-space: normal;
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--color-ink) 8%, transparent);
+  transition: box-shadow 200ms ease;
+}
+
+.tabs--pane .tabs__tab:hover {
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-ink) 12%, transparent);
+}
+
+.tabs__pane-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  background: var(--color-grey-100);
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+
+.tabs__pane-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-latam-teal-500);
+  flex-shrink: 0;
+}
+
+.tabs--pane .tabs__tab-row .tabs__chevron {
+  color: var(--color-ink);
+}
+
+.tabs--pane .tabs__tab--active .tabs__chevron {
+  transform: rotate(180deg);
+}
+
+.tabs--pane .tabs__tab-desc {
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 200ms ease, opacity 200ms ease, margin-top 200ms ease;
+}
+
+.tabs--pane .tabs__tab--active .tabs__tab-desc {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 16px;
+}
+
+.tabs--pane .tabs__checklist li {
+  font-size: 15px;
+}
+
+.tabs--pane .tabs__check-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-latam-teal-500);
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+/* ── Logos Variant (Figma: Logos / Logos Section) ──
+   Client logo tabs: greyscale by default, full color + gradient underline
+   when active. Add .tabs--on-dark inside dark sections. */
+
+.tabs--logos .tabs__list {
+  border-bottom: none;
+  gap: 24px;
+}
+
+.tabs--logos .tabs__tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  border-bottom: none;
+  margin-bottom: 0;
+  padding: 12px 20px 0;
+}
+
+.tabs--logos .tabs__logo {
+  filter: grayscale(1);
+  opacity: 0.55;
+  transition: filter 200ms ease, opacity 200ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+}
+
+.tabs--logos .tabs__logo img,
+.tabs--logos .tabs__logo svg {
+  max-height: 48px;
+  width: auto;
+}
+
+.tabs--logos .tabs__tab::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-ink) 8%, transparent);
+  transition: background 200ms ease;
+}
+
+.tabs--logos .tabs__tab:hover .tabs__logo {
+  opacity: 0.8;
+}
+
+.tabs--logos .tabs__tab--active .tabs__logo {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.tabs--logos .tabs__tab--active::after {
+  background: var(--gradient-global);
+}
+
+.tabs--logos.tabs--on-dark .tabs__tab::after {
+  background: color-mix(in srgb, var(--color-white) 25%, transparent);
+}
+
+.tabs--logos.tabs--on-dark .tabs__logo {
+  filter: grayscale(1) brightness(1.6);
+}
+
+.tabs--logos.tabs--on-dark .tabs__tab--active .tabs__logo {
+  filter: grayscale(0) brightness(1.2);
+}
+
+/* ── Products Variant (Figma: Products set / Products Cards section) ──
+   Horizontal product-logo strip. Inactive logos are greyscale and faded;
+   the active product shows at full color. */
+
+.tabs--products .tabs__list {
+  border-bottom: none;
+  gap: 8px;
+  background: linear-gradient(90deg, var(--color-white) 0%, var(--color-neutral-100) 100%);
+  border-radius: 8px;
+  padding: 8px;
+  justify-content: space-evenly;
+}
+
+.tabs--products .tabs__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: none;
+  margin-bottom: 0;
+  padding: 10px 16px;
+  border-radius: 8px;
+  filter: grayscale(1);
+  opacity: 0.45;
+  transition: filter 200ms ease, opacity 200ms ease, background-color 200ms ease;
+}
+
+.tabs--products .tabs__tab:hover {
+  opacity: 0.75;
+}
+
+.tabs--products .tabs__tab--active {
+  filter: grayscale(0);
+  opacity: 1;
+  border-bottom: none;
+}
+
+.tabs__product-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+.tabs__product-name {
+  font-size: 16px;
+  color: var(--color-ink);
+  text-align: left;
+  line-height: 1.2;
+}
+
+.tabs__product-name strong {
+  font-weight: 700;
+}

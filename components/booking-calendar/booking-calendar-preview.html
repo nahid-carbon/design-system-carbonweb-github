@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Calendar — CarbonWeb DS</title>
+  <link rel="stylesheet" href="../../tokens/colors.css" />
+  <link rel="stylesheet" href="../../tokens/spacing.css" />
+  <link rel="stylesheet" href="../../tokens/typography.css" />
+  <link rel="stylesheet" href="../../tokens/radii.css" />
+  <link rel="stylesheet" href="../../tokens/shadows.css" />
+  <link rel="stylesheet" href="booking-calendar.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-family); background: #f8f9fb; color: var(--color-ink); padding: 48px 60px; -webkit-font-smoothing: antialiased; }
+    h2 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .desc { font-size: 15px; color: var(--color-muted); margin-bottom: 40px; line-height: 1.6; }
+    .section { margin-bottom: 48px; }
+    .section h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+    .section .label { font-size: 13px; font-weight: 500; color: var(--color-muted); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+  </style>
+</head>
+<body>
+
+<h2>Booking Calendar</h2>
+<p class="desc">Calendly-style date &amp; time picker. Weekdays are selectable (teal), weekends and past days disabled. Picking a day reveals time slots. Numbers use Montserrat.</p>
+
+<div class="section">
+  <h3>Default</h3>
+  <p class="label">Click an available day to reveal time slots</p>
+  <div class="booking-calendar">
+    <h3 class="booking-calendar__title">Select a Date &amp; Time</h3>
+    <div class="booking-calendar__month">
+      <button class="booking-calendar__nav" data-dir="prev" aria-label="Previous month">&#8249;</button>
+      <span class="booking-calendar__month-label"></span>
+      <button class="booking-calendar__nav" data-dir="next" aria-label="Next month">&#8250;</button>
+    </div>
+    <div class="booking-calendar__grid">
+      <span class="booking-calendar__dow">Sun</span>
+      <span class="booking-calendar__dow">Mon</span>
+      <span class="booking-calendar__dow">Tue</span>
+      <span class="booking-calendar__dow">Wed</span>
+      <span class="booking-calendar__dow">Thu</span>
+      <span class="booking-calendar__dow">Fri</span>
+      <span class="booking-calendar__dow">Sat</span>
+    </div>
+    <div class="booking-calendar__slots">
+      <button class="booking-calendar__slot">9:00 am</button>
+      <button class="booking-calendar__slot">10:30 am</button>
+      <button class="booking-calendar__slot">12:00 pm</button>
+      <button class="booking-calendar__slot">1:30 pm</button>
+      <button class="booking-calendar__slot">3:00 pm</button>
+      <button class="booking-calendar__slot">4:30 pm</button>
+    </div>
+    <div class="booking-calendar__tz">
+      <div class="booking-calendar__tz-label">Time zone</div>
+      <span class="booking-calendar__tz-value">🌐 Eastern Time - US &amp; Canada ▾</span>
+    </div>
+  </div>
+</div>
+
+<script src="booking-calendar.js"></script>
+</body>
+</html>
